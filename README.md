@@ -1,152 +1,140 @@
 # EEG BCI Project
 
-## Neural Compute Device
+Binary REST-vs-INTENT EEG detection for cue-guided rehabilitation. A known cue
+specifies the requested movement; EEG confirms whether motor intent follows.
 
-Neural experiments default to `--device auto`, which selects CUDA first, then
-Apple Metal (`mps`), and finally CPU. The WAY EEG-only experiments and decoder
-bakeoff accept `--device auto|cpu|mps|cuda`; translational v4 inference uses the
-equivalent `--neural-device` option. Classical MNE, SciPy, NumPy, covariance,
-and scikit-learn processing remains CPU-based.
+## Current status (2026-10-07)
 
-Completed seed results are reused by default for reproducibility. Pass `--force`
-to the five-seed stability or decoder-bakeoff command when a deliberate retrain
-on the newly selected device is required. The HS Stroke locked external script
-remains explicitly CPU-bound so its completed locked result is not altered.
-On Apple Silicon, the GUI exposes a `Neural compute` selector and defaults to
-`mps` when Metal is available. Enable `Rebuild cached features` to retrain and
-replace completed seed models on the selected neural device.
+**Start with [`docs/final/PROJECT_STATUS_AND_RESULTS.md`](docs/final/PROJECT_STATUS_AND_RESULTS.md).**
+It is the canonical summary after the independent audit
+([`EEG_BCI_Project_AUDIT_2026-10-07.md`](EEG_BCI_Project_AUDIT_2026-10-07.md)).
+[`docs/README.md`](docs/README.md) labels every other document as current,
+supporting, pre-audit poster material, or historical.
 
-Use `EEG_BCI_Project_RUN_GUI.command` to launch the console. On this project
-machine, that launcher prefers the Python 3.12 installation matching the pinned
-scikit-learn 1.6.1 artifacts and the working PyTorch Metal backend. Set
-`EEG_BCI_PYTHON=/path/to/python` only when intentionally using another complete
-environment.
+- **V7, participant level:** **66.0% balanced accuracy** (95% CI 62.3-69.6%)
+  across 38 evaluation participants, with 21/38 above their individual chance
+  threshold. Patient calibration adds +6.5 points per participant (95% CI
+  +3.7 to +9.3).
+- **V7, window-pooled:** 73.6% balanced accuracy, 53.5% sensitivity, 93.7%
+  specificity. This is the August poster number. It is dominated by 6 OpenBMI
+  participants who supply 77.5% of evaluation windows.
+- **Evaluation set:** the 38 participants have been scored by every version
+  since v3 and were used to rank neural architectures. They are a validation
+  set, not a test set.
+- **Confound controls**
+  ([findings](docs/final/CONFOUND_CONTROL_FINDINGS.md)):
+  - **PhysioNet:** about 0.70 AUROC of imagery-related signal survives
+    pre-cue rest, later windows, and causal filters, and beats an
+    amplitude-only model by 0.12-0.16.
+  - **OpenBMI:** separability is matched by amplitude alone.
+  - **Liu stroke:** physiology does no better than amplitude or EOG.
+- **Locked external tests:** both failed. HS-Stroke (v4) and Cho2017 (V7)
+  windows were 100% rejected, primarily by a quality-gate defect that is now
+  fixed. Cho2017 zero-shot AUROC was 0.575. Its "adapted 0.925" is a
+  recording-identity artifact, not evidence.
+- **Safety:** specificity is per cue-locked window. Continuous false
+  activations per minute have never been measured.
 
-## Current Patient-Adaptive Model
+## Quick start
 
-The recommended development workflow is
-`Translational v7 graph/LDA-enhanced intent`. Its device-facing output is
-strictly binary `rest` versus `intent`. During training and rapid calibration,
-an internal auxiliary model may use the known left/right cue labels, but its
-probabilities are collapsed to `P(left) + P(right)` and direction is never
-exposed as a command. Recording 0 supplies 10 rest, 10 left, and 10 right
-calibration windows; only later recordings are evaluated.
+```bash
+./EEG_BCI_Project_SETUP_ENV.command              # one-time: build the project .venv
+./EEG_BCI_Project_VERIFY.command                 # syntax, GUI check, model hashes, 115 tests (~10 s)
+./EEG_BCI_Project_RUN_FINAL_PIPELINE.command     # reproduce V7 with participant-level metrics (~2 min)
+./EEG_BCI_Project_RUN_CONFOUND_CONTROLS.command  # confound-control benchmark (~15 min first run)
+./EEG_BCI_Project_RUN_GUI.command                # research console
+```
 
-The development-observed patient-adapted conservative result is **73.6%
-balanced accuracy**, **53.5% sensitivity**, and **93.7% specificity**. The
-sensitivity-targeted point reaches **74.1% balanced accuracy**, **58.5%
-sensitivity**, and **89.6% specificity**. Controller selection retained an
-auxiliary weight of 0.25 for PhysioNet and 0.50 for OpenBMI, but correctly
-selected 0.00 for Liu stroke data. This is a modest conservative improvement
-over v5 (**73.3% BA**) and v6 (**71.9% BA**), not external confirmation. V6
-remains available when its simpler 20-window binary calibration contract is
-preferred. Continuous false commands per minute remain unevaluated. Cho2017
-now supplies an external continuous-rest window test, but temporal confirmation
-and commands per minute are still not measured.
+### Environment
 
-The V7-only course-concept extension adds a fixed seven-electrode graph,
-64 graph-spectral features, weighted OAS shrinkage LDA, and development-fitted
-PCA/K-means diagnostics. Controller validation assigned zero operational
-fusion weight to the graph and LDA candidates and rejected graph augmentation
-for all patient adapters. The protected V7 result therefore remains 73.6% BA.
-This negative ablation is retained because added feature complexity did not
-improve later-recording generalization. Shrinkage LDA remains a useful
-interpretable reference at 62.8% raw BA and 0.803 AUROC.
+- **Interpreter.** Every launcher sources `scripts/project_python.sh`, which
+  picks one interpreter, in this order: `$EEG_BCI_PYTHON`, then `.venv/`, then
+  the framework Python 3.12, then `python3`.
+- **Setup.** `EEG_BCI_Project_SETUP_ENV.command` creates `.venv` with access to
+  the framework Python 3.12 packages, which provide scikit-learn 1.6.1 for the
+  saved `.joblib` models and PyTorch with Metal. It pins scipy 1.16.3, because
+  scipy 1.15.2 does not load on macOS 27.
+- **Neural compute.** Neural steps default to `--device auto` / `--neural-device
+  auto` (CUDA, then Metal, then CPU). Completed seed models are reused unless
+  `--force` is passed.
 
-The portable model package is under
-`artifacts/gui_experiments/translational_v7_graph_lda/general_model_bundle`.
-It contains the population controller, fingerprinted neural seed models,
-preprocessing and channel contracts, operating thresholds, and the selected
-rapid-calibration configuration. The API class
-`RapidAuxiliaryIntentPatientAdapter` can be fitted from labeled rest/left/right
-calibration windows and serialized with joblib for later patient-specific
-binary inference. A known rehabilitation cue supplies the requested movement
-while EEG confirms whether intent is present.
+### Version control
 
-This folder is the consolidated home for the final weak motor-intent EEG
-project. It contains the runnable pipeline, GUI, tests, documentation, trained
-model bundle, metrics, and presentation figures.
+The project is a git repository.
 
-The large source datasets are not duplicated. The `files/`,
-`Liu acute-stroke dataset`, and `data_links/` entries point to the existing
-local datasets. The requested WAY-EEG-GAL release is the exception: its
-verified archives and extracted MATLAB files are stored directly in
-`WAY-EEG-GAL/` and occupy approximately 20 GB.
+- **Branches.** `main` holds the pre-audit baseline snapshot, and
+  `audit-fixes` holds the audit follow-up.
+- **What is not tracked.** Source datasets (about 67 GB), cached `.npz` window
+  arrays, third-party PDFs, and poster design binaries (`.pptx`, `.pxd`) are
+  excluded by `.gitignore`.
 
-## Start Here
+## Main results and reports
 
-### Learn the complete project for a presentation
+| What | Where |
+|---|---|
+| Canonical status and results | `docs/final/PROJECT_STATUS_AND_RESULTS.md` (also `EEG_BCI_Project_FINAL_REPORT.md`) |
+| V7 reproduction: report, participant-level metrics, per-window predictions | `artifacts/gui_experiments/translational_v7_graph_lda_reproduction/` (also `EEG_BCI_Project_Final_Results`) |
+| Original V7 run (pooled metrics only) | `artifacts/gui_experiments/translational_v7_graph_lda/` |
+| Confound controls | `artifacts/confound_controls/`, `docs/final/CONFOUND_CONTROL_FINDINGS.md` |
+| HS-Stroke locked external (v4) | `artifacts/hs_stroke_locked_external/` |
+| Cho2017 locked external (V7) | `artifacts/cho2017_locked_external_v7/`, `artifacts/cho2017_post_lock_quality_audit/` |
+| Next locked test (draft protocol) | `docs/final/PREREGISTRATION_DRAFT_EXTERNAL_TEST.md` |
+| Base pipeline implementation (v3; V7 extends it) | `docs/final/TRANSLATIONAL_V3_IMPLEMENTATION.md` (also `EEG_BCI_Project_IMPLEMENTATION.md`) |
+| Course-concept mapping | `docs/final/BME473_COURSE_CONCEPTS_AND_PROJECT_MAPPING.md` |
+| Poster and presentation material (pre-audit numbers) | `docs/final/EEG_BCI_V7_POSTER_CONTENT.md`, `artifacts/poster_v7/` |
 
-- Course-to-project technical study guide:
-  `EEG_BCI_Project_BME473_COURSE_GUIDE.md`
-- Connects the supplied BME 473/ELE 573 lectures on baseline normalization,
-  Hilbert analysis, CSP, LDA, Bayesian classification, clustering, neural
-  networks, optimization, and graph signal processing to V7/V7-H.
-- Poster-specific section walkthrough, talk track, glossary, and likely Q&A:
-  `EEG_BCI_Project_POSTER_PRESENTATION_GUIDE.md`
-- Top-level shortcut: `EEG_BCI_Project_PRESENTATION_GUIDE.md`
-- Presentation and study guide:
-  `docs/final/EEG_BCI_PROJECT_PRESENTATION_GUIDE.md`
-- Includes the full pipeline, physiology, preprocessing, feature and decoder
-  explanations, acronyms, metrics, side experiments, likely questions, and
-  presentation-safe interpretation of the current results.
-- Comparable-project research review:
-  `docs/final/COMPARABLE_BCI_PROJECTS_METHODS_RESULTS_REVIEW_2026.md`
-- Top-level research shortcut:
-  `EEG_BCI_Project_COMPARABLE_BCI_RESEARCH.md`
-- Compares decoder, transfer, asynchronous-control, and rehabilitation studies
-  by cohort, method, validation contract, and result, then defines the next
-  recommended experiment for this project.
-- Prospective frozen-controller guide:
-  `docs/final/PROSPECTIVE_CUE_CONSTRAINED_CONTROLLER.md`
-- Top-level prospective shortcut:
-  `EEG_BCI_Project_PROSPECTIVE_CONTROLLER.md`
-- Proposed EEG-fNIRS extension of V7:
-  `docs/final/FNIRS_INTEGRATION_SYNOPSIS_V7.md`
-- Reviews the supplied MIND and Yin studies, comparable hybrid BCI evidence,
-  a dual-timescale V7-H architecture, public-data benchmark, fNIRS quality
-  control, prospective acquisition protocol, GUI changes, and advancement
-  criteria.
+### V7 binary contract
 
-### View the final result
+- **Output.** The device-facing output is strictly `rest` versus `intent`.
+- **Calibration.** Recording 0 supplies 10 rest, 10 left, and 10 right
+  calibration windows. Only later recordings are evaluated.
+- **Direction.** An internal auxiliary model may use left/right cue labels.
+  Its probabilities are collapsed to `P(left) + P(right)`, and direction is
+  never exposed as a command.
+- **Auxiliary weight.** Controller selection kept a weight of 0.25 for
+  PhysioNet and 0.50 for OpenBMI, and selected 0.00 for Liu stroke.
+- **Graph/LDA extension.** It received zero fusion weight and was rejected
+  for every patient adapter.
+- **Model bundle.** The portable bundle is in
+  `artifacts/gui_experiments/translational_v7_graph_lda/general_model_bundle`.
 
-- Poster clinical-motivation panel and recommended abstract replacement:
-  `artifacts/poster_v7/why_project/00_why_this_project.png`
-- Poster graphical abstract:
-  `artifacts/poster_v7/01_v7_poster_graphical_abstract.png`
-- Poster dataset and V7 pipeline:
-  `artifacts/poster_v7/02_v7_poster_dataset_pipeline.png`
-- Poster V7 results dashboard:
-  `artifacts/poster_v7/03_v7_poster_results_dashboard.png`
-- Poster figure guide and vector exports:
-  `artifacts/poster_v7/POSTER_FIGURES.md`
-- Standalone poster visuals for Sections 3-7:
-  `artifacts/poster_v7/sections/SECTION_VISUALS.md`
-- Poster-ready section text and updated abstract:
-  `EEG_BCI_Project_POSTER_CONTENT.md`
-- Current v7 report:
-  `artifacts/gui_experiments/translational_v7_graph_lda/TRANSLATIONAL_V7_AUXILIARY_DIRECTION_REPORT.md`
-- V7 fixed-geometry graph signal audit:
-  `artifacts/gui_experiments/translational_v7_graph_lda/10_v7_graph_signal_audit.png`
-- V7 PCA, shrinkage-LDA, and K-means diagnostics:
-  `artifacts/gui_experiments/translational_v7_graph_lda/11_v7_graph_representation_diagnostics.png`
-- V5/v6/v7 presentation comparison:
-  `artifacts/gui_experiments/translational_v7_graph_lda/09_v5_v6_v7_comparison.png`
-- Immediate report shortcut: `EEG_BCI_Project_FINAL_REPORT.md`
-- Immediate figure shortcut: `EEG_BCI_Project_RESULTS_OVERVIEW.png`
-- Immediate implementation shortcut: `EEG_BCI_Project_IMPLEMENTATION.md`
-- Report:
-  `EEG_BCI_Project_Final_Results/TRANSLATIONAL_V3_REPORT.md`
-- Main comparison figure:
-  `EEG_BCI_Project_Final_Results/07_operating_point_comparison.png`
-- Full implementation guide:
-  `docs/final/TRANSLATIONAL_V3_IMPLEMENTATION.md`
-- Neural-integration report:
-  `artifacts/gui_experiments/translational_v4_neural_integrated/TRANSLATIONAL_V4_NEURAL_REPORT.md`
-- Neural-integration overview figure:
-  `artifacts/gui_experiments/translational_v4_neural_integrated/08_neural_integration_summary.png`
-- Project manifest:
-  `EEG_BCI_Project_MANIFEST.md`
+### Quality gate
+
+The fix is in `QualityAvailabilityGate` (`bci_pipeline/translational_decoder.py`).
+
+- **The defect.** Scoring version 1 floored the zero spread of the binary
+  indicators `auxiliary_available` and `csd_available` at 1e-6. Any dataset
+  without auxiliary channels or CSD was therefore rejected outright.
+- **The fix.** Version 2, the default for new fits, excludes indicator and
+  constant features from the distance and reports them via
+  `compatibility_report()`. It also offers a label-free within-recording mode.
+- **Frozen models are unchanged.** Pickled gates keep version 1 scoring.
+  `scripts/30_translational_motor_intent_v3.py --legacy-quality-gate`
+  reproduces historical runs exactly.
+
+### Locked external tests
+
+**HS-Stroke (14 chronic-stroke patients, frozen v4).**
+
+- The gate rejected every window.
+- With the fixed gate, 95.1% of windows are available.
+- The descriptive intent AUROC before gating was 0.524. The contrast there was
+  cued preparation vs imagery, so both classes had stimuli.
+- HS-Stroke has now been inspected and cannot serve as a locked test again.
+- The one-shot evaluator `scripts/42_hs_stroke_locked_external.py` refuses to
+  overwrite its result.
+
+**Cho2017 (32 retained healthy participants, V7).**
+
+- The gate rejected every window, for two reasons:
+  - the indicator defect, and
+  - Cho2017 amplitude features about 20× the training data (median RMS 105.7
+    vs 5.2), which is unresolved and may be a unit issue.
+- Zero-shot AUROC was **0.575**.
+- The reported "adapted AUROC 0.925" and the post-hoc 72.0% BA are not evidence.
+  Rest windows come from a separately recorded and separately preprocessed
+  resting file, so a feature that is constant within each recording separates
+  the classes at about 0.87 AUROC on its own.
 
 ### Open the GUI
 
@@ -167,24 +155,34 @@ Choose `Translational v7 graph/LDA-enhanced intent (recommended)` in the
 Dataset Experiments tab. V6 and the fixed legacy references remain available
 in the same menu.
 
-### Re-run the final pipeline
+## Supporting experiments
+
+Every experiment below was scored on the same validation participants as V7.
+Treat each as exploratory.
+
+### Run the EEG decoder model bakeoff
 
 ```bash
-cd EEG_BCI_Project
-./EEG_BCI_Project_RUN_FINAL_PIPELINE.command
+./EEG_BCI_Project_RUN_DECODER_BAKEOFF.command
 ```
 
-This reuses the existing 36,903-window cache and writes results to:
+The completed matched five-seed comparison evaluates EEGNet, ShallowConvNet,
+FBCNet, a two-stream MRCP + FBCNet model, corrected target-only Conv1D, WAY
+SSL, Riemannian, and calibrated-fusion references. **MRCP + FBCNet was the only
+candidate to pass every predeclared advancement check**, reaching **62.66%
+balanced accuracy**, **31.29% sensitivity**, **94.03% specificity**, and
+**0.804 AUROC**. It improved equal-participant balanced accuracy by **+3.10
+points** over target-only Conv1D (95% participant-bootstrap interval **+1.50 to
++4.73**) and helped **76.3%** of participants.
 
-```text
-artifacts/gui_experiments/translational_v3_calibrated
-```
-
-Pass additional pipeline arguments after the launcher if needed:
-
-```bash
-./EEG_BCI_Project_RUN_FINAL_PIPELINE.command --bootstrap-iterations 200
-```
+The workflow is also available in the GUI as `EEG decoder model bakeoff`.
+Research rationale and the completed interpretation are documented in
+`docs/final/DECODER_MODEL_RESEARCH_RECOMMENDATION.md`; the generated report and
+five presentation figures are in `artifacts/eeg_decoder_model_bakeoff/`.
+This is a base intent-gate architecture audit; it does not replace the
+patient-adapted V7 result. The ranking used the V7 evaluation participants, and
+the top two architectures (MRCP + FBCNet, ShallowConvNet) were then built into
+V5-V7, so V7's evaluation set also served for architecture selection.
 
 ### Run the neural-integrated pipeline
 
@@ -210,61 +208,6 @@ replay template, synthetic state-machine figure, and a development-only MRCP
 phase ablation. Device output remains disabled and no external result is
 claimed. Outputs are written to `artifacts/prospective_cue_controller/` and
 `artifacts/mrcp_phase_ablation/`.
-
-### Inspect the HS-Stroke locked external result
-
-The corrected HS-Stroke v6 cohort was evaluated once with the frozen v4 model:
-
-```bash
-open artifacts/hs_stroke_locked_external/HS_STROKE_LOCKED_EXTERNAL_REPORT.md
-open artifacts/hs_stroke_locked_external/POST_LOCK_DIAGNOSTIC_AUDIT.md
-```
-
-The one-shot evaluator is `scripts/42_hs_stroke_locked_external.py`. It refuses
-to overwrite the completed result. `scripts/43_hs_stroke_post_lock_audit.py`
-recreates only the explanatory post-lock audit and does not refit or rescore the
-locked model.
-
-### Inspect the Cho2017 locked external result
-
-Cho2017 provides an additional healthy motor-imagery domain that was absent
-from V7 training. Subject 1 was used only to validate the source-data adapter
-and was excluded before inference; subjects 2-52 formed the frozen external
-cohort. Native 64-channel, 512 Hz EEG was mapped through the unchanged V7
-seven-channel preprocessing contract. Intent came from cue-period imagery,
-while negatives came from each participant's independent continuous resting
-recording.
-
-```bash
-open artifacts/cho2017_locked_external_v7/CHO2017_V7_LOCKED_EXTERNAL_REPORT.md
-open artifacts/cho2017_post_lock_quality_audit/CHO2017_POST_LOCK_QUALITY_AUDIT.md
-```
-
-The locked run retained 32 participants and 4,983 QC-passing windows. The
-frozen population OOD gate rejected 100% of external windows, producing 0%
-sensitivity despite adapted intent scores reaching 0.925 AUROC. This is a
-real external failure of quality calibration, not evidence that the intent
-representation contains no information.
-
-A separate post-lock analysis fitted quality normalization from the same 30
-reserved patient-calibration windows without evaluation labels. At the
-unchanged sensitivity-targeted threshold it restored 93.7% availability and
-reached **72.0% balanced accuracy, 45.2% sensitivity, and 98.8% specificity**.
-Because this correction was designed after observing the locked failure, it is
-exploratory and must be pre-registered before testing another untouched cohort.
-
-The reproducible scripts are:
-
-```text
-scripts/52_cho2017_locked_external_v7.py
-scripts/53_cho2017_post_lock_quality_audit.py
-```
-
-### Verify the project
-
-```bash
-./EEG_BCI_Project_VERIFY.command
-```
 
 ### Run the EEG-EMG research audit
 
@@ -302,51 +245,6 @@ Current exploratory development-observed result:
 
 The interval crosses zero, so this supports feasibility but not a claim that
 EMG supervision improves general EEG intent detection.
-
-### Download MIND and run V7-H
-
-V7-H is the paired EEG-fNIRS extension of V7. The default Bash launcher reads
-the official ScienceDB V3 manifest and downloads only the processed EEG, HbO,
-and HbR derivatives needed for the first benchmark:
-
-```bash
-cd "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project"
-bash EEG_BCI_Project_DOWNLOAD_MIND.sh
-```
-
-The download is resumable and writes its manifest and progress state under
-`MIND/`. To validate the workflow with a smaller subset first:
-
-```bash
-bash EEG_BCI_Project_DOWNLOAD_MIND.sh --subjects 3-7
-```
-
-The current V3 derivative manifest yields 27 usable complete EEG/HbO/HbR
-participant pairs: the adapter reports and skips incomplete `sub-02` and the
-documented corrupt fNIRS derivative for `sub-13`.
-
-The complete MIND release is approximately **93.1 GiB**. It is not required
-for V7-H, but it can be selected explicitly with:
-
-```bash
-bash EEG_BCI_Project_DOWNLOAD_MIND.sh --profile full
-```
-
-After the derivative download completes, run the participant-isolated hybrid
-benchmark with:
-
-```bash
-bash EEG_BCI_Project_RUN_V7H_MIND.sh
-```
-
-V7-H compares EEG-only, fNIRS-only, population late fusion, rapid
-patient-adapted fusion, and sequential EEG-proposal/fNIRS-confirmation modes.
-It reserves recording 0 for calibration and evaluates later recordings. The
-same workflow is available in the GUI as `V7-H hybrid EEG-fNIRS (MIND)`.
-Implementation details and output definitions are in
-`docs/final/V7H_MIND_IMPLEMENTATION.md`. No MIND performance result should be
-reported until the real-data command completes; `--synthetic` is only a
-software smoke test.
 
 ### Download WAY-EEG-GAL
 
@@ -423,91 +321,81 @@ were shared with the unlabeled WAY condition, so it is not the strict
 target-only preprocessing baseline. See
 `artifacts/way_eeg_only_ssl_seed_stability/ORIGINAL_EEG_ONLY_FIVE_SEED_REPORT.md`.
 
-### Run the EEG decoder model bakeoff
+### Download MIND and run V7-H (not yet run on real data)
+
+No `MIND/` download or `artifacts/v7h_mind/` output exists yet. MIND is a
+healthy 4-direction right-arm imagery dataset, and the slow fNIRS response
+(peak 5-8 s) cannot speed a sub-second trigger, so this extension is
+deprioritized.
+
+V7-H is the paired EEG-fNIRS extension of V7. The default Bash launcher reads
+the official ScienceDB V3 manifest and downloads only the processed EEG, HbO,
+and HbR derivatives needed for the first benchmark:
 
 ```bash
-./EEG_BCI_Project_RUN_DECODER_BAKEOFF.command
+cd "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project"
+bash EEG_BCI_Project_DOWNLOAD_MIND.sh
 ```
 
-The completed matched five-seed comparison evaluates EEGNet, ShallowConvNet,
-FBCNet, a two-stream MRCP + FBCNet model, corrected target-only Conv1D, WAY
-SSL, Riemannian, and calibrated-fusion references. **MRCP + FBCNet was the only
-candidate to pass every predeclared advancement check**, reaching **62.66%
-balanced accuracy**, **31.29% sensitivity**, **94.03% specificity**, and
-**0.804 AUROC**. It improved equal-participant balanced accuracy by **+3.10
-points** over target-only Conv1D (95% participant-bootstrap interval **+1.50 to
-+4.73**) and helped **76.3%** of participants.
+The download is resumable and writes its manifest and progress state under
+`MIND/`. To validate the workflow with a smaller subset first:
 
-The workflow is also available in the GUI as `EEG decoder model bakeoff`.
-Research rationale and the completed interpretation are documented in
-`docs/final/DECODER_MODEL_RESEARCH_RECOMMENDATION.md`; the generated report and
-five presentation figures are in `artifacts/eeg_decoder_model_bakeoff/`.
-This is a base intent-gate architecture audit; it does not replace the separate
-patient-adapted calibrated result reported below.
+```bash
+bash EEG_BCI_Project_DOWNLOAD_MIND.sh --subjects 3-7
+```
 
-## Folder Layout
+The current V3 derivative manifest yields 27 usable complete EEG/HbO/HbR
+participant pairs: the adapter reports and skips incomplete `sub-02` and the
+documented corrupt fNIRS derivative for `sub-13`.
+
+The complete MIND release is approximately **93.1 GiB**. It is not required
+for V7-H, but it can be selected explicitly with:
+
+```bash
+bash EEG_BCI_Project_DOWNLOAD_MIND.sh --profile full
+```
+
+After the derivative download completes, run the participant-isolated hybrid
+benchmark with:
+
+```bash
+bash EEG_BCI_Project_RUN_V7H_MIND.sh
+```
+
+V7-H compares EEG-only, fNIRS-only, population late fusion, rapid
+patient-adapted fusion, and sequential EEG-proposal/fNIRS-confirmation modes.
+It reserves recording 0 for calibration and evaluates later recordings. The
+same workflow is available in the GUI as `V7-H hybrid EEG-fNIRS (MIND)`.
+Implementation details and output definitions are in
+`docs/final/V7H_MIND_IMPLEMENTATION.md`. No MIND performance result should be
+reported until the real-data command completes; `--synthetic` is only a
+software smoke test.
+
+### Reference runs
+
+- `EEG_BCI_Project_RUN_V3_REFERENCE.command` reruns the fixed physiology-only
+  v3 reference into `artifacts/gui_experiments/translational_v3_calibrated`.
+  On the window-pooled metric it scored 67.9% BA, 41.3% sensitivity, and 94.5%
+  specificity.
+
+## Folder layout
 
 | Location | Purpose |
 |---|---|
-| `bci_pipeline/` | Signal processing, feature extraction, decoders, calibration, and metrics |
-| `scripts/` | Complete experiment history and final GUI/pipeline entry points |
-| `tests/` | Automated pipeline tests |
-| `docs/final/` | Current architecture, audit, workflow, and implementation documents |
-| `artifacts/multimodal_readiness/` | EEG-EMG readiness checks and presentation figures |
-| `artifacts/way_eeg_gal_transfer/` | WAY source QC, transfer metrics, EEG-only student, and figures |
-| `artifacts/multisource_privileged_ensemble/` | Domain-selected multi-source model, metrics, report, and figures |
-| `artifacts/way_eeg_only_ssl/` | Unlabeled WAY cache, pretrained encoder, EEG-only decoder, metrics, and figures |
-| `artifacts/eeg_decoder_model_bakeoff/` | Five-seed architecture comparison, participant analysis, models, metrics, and presentation figures |
-| `artifacts/prospective_cue_controller/` | Frozen model hashes, cue controller, locked protocol, replay template, and synthetic functional figure |
-| `artifacts/mrcp_phase_ablation/` | Development-only explicit MRCP phase audit and presentation figure |
-| `artifacts/hs_stroke_locked_external/` | First frozen-v4 chronic-stroke external result, QC records, predictions, five figures, and post-lock audit |
-| `MIND/` | Official MIND V3 files, downloader manifest, and resumable state |
-| `artifacts/v7h_mind/` | V7-H features, model, locked internal metrics, predictions, report, and figures |
-| `docs/research_archive/` | Earlier experiment reports and research notes |
-| `artifacts/gui_experiments/translational_v3_calibrated/` | Final model, metrics, report, and seven figures |
-| `artifacts/gui_experiments/translational_v4_neural_integrated/` | Neural-integrated candidate, paired v3 comparison, metrics, model manifest, and eight figures |
-| `data_links/` | Clearly named links to the three source datasets |
-| `WAY-EEG-GAL/` | Verified 12-participant EEG/EMG/kinematic/force release and download audit |
-
-## Current Results
-
-The fixed physiology-only v3 reference remains:
-
-- Balanced accuracy: **67.9%**
-- Intent sensitivity: **41.3%**
-- Intent specificity: **94.5%**
-- Conditional direction balanced accuracy: **71.0%**
-
-The patient-adapted neural-integrated v4 candidate reached:
-
-- Balanced accuracy: **70.6%**
-- Intent sensitivity: **46.7%**
-- Intent specificity: **94.4%**
-- Conditional direction balanced accuracy: **71.4%**
-
-The pooled change is **+2.7 BA points** and **+5.4 sensitivity points** versus
-v3, but the equal-participant BA change is only **+0.16 points** (95%
-participant-bootstrap interval **-3.67 to +3.97**). V4 is therefore the
-preferred integration candidate, not a confirmed replacement for v3.
-
-The first locked external test has now been completed on corrected HS-Stroke v6:
-
-- Patients: **14** across **278** downloaded sessions
-- Frozen recording-QC acceptance: **172/278 (61.9%)** sessions
-- Retained paired-window opportunities: **26,483/46,764 (56.6%)**
-- Frozen availability gate: **0.0% available**
-- Locked sensitivity/specificity: **0.0% / 100.0%**
-- Descriptive intent AUROC before command gating: **52.4%**
-- Descriptive numeric direction balanced accuracy: **51.1%**
-
-This external result does not confirm the development-observed improvement. The
-quality gate rejected every HS window because missing auxiliary channels and
-unavailable CSD were encoded as extreme deviations. Removing the gate alone is
-unsafe: at the frozen conservative threshold, ungated sensitivity was 99.9% but
-specificity was only 0.05%. HS-Stroke is therefore now an observed adaptation
-cohort; a different untouched dataset or prospective cohort is required to
-confirm any fixes. Continuous natural-idle recordings also remain necessary
-before reporting false commands per minute or enabling device commands.
+| `bci_pipeline/` | Signal processing, feature extraction, decoders, calibration, metrics, and confound controls |
+| `scripts/` | Experiment history and entry points (`30_` = V7 pipeline, `54_` = confound controls, `project_python.sh` = interpreter selection) |
+| `tests/` | Automated tests (115) |
+| `docs/` | Documentation; see `docs/README.md` for status labels |
+| `artifacts/gui_experiments/` | V3-V7 runs, including the V7 reproduction with participant-level metrics |
+| `artifacts/confound_controls/` | Cue and trial-phase control benchmark |
+| `artifacts/hs_stroke_locked_external/`, `artifacts/cho2017_*` | Locked external tests and post-lock audits |
+| `artifacts/eeg_decoder_model_bakeoff/`, `artifacts/way_*`, `artifacts/emg_supervised_transfer/`, `artifacts/multisource_privileged_ensemble/`, `artifacts/multimodal_readiness/` | Supporting experiments |
+| `artifacts/prospective_cue_controller/`, `artifacts/mrcp_phase_ablation/` | Frozen v4 controller preparation and phase ablation |
+| `artifacts/poster_v7/` | Poster figures and their generator outputs |
+| `data_links/`, `files/`, `Liu acute-stroke dataset` | Dataset links (machine-specific; not tracked) |
+| `WAY-EEG-GAL/` | Local WAY-EEG-GAL release (about 20 GB; only the audit and manifest are tracked) |
+| `30747806/` | HS-Stroke release (about 13 GB; only the project's intake and contract JSON are tracked) |
+| `files/external/cho2017/` | Cho2017 release (about 33 GB; not tracked) |
 
 ## Moving This Folder
 
@@ -525,3 +413,9 @@ source data are moved:
 ```
 
 See `data_links/README.md` for details.
+
+On another machine, run `./EEG_BCI_Project_SETUP_ENV.command` to create the
+`.venv` (it installs the full `requirements.txt` when the framework Python 3.12
+stack is absent; add `--with-optional` for PyTorch). Tracked symlinks inside the
+project are relative. The dataset links in `data_links/` are machine-specific
+and not tracked.

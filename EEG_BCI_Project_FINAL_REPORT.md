@@ -1,1 +1,1 @@
-EEG_BCI_Project_Final_Results/TRANSLATIONAL_V3_REPORT.md
+docs/final/PROJECT_STATUS_AND_RESULTS.md

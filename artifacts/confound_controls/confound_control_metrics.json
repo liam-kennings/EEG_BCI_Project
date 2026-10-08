@@ -1,0 +1,5151 @@
+{
+  "schema_version": 1,
+  "purpose": "Audit of cue/trial-phase confounds in the V7 rest-vs-intent contrast",
+  "evaluation_rows": "development_observed participants (V7 roles), recordings after recording 0",
+  "training_rows": "development + controller_validation participants, all recordings",
+  "conditions": {
+    "original": {
+      "phase": "zero",
+      "positive": {
+        "physionet": "intent@0.5",
+        "openbmi": "intent@0.5",
+        "liu2024": "intent@1.0"
+      },
+      "negative": "rest_original",
+      "description": "V7 windows: cue-period intent vs post-task rest, zero-phase filters"
+    },
+    "original_causal": {
+      "phase": "forward",
+      "positive": {
+        "physionet": "intent@0.5",
+        "openbmi": "intent@0.5",
+        "liu2024": "intent@1.0"
+      },
+      "negative": "rest_original",
+      "description": "V7 windows with causal (forward) filters"
+    },
+    "precue_rest": {
+      "phase": "zero",
+      "positive": {
+        "physionet": "intent@0.5",
+        "openbmi": "intent@0.5",
+        "liu2024": "intent@1.0"
+      },
+      "negative": "rest_precue",
+      "description": "Same intent windows; rest taken from the 2 s before the cue"
+    },
+    "precue_rest_late_intent": {
+      "phase": "zero",
+      "positive": {
+        "physionet": "intent@1.5",
+        "openbmi": "intent@1.5",
+        "liu2024": "intent@2.0"
+      },
+      "negative": "rest_precue",
+      "description": "Pre-cue rest; intent window moved 1 s later to avoid cue-evoked responses"
+    },
+    "precue_rest_late_intent_causal": {
+      "phase": "forward",
+      "positive": {
+        "physionet": "intent@1.5",
+        "openbmi": "intent@1.5",
+        "liu2024": "intent@2.0"
+      },
+      "negative": "rest_precue",
+      "description": "Strictest: pre-cue rest, late intent window, causal filters"
+    },
+    "rest_vs_rest_control": {
+      "phase": "zero",
+      "positive": {
+        "physionet": "rest_original",
+        "openbmi": "rest_original",
+        "liu2024": "rest_original"
+      },
+      "negative": "rest_precue",
+      "description": "Negative control: post-task rest (scored as 'positive') vs pre-cue rest. Neither contains motor imagery; separability measures trial-phase signal."
+    }
+  },
+  "models": [
+    "amplitude",
+    "auxiliary_eog_emg",
+    "bandpower",
+    "bandpower_baseline_normalized",
+    "riemann_recentered",
+    "mrcp",
+    "combined"
+  ],
+  "dataset_counts": {
+    "physionet": {
+      "participants": 109,
+      "windows_per_phase": 34418
+    },
+    "openbmi": {
+      "participants": 29,
+      "windows_per_phase": 81199
+    },
+    "liu2024": {
+      "participants": 49,
+      "windows_per_phase": 13660
+    }
+  },
+  "excluded": [],
+  "population": [
+    {
+      "condition": "original",
+      "model": "amplitude",
+      "dataset": "physionet",
+      "train_rows": 7874,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6300126262626262,
+      "participant_mean_auroc_95_ci": [
+        0.5655653409090909,
+        0.6929299242424244
+      ],
+      "pooled_auroc": 0.5522917075816663,
+      "participant_mean_balanced_accuracy": 0.5306818181818183,
+      "participants_above_chance": 3,
+      "per_participant_auroc": {
+        "physionet:S005": 0.7377777777777778,
+        "physionet:S007": 0.8933333333333334,
+        "physionet:S010": 0.4888888888888888,
+        "physionet:S020": 0.9377777777777778,
+        "physionet:S021": 0.7466666666666667,
+        "physionet:S025": 0.84,
+        "physionet:S036": 0.6755555555555556,
+        "physionet:S044": 0.8,
+        "physionet:S047": 0.4933333333333334,
+        "physionet:S048": 0.6044444444444443,
+        "physionet:S054": 0.6222222222222222,
+        "physionet:S058": 0.5599999999999999,
+        "physionet:S061": 0.36,
+        "physionet:S065": 0.7377777777777778,
+        "physionet:S073": 0.44,
+        "physionet:S076": 0.56,
+        "physionet:S081": 0.5777777777777777,
+        "physionet:S095": 0.5555555555555556,
+        "physionet:S097": 0.4844444444444444,
+        "physionet:S098": 0.5955555555555556,
+        "physionet:S100": 0.673611111111111,
+        "physionet:S103": 0.47555555555555556
+      }
+    },
+    {
+      "condition": "original",
+      "model": "bandpower",
+      "dataset": "physionet",
+      "train_rows": 7874,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.5695454545454546,
+      "participant_mean_auroc_95_ci": [
+        0.5031047979797979,
+        0.6323977272727274
+      ],
+      "pooled_auroc": 0.550542883595657,
+      "participant_mean_balanced_accuracy": 0.5287878787878788,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "physionet:S005": 0.5422222222222223,
+        "physionet:S007": 0.5644444444444445,
+        "physionet:S010": 0.41333333333333333,
+        "physionet:S020": 0.7111111111111111,
+        "physionet:S021": 0.6977777777777778,
+        "physionet:S025": 0.72,
+        "physionet:S036": 0.8,
+        "physionet:S044": 0.6311111111111111,
+        "physionet:S047": 0.5422222222222222,
+        "physionet:S048": 0.7333333333333334,
+        "physionet:S054": 0.6577777777777778,
+        "physionet:S058": 0.6400000000000001,
+        "physionet:S061": 0.6577777777777778,
+        "physionet:S065": 0.5777777777777777,
+        "physionet:S073": 0.5333333333333334,
+        "physionet:S076": 0.5422222222222222,
+        "physionet:S081": 0.19555555555555554,
+        "physionet:S095": 0.48444444444444446,
+        "physionet:S097": 0.38666666666666666,
+        "physionet:S098": 0.76,
+        "physionet:S100": 0.25,
+        "physionet:S103": 0.4888888888888889
+      }
+    },
+    {
+      "condition": "original",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "physionet",
+      "train_rows": 7874,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6610984848484849,
+      "participant_mean_auroc_95_ci": [
+        0.5953529040404041,
+        0.7234444444444444
+      ],
+      "pooled_auroc": 0.6501977947984177,
+      "participant_mean_balanced_accuracy": 0.5837121212121211,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "physionet:S005": 0.6533333333333333,
+        "physionet:S007": 0.7377777777777779,
+        "physionet:S010": 0.5911111111111111,
+        "physionet:S020": 0.8311111111111111,
+        "physionet:S021": 0.7777777777777779,
+        "physionet:S025": 0.8755555555555556,
+        "physionet:S036": 0.8577777777777778,
+        "physionet:S044": 0.72,
+        "physionet:S047": 0.42222222222222217,
+        "physionet:S048": 0.7644444444444445,
+        "physionet:S054": 0.7733333333333334,
+        "physionet:S058": 0.7777777777777778,
+        "physionet:S061": 0.6133333333333334,
+        "physionet:S065": 0.8400000000000001,
+        "physionet:S073": 0.7244444444444444,
+        "physionet:S076": 0.4666666666666667,
+        "physionet:S081": 0.3111111111111111,
+        "physionet:S095": 0.72,
+        "physionet:S097": 0.45333333333333337,
+        "physionet:S098": 0.6844444444444444,
+        "physionet:S100": 0.4375,
+        "physionet:S103": 0.5111111111111112
+      }
+    },
+    {
+      "condition": "original",
+      "model": "riemann_recentered",
+      "dataset": "physionet",
+      "train_rows": 7874,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6990530303030302,
+      "participant_mean_auroc_95_ci": [
+        0.6357525252525252,
+        0.7549545454545454
+      ],
+      "pooled_auroc": 0.6969577944243376,
+      "participant_mean_balanced_accuracy": 0.6393939393939394,
+      "participants_above_chance": 8,
+      "per_participant_auroc": {
+        "physionet:S005": 0.7022222222222222,
+        "physionet:S007": 0.6888888888888889,
+        "physionet:S010": 0.7377777777777779,
+        "physionet:S020": 0.8755555555555556,
+        "physionet:S021": 0.7822222222222222,
+        "physionet:S025": 0.9822222222222222,
+        "physionet:S036": 0.8711111111111112,
+        "physionet:S044": 0.7333333333333333,
+        "physionet:S047": 0.43111111111111106,
+        "physionet:S048": 0.8622222222222222,
+        "physionet:S054": 0.6133333333333333,
+        "physionet:S058": 0.6666666666666667,
+        "physionet:S061": 0.6311111111111111,
+        "physionet:S065": 0.6311111111111111,
+        "physionet:S073": 0.8355555555555556,
+        "physionet:S076": 0.49333333333333335,
+        "physionet:S081": 0.4488888888888889,
+        "physionet:S095": 0.6622222222222223,
+        "physionet:S097": 0.76,
+        "physionet:S098": 0.6488888888888888,
+        "physionet:S100": 0.5347222222222222,
+        "physionet:S103": 0.7866666666666666
+      }
+    },
+    {
+      "condition": "original",
+      "model": "mrcp",
+      "dataset": "physionet",
+      "train_rows": 7874,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6873737373737373,
+      "participant_mean_auroc_95_ci": [
+        0.613810606060606,
+        0.7576035353535354
+      ],
+      "pooled_auroc": 0.6818169065454647,
+      "participant_mean_balanced_accuracy": 0.6409090909090909,
+      "participants_above_chance": 10,
+      "per_participant_auroc": {
+        "physionet:S005": 0.64,
+        "physionet:S007": 0.38666666666666666,
+        "physionet:S010": 0.5688888888888889,
+        "physionet:S020": 0.9511111111111112,
+        "physionet:S021": 0.7511111111111111,
+        "physionet:S025": 0.9733333333333334,
+        "physionet:S036": 0.7555555555555555,
+        "physionet:S044": 0.5955555555555556,
+        "physionet:S047": 0.5288888888888889,
+        "physionet:S048": 0.8888888888888888,
+        "physionet:S054": 0.8355555555555556,
+        "physionet:S058": 0.5022222222222222,
+        "physionet:S061": 0.3466666666666667,
+        "physionet:S065": 0.9155555555555556,
+        "physionet:S073": 0.56,
+        "physionet:S076": 0.5777777777777777,
+        "physionet:S081": 0.4622222222222222,
+        "physionet:S095": 0.7911111111111111,
+        "physionet:S097": 0.8666666666666667,
+        "physionet:S098": 0.7555555555555555,
+        "physionet:S100": 0.7222222222222221,
+        "physionet:S103": 0.7466666666666667
+      }
+    },
+    {
+      "condition": "original",
+      "model": "combined",
+      "dataset": "physionet",
+      "train_rows": 7874,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.7475631313131313,
+      "participant_mean_auroc_95_ci": [
+        0.6715710227272729,
+        0.8134071969696969
+      ],
+      "pooled_auroc": 0.7447558660419532,
+      "participant_mean_balanced_accuracy": 0.6848484848484848,
+      "participants_above_chance": 13,
+      "per_participant_auroc": {
+        "physionet:S005": 0.7155555555555555,
+        "physionet:S007": 0.6044444444444445,
+        "physionet:S010": 0.6000000000000001,
+        "physionet:S020": 0.9822222222222222,
+        "physionet:S021": 0.7777777777777779,
+        "physionet:S025": 1.0,
+        "physionet:S036": 0.9422222222222223,
+        "physionet:S044": 0.7022222222222222,
+        "physionet:S047": 0.4666666666666666,
+        "physionet:S048": 0.9155555555555557,
+        "physionet:S054": 0.8666666666666667,
+        "physionet:S058": 0.6177777777777778,
+        "physionet:S061": 0.5422222222222222,
+        "physionet:S065": 0.9466666666666667,
+        "physionet:S073": 0.8444444444444446,
+        "physionet:S076": 0.45333333333333337,
+        "physionet:S081": 0.4044444444444444,
+        "physionet:S095": 0.8755555555555555,
+        "physionet:S097": 0.8222222222222222,
+        "physionet:S098": 0.7511111111111112,
+        "physionet:S100": 0.7708333333333333,
+        "physionet:S103": 0.8444444444444444
+      }
+    },
+    {
+      "condition": "original",
+      "model": "amplitude",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.9096851851851852,
+      "participant_mean_auroc_95_ci": [
+        0.8676804166666666,
+        0.9469490277777778
+      ],
+      "pooled_auroc": 0.8613475308641976,
+      "participant_mean_balanced_accuracy": 0.7872222222222222,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.896888888888889,
+        "openbmi:S036": 0.8749333333333333,
+        "openbmi:S042": 0.8274444444444444,
+        "openbmi:S047": 0.9419000000000001,
+        "openbmi:S049": 0.9649555555555556,
+        "openbmi:S052": 0.9519888888888889
+      }
+    },
+    {
+      "condition": "original",
+      "model": "auxiliary_eog_emg",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.6380166666666666,
+      "participant_mean_auroc_95_ci": [
+        0.5808485648148147,
+        0.6873074074074074
+      ],
+      "pooled_auroc": 0.5613185185185185,
+      "participant_mean_balanced_accuracy": 0.5297222222222223,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6738333333333333,
+        "openbmi:S036": 0.7275111111111111,
+        "openbmi:S042": 0.5308666666666666,
+        "openbmi:S047": 0.6333444444444444,
+        "openbmi:S049": 0.6808222222222222,
+        "openbmi:S052": 0.5817222222222223
+      }
+    },
+    {
+      "condition": "original",
+      "model": "bandpower",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7738092592592593,
+      "participant_mean_auroc_95_ci": [
+        0.7163554629629629,
+        0.8265092592592592
+      ],
+      "pooled_auroc": 0.7318179012345679,
+      "participant_mean_balanced_accuracy": 0.6441666666666667,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.8049777777777778,
+        "openbmi:S036": 0.6694666666666667,
+        "openbmi:S042": 0.6846,
+        "openbmi:S047": 0.8351333333333334,
+        "openbmi:S049": 0.8481444444444444,
+        "openbmi:S052": 0.8005333333333333
+      }
+    },
+    {
+      "condition": "original",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.8165166666666668,
+      "participant_mean_auroc_95_ci": [
+        0.7476506944444443,
+        0.8840292592592593
+      ],
+      "pooled_auroc": 0.7889447530864198,
+      "participant_mean_balanced_accuracy": 0.7252777777777778,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.8201333333333334,
+        "openbmi:S036": 0.6952777777777778,
+        "openbmi:S042": 0.7426444444444444,
+        "openbmi:S047": 0.9471666666666667,
+        "openbmi:S049": 0.833988888888889,
+        "openbmi:S052": 0.8598888888888889
+      }
+    },
+    {
+      "condition": "original",
+      "model": "riemann_recentered",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7687481481481483,
+      "participant_mean_auroc_95_ci": [
+        0.7209460648148148,
+        0.8211335648148148
+      ],
+      "pooled_auroc": 0.7406478395061729,
+      "participant_mean_balanced_accuracy": 0.6836111111111111,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.7632999999999999,
+        "openbmi:S036": 0.7065444444444445,
+        "openbmi:S042": 0.6962666666666667,
+        "openbmi:S047": 0.7467333333333334,
+        "openbmi:S049": 0.8686555555555555,
+        "openbmi:S052": 0.8309888888888889
+      }
+    },
+    {
+      "condition": "original",
+      "model": "mrcp",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.5492018518518518,
+      "participant_mean_auroc_95_ci": [
+        0.4656310185185185,
+        0.6327666666666666
+      ],
+      "pooled_auroc": 0.5495416666666666,
+      "participant_mean_balanced_accuracy": 0.5563888888888889,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5361888888888888,
+        "openbmi:S036": 0.46603333333333335,
+        "openbmi:S042": 0.3946888888888889,
+        "openbmi:S047": 0.7050444444444445,
+        "openbmi:S049": 0.5883555555555555,
+        "openbmi:S052": 0.6049
+      }
+    },
+    {
+      "condition": "original",
+      "model": "combined",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.8436333333333333,
+      "participant_mean_auroc_95_ci": [
+        0.7853377314814816,
+        0.8959965277777777
+      ],
+      "pooled_auroc": 0.8166216049382716,
+      "participant_mean_balanced_accuracy": 0.7505555555555556,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.8335111111111111,
+        "openbmi:S036": 0.7504888888888889,
+        "openbmi:S042": 0.7609666666666667,
+        "openbmi:S047": 0.9281777777777778,
+        "openbmi:S049": 0.8970555555555555,
+        "openbmi:S052": 0.8916
+      }
+    },
+    {
+      "condition": "original",
+      "model": "amplitude",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.7015526315789473,
+      "participant_mean_auroc_95_ci": [
+        0.6276184210526315,
+        0.7641460526315789
+      ],
+      "pooled_auroc": 0.6660732984293195,
+      "participant_mean_balanced_accuracy": 0.6101315789473684,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.65,
+        "liu2024:S022": 0.805,
+        "liu2024:S025": 0.45263157894736844,
+        "liu2024:S027": 0.7947368421052631,
+        "liu2024:S031": 0.7236842105263157,
+        "liu2024:S034": 0.6368421052631579,
+        "liu2024:S036": 0.7631578947368421,
+        "liu2024:S040": 0.6815789473684211,
+        "liu2024:S048": 0.6236842105263158,
+        "liu2024:S050": 0.8842105263157896
+      }
+    },
+    {
+      "condition": "original",
+      "model": "auxiliary_eog_emg",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.6213157894736843,
+      "participant_mean_auroc_95_ci": [
+        0.5286447368421052,
+        0.6965986842105262
+      ],
+      "pooled_auroc": 0.6106544502617801,
+      "participant_mean_balanced_accuracy": 0.5715789473684211,
+      "participants_above_chance": 3,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5552631578947368,
+        "liu2024:S022": 0.7,
+        "liu2024:S025": 0.5973684210526317,
+        "liu2024:S027": 0.8105263157894737,
+        "liu2024:S031": 0.6815789473684211,
+        "liu2024:S034": 0.5842105263157895,
+        "liu2024:S036": 0.6368421052631579,
+        "liu2024:S040": 0.26315789473684215,
+        "liu2024:S048": 0.7394736842105263,
+        "liu2024:S050": 0.6447368421052632
+      }
+    },
+    {
+      "condition": "original",
+      "model": "bandpower",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.5854473684210527,
+      "participant_mean_auroc_95_ci": [
+        0.5073486842105264,
+        0.6658309210526316
+      ],
+      "pooled_auroc": 0.5590052356020943,
+      "participant_mean_balanced_accuracy": 0.5360526315789473,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.6289473684210526,
+        "liu2024:S022": 0.615,
+        "liu2024:S025": 0.48157894736842105,
+        "liu2024:S027": 0.5710526315789474,
+        "liu2024:S031": 0.6105263157894737,
+        "liu2024:S034": 0.7421052631578948,
+        "liu2024:S036": 0.43157894736842106,
+        "liu2024:S040": 0.8236842105263158,
+        "liu2024:S048": 0.3894736842105263,
+        "liu2024:S050": 0.5605263157894738
+      }
+    },
+    {
+      "condition": "original",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.6659473684210527,
+      "participant_mean_auroc_95_ci": [
+        0.5798684210526317,
+        0.74685
+      ],
+      "pooled_auroc": 0.6509947643979058,
+      "participant_mean_balanced_accuracy": 0.6475000000000001,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.6447368421052632,
+        "liu2024:S022": 0.8200000000000001,
+        "liu2024:S025": 0.5763157894736843,
+        "liu2024:S027": 0.6605263157894737,
+        "liu2024:S031": 0.6789473684210526,
+        "liu2024:S034": 0.7131578947368422,
+        "liu2024:S036": 0.5842105263157895,
+        "liu2024:S040": 0.9105263157894736,
+        "liu2024:S048": 0.4210526315789474,
+        "liu2024:S050": 0.65
+      }
+    },
+    {
+      "condition": "original",
+      "model": "riemann_recentered",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.6348421052631579,
+      "participant_mean_auroc_95_ci": [
+        0.5400578947368422,
+        0.7313486842105263
+      ],
+      "pooled_auroc": 0.6421204188481675,
+      "participant_mean_balanced_accuracy": 0.5865789473684211,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5631578947368421,
+        "liu2024:S022": 0.58,
+        "liu2024:S025": 0.6210526315789474,
+        "liu2024:S027": 0.7500000000000001,
+        "liu2024:S031": 0.5105263157894737,
+        "liu2024:S034": 0.731578947368421,
+        "liu2024:S036": 0.4421052631578948,
+        "liu2024:S040": 0.8894736842105263,
+        "liu2024:S048": 0.4184210526315789,
+        "liu2024:S050": 0.8421052631578948
+      }
+    },
+    {
+      "condition": "original",
+      "model": "mrcp",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.44936842105263153,
+      "participant_mean_auroc_95_ci": [
+        0.3644644736842106,
+        0.5296381578947369
+      ],
+      "pooled_auroc": 0.4800261780104712,
+      "participant_mean_balanced_accuracy": 0.4955263157894737,
+      "participants_above_chance": 0,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.3973684210526316,
+        "liu2024:S022": 0.5700000000000001,
+        "liu2024:S025": 0.5763157894736842,
+        "liu2024:S027": 0.4342105263157895,
+        "liu2024:S031": 0.5157894736842106,
+        "liu2024:S034": 0.19473684210526315,
+        "liu2024:S036": 0.6026315789473684,
+        "liu2024:S040": 0.33947368421052626,
+        "liu2024:S048": 0.29210526315789476,
+        "liu2024:S050": 0.5710526315789474
+      }
+    },
+    {
+      "condition": "original",
+      "model": "combined",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.6665263157894736,
+      "participant_mean_auroc_95_ci": [
+        0.5792092105263158,
+        0.7471092105263157
+      ],
+      "pooled_auroc": 0.6455235602094241,
+      "participant_mean_balanced_accuracy": 0.5951315789473685,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5421052631578948,
+        "liu2024:S022": 0.86,
+        "liu2024:S025": 0.7210526315789474,
+        "liu2024:S027": 0.7394736842105263,
+        "liu2024:S031": 0.5605263157894738,
+        "liu2024:S034": 0.6736842105263158,
+        "liu2024:S036": 0.5973684210526315,
+        "liu2024:S040": 0.8210526315789474,
+        "liu2024:S048": 0.3868421052631579,
+        "liu2024:S050": 0.763157894736842
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "amplitude",
+      "dataset": "physionet",
+      "train_rows": 7874,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.632739898989899,
+      "participant_mean_auroc_95_ci": [
+        0.5478784722222222,
+        0.7048914141414142
+      ],
+      "pooled_auroc": 0.5497947236016423,
+      "participant_mean_balanced_accuracy": 0.5310606060606061,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "physionet:S005": 0.7333333333333334,
+        "physionet:S007": 0.9022222222222223,
+        "physionet:S010": 0.5333333333333333,
+        "physionet:S020": 0.9377777777777778,
+        "physionet:S021": 0.6933333333333334,
+        "physionet:S025": 0.8755555555555554,
+        "physionet:S036": 0.8266666666666667,
+        "physionet:S044": 0.8177777777777777,
+        "physionet:S047": 0.39555555555555555,
+        "physionet:S048": 0.6355555555555554,
+        "physionet:S054": 0.5688888888888889,
+        "physionet:S058": 0.6666666666666666,
+        "physionet:S061": 0.36000000000000004,
+        "physionet:S065": 0.7155555555555556,
+        "physionet:S073": 0.16,
+        "physionet:S076": 0.5288888888888889,
+        "physionet:S081": 0.8222222222222222,
+        "physionet:S095": 0.45333333333333337,
+        "physionet:S097": 0.6044444444444445,
+        "physionet:S098": 0.5733333333333333,
+        "physionet:S100": 0.6180555555555556,
+        "physionet:S103": 0.49777777777777776
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "bandpower",
+      "dataset": "physionet",
+      "train_rows": 7874,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.5716161616161616,
+      "participant_mean_auroc_95_ci": [
+        0.5007045454545455,
+        0.6363686868686869
+      ],
+      "pooled_auroc": 0.5535635795714914,
+      "participant_mean_balanced_accuracy": 0.5181818181818182,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "physionet:S005": 0.5733333333333333,
+        "physionet:S007": 0.5866666666666667,
+        "physionet:S010": 0.43111111111111117,
+        "physionet:S020": 0.7244444444444444,
+        "physionet:S021": 0.6977777777777777,
+        "physionet:S025": 0.7288888888888888,
+        "physionet:S036": 0.7822222222222222,
+        "physionet:S044": 0.6622222222222223,
+        "physionet:S047": 0.5288888888888889,
+        "physionet:S048": 0.72,
+        "physionet:S054": 0.6888888888888889,
+        "physionet:S058": 0.6266666666666667,
+        "physionet:S061": 0.6977777777777778,
+        "physionet:S065": 0.5733333333333333,
+        "physionet:S073": 0.5377777777777778,
+        "physionet:S076": 0.5155555555555555,
+        "physionet:S081": 0.1822222222222222,
+        "physionet:S095": 0.4622222222222222,
+        "physionet:S097": 0.3155555555555556,
+        "physionet:S098": 0.7688888888888888,
+        "physionet:S100": 0.2777777777777778,
+        "physionet:S103": 0.49333333333333335
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "physionet",
+      "train_rows": 7874,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6722474747474748,
+      "participant_mean_auroc_95_ci": [
+        0.6118251262626263,
+        0.7301142676767679
+      ],
+      "pooled_auroc": 0.6532184907742521,
+      "participant_mean_balanced_accuracy": 0.5912878787878788,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "physionet:S005": 0.6577777777777778,
+        "physionet:S007": 0.72,
+        "physionet:S010": 0.5777777777777777,
+        "physionet:S020": 0.8266666666666667,
+        "physionet:S021": 0.8088888888888889,
+        "physionet:S025": 0.8844444444444445,
+        "physionet:S036": 0.8666666666666667,
+        "physionet:S044": 0.7288888888888889,
+        "physionet:S047": 0.4177777777777778,
+        "physionet:S048": 0.7555555555555555,
+        "physionet:S054": 0.7777777777777778,
+        "physionet:S058": 0.7866666666666666,
+        "physionet:S061": 0.6266666666666667,
+        "physionet:S065": 0.8355555555555556,
+        "physionet:S073": 0.7466666666666667,
+        "physionet:S076": 0.48444444444444446,
+        "physionet:S081": 0.3555555555555555,
+        "physionet:S095": 0.6977777777777778,
+        "physionet:S097": 0.45777777777777773,
+        "physionet:S098": 0.7022222222222223,
+        "physionet:S100": 0.5138888888888888,
+        "physionet:S103": 0.5599999999999999
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "riemann_recentered",
+      "dataset": "physionet",
+      "train_rows": 7874,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.70125,
+      "participant_mean_auroc_95_ci": [
+        0.6367474747474746,
+        0.7584510732323232
+      ],
+      "pooled_auroc": 0.6975656744194745,
+      "participant_mean_balanced_accuracy": 0.643939393939394,
+      "participants_above_chance": 9,
+      "per_participant_auroc": {
+        "physionet:S005": 0.6888888888888889,
+        "physionet:S007": 0.671111111111111,
+        "physionet:S010": 0.7511111111111111,
+        "physionet:S020": 0.9066666666666667,
+        "physionet:S021": 0.7733333333333334,
+        "physionet:S025": 1.0,
+        "physionet:S036": 0.8933333333333333,
+        "physionet:S044": 0.7644444444444445,
+        "physionet:S047": 0.4533333333333333,
+        "physionet:S048": 0.8666666666666667,
+        "physionet:S054": 0.6,
+        "physionet:S058": 0.6444444444444444,
+        "physionet:S061": 0.6311111111111111,
+        "physionet:S065": 0.6222222222222222,
+        "physionet:S073": 0.8355555555555556,
+        "physionet:S076": 0.5066666666666666,
+        "physionet:S081": 0.47555555555555556,
+        "physionet:S095": 0.6622222222222223,
+        "physionet:S097": 0.76,
+        "physionet:S098": 0.6044444444444443,
+        "physionet:S100": 0.5208333333333333,
+        "physionet:S103": 0.7955555555555556
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "mrcp",
+      "dataset": "physionet",
+      "train_rows": 7874,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6997727272727273,
+      "participant_mean_auroc_95_ci": [
+        0.6387872474747475,
+        0.7609412878787879
+      ],
+      "pooled_auroc": 0.687119490503044,
+      "participant_mean_balanced_accuracy": 0.6443181818181818,
+      "participants_above_chance": 11,
+      "per_participant_auroc": {
+        "physionet:S005": 0.7155555555555555,
+        "physionet:S007": 0.64,
+        "physionet:S010": 0.5822222222222222,
+        "physionet:S020": 0.9333333333333333,
+        "physionet:S021": 0.8755555555555555,
+        "physionet:S025": 0.9555555555555556,
+        "physionet:S036": 0.7333333333333334,
+        "physionet:S044": 0.6088888888888889,
+        "physionet:S047": 0.5644444444444444,
+        "physionet:S048": 0.6044444444444445,
+        "physionet:S054": 0.8488888888888889,
+        "physionet:S058": 0.48444444444444446,
+        "physionet:S061": 0.47555555555555556,
+        "physionet:S065": 0.8222222222222222,
+        "physionet:S073": 0.5688888888888889,
+        "physionet:S076": 0.6044444444444445,
+        "physionet:S081": 0.45777777777777773,
+        "physionet:S095": 0.7555555555555555,
+        "physionet:S097": 0.8933333333333333,
+        "physionet:S098": 0.808888888888889,
+        "physionet:S100": 0.7638888888888888,
+        "physionet:S103": 0.6977777777777778
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "combined",
+      "dataset": "physionet",
+      "train_rows": 7874,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.7665151515151517,
+      "participant_mean_auroc_95_ci": [
+        0.7012967171717172,
+        0.8254709595959595
+      ],
+      "pooled_auroc": 0.758166633934667,
+      "participant_mean_balanced_accuracy": 0.7109848484848487,
+      "participants_above_chance": 15,
+      "per_participant_auroc": {
+        "physionet:S005": 0.7155555555555556,
+        "physionet:S007": 0.6888888888888889,
+        "physionet:S010": 0.6266666666666667,
+        "physionet:S020": 0.9688888888888889,
+        "physionet:S021": 0.84,
+        "physionet:S025": 1.0,
+        "physionet:S036": 0.92,
+        "physionet:S044": 0.7733333333333333,
+        "physionet:S047": 0.49333333333333335,
+        "physionet:S048": 0.8044444444444445,
+        "physionet:S054": 0.8755555555555555,
+        "physionet:S058": 0.6266666666666667,
+        "physionet:S061": 0.6177777777777779,
+        "physionet:S065": 0.9155555555555557,
+        "physionet:S073": 0.8622222222222222,
+        "physionet:S076": 0.49777777777777776,
+        "physionet:S081": 0.5022222222222221,
+        "physionet:S095": 0.8222222222222222,
+        "physionet:S097": 0.9066666666666667,
+        "physionet:S098": 0.7244444444444444,
+        "physionet:S100": 0.8055555555555556,
+        "physionet:S103": 0.8755555555555556
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "amplitude",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.9137796296296296,
+      "participant_mean_auroc_95_ci": [
+        0.8670092592592592,
+        0.9503609259259259
+      ],
+      "pooled_auroc": 0.8666564814814814,
+      "participant_mean_balanced_accuracy": 0.7880555555555554,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.8966555555555555,
+        "openbmi:S036": 0.907088888888889,
+        "openbmi:S042": 0.8143222222222222,
+        "openbmi:S047": 0.9443333333333334,
+        "openbmi:S049": 0.9649333333333334,
+        "openbmi:S052": 0.9553444444444444
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "auxiliary_eog_emg",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.6380166666666666,
+      "participant_mean_auroc_95_ci": [
+        0.5808485648148147,
+        0.6873074074074074
+      ],
+      "pooled_auroc": 0.5613185185185185,
+      "participant_mean_balanced_accuracy": 0.5297222222222223,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6738333333333333,
+        "openbmi:S036": 0.7275111111111111,
+        "openbmi:S042": 0.5308666666666666,
+        "openbmi:S047": 0.6333444444444444,
+        "openbmi:S049": 0.6808222222222222,
+        "openbmi:S052": 0.5817222222222223
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "bandpower",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7735148148148149,
+      "participant_mean_auroc_95_ci": [
+        0.7142894907407408,
+        0.8262609259259261
+      ],
+      "pooled_auroc": 0.7326490740740741,
+      "participant_mean_balanced_accuracy": 0.6436111111111112,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.800488888888889,
+        "openbmi:S036": 0.6649555555555555,
+        "openbmi:S042": 0.6874333333333333,
+        "openbmi:S047": 0.8357111111111112,
+        "openbmi:S049": 0.8486333333333334,
+        "openbmi:S052": 0.8038666666666667
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.8166388888888889,
+      "participant_mean_auroc_95_ci": [
+        0.7481319444444445,
+        0.8851088425925927
+      ],
+      "pooled_auroc": 0.7892697530864199,
+      "participant_mean_balanced_accuracy": 0.7247222222222223,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.8194222222222223,
+        "openbmi:S036": 0.6926666666666668,
+        "openbmi:S042": 0.7442444444444445,
+        "openbmi:S047": 0.9487888888888889,
+        "openbmi:S049": 0.8347111111111111,
+        "openbmi:S052": 0.86
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "riemann_recentered",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7764925925925926,
+      "participant_mean_auroc_95_ci": [
+        0.7282096296296295,
+        0.8331051851851852
+      ],
+      "pooled_auroc": 0.7493169753086419,
+      "participant_mean_balanced_accuracy": 0.6891666666666666,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.7606666666666666,
+        "openbmi:S036": 0.7191555555555555,
+        "openbmi:S042": 0.7048777777777778,
+        "openbmi:S047": 0.7471000000000001,
+        "openbmi:S049": 0.8878333333333334,
+        "openbmi:S052": 0.8393222222222223
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "mrcp",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.6176833333333334,
+      "participant_mean_auroc_95_ci": [
+        0.52000125,
+        0.7309296296296295
+      ],
+      "pooled_auroc": 0.6163598765432099,
+      "participant_mean_balanced_accuracy": 0.6019444444444444,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5851,
+        "openbmi:S036": 0.48360000000000003,
+        "openbmi:S042": 0.47768888888888894,
+        "openbmi:S047": 0.8358,
+        "openbmi:S049": 0.7079777777777776,
+        "openbmi:S052": 0.6159333333333334
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "combined",
+      "dataset": "openbmi",
+      "train_rows": 18400,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.8554611111111111,
+      "participant_mean_auroc_95_ci": [
+        0.7963706944444445,
+        0.9112488425925926
+      ],
+      "pooled_auroc": 0.8319774691358025,
+      "participant_mean_balanced_accuracy": 0.758888888888889,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.8363777777777779,
+        "openbmi:S036": 0.7564222222222223,
+        "openbmi:S042": 0.7737444444444445,
+        "openbmi:S047": 0.9477333333333333,
+        "openbmi:S049": 0.9158444444444443,
+        "openbmi:S052": 0.9026444444444445
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "amplitude",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.6806315789473685,
+      "participant_mean_auroc_95_ci": [
+        0.622567105263158,
+        0.7347973684210526
+      ],
+      "pooled_auroc": 0.6549214659685864,
+      "participant_mean_balanced_accuracy": 0.6082894736842105,
+      "participants_above_chance": 3,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5815789473684211,
+        "liu2024:S022": 0.73,
+        "liu2024:S025": 0.568421052631579,
+        "liu2024:S027": 0.7342105263157894,
+        "liu2024:S031": 0.7157894736842105,
+        "liu2024:S034": 0.5394736842105263,
+        "liu2024:S036": 0.718421052631579,
+        "liu2024:S040": 0.75,
+        "liu2024:S048": 0.6078947368421053,
+        "liu2024:S050": 0.8605263157894738
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "auxiliary_eog_emg",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.6213157894736843,
+      "participant_mean_auroc_95_ci": [
+        0.5286447368421052,
+        0.6965986842105262
+      ],
+      "pooled_auroc": 0.6106544502617801,
+      "participant_mean_balanced_accuracy": 0.5715789473684211,
+      "participants_above_chance": 3,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5552631578947368,
+        "liu2024:S022": 0.7,
+        "liu2024:S025": 0.5973684210526317,
+        "liu2024:S027": 0.8105263157894737,
+        "liu2024:S031": 0.6815789473684211,
+        "liu2024:S034": 0.5842105263157895,
+        "liu2024:S036": 0.6368421052631579,
+        "liu2024:S040": 0.26315789473684215,
+        "liu2024:S048": 0.7394736842105263,
+        "liu2024:S050": 0.6447368421052632
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "bandpower",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.5856710526315789,
+      "participant_mean_auroc_95_ci": [
+        0.5056476973684211,
+        0.6614677631578947
+      ],
+      "pooled_auroc": 0.556151832460733,
+      "participant_mean_balanced_accuracy": 0.5332894736842105,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.636842105263158,
+        "liu2024:S022": 0.6224999999999999,
+        "liu2024:S025": 0.48157894736842105,
+        "liu2024:S027": 0.55,
+        "liu2024:S031": 0.6263157894736843,
+        "liu2024:S034": 0.7026315789473684,
+        "liu2024:S036": 0.4289473684210527,
+        "liu2024:S040": 0.8105263157894738,
+        "liu2024:S048": 0.3763157894736842,
+        "liu2024:S050": 0.6210526315789474
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.6648552631578947,
+      "participant_mean_auroc_95_ci": [
+        0.5786644736842107,
+        0.7443749999999999
+      ],
+      "pooled_auroc": 0.6489267015706807,
+      "participant_mean_balanced_accuracy": 0.6397368421052632,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.6421052631578947,
+        "liu2024:S022": 0.8274999999999999,
+        "liu2024:S025": 0.5578947368421052,
+        "liu2024:S027": 0.6421052631578947,
+        "liu2024:S031": 0.6973684210526315,
+        "liu2024:S034": 0.7105263157894737,
+        "liu2024:S036": 0.5815789473684211,
+        "liu2024:S040": 0.8973684210526316,
+        "liu2024:S048": 0.42631578947368426,
+        "liu2024:S050": 0.6657894736842105
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "riemann_recentered",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.6344868421052631,
+      "participant_mean_auroc_95_ci": [
+        0.5329009868421053,
+        0.7231776315789474
+      ],
+      "pooled_auroc": 0.6262041884816754,
+      "participant_mean_balanced_accuracy": 0.5926315789473684,
+      "participants_above_chance": 3,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5605263157894738,
+        "liu2024:S022": 0.6975,
+        "liu2024:S025": 0.65,
+        "liu2024:S027": 0.6368421052631579,
+        "liu2024:S031": 0.6447368421052632,
+        "liu2024:S034": 0.7394736842105263,
+        "liu2024:S036": 0.4263157894736842,
+        "liu2024:S040": 0.8289473684210527,
+        "liu2024:S048": 0.33947368421052637,
+        "liu2024:S050": 0.8210526315789474
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "mrcp",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.5028289473684211,
+      "participant_mean_auroc_95_ci": [
+        0.4441447368421053,
+        0.5723207236842105
+      ],
+      "pooled_auroc": 0.49992146596858633,
+      "participant_mean_balanced_accuracy": 0.4946052631578947,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.48684210526315785,
+        "liu2024:S022": 0.4625000000000001,
+        "liu2024:S025": 0.5473684210526316,
+        "liu2024:S027": 0.4842105263157895,
+        "liu2024:S031": 0.5447368421052632,
+        "liu2024:S034": 0.41842105263157897,
+        "liu2024:S036": 0.5578947368421052,
+        "liu2024:S040": 0.7526315789473684,
+        "liu2024:S048": 0.41052631578947363,
+        "liu2024:S050": 0.3631578947368421
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "combined",
+      "dataset": "liu2024",
+      "train_rows": 3076,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.6371184210526316,
+      "participant_mean_auroc_95_ci": [
+        0.5470398026315789,
+        0.7147634868421052
+      ],
+      "pooled_auroc": 0.6163874345549738,
+      "participant_mean_balanced_accuracy": 0.5843421052631579,
+      "participants_above_chance": 3,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5605263157894737,
+        "liu2024:S022": 0.6974999999999999,
+        "liu2024:S025": 0.6868421052631579,
+        "liu2024:S027": 0.631578947368421,
+        "liu2024:S031": 0.6289473684210526,
+        "liu2024:S034": 0.7105263157894738,
+        "liu2024:S036": 0.631578947368421,
+        "liu2024:S040": 0.8921052631578947,
+        "liu2024:S048": 0.35789473684210527,
+        "liu2024:S050": 0.5736842105263158
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "amplitude",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.5629671717171717,
+      "participant_mean_auroc_95_ci": [
+        0.5112979797979799,
+        0.6169081439393941
+      ],
+      "pooled_auroc": 0.5359257077125943,
+      "participant_mean_balanced_accuracy": 0.5128787878787878,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "physionet:S005": 0.6177777777777778,
+        "physionet:S007": 0.7999999999999999,
+        "physionet:S010": 0.6577777777777778,
+        "physionet:S020": 0.8,
+        "physionet:S021": 0.5111111111111111,
+        "physionet:S025": 0.7822222222222222,
+        "physionet:S036": 0.47111111111111115,
+        "physionet:S044": 0.4711111111111111,
+        "physionet:S047": 0.5155555555555555,
+        "physionet:S048": 0.5422222222222222,
+        "physionet:S054": 0.711111111111111,
+        "physionet:S058": 0.528888888888889,
+        "physionet:S061": 0.5822222222222222,
+        "physionet:S065": 0.5377777777777778,
+        "physionet:S073": 0.6444444444444444,
+        "physionet:S076": 0.36888888888888893,
+        "physionet:S081": 0.2533333333333333,
+        "physionet:S095": 0.6000000000000001,
+        "physionet:S097": 0.44000000000000006,
+        "physionet:S098": 0.528888888888889,
+        "physionet:S100": 0.4652777777777778,
+        "physionet:S103": 0.5555555555555556
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "bandpower",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6050883838383839,
+      "participant_mean_auroc_95_ci": [
+        0.5312228535353535,
+        0.6660615530303029
+      ],
+      "pooled_auroc": 0.5700511554395908,
+      "participant_mean_balanced_accuracy": 0.5359848484848485,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "physionet:S005": 0.3688888888888889,
+        "physionet:S007": 0.6266666666666667,
+        "physionet:S010": 0.5777777777777777,
+        "physionet:S020": 0.7111111111111111,
+        "physionet:S021": 0.6355555555555555,
+        "physionet:S025": 0.7422222222222222,
+        "physionet:S036": 0.8755555555555556,
+        "physionet:S044": 0.6,
+        "physionet:S047": 0.5911111111111111,
+        "physionet:S048": 0.7866666666666666,
+        "physionet:S054": 0.8400000000000001,
+        "physionet:S058": 0.8577777777777779,
+        "physionet:S061": 0.6622222222222222,
+        "physionet:S065": 0.6444444444444444,
+        "physionet:S073": 0.4533333333333333,
+        "physionet:S076": 0.6844444444444444,
+        "physionet:S081": 0.36444444444444446,
+        "physionet:S095": 0.5155555555555555,
+        "physionet:S097": 0.4666666666666667,
+        "physionet:S098": 0.5688888888888889,
+        "physionet:S100": 0.1875,
+        "physionet:S103": 0.5511111111111111
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6537878787878788,
+      "participant_mean_auroc_95_ci": [
+        0.5892790404040404,
+        0.711165404040404
+      ],
+      "pooled_auroc": 0.6443621468451027,
+      "participant_mean_balanced_accuracy": 0.581439393939394,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "physionet:S005": 0.4666666666666667,
+        "physionet:S007": 0.6622222222222223,
+        "physionet:S010": 0.6222222222222223,
+        "physionet:S020": 0.84,
+        "physionet:S021": 0.7511111111111111,
+        "physionet:S025": 0.8622222222222222,
+        "physionet:S036": 0.7911111111111111,
+        "physionet:S044": 0.6711111111111111,
+        "physionet:S047": 0.5822222222222222,
+        "physionet:S048": 0.7777777777777778,
+        "physionet:S054": 0.8711111111111112,
+        "physionet:S058": 0.8711111111111112,
+        "physionet:S061": 0.7111111111111111,
+        "physionet:S065": 0.7377777777777778,
+        "physionet:S073": 0.6088888888888889,
+        "physionet:S076": 0.6622222222222223,
+        "physionet:S081": 0.41333333333333333,
+        "physionet:S095": 0.5555555555555556,
+        "physionet:S097": 0.48,
+        "physionet:S098": 0.48,
+        "physionet:S100": 0.4722222222222222,
+        "physionet:S103": 0.49333333333333335
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "riemann_recentered",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.679419191919192,
+      "participant_mean_auroc_95_ci": [
+        0.6272979797979797,
+        0.7333390151515151
+      ],
+      "pooled_auroc": 0.6602511947179903,
+      "participant_mean_balanced_accuracy": 0.6212121212121212,
+      "participants_above_chance": 9,
+      "per_participant_auroc": {
+        "physionet:S005": 0.5422222222222222,
+        "physionet:S007": 0.6088888888888888,
+        "physionet:S010": 0.7066666666666667,
+        "physionet:S020": 0.7822222222222223,
+        "physionet:S021": 0.671111111111111,
+        "physionet:S025": 0.9866666666666667,
+        "physionet:S036": 0.8444444444444444,
+        "physionet:S044": 0.6666666666666667,
+        "physionet:S047": 0.43111111111111106,
+        "physionet:S048": 0.6088888888888889,
+        "physionet:S054": 0.8088888888888889,
+        "physionet:S058": 0.6577777777777778,
+        "physionet:S061": 0.6933333333333334,
+        "physionet:S065": 0.6888888888888889,
+        "physionet:S073": 0.8577777777777778,
+        "physionet:S076": 0.5333333333333333,
+        "physionet:S081": 0.47555555555555556,
+        "physionet:S095": 0.6755555555555556,
+        "physionet:S097": 0.7777777777777778,
+        "physionet:S098": 0.5777777777777777,
+        "physionet:S100": 0.6805555555555555,
+        "physionet:S103": 0.6711111111111111
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "mrcp",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6726136363636365,
+      "participant_mean_auroc_95_ci": [
+        0.5901010101010102,
+        0.7508083964646465
+      ],
+      "pooled_auroc": 0.6466627388266981,
+      "participant_mean_balanced_accuracy": 0.6295454545454546,
+      "participants_above_chance": 10,
+      "per_participant_auroc": {
+        "physionet:S005": 0.7777777777777778,
+        "physionet:S007": 0.5466666666666666,
+        "physionet:S010": 0.4,
+        "physionet:S020": 0.8133333333333334,
+        "physionet:S021": 0.9688888888888889,
+        "physionet:S025": 0.8933333333333334,
+        "physionet:S036": 0.5911111111111111,
+        "physionet:S044": 0.5244444444444444,
+        "physionet:S047": 0.6799999999999999,
+        "physionet:S048": 0.8177777777777778,
+        "physionet:S054": 0.9066666666666667,
+        "physionet:S058": 0.2,
+        "physionet:S061": 0.6,
+        "physionet:S065": 0.8844444444444445,
+        "physionet:S073": 0.8088888888888889,
+        "physionet:S076": 0.5688888888888889,
+        "physionet:S081": 0.39111111111111113,
+        "physionet:S095": 0.5955555555555556,
+        "physionet:S097": 0.6977777777777778,
+        "physionet:S098": 0.6622222222222223,
+        "physionet:S100": 0.6597222222222222,
+        "physionet:S103": 0.8088888888888889
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "combined",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.7263636363636362,
+      "participant_mean_auroc_95_ci": [
+        0.6510025252525252,
+        0.7911136363636364
+      ],
+      "pooled_auroc": 0.695657866434737,
+      "participant_mean_balanced_accuracy": 0.6488636363636363,
+      "participants_above_chance": 9,
+      "per_participant_auroc": {
+        "physionet:S005": 0.64,
+        "physionet:S007": 0.6488888888888888,
+        "physionet:S010": 0.45777777777777784,
+        "physionet:S020": 0.9111111111111111,
+        "physionet:S021": 0.8444444444444444,
+        "physionet:S025": 0.9911111111111112,
+        "physionet:S036": 0.84,
+        "physionet:S044": 0.6088888888888888,
+        "physionet:S047": 0.5555555555555556,
+        "physionet:S048": 0.84,
+        "physionet:S054": 0.9511111111111111,
+        "physionet:S058": 0.5822222222222222,
+        "physionet:S061": 0.7155555555555555,
+        "physionet:S065": 0.9555555555555556,
+        "physionet:S073": 0.9066666666666667,
+        "physionet:S076": 0.7022222222222223,
+        "physionet:S081": 0.40888888888888886,
+        "physionet:S095": 0.6311111111111112,
+        "physionet:S097": 0.6933333333333334,
+        "physionet:S098": 0.5777777777777777,
+        "physionet:S100": 0.7222222222222222,
+        "physionet:S103": 0.7955555555555556
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "amplitude",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7821277777777778,
+      "participant_mean_auroc_95_ci": [
+        0.7448925925925926,
+        0.8212629629629631
+      ],
+      "pooled_auroc": 0.7212413580246914,
+      "participant_mean_balanced_accuracy": 0.6727777777777777,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.713211111111111,
+        "openbmi:S036": 0.7618888888888888,
+        "openbmi:S042": 0.7476666666666667,
+        "openbmi:S047": 0.7948777777777778,
+        "openbmi:S049": 0.8201666666666667,
+        "openbmi:S052": 0.8549555555555556
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "auxiliary_eog_emg",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.5620629629629631,
+      "participant_mean_auroc_95_ci": [
+        0.5425111111111112,
+        0.5786796296296296
+      ],
+      "pooled_auroc": 0.5220623456790123,
+      "participant_mean_balanced_accuracy": 0.5175000000000001,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5522444444444444,
+        "openbmi:S036": 0.5820555555555555,
+        "openbmi:S042": 0.5195666666666667,
+        "openbmi:S047": 0.5857555555555556,
+        "openbmi:S049": 0.5706888888888889,
+        "openbmi:S052": 0.5620666666666667
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "bandpower",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.6894814814814815,
+      "participant_mean_auroc_95_ci": [
+        0.6309798611111112,
+        0.738920138888889
+      ],
+      "pooled_auroc": 0.6422663580246913,
+      "participant_mean_balanced_accuracy": 0.6091666666666666,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.627111111111111,
+        "openbmi:S036": 0.5670444444444445,
+        "openbmi:S042": 0.7512333333333332,
+        "openbmi:S047": 0.7229777777777779,
+        "openbmi:S049": 0.7346777777777778,
+        "openbmi:S052": 0.7338444444444444
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7485648148148147,
+      "participant_mean_auroc_95_ci": [
+        0.6885185185185185,
+        0.8096807407407409
+      ],
+      "pooled_auroc": 0.7315953703703704,
+      "participant_mean_balanced_accuracy": 0.6680555555555555,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6496444444444445,
+        "openbmi:S036": 0.6458777777777778,
+        "openbmi:S042": 0.8105111111111112,
+        "openbmi:S047": 0.8490555555555557,
+        "openbmi:S049": 0.7404,
+        "openbmi:S052": 0.7959
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "riemann_recentered",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7288851851851851,
+      "participant_mean_auroc_95_ci": [
+        0.6480481481481482,
+        0.8044838425925925
+      ],
+      "pooled_auroc": 0.7005,
+      "participant_mean_balanced_accuracy": 0.6511111111111112,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5660444444444444,
+        "openbmi:S036": 0.6366333333333334,
+        "openbmi:S042": 0.7991,
+        "openbmi:S047": 0.8423222222222223,
+        "openbmi:S049": 0.7877444444444445,
+        "openbmi:S052": 0.7414666666666667
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "mrcp",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.6068796296296296,
+      "participant_mean_auroc_95_ci": [
+        0.556462962962963,
+        0.6707703703703704
+      ],
+      "pooled_auroc": 0.6071901234567901,
+      "participant_mean_balanced_accuracy": 0.5894444444444445,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5434555555555555,
+        "openbmi:S036": 0.7414777777777778,
+        "openbmi:S042": 0.5361555555555556,
+        "openbmi:S047": 0.5589222222222222,
+        "openbmi:S049": 0.6206333333333334,
+        "openbmi:S052": 0.6406333333333333
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "combined",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7793833333333332,
+      "participant_mean_auroc_95_ci": [
+        0.7125833333333332,
+        0.8417555555555557
+      ],
+      "pooled_auroc": 0.7637750000000001,
+      "participant_mean_balanced_accuracy": 0.6822222222222223,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6296111111111111,
+        "openbmi:S036": 0.7198888888888889,
+        "openbmi:S042": 0.7981555555555556,
+        "openbmi:S047": 0.8618666666666667,
+        "openbmi:S049": 0.8052222222222222,
+        "openbmi:S052": 0.8615555555555554
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "amplitude",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.6184999999999999,
+      "participant_mean_auroc_95_ci": [
+        0.5349937499999999,
+        0.7020062499999999
+      ],
+      "pooled_auroc": 0.5882000000000001,
+      "participant_mean_balanced_accuracy": 0.55,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.6924999999999999,
+        "liu2024:S022": 0.5425,
+        "liu2024:S025": 0.395,
+        "liu2024:S027": 0.6875,
+        "liu2024:S031": 0.6725,
+        "liu2024:S034": 0.65,
+        "liu2024:S036": 0.6625,
+        "liu2024:S040": 0.41250000000000003,
+        "liu2024:S048": 0.5725,
+        "liu2024:S050": 0.8975
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "auxiliary_eog_emg",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.6469999999999999,
+      "participant_mean_auroc_95_ci": [
+        0.5662375000000001,
+        0.7132562499999998
+      ],
+      "pooled_auroc": 0.6328,
+      "participant_mean_balanced_accuracy": 0.6025,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.72,
+        "liu2024:S022": 0.59,
+        "liu2024:S025": 0.525,
+        "liu2024:S027": 0.765,
+        "liu2024:S031": 0.655,
+        "liu2024:S034": 0.825,
+        "liu2024:S036": 0.64,
+        "liu2024:S040": 0.3725,
+        "liu2024:S048": 0.71,
+        "liu2024:S050": 0.6675
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "bandpower",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.64275,
+      "participant_mean_auroc_95_ci": [
+        0.57174375,
+        0.7105062500000001
+      ],
+      "pooled_auroc": 0.630425,
+      "participant_mean_balanced_accuracy": 0.6,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.46499999999999997,
+        "liu2024:S022": 0.6525000000000001,
+        "liu2024:S025": 0.495,
+        "liu2024:S027": 0.5875,
+        "liu2024:S031": 0.8150000000000001,
+        "liu2024:S034": 0.6099999999999999,
+        "liu2024:S036": 0.6525,
+        "liu2024:S040": 0.7725,
+        "liu2024:S048": 0.5974999999999999,
+        "liu2024:S050": 0.78
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.69275,
+      "participant_mean_auroc_95_ci": [
+        0.6057374999999999,
+        0.7777687499999999
+      ],
+      "pooled_auroc": 0.6609,
+      "participant_mean_balanced_accuracy": 0.615,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.49250000000000005,
+        "liu2024:S022": 0.8300000000000001,
+        "liu2024:S025": 0.5225,
+        "liu2024:S027": 0.6799999999999999,
+        "liu2024:S031": 0.88,
+        "liu2024:S034": 0.5474999999999999,
+        "liu2024:S036": 0.7924999999999999,
+        "liu2024:S040": 0.835,
+        "liu2024:S048": 0.54,
+        "liu2024:S050": 0.8075
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "riemann_recentered",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.6452500000000001,
+      "participant_mean_auroc_95_ci": [
+        0.52698125,
+        0.7492562500000001
+      ],
+      "pooled_auroc": 0.6485,
+      "participant_mean_balanced_accuracy": 0.5974999999999999,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.685,
+        "liu2024:S022": 0.41,
+        "liu2024:S025": 0.575,
+        "liu2024:S027": 0.7175,
+        "liu2024:S031": 0.7625,
+        "liu2024:S034": 0.7625000000000001,
+        "liu2024:S036": 0.385,
+        "liu2024:S040": 0.9,
+        "liu2024:S048": 0.4,
+        "liu2024:S050": 0.855
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "mrcp",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.473,
+      "participant_mean_auroc_95_ci": [
+        0.41567499999999996,
+        0.54100625
+      ],
+      "pooled_auroc": 0.479275,
+      "participant_mean_balanced_accuracy": 0.5,
+      "participants_above_chance": 0,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.44999999999999996,
+        "liu2024:S022": 0.49250000000000005,
+        "liu2024:S025": 0.4375,
+        "liu2024:S027": 0.3075,
+        "liu2024:S031": 0.45,
+        "liu2024:S034": 0.5175000000000001,
+        "liu2024:S036": 0.6799999999999999,
+        "liu2024:S040": 0.43000000000000005,
+        "liu2024:S048": 0.3825,
+        "liu2024:S050": 0.5824999999999999
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "combined",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.64825,
+      "participant_mean_auroc_95_ci": [
+        0.5694937499999999,
+        0.7184999999999999
+      ],
+      "pooled_auroc": 0.6305000000000001,
+      "participant_mean_balanced_accuracy": 0.58,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5025,
+        "liu2024:S022": 0.6025,
+        "liu2024:S025": 0.59,
+        "liu2024:S027": 0.6175,
+        "liu2024:S031": 0.7174999999999999,
+        "liu2024:S034": 0.7175,
+        "liu2024:S036": 0.6825000000000001,
+        "liu2024:S040": 0.8325,
+        "liu2024:S048": 0.4375,
+        "liu2024:S050": 0.7825
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "amplitude",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.5452272727272727,
+      "participant_mean_auroc_95_ci": [
+        0.48868623737373734,
+        0.600409090909091
+      ],
+      "pooled_auroc": 0.5184468198524255,
+      "participant_mean_balanced_accuracy": 0.5037878787878788,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "physionet:S005": 0.6488888888888888,
+        "physionet:S007": 0.8133333333333334,
+        "physionet:S010": 0.5955555555555556,
+        "physionet:S020": 0.8444444444444444,
+        "physionet:S021": 0.49333333333333335,
+        "physionet:S025": 0.6177777777777779,
+        "physionet:S036": 0.6533333333333333,
+        "physionet:S044": 0.4444444444444445,
+        "physionet:S047": 0.3555555555555555,
+        "physionet:S048": 0.5733333333333334,
+        "physionet:S054": 0.5644444444444444,
+        "physionet:S058": 0.6133333333333333,
+        "physionet:S061": 0.42666666666666664,
+        "physionet:S065": 0.5422222222222223,
+        "physionet:S073": 0.5777777777777777,
+        "physionet:S076": 0.47111111111111115,
+        "physionet:S081": 0.35111111111111115,
+        "physionet:S095": 0.4666666666666667,
+        "physionet:S097": 0.3422222222222222,
+        "physionet:S098": 0.44,
+        "physionet:S100": 0.6527777777777778,
+        "physionet:S103": 0.5066666666666667
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "bandpower",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.5865277777777778,
+      "participant_mean_auroc_95_ci": [
+        0.5230782828282828,
+        0.6426313131313132
+      ],
+      "pooled_auroc": 0.5564626995482984,
+      "participant_mean_balanced_accuracy": 0.5291666666666667,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "physionet:S005": 0.52,
+        "physionet:S007": 0.5288888888888889,
+        "physionet:S010": 0.7333333333333334,
+        "physionet:S020": 0.6133333333333333,
+        "physionet:S021": 0.5644444444444445,
+        "physionet:S025": 0.7644444444444445,
+        "physionet:S036": 0.8533333333333334,
+        "physionet:S044": 0.4488888888888889,
+        "physionet:S047": 0.5777777777777777,
+        "physionet:S048": 0.6133333333333333,
+        "physionet:S054": 0.8088888888888889,
+        "physionet:S058": 0.7999999999999999,
+        "physionet:S061": 0.6133333333333333,
+        "physionet:S065": 0.68,
+        "physionet:S073": 0.4666666666666667,
+        "physionet:S076": 0.7422222222222222,
+        "physionet:S081": 0.4355555555555556,
+        "physionet:S095": 0.3244444444444444,
+        "physionet:S097": 0.6088888888888889,
+        "physionet:S098": 0.38222222222222224,
+        "physionet:S100": 0.42361111111111105,
+        "physionet:S103": 0.4
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6223737373737376,
+      "participant_mean_auroc_95_ci": [
+        0.5558939393939394,
+        0.6828333333333333
+      ],
+      "pooled_auroc": 0.6162126270702989,
+      "participant_mean_balanced_accuracy": 0.5795454545454546,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "physionet:S005": 0.5733333333333333,
+        "physionet:S007": 0.6222222222222222,
+        "physionet:S010": 0.7466666666666667,
+        "physionet:S020": 0.8355555555555555,
+        "physionet:S021": 0.45777777777777773,
+        "physionet:S025": 0.84,
+        "physionet:S036": 0.8266666666666667,
+        "physionet:S044": 0.5377777777777778,
+        "physionet:S047": 0.52,
+        "physionet:S048": 0.6755555555555556,
+        "physionet:S054": 0.8400000000000001,
+        "physionet:S058": 0.8844444444444445,
+        "physionet:S061": 0.6355555555555555,
+        "physionet:S065": 0.7288888888888889,
+        "physionet:S073": 0.711111111111111,
+        "physionet:S076": 0.5955555555555556,
+        "physionet:S081": 0.3688888888888889,
+        "physionet:S095": 0.4888888888888889,
+        "physionet:S097": 0.48888888888888893,
+        "physionet:S098": 0.3733333333333333,
+        "physionet:S100": 0.5277777777777778,
+        "physionet:S103": 0.41333333333333333
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "riemann_recentered",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.645719696969697,
+      "participant_mean_auroc_95_ci": [
+        0.5980978535353536,
+        0.6954384469696969
+      ],
+      "pooled_auroc": 0.6385171468918629,
+      "participant_mean_balanced_accuracy": 0.593560606060606,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "physionet:S005": 0.45333333333333337,
+        "physionet:S007": 0.6488888888888888,
+        "physionet:S010": 0.76,
+        "physionet:S020": 0.7955555555555556,
+        "physionet:S021": 0.5822222222222222,
+        "physionet:S025": 0.9377777777777778,
+        "physionet:S036": 0.7288888888888889,
+        "physionet:S044": 0.6755555555555556,
+        "physionet:S047": 0.41333333333333333,
+        "physionet:S048": 0.5288888888888889,
+        "physionet:S054": 0.7244444444444444,
+        "physionet:S058": 0.6666666666666667,
+        "physionet:S061": 0.6444444444444445,
+        "physionet:S065": 0.5866666666666667,
+        "physionet:S073": 0.8044444444444445,
+        "physionet:S076": 0.5066666666666667,
+        "physionet:S081": 0.56,
+        "physionet:S095": 0.6888888888888889,
+        "physionet:S097": 0.6488888888888888,
+        "physionet:S098": 0.6,
+        "physionet:S100": 0.6458333333333334,
+        "physionet:S103": 0.6044444444444445
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "mrcp",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.5940151515151516,
+      "participant_mean_auroc_95_ci": [
+        0.516429292929293,
+        0.6667556818181817
+      ],
+      "pooled_auroc": 0.5840885073272919,
+      "participant_mean_balanced_accuracy": 0.5784090909090909,
+      "participants_above_chance": 8,
+      "per_participant_auroc": {
+        "physionet:S005": 0.6666666666666666,
+        "physionet:S007": 0.6888888888888889,
+        "physionet:S010": 0.4222222222222222,
+        "physionet:S020": 0.8,
+        "physionet:S021": 0.7688888888888888,
+        "physionet:S025": 0.3466666666666667,
+        "physionet:S036": 0.6488888888888888,
+        "physionet:S044": 0.47111111111111115,
+        "physionet:S047": 0.24888888888888888,
+        "physionet:S048": 0.7377777777777779,
+        "physionet:S054": 0.3866666666666667,
+        "physionet:S058": 0.8088888888888889,
+        "physionet:S061": 0.33333333333333337,
+        "physionet:S065": 0.6488888888888888,
+        "physionet:S073": 0.56,
+        "physionet:S076": 0.6533333333333333,
+        "physionet:S081": 0.6177777777777778,
+        "physionet:S095": 0.9688888888888889,
+        "physionet:S097": 0.49777777777777776,
+        "physionet:S098": 0.7466666666666667,
+        "physionet:S100": 0.5972222222222222,
+        "physionet:S103": 0.4488888888888889
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "combined",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6630176767676766,
+      "participant_mean_auroc_95_ci": [
+        0.6024116161616162,
+        0.7209725378787879
+      ],
+      "pooled_auroc": 0.6577355067381161,
+      "participant_mean_balanced_accuracy": 0.618939393939394,
+      "participants_above_chance": 8,
+      "per_participant_auroc": {
+        "physionet:S005": 0.49777777777777776,
+        "physionet:S007": 0.72,
+        "physionet:S010": 0.5111111111111111,
+        "physionet:S020": 0.8977777777777779,
+        "physionet:S021": 0.6,
+        "physionet:S025": 0.8977777777777778,
+        "physionet:S036": 0.7822222222222223,
+        "physionet:S044": 0.5955555555555556,
+        "physionet:S047": 0.38666666666666666,
+        "physionet:S048": 0.7288888888888889,
+        "physionet:S054": 0.6888888888888889,
+        "physionet:S058": 0.8177777777777777,
+        "physionet:S061": 0.6,
+        "physionet:S065": 0.76,
+        "physionet:S073": 0.84,
+        "physionet:S076": 0.5244444444444445,
+        "physionet:S081": 0.6088888888888889,
+        "physionet:S095": 0.9422222222222223,
+        "physionet:S097": 0.4888888888888889,
+        "physionet:S098": 0.5511111111111111,
+        "physionet:S100": 0.6041666666666667,
+        "physionet:S103": 0.5422222222222222
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "amplitude",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.758137037037037,
+      "participant_mean_auroc_95_ci": [
+        0.7142023611111111,
+        0.8042777777777778
+      ],
+      "pooled_auroc": 0.7055586419753086,
+      "participant_mean_balanced_accuracy": 0.66,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.7422888888888889,
+        "openbmi:S036": 0.6881222222222222,
+        "openbmi:S042": 0.7105222222222223,
+        "openbmi:S047": 0.7403111111111111,
+        "openbmi:S049": 0.8367555555555556,
+        "openbmi:S052": 0.8308222222222224
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "auxiliary_eog_emg",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.562862962962963,
+      "participant_mean_auroc_95_ci": [
+        0.541638888888889,
+        0.587761712962963
+      ],
+      "pooled_auroc": 0.5221969135802469,
+      "participant_mean_balanced_accuracy": 0.5175,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5610777777777778,
+        "openbmi:S036": 0.5420666666666667,
+        "openbmi:S042": 0.5256222222222222,
+        "openbmi:S047": 0.6134333333333334,
+        "openbmi:S049": 0.5723888888888888,
+        "openbmi:S052": 0.5625888888888888
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "bandpower",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7003851851851852,
+      "participant_mean_auroc_95_ci": [
+        0.6217814814814815,
+        0.7647222222222222
+      ],
+      "pooled_auroc": 0.6471111111111112,
+      "participant_mean_balanced_accuracy": 0.6061111111111112,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6471000000000001,
+        "openbmi:S036": 0.5364555555555556,
+        "openbmi:S042": 0.7113444444444444,
+        "openbmi:S047": 0.7628777777777778,
+        "openbmi:S049": 0.7551666666666667,
+        "openbmi:S052": 0.7893666666666667
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7466833333333334,
+      "participant_mean_auroc_95_ci": [
+        0.672106712962963,
+        0.8174277777777778
+      ],
+      "pooled_auroc": 0.7307018518518518,
+      "participant_mean_balanced_accuracy": 0.6608333333333333,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6447777777777778,
+        "openbmi:S036": 0.6024666666666666,
+        "openbmi:S042": 0.8114666666666668,
+        "openbmi:S047": 0.8471555555555557,
+        "openbmi:S049": 0.7562222222222222,
+        "openbmi:S052": 0.818011111111111
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "riemann_recentered",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.708214814814815,
+      "participant_mean_auroc_95_ci": [
+        0.6169555555555556,
+        0.799312361111111
+      ],
+      "pooled_auroc": 0.6824941358024692,
+      "participant_mean_balanced_accuracy": 0.6338888888888888,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5375777777777777,
+        "openbmi:S036": 0.5926555555555556,
+        "openbmi:S042": 0.7650444444444444,
+        "openbmi:S047": 0.8631444444444444,
+        "openbmi:S049": 0.7702333333333333,
+        "openbmi:S052": 0.7206333333333333
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "mrcp",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.6220166666666667,
+      "participant_mean_auroc_95_ci": [
+        0.5884087962962963,
+        0.6689907407407407
+      ],
+      "pooled_auroc": 0.6184638888888889,
+      "participant_mean_balanced_accuracy": 0.5866666666666667,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5828222222222221,
+        "openbmi:S036": 0.6362,
+        "openbmi:S042": 0.5809444444444445,
+        "openbmi:S047": 0.5774666666666667,
+        "openbmi:S049": 0.6328777777777778,
+        "openbmi:S052": 0.7217888888888889
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "combined",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7893425925925927,
+      "participant_mean_auroc_95_ci": [
+        0.7067024074074074,
+        0.8756574074074074
+      ],
+      "pooled_auroc": 0.773933024691358,
+      "participant_mean_balanced_accuracy": 0.6913888888888889,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.642488888888889,
+        "openbmi:S036": 0.6512444444444445,
+        "openbmi:S042": 0.8121666666666667,
+        "openbmi:S047": 0.9058111111111112,
+        "openbmi:S049": 0.8320444444444445,
+        "openbmi:S052": 0.8923000000000001
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "amplitude",
+      "dataset": "liu2024",
+      "train_rows": 3117,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.613,
+      "participant_mean_auroc_95_ci": [
+        0.52498125,
+        0.70550625
+      ],
+      "pooled_auroc": 0.5878749999999999,
+      "participant_mean_balanced_accuracy": 0.5474999999999999,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.6974999999999999,
+        "liu2024:S022": 0.385,
+        "liu2024:S025": 0.505,
+        "liu2024:S027": 0.6675,
+        "liu2024:S031": 0.6699999999999999,
+        "liu2024:S034": 0.745,
+        "liu2024:S036": 0.61,
+        "liu2024:S040": 0.4925,
+        "liu2024:S048": 0.46,
+        "liu2024:S050": 0.8975
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "auxiliary_eog_emg",
+      "dataset": "liu2024",
+      "train_rows": 3117,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.60125,
+      "participant_mean_auroc_95_ci": [
+        0.5139875,
+        0.6965312499999999
+      ],
+      "pooled_auroc": 0.6112500000000001,
+      "participant_mean_balanced_accuracy": 0.5700000000000001,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.6375,
+        "liu2024:S022": 0.3425,
+        "liu2024:S025": 0.5825,
+        "liu2024:S027": 0.7025,
+        "liu2024:S031": 0.675,
+        "liu2024:S034": 0.9375,
+        "liu2024:S036": 0.4375,
+        "liu2024:S040": 0.5625,
+        "liu2024:S048": 0.585,
+        "liu2024:S050": 0.55
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "bandpower",
+      "dataset": "liu2024",
+      "train_rows": 3117,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.65975,
+      "participant_mean_auroc_95_ci": [
+        0.58495,
+        0.7305374999999998
+      ],
+      "pooled_auroc": 0.6491,
+      "participant_mean_balanced_accuracy": 0.6050000000000001,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.47500000000000003,
+        "liu2024:S022": 0.6725,
+        "liu2024:S025": 0.5975,
+        "liu2024:S027": 0.6174999999999999,
+        "liu2024:S031": 0.7075,
+        "liu2024:S034": 0.5025,
+        "liu2024:S036": 0.605,
+        "liu2024:S040": 0.7975000000000001,
+        "liu2024:S048": 0.8049999999999999,
+        "liu2024:S050": 0.8174999999999999
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "liu2024",
+      "train_rows": 3117,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.68025,
+      "participant_mean_auroc_95_ci": [
+        0.6012375,
+        0.7492749999999999
+      ],
+      "pooled_auroc": 0.6561250000000001,
+      "participant_mean_balanced_accuracy": 0.6225,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5,
+        "liu2024:S022": 0.7575000000000001,
+        "liu2024:S025": 0.6225,
+        "liu2024:S027": 0.655,
+        "liu2024:S031": 0.7825,
+        "liu2024:S034": 0.44750000000000006,
+        "liu2024:S036": 0.6399999999999999,
+        "liu2024:S040": 0.8175,
+        "liu2024:S048": 0.7675000000000001,
+        "liu2024:S050": 0.8125000000000001
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "riemann_recentered",
+      "dataset": "liu2024",
+      "train_rows": 3117,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.62625,
+      "participant_mean_auroc_95_ci": [
+        0.5197499999999999,
+        0.7177749999999999
+      ],
+      "pooled_auroc": 0.6345999999999999,
+      "participant_mean_balanced_accuracy": 0.585,
+      "participants_above_chance": 3,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.595,
+        "liu2024:S022": 0.31999999999999995,
+        "liu2024:S025": 0.7525,
+        "liu2024:S027": 0.655,
+        "liu2024:S031": 0.7475,
+        "liu2024:S034": 0.645,
+        "liu2024:S036": 0.44999999999999996,
+        "liu2024:S040": 0.8125,
+        "liu2024:S048": 0.44,
+        "liu2024:S050": 0.8450000000000001
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "mrcp",
+      "dataset": "liu2024",
+      "train_rows": 3117,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.499,
+      "participant_mean_auroc_95_ci": [
+        0.4422499999999999,
+        0.56100625
+      ],
+      "pooled_auroc": 0.503125,
+      "participant_mean_balanced_accuracy": 0.5250000000000001,
+      "participants_above_chance": 0,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.48000000000000004,
+        "liu2024:S022": 0.4875,
+        "liu2024:S025": 0.5125,
+        "liu2024:S027": 0.3875,
+        "liu2024:S031": 0.5175,
+        "liu2024:S034": 0.375,
+        "liu2024:S036": 0.6825000000000001,
+        "liu2024:S040": 0.3975,
+        "liu2024:S048": 0.5349999999999999,
+        "liu2024:S050": 0.615
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "combined",
+      "dataset": "liu2024",
+      "train_rows": 3117,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.6637500000000001,
+      "participant_mean_auroc_95_ci": [
+        0.6002187499999999,
+        0.72800625
+      ],
+      "pooled_auroc": 0.637825,
+      "participant_mean_balanced_accuracy": 0.59,
+      "participants_above_chance": 3,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.515,
+        "liu2024:S022": 0.6074999999999999,
+        "liu2024:S025": 0.6975,
+        "liu2024:S027": 0.6475,
+        "liu2024:S031": 0.7324999999999999,
+        "liu2024:S034": 0.53,
+        "liu2024:S036": 0.58,
+        "liu2024:S040": 0.7925,
+        "liu2024:S048": 0.6975000000000001,
+        "liu2024:S050": 0.8375000000000001
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "amplitude",
+      "dataset": "physionet",
+      "train_rows": 7868,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.571969696969697,
+      "participant_mean_auroc_95_ci": [
+        0.5185606060606058,
+        0.6197007575757577
+      ],
+      "pooled_auroc": 0.5360753397113973,
+      "participant_mean_balanced_accuracy": 0.5136363636363636,
+      "participants_above_chance": 0,
+      "per_participant_auroc": {
+        "physionet:S005": 0.7333333333333334,
+        "physionet:S007": 0.6488888888888888,
+        "physionet:S010": 0.6133333333333333,
+        "physionet:S020": 0.7777777777777778,
+        "physionet:S021": 0.4355555555555556,
+        "physionet:S025": 0.6311111111111112,
+        "physionet:S036": 0.6844444444444444,
+        "physionet:S044": 0.5777777777777777,
+        "physionet:S047": 0.3244444444444444,
+        "physionet:S048": 0.6177777777777778,
+        "physionet:S054": 0.64,
+        "physionet:S058": 0.5555555555555556,
+        "physionet:S061": 0.5377777777777777,
+        "physionet:S065": 0.5422222222222222,
+        "physionet:S073": 0.6044444444444445,
+        "physionet:S076": 0.56,
+        "physionet:S081": 0.5022222222222222,
+        "physionet:S095": 0.6844444444444444,
+        "physionet:S097": 0.3155555555555555,
+        "physionet:S098": 0.49777777777777776,
+        "physionet:S100": 0.6944444444444444,
+        "physionet:S103": 0.4044444444444444
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "bandpower",
+      "dataset": "physionet",
+      "train_rows": 7868,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.5769444444444444,
+      "participant_mean_auroc_95_ci": [
+        0.5131060606060607,
+        0.6347979797979797
+      ],
+      "pooled_auroc": 0.553292371573661,
+      "participant_mean_balanced_accuracy": 0.5234848484848486,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "physionet:S005": 0.5111111111111111,
+        "physionet:S007": 0.5111111111111111,
+        "physionet:S010": 0.6977777777777778,
+        "physionet:S020": 0.5866666666666667,
+        "physionet:S021": 0.5555555555555556,
+        "physionet:S025": 0.7288888888888889,
+        "physionet:S036": 0.8622222222222222,
+        "physionet:S044": 0.41333333333333333,
+        "physionet:S047": 0.56,
+        "physionet:S048": 0.6222222222222222,
+        "physionet:S054": 0.8400000000000001,
+        "physionet:S058": 0.7911111111111111,
+        "physionet:S061": 0.6044444444444445,
+        "physionet:S065": 0.6977777777777778,
+        "physionet:S073": 0.45333333333333337,
+        "physionet:S076": 0.7066666666666667,
+        "physionet:S081": 0.4177777777777778,
+        "physionet:S095": 0.3244444444444444,
+        "physionet:S097": 0.6222222222222222,
+        "physionet:S098": 0.38222222222222224,
+        "physionet:S100": 0.4305555555555555,
+        "physionet:S103": 0.37333333333333335
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "physionet",
+      "train_rows": 7868,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6248484848484849,
+      "participant_mean_auroc_95_ci": [
+        0.5587676767676767,
+        0.682439393939394
+      ],
+      "pooled_auroc": 0.6154644670762842,
+      "participant_mean_balanced_accuracy": 0.5772727272727273,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "physionet:S005": 0.5733333333333333,
+        "physionet:S007": 0.6044444444444445,
+        "physionet:S010": 0.7333333333333334,
+        "physionet:S020": 0.8311111111111111,
+        "physionet:S021": 0.5155555555555555,
+        "physionet:S025": 0.831111111111111,
+        "physionet:S036": 0.808888888888889,
+        "physionet:S044": 0.5155555555555555,
+        "physionet:S047": 0.5155555555555555,
+        "physionet:S048": 0.6888888888888889,
+        "physionet:S054": 0.84,
+        "physionet:S058": 0.888888888888889,
+        "physionet:S061": 0.6311111111111112,
+        "physionet:S065": 0.7377777777777779,
+        "physionet:S073": 0.68,
+        "physionet:S076": 0.6,
+        "physionet:S081": 0.3822222222222222,
+        "physionet:S095": 0.52,
+        "physionet:S097": 0.4977777777777778,
+        "physionet:S098": 0.37777777777777777,
+        "physionet:S100": 0.5555555555555556,
+        "physionet:S103": 0.4177777777777778
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "riemann_recentered",
+      "dataset": "physionet",
+      "train_rows": 7868,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6467550505050504,
+      "participant_mean_auroc_95_ci": [
+        0.5981587752525253,
+        0.6976865530303029
+      ],
+      "pooled_auroc": 0.6384797388921621,
+      "participant_mean_balanced_accuracy": 0.5874999999999999,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "physionet:S005": 0.4488888888888889,
+        "physionet:S007": 0.6488888888888888,
+        "physionet:S010": 0.7244444444444444,
+        "physionet:S020": 0.8355555555555556,
+        "physionet:S021": 0.5644444444444445,
+        "physionet:S025": 0.9422222222222223,
+        "physionet:S036": 0.7288888888888889,
+        "physionet:S044": 0.6799999999999999,
+        "physionet:S047": 0.43555555555555553,
+        "physionet:S048": 0.5422222222222223,
+        "physionet:S054": 0.7511111111111111,
+        "physionet:S058": 0.6311111111111112,
+        "physionet:S061": 0.6577777777777778,
+        "physionet:S065": 0.5955555555555556,
+        "physionet:S073": 0.8,
+        "physionet:S076": 0.5066666666666666,
+        "physionet:S081": 0.5911111111111111,
+        "physionet:S095": 0.6799999999999999,
+        "physionet:S097": 0.64,
+        "physionet:S098": 0.5866666666666667,
+        "physionet:S100": 0.6597222222222222,
+        "physionet:S103": 0.5777777777777777
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "mrcp",
+      "dataset": "physionet",
+      "train_rows": 7868,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.6705176767676768,
+      "participant_mean_auroc_95_ci": [
+        0.615738005050505,
+        0.722840909090909
+      ],
+      "pooled_auroc": 0.6699772746401818,
+      "participant_mean_balanced_accuracy": 0.6303030303030304,
+      "participants_above_chance": 9,
+      "per_participant_auroc": {
+        "physionet:S005": 0.7555555555555555,
+        "physionet:S007": 0.72,
+        "physionet:S010": 0.6088888888888888,
+        "physionet:S020": 0.8044444444444444,
+        "physionet:S021": 0.5644444444444444,
+        "physionet:S025": 0.8933333333333334,
+        "physionet:S036": 0.7422222222222222,
+        "physionet:S044": 0.6888888888888889,
+        "physionet:S047": 0.48444444444444446,
+        "physionet:S048": 0.8177777777777777,
+        "physionet:S054": 0.8177777777777778,
+        "physionet:S058": 0.568888888888889,
+        "physionet:S061": 0.4533333333333333,
+        "physionet:S065": 0.8177777777777778,
+        "physionet:S073": 0.6755555555555555,
+        "physionet:S076": 0.45333333333333337,
+        "physionet:S081": 0.5911111111111111,
+        "physionet:S095": 0.7644444444444445,
+        "physionet:S097": 0.7688888888888888,
+        "physionet:S098": 0.5688888888888889,
+        "physionet:S100": 0.5069444444444445,
+        "physionet:S103": 0.6844444444444444
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "combined",
+      "dataset": "physionet",
+      "train_rows": 7868,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.703169191919192,
+      "participant_mean_auroc_95_ci": [
+        0.6360782828282828,
+        0.7612140151515153
+      ],
+      "pooled_auroc": 0.6984354104125167,
+      "participant_mean_balanced_accuracy": 0.6397727272727272,
+      "participants_above_chance": 10,
+      "per_participant_auroc": {
+        "physionet:S005": 0.6044444444444443,
+        "physionet:S007": 0.7644444444444445,
+        "physionet:S010": 0.6133333333333333,
+        "physionet:S020": 0.9022222222222223,
+        "physionet:S021": 0.5955555555555556,
+        "physionet:S025": 0.9466666666666667,
+        "physionet:S036": 0.8177777777777778,
+        "physionet:S044": 0.7555555555555555,
+        "physionet:S047": 0.4,
+        "physionet:S048": 0.7866666666666667,
+        "physionet:S054": 0.9155555555555556,
+        "physionet:S058": 0.8133333333333334,
+        "physionet:S061": 0.5955555555555556,
+        "physionet:S065": 0.8622222222222222,
+        "physionet:S073": 0.8622222222222222,
+        "physionet:S076": 0.4177777777777778,
+        "physionet:S081": 0.6177777777777778,
+        "physionet:S095": 0.7733333333333333,
+        "physionet:S097": 0.6488888888888888,
+        "physionet:S098": 0.5466666666666667,
+        "physionet:S100": 0.576388888888889,
+        "physionet:S103": 0.6533333333333333
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "amplitude",
+      "dataset": "openbmi",
+      "train_rows": 18398,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.810825925925926,
+      "participant_mean_auroc_95_ci": [
+        0.7738571296296296,
+        0.8521518518518519
+      ],
+      "pooled_auroc": 0.7455820987654321,
+      "participant_mean_balanced_accuracy": 0.69,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.7728222222222222,
+        "openbmi:S036": 0.7561222222222221,
+        "openbmi:S042": 0.7609555555555554,
+        "openbmi:S047": 0.8400666666666667,
+        "openbmi:S049": 0.8577222222222223,
+        "openbmi:S052": 0.8772666666666668
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "auxiliary_eog_emg",
+      "dataset": "openbmi",
+      "train_rows": 18398,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.5627851851851852,
+      "participant_mean_auroc_95_ci": [
+        0.5415222222222223,
+        0.5876754166666667
+      ],
+      "pooled_auroc": 0.5221493827160494,
+      "participant_mean_balanced_accuracy": 0.5175,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5610444444444445,
+        "openbmi:S036": 0.5419222222222222,
+        "openbmi:S042": 0.5254555555555556,
+        "openbmi:S047": 0.6133222222222222,
+        "openbmi:S049": 0.5724555555555556,
+        "openbmi:S052": 0.5625111111111112
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "bandpower",
+      "dataset": "openbmi",
+      "train_rows": 18398,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7010277777777777,
+      "participant_mean_auroc_95_ci": [
+        0.6185537037037037,
+        0.7682394444444445
+      ],
+      "pooled_auroc": 0.6488947530864198,
+      "participant_mean_balanced_accuracy": 0.6077777777777778,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6450555555555556,
+        "openbmi:S036": 0.5262222222222223,
+        "openbmi:S042": 0.7132222222222222,
+        "openbmi:S047": 0.7743777777777778,
+        "openbmi:S049": 0.7600333333333333,
+        "openbmi:S052": 0.7872555555555556
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "openbmi",
+      "train_rows": 18398,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.747537037037037,
+      "participant_mean_auroc_95_ci": [
+        0.6681259722222223,
+        0.82125
+      ],
+      "pooled_auroc": 0.7316308641975309,
+      "participant_mean_balanced_accuracy": 0.6627777777777778,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6448666666666667,
+        "openbmi:S036": 0.5952888888888889,
+        "openbmi:S042": 0.8122888888888888,
+        "openbmi:S047": 0.8546777777777779,
+        "openbmi:S049": 0.7580777777777777,
+        "openbmi:S052": 0.8200222222222223
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "riemann_recentered",
+      "dataset": "openbmi",
+      "train_rows": 18398,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7158851851851852,
+      "participant_mean_auroc_95_ci": [
+        0.6201814814814814,
+        0.8120063888888888
+      ],
+      "pooled_auroc": 0.6942287037037037,
+      "participant_mean_balanced_accuracy": 0.6374999999999998,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5373888888888889,
+        "openbmi:S036": 0.5889222222222222,
+        "openbmi:S042": 0.7562666666666668,
+        "openbmi:S047": 0.8824111111111111,
+        "openbmi:S049": 0.7960888888888888,
+        "openbmi:S052": 0.7342333333333333
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "mrcp",
+      "dataset": "openbmi",
+      "train_rows": 18398,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.6148444444444445,
+      "participant_mean_auroc_95_ci": [
+        0.5008540277777778,
+        0.7182666666666666
+      ],
+      "pooled_auroc": 0.6155413580246913,
+      "participant_mean_balanced_accuracy": 0.5883333333333334,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6621777777777778,
+        "openbmi:S036": 0.7145222222222222,
+        "openbmi:S042": 0.5109444444444444,
+        "openbmi:S047": 0.3913777777777778,
+        "openbmi:S049": 0.6319444444444445,
+        "openbmi:S052": 0.7781
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "combined",
+      "dataset": "openbmi",
+      "train_rows": 18398,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7989703703703704,
+      "participant_mean_auroc_95_ci": [
+        0.7261213425925925,
+        0.8770574074074076
+      ],
+      "pooled_auroc": 0.7879280864197532,
+      "participant_mean_balanced_accuracy": 0.711388888888889,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6663666666666667,
+        "openbmi:S036": 0.683911111111111,
+        "openbmi:S042": 0.7956333333333333,
+        "openbmi:S047": 0.8855000000000001,
+        "openbmi:S049": 0.8434333333333334,
+        "openbmi:S052": 0.9189777777777778
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "amplitude",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.73125,
+      "participant_mean_auroc_95_ci": [
+        0.66474375,
+        0.8
+      ],
+      "pooled_auroc": 0.70475,
+      "participant_mean_balanced_accuracy": 0.6449999999999999,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.6525,
+        "liu2024:S022": 0.7175,
+        "liu2024:S025": 0.755,
+        "liu2024:S027": 0.8475,
+        "liu2024:S031": 0.8074999999999999,
+        "liu2024:S034": 0.78,
+        "liu2024:S036": 0.6199999999999999,
+        "liu2024:S040": 0.5725,
+        "liu2024:S048": 0.645,
+        "liu2024:S050": 0.915
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "auxiliary_eog_emg",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.60075,
+      "participant_mean_auroc_95_ci": [
+        0.5124875000000001,
+        0.69651875
+      ],
+      "pooled_auroc": 0.61115,
+      "participant_mean_balanced_accuracy": 0.5725,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.6375,
+        "liu2024:S022": 0.3375,
+        "liu2024:S025": 0.5825,
+        "liu2024:S027": 0.7025,
+        "liu2024:S031": 0.675,
+        "liu2024:S034": 0.9375,
+        "liu2024:S036": 0.4375,
+        "liu2024:S040": 0.5625,
+        "liu2024:S048": 0.585,
+        "liu2024:S050": 0.55
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "bandpower",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.6655,
+      "participant_mean_auroc_95_ci": [
+        0.5965,
+        0.733025
+      ],
+      "pooled_auroc": 0.64445,
+      "participant_mean_balanced_accuracy": 0.5900000000000001,
+      "participants_above_chance": 3,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.48750000000000004,
+        "liu2024:S022": 0.6675,
+        "liu2024:S025": 0.5800000000000001,
+        "liu2024:S027": 0.6225,
+        "liu2024:S031": 0.7199999999999999,
+        "liu2024:S034": 0.5175,
+        "liu2024:S036": 0.655,
+        "liu2024:S040": 0.7875000000000001,
+        "liu2024:S048": 0.7925000000000001,
+        "liu2024:S050": 0.825
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.6845,
+      "participant_mean_auroc_95_ci": [
+        0.6032062499999998,
+        0.7560125
+      ],
+      "pooled_auroc": 0.66125,
+      "participant_mean_balanced_accuracy": 0.6200000000000001,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.485,
+        "liu2024:S022": 0.7825,
+        "liu2024:S025": 0.6075,
+        "liu2024:S027": 0.66,
+        "liu2024:S031": 0.7775000000000001,
+        "liu2024:S034": 0.45749999999999996,
+        "liu2024:S036": 0.6575,
+        "liu2024:S040": 0.8274999999999999,
+        "liu2024:S048": 0.7775,
+        "liu2024:S050": 0.8125
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "riemann_recentered",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.635,
+      "participant_mean_auroc_95_ci": [
+        0.53374375,
+        0.7225624999999999
+      ],
+      "pooled_auroc": 0.64545,
+      "participant_mean_balanced_accuracy": 0.6,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.6299999999999999,
+        "liu2024:S022": 0.3575,
+        "liu2024:S025": 0.725,
+        "liu2024:S027": 0.68,
+        "liu2024:S031": 0.73,
+        "liu2024:S034": 0.6375,
+        "liu2024:S036": 0.45499999999999996,
+        "liu2024:S040": 0.8125,
+        "liu2024:S048": 0.45499999999999996,
+        "liu2024:S050": 0.8674999999999999
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "mrcp",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.54425,
+      "participant_mean_auroc_95_ci": [
+        0.47516249999999993,
+        0.61850625
+      ],
+      "pooled_auroc": 0.5345249999999999,
+      "participant_mean_balanced_accuracy": 0.5275000000000001,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.4475,
+        "liu2024:S022": 0.48500000000000004,
+        "liu2024:S025": 0.5049999999999999,
+        "liu2024:S027": 0.3175,
+        "liu2024:S031": 0.5075,
+        "liu2024:S034": 0.555,
+        "liu2024:S036": 0.74,
+        "liu2024:S040": 0.64,
+        "liu2024:S048": 0.5875,
+        "liu2024:S050": 0.6575000000000001
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "combined",
+      "dataset": "liu2024",
+      "train_rows": 3115,
+      "test_rows": 400,
+      "participants": 10,
+      "participant_mean_auroc": 0.6627500000000001,
+      "participant_mean_auroc_95_ci": [
+        0.6092500000000001,
+        0.71875
+      ],
+      "pooled_auroc": 0.648525,
+      "participant_mean_balanced_accuracy": 0.6125,
+      "participants_above_chance": 3,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.52,
+        "liu2024:S022": 0.5475000000000001,
+        "liu2024:S025": 0.6525,
+        "liu2024:S027": 0.6174999999999999,
+        "liu2024:S031": 0.745,
+        "liu2024:S034": 0.5974999999999999,
+        "liu2024:S036": 0.66,
+        "liu2024:S040": 0.7825,
+        "liu2024:S048": 0.705,
+        "liu2024:S050": 0.8
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "amplitude",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.57625,
+      "participant_mean_auroc_95_ci": [
+        0.5327222222222221,
+        0.6200956439393939
+      ],
+      "pooled_auroc": 0.5351588437187292,
+      "participant_mean_balanced_accuracy": 0.5299242424242424,
+      "participants_above_chance": 0,
+      "per_participant_auroc": {
+        "physionet:S005": 0.49333333333333335,
+        "physionet:S007": 0.4711111111111111,
+        "physionet:S010": 0.5422222222222222,
+        "physionet:S020": 0.6444444444444445,
+        "physionet:S021": 0.5333333333333333,
+        "physionet:S025": 0.7288888888888889,
+        "physionet:S036": 0.5333333333333333,
+        "physionet:S044": 0.6755555555555556,
+        "physionet:S047": 0.7155555555555556,
+        "physionet:S048": 0.4755555555555556,
+        "physionet:S054": 0.6311111111111112,
+        "physionet:S058": 0.6533333333333333,
+        "physionet:S061": 0.48444444444444446,
+        "physionet:S065": 0.6,
+        "physionet:S073": 0.3999999999999999,
+        "physionet:S076": 0.4133333333333333,
+        "physionet:S081": 0.6755555555555556,
+        "physionet:S095": 0.5822222222222222,
+        "physionet:S097": 0.7288888888888889,
+        "physionet:S098": 0.6844444444444444,
+        "physionet:S100": 0.5486111111111112,
+        "physionet:S103": 0.4622222222222222
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "bandpower",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.538421717171717,
+      "participant_mean_auroc_95_ci": [
+        0.49816445707070706,
+        0.5798368055555556
+      ],
+      "pooled_auroc": 0.5229544838163641,
+      "participant_mean_balanced_accuracy": 0.524621212121212,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "physionet:S005": 0.6622222222222222,
+        "physionet:S007": 0.40444444444444444,
+        "physionet:S010": 0.4355555555555555,
+        "physionet:S020": 0.5644444444444445,
+        "physionet:S021": 0.5422222222222222,
+        "physionet:S025": 0.6755555555555556,
+        "physionet:S036": 0.4533333333333333,
+        "physionet:S044": 0.7422222222222222,
+        "physionet:S047": 0.4755555555555555,
+        "physionet:S048": 0.35555555555555557,
+        "physionet:S054": 0.56,
+        "physionet:S058": 0.5466666666666666,
+        "physionet:S061": 0.40444444444444444,
+        "physionet:S065": 0.6133333333333334,
+        "physionet:S073": 0.5733333333333334,
+        "physionet:S076": 0.6266666666666667,
+        "physionet:S081": 0.5466666666666666,
+        "physionet:S095": 0.6311111111111111,
+        "physionet:S097": 0.5644444444444444,
+        "physionet:S098": 0.4488888888888889,
+        "physionet:S100": 0.5208333333333334,
+        "physionet:S103": 0.49777777777777776
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.5433838383838384,
+      "participant_mean_auroc_95_ci": [
+        0.50322601010101,
+        0.5819229797979798
+      ],
+      "pooled_auroc": 0.5309130357526957,
+      "participant_mean_balanced_accuracy": 0.5041666666666668,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "physionet:S005": 0.5866666666666667,
+        "physionet:S007": 0.4,
+        "physionet:S010": 0.45333333333333337,
+        "physionet:S020": 0.5466666666666666,
+        "physionet:S021": 0.5377777777777778,
+        "physionet:S025": 0.6488888888888888,
+        "physionet:S036": 0.5555555555555556,
+        "physionet:S044": 0.72,
+        "physionet:S047": 0.4666666666666667,
+        "physionet:S048": 0.33333333333333337,
+        "physionet:S054": 0.6,
+        "physionet:S058": 0.5022222222222222,
+        "physionet:S061": 0.4488888888888889,
+        "physionet:S065": 0.5955555555555555,
+        "physionet:S073": 0.5911111111111111,
+        "physionet:S076": 0.6,
+        "physionet:S081": 0.5688888888888888,
+        "physionet:S095": 0.7022222222222223,
+        "physionet:S097": 0.6088888888888888,
+        "physionet:S098": 0.45333333333333337,
+        "physionet:S100": 0.5277777777777778,
+        "physionet:S103": 0.5066666666666667
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "riemann_recentered",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.5221969696969697,
+      "participant_mean_auroc_95_ci": [
+        0.4771155303030303,
+        0.5664684343434342
+      ],
+      "pooled_auroc": 0.5273125157814998,
+      "participant_mean_balanced_accuracy": 0.5257575757575758,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "physionet:S005": 0.5911111111111111,
+        "physionet:S007": 0.6444444444444445,
+        "physionet:S010": 0.5022222222222221,
+        "physionet:S020": 0.7155555555555555,
+        "physionet:S021": 0.41333333333333333,
+        "physionet:S025": 0.3866666666666667,
+        "physionet:S036": 0.49333333333333335,
+        "physionet:S044": 0.5644444444444444,
+        "physionet:S047": 0.40444444444444444,
+        "physionet:S048": 0.5022222222222222,
+        "physionet:S054": 0.5688888888888889,
+        "physionet:S058": 0.5955555555555556,
+        "physionet:S061": 0.4266666666666667,
+        "physionet:S065": 0.6311111111111111,
+        "physionet:S073": 0.7555555555555555,
+        "physionet:S076": 0.42666666666666664,
+        "physionet:S081": 0.5111111111111111,
+        "physionet:S095": 0.5511111111111111,
+        "physionet:S097": 0.5555555555555556,
+        "physionet:S098": 0.4088888888888889,
+        "physionet:S100": 0.3194444444444445,
+        "physionet:S103": 0.52
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "mrcp",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.5755934343434345,
+      "participant_mean_auroc_95_ci": [
+        0.5088923611111111,
+        0.643519255050505
+      ],
+      "pooled_auroc": 0.5818814353449486,
+      "participant_mean_balanced_accuracy": 0.5571969696969697,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "physionet:S005": 0.6444444444444445,
+        "physionet:S007": 0.6755555555555555,
+        "physionet:S010": 0.6622222222222223,
+        "physionet:S020": 0.6844444444444444,
+        "physionet:S021": 0.7777777777777778,
+        "physionet:S025": 0.9466666666666668,
+        "physionet:S036": 0.28888888888888886,
+        "physionet:S044": 0.6311111111111112,
+        "physionet:S047": 0.6666666666666667,
+        "physionet:S048": 0.3733333333333333,
+        "physionet:S054": 0.8133333333333334,
+        "physionet:S058": 0.49777777777777776,
+        "physionet:S061": 0.4755555555555555,
+        "physionet:S065": 0.5066666666666666,
+        "physionet:S073": 0.47111111111111115,
+        "physionet:S076": 0.4533333333333333,
+        "physionet:S081": 0.3333333333333333,
+        "physionet:S095": 0.7333333333333334,
+        "physionet:S097": 0.6444444444444445,
+        "physionet:S098": 0.3688888888888888,
+        "physionet:S100": 0.4097222222222222,
+        "physionet:S103": 0.6044444444444445
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "combined",
+      "dataset": "physionet",
+      "train_rows": 7867,
+      "test_rows": 654,
+      "participants": 22,
+      "participant_mean_auroc": 0.5894065656565656,
+      "participant_mean_auroc_95_ci": [
+        0.5228203914141415,
+        0.6569239267676769
+      ],
+      "pooled_auroc": 0.5910838032713296,
+      "participant_mean_balanced_accuracy": 0.5659090909090908,
+      "participants_above_chance": 8,
+      "per_participant_auroc": {
+        "physionet:S005": 0.6755555555555556,
+        "physionet:S007": 0.6488888888888888,
+        "physionet:S010": 0.7155555555555555,
+        "physionet:S020": 0.7111111111111112,
+        "physionet:S021": 0.6444444444444444,
+        "physionet:S025": 0.8044444444444445,
+        "physionet:S036": 0.3422222222222222,
+        "physionet:S044": 0.7111111111111111,
+        "physionet:S047": 0.4355555555555556,
+        "physionet:S048": 0.3511111111111111,
+        "physionet:S054": 0.8266666666666667,
+        "physionet:S058": 0.4844444444444444,
+        "physionet:S061": 0.39999999999999997,
+        "physionet:S065": 0.7511111111111111,
+        "physionet:S073": 0.6977777777777777,
+        "physionet:S076": 0.6444444444444445,
+        "physionet:S081": 0.4355555555555556,
+        "physionet:S095": 0.7422222222222223,
+        "physionet:S097": 0.6711111111111112,
+        "physionet:S098": 0.3466666666666667,
+        "physionet:S100": 0.3402777777777778,
+        "physionet:S103": 0.5866666666666667
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "amplitude",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7311388888888889,
+      "participant_mean_auroc_95_ci": [
+        0.6689981481481482,
+        0.7811814814814815
+      ],
+      "pooled_auroc": 0.6927496913580247,
+      "participant_mean_balanced_accuracy": 0.6363888888888889,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.7472666666666666,
+        "openbmi:S036": 0.6823222222222223,
+        "openbmi:S042": 0.6052111111111111,
+        "openbmi:S047": 0.7687666666666666,
+        "openbmi:S049": 0.8224111111111112,
+        "openbmi:S052": 0.7608555555555556
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "auxiliary_eog_emg",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.5916148148148148,
+      "participant_mean_auroc_95_ci": [
+        0.5452001851851852,
+        0.6391579629629629
+      ],
+      "pooled_auroc": 0.544591975308642,
+      "participant_mean_balanced_accuracy": 0.5163888888888889,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6317888888888888,
+        "openbmi:S036": 0.6783,
+        "openbmi:S042": 0.5166777777777778,
+        "openbmi:S047": 0.5595222222222223,
+        "openbmi:S049": 0.6312111111111111,
+        "openbmi:S052": 0.5321888888888889
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "bandpower",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.6543944444444444,
+      "participant_mean_auroc_95_ci": [
+        0.5709009259259259,
+        0.7058202777777778
+      ],
+      "pooled_auroc": 0.6264641975308642,
+      "participant_mean_balanced_accuracy": 0.5886111111111111,
+      "participants_above_chance": 4,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6770888888888889,
+        "openbmi:S036": 0.6860888888888889,
+        "openbmi:S042": 0.45593333333333336,
+        "openbmi:S047": 0.6728666666666667,
+        "openbmi:S049": 0.7266333333333335,
+        "openbmi:S052": 0.7077555555555555
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.6492407407407407,
+      "participant_mean_auroc_95_ci": [
+        0.5553462962962963,
+        0.7132166666666667
+      ],
+      "pooled_auroc": 0.6384456790123457,
+      "participant_mean_balanced_accuracy": 0.6033333333333334,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6899888888888888,
+        "openbmi:S036": 0.6287444444444446,
+        "openbmi:S042": 0.4307888888888889,
+        "openbmi:S047": 0.7084333333333334,
+        "openbmi:S049": 0.7165111111111111,
+        "openbmi:S052": 0.7209777777777777
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "riemann_recentered",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7078129629629629,
+      "participant_mean_auroc_95_ci": [
+        0.6443333333333333,
+        0.7603222222222223
+      ],
+      "pooled_auroc": 0.7046481481481481,
+      "participant_mean_balanced_accuracy": 0.6655555555555556,
+      "participants_above_chance": 6,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.7184111111111111,
+        "openbmi:S036": 0.7576555555555555,
+        "openbmi:S042": 0.5662777777777778,
+        "openbmi:S047": 0.7008,
+        "openbmi:S049": 0.708711111111111,
+        "openbmi:S052": 0.7950222222222223
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "mrcp",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.5216481481481482,
+      "participant_mean_auroc_95_ci": [
+        0.4700003240740741,
+        0.5837334722222222
+      ],
+      "pooled_auroc": 0.5279237654320987,
+      "participant_mean_balanced_accuracy": 0.5113888888888889,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5240222222222223,
+        "openbmi:S036": 0.5218777777777778,
+        "openbmi:S042": 0.45206666666666667,
+        "openbmi:S047": 0.4350111111111111,
+        "openbmi:S049": 0.5536777777777778,
+        "openbmi:S052": 0.6432333333333333
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "combined",
+      "dataset": "openbmi",
+      "train_rows": 18399,
+      "test_rows": 3600,
+      "participants": 6,
+      "participant_mean_auroc": 0.7200851851851852,
+      "participant_mean_auroc_95_ci": [
+        0.6463111111111112,
+        0.7692610185185187
+      ],
+      "pooled_auroc": 0.7149438271604939,
+      "participant_mean_balanced_accuracy": 0.6755555555555556,
+      "participants_above_chance": 5,
+      "per_participant_auroc": {
+        "openbmi:S009": 0.7253444444444445,
+        "openbmi:S036": 0.7655,
+        "openbmi:S042": 0.5375666666666666,
+        "openbmi:S047": 0.7764333333333333,
+        "openbmi:S049": 0.7341666666666669,
+        "openbmi:S052": 0.7815000000000001
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "amplitude",
+      "dataset": "liu2024",
+      "train_rows": 3075,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.5217631578947369,
+      "participant_mean_auroc_95_ci": [
+        0.44815789473684214,
+        0.6000328947368421
+      ],
+      "pooled_auroc": 0.49882198952879575,
+      "participant_mean_balanced_accuracy": 0.523421052631579,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.42894736842105263,
+        "liu2024:S022": 0.36500000000000005,
+        "liu2024:S025": 0.4684210526315789,
+        "liu2024:S027": 0.4,
+        "liu2024:S031": 0.5842105263157895,
+        "liu2024:S034": 0.6710526315789473,
+        "liu2024:S036": 0.5921052631578947,
+        "liu2024:S040": 0.37631578947368427,
+        "liu2024:S048": 0.6078947368421052,
+        "liu2024:S050": 0.7236842105263158
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "auxiliary_eog_emg",
+      "dataset": "liu2024",
+      "train_rows": 3075,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.5509605263157895,
+      "participant_mean_auroc_95_ci": [
+        0.4552565789473684,
+        0.6726644736842105
+      ],
+      "pooled_auroc": 0.5544764397905759,
+      "participant_mean_balanced_accuracy": 0.5506578947368421,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5868421052631579,
+        "liu2024:S022": 0.5675,
+        "liu2024:S025": 0.46578947368421053,
+        "liu2024:S027": 0.4605263157894737,
+        "liu2024:S031": 0.28157894736842104,
+        "liu2024:S034": 0.9631578947368421,
+        "liu2024:S036": 0.6368421052631579,
+        "liu2024:S040": 0.6210526315789473,
+        "liu2024:S048": 0.43157894736842106,
+        "liu2024:S050": 0.4947368421052631
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "bandpower",
+      "dataset": "liu2024",
+      "train_rows": 3075,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.5139868421052631,
+      "participant_mean_auroc_95_ci": [
+        0.4621249999999999,
+        0.5660555921052631
+      ],
+      "pooled_auroc": 0.5163089005235602,
+      "participant_mean_balanced_accuracy": 0.525,
+      "participants_above_chance": 0,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5526315789473684,
+        "liu2024:S022": 0.49250000000000005,
+        "liu2024:S025": 0.6105263157894737,
+        "liu2024:S027": 0.33421052631578946,
+        "liu2024:S031": 0.5552631578947369,
+        "liu2024:S034": 0.5657894736842105,
+        "liu2024:S036": 0.48684210526315785,
+        "liu2024:S040": 0.481578947368421,
+        "liu2024:S048": 0.644736842105263,
+        "liu2024:S050": 0.41578947368421054
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "bandpower_baseline_normalized",
+      "dataset": "liu2024",
+      "train_rows": 3075,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.5260394736842106,
+      "participant_mean_auroc_95_ci": [
+        0.47496710526315794,
+        0.5763223684210526
+      ],
+      "pooled_auroc": 0.5204188481675392,
+      "participant_mean_balanced_accuracy": 0.5009210526315788,
+      "participants_above_chance": 0,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5605263157894737,
+        "liu2024:S022": 0.5025,
+        "liu2024:S025": 0.5947368421052631,
+        "liu2024:S027": 0.3526315789473684,
+        "liu2024:S031": 0.5789473684210527,
+        "liu2024:S034": 0.5552631578947368,
+        "liu2024:S036": 0.5026315789473684,
+        "liu2024:S040": 0.48421052631578954,
+        "liu2024:S048": 0.6710526315789473,
+        "liu2024:S050": 0.45789473684210524
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "riemann_recentered",
+      "dataset": "liu2024",
+      "train_rows": 3075,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.5666447368421051,
+      "participant_mean_auroc_95_ci": [
+        0.5105131578947367,
+        0.6292269736842104
+      ],
+      "pooled_auroc": 0.5531675392670157,
+      "participant_mean_balanced_accuracy": 0.5539473684210526,
+      "participants_above_chance": 0,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5052631578947369,
+        "liu2024:S022": 0.5874999999999999,
+        "liu2024:S025": 0.7052631578947368,
+        "liu2024:S027": 0.5368421052631579,
+        "liu2024:S031": 0.36578947368421044,
+        "liu2024:S034": 0.6631578947368421,
+        "liu2024:S036": 0.6105263157894737,
+        "liu2024:S040": 0.5184210526315789,
+        "liu2024:S048": 0.49999999999999994,
+        "liu2024:S050": 0.6736842105263158
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "mrcp",
+      "dataset": "liu2024",
+      "train_rows": 3075,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.48202631578947364,
+      "participant_mean_auroc_95_ci": [
+        0.4197282894736841,
+        0.5412453947368421
+      ],
+      "pooled_auroc": 0.48984293193717277,
+      "participant_mean_balanced_accuracy": 0.4971052631578948,
+      "participants_above_chance": 1,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.581578947368421,
+        "liu2024:S022": 0.36499999999999994,
+        "liu2024:S025": 0.3157894736842105,
+        "liu2024:S027": 0.5736842105263158,
+        "liu2024:S031": 0.5289473684210526,
+        "liu2024:S034": 0.49473684210526314,
+        "liu2024:S036": 0.5973684210526315,
+        "liu2024:S040": 0.34736842105263155,
+        "liu2024:S048": 0.4789473684210526,
+        "liu2024:S050": 0.5368421052631578
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "combined",
+      "dataset": "liu2024",
+      "train_rows": 3075,
+      "test_rows": 391,
+      "participants": 10,
+      "participant_mean_auroc": 0.5567368421052631,
+      "participant_mean_auroc_95_ci": [
+        0.5083618421052631,
+        0.607375
+      ],
+      "pooled_auroc": 0.5637958115183246,
+      "participant_mean_balanced_accuracy": 0.5577631578947366,
+      "participants_above_chance": 2,
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5815789473684211,
+        "liu2024:S022": 0.42000000000000004,
+        "liu2024:S025": 0.5184210526315789,
+        "liu2024:S027": 0.4947368421052631,
+        "liu2024:S031": 0.5421052631578946,
+        "liu2024:S034": 0.6421052631578947,
+        "liu2024:S036": 0.6421052631578947,
+        "liu2024:S040": 0.47894736842105257,
+        "liu2024:S048": 0.5552631578947368,
+        "liu2024:S050": 0.6921052631578948
+      }
+    }
+  ],
+  "within_subject_calibration": [
+    {
+      "condition": "original",
+      "model": "amplitude",
+      "dataset": "physionet",
+      "participants": 22,
+      "participant_mean_auroc": 0.686969696969697,
+      "participant_mean_auroc_95_ci": [
+        0.6288813131313131,
+        0.7490909090909091
+      ],
+      "per_participant_auroc": {
+        "physionet:S005": 0.7333333333333334,
+        "physionet:S007": 0.8355555555555556,
+        "physionet:S010": 0.5466666666666667,
+        "physionet:S020": 0.9511111111111112,
+        "physionet:S021": 0.6222222222222222,
+        "physionet:S025": 0.9555555555555556,
+        "physionet:S036": 0.9155555555555556,
+        "physionet:S044": 0.72,
+        "physionet:S047": 0.5777777777777777,
+        "physionet:S048": 0.6888888888888889,
+        "physionet:S054": 0.6088888888888888,
+        "physionet:S058": 0.39999999999999997,
+        "physionet:S061": 0.6622222222222223,
+        "physionet:S065": 0.76,
+        "physionet:S073": 0.8088888888888889,
+        "physionet:S076": 0.5688888888888889,
+        "physionet:S081": 0.7822222222222222,
+        "physionet:S095": 0.52,
+        "physionet:S097": 0.6844444444444444,
+        "physionet:S098": 0.6177777777777778,
+        "physionet:S100": 0.611111111111111,
+        "physionet:S103": 0.5422222222222222
+      }
+    },
+    {
+      "condition": "original",
+      "model": "combined",
+      "dataset": "physionet",
+      "participants": 22,
+      "participant_mean_auroc": 0.7766414141414141,
+      "participant_mean_auroc_95_ci": [
+        0.726008207070707,
+        0.8229071969696969
+      ],
+      "per_participant_auroc": {
+        "physionet:S005": 0.6977777777777778,
+        "physionet:S007": 0.808888888888889,
+        "physionet:S010": 0.5644444444444444,
+        "physionet:S020": 0.8977777777777778,
+        "physionet:S021": 0.8355555555555556,
+        "physionet:S025": 0.96,
+        "physionet:S036": 0.9155555555555556,
+        "physionet:S044": 0.7555555555555555,
+        "physionet:S047": 0.5511111111111111,
+        "physionet:S048": 0.7955555555555556,
+        "physionet:S054": 0.8755555555555555,
+        "physionet:S058": 0.76,
+        "physionet:S061": 0.6666666666666667,
+        "physionet:S065": 0.8488888888888889,
+        "physionet:S073": 0.9377777777777778,
+        "physionet:S076": 0.6666666666666667,
+        "physionet:S081": 0.8177777777777778,
+        "physionet:S095": 0.7422222222222222,
+        "physionet:S097": 0.8266666666666667,
+        "physionet:S098": 0.5555555555555556,
+        "physionet:S100": 0.8194444444444445,
+        "physionet:S103": 0.7866666666666667
+      }
+    },
+    {
+      "condition": "original",
+      "model": "amplitude",
+      "dataset": "openbmi",
+      "participants": 6,
+      "participant_mean_auroc": 0.9254907407407407,
+      "participant_mean_auroc_95_ci": [
+        0.8847600925925927,
+        0.9572389351851852
+      ],
+      "per_participant_auroc": {
+        "openbmi:S009": 0.9303555555555556,
+        "openbmi:S036": 0.8996888888888889,
+        "openbmi:S042": 0.8397777777777777,
+        "openbmi:S047": 0.953311111111111,
+        "openbmi:S049": 0.9704777777777778,
+        "openbmi:S052": 0.9593333333333334
+      }
+    },
+    {
+      "condition": "original",
+      "model": "combined",
+      "dataset": "openbmi",
+      "participants": 6,
+      "participant_mean_auroc": 0.8911092592592594,
+      "participant_mean_auroc_95_ci": [
+        0.8346833333333334,
+        0.9433882870370373
+      ],
+      "per_participant_auroc": {
+        "openbmi:S009": 0.8731666666666666,
+        "openbmi:S036": 0.8267444444444445,
+        "openbmi:S042": 0.7844666666666668,
+        "openbmi:S047": 0.9623999999999999,
+        "openbmi:S049": 0.9589333333333333,
+        "openbmi:S052": 0.9409444444444445
+      }
+    },
+    {
+      "condition": "original",
+      "model": "amplitude",
+      "dataset": "liu2024",
+      "participants": 10,
+      "participant_mean_auroc": 0.7191973684210526,
+      "participant_mean_auroc_95_ci": [
+        0.6381243421052633,
+        0.7997628289473684
+      ],
+      "per_participant_auroc": {
+        "liu2024:S006": 0.4921052631578947,
+        "liu2024:S022": 0.8025,
+        "liu2024:S025": 0.6789473684210526,
+        "liu2024:S027": 0.7578947368421053,
+        "liu2024:S031": 0.65,
+        "liu2024:S034": 0.5894736842105264,
+        "liu2024:S036": 0.7552631578947369,
+        "liu2024:S040": 0.968421052631579,
+        "liu2024:S048": 0.6131578947368421,
+        "liu2024:S050": 0.8842105263157896
+      }
+    },
+    {
+      "condition": "original",
+      "model": "combined",
+      "dataset": "liu2024",
+      "participants": 10,
+      "participant_mean_auroc": 0.6798026315789474,
+      "participant_mean_auroc_95_ci": [
+        0.5923355263157895,
+        0.7748059210526316
+      ],
+      "per_participant_auroc": {
+        "liu2024:S006": 0.48157894736842105,
+        "liu2024:S022": 0.9375,
+        "liu2024:S025": 0.536842105263158,
+        "liu2024:S027": 0.6605263157894737,
+        "liu2024:S031": 0.6947368421052632,
+        "liu2024:S034": 0.6605263157894737,
+        "liu2024:S036": 0.7157894736842105,
+        "liu2024:S040": 0.9289473684210526,
+        "liu2024:S048": 0.4921052631578947,
+        "liu2024:S050": 0.6894736842105262
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "amplitude",
+      "dataset": "physionet",
+      "participants": 22,
+      "participant_mean_auroc": 0.6828156565656566,
+      "participant_mean_auroc_95_ci": [
+        0.6173636363636364,
+        0.7494993686868686
+      ],
+      "per_participant_auroc": {
+        "physionet:S005": 0.7244444444444444,
+        "physionet:S007": 0.8266666666666667,
+        "physionet:S010": 0.6088888888888888,
+        "physionet:S020": 0.9733333333333334,
+        "physionet:S021": 0.5333333333333333,
+        "physionet:S025": 0.9333333333333333,
+        "physionet:S036": 0.9466666666666668,
+        "physionet:S044": 0.8222222222222222,
+        "physionet:S047": 0.6088888888888889,
+        "physionet:S048": 0.6933333333333334,
+        "physionet:S054": 0.6177777777777778,
+        "physionet:S058": 0.3022222222222222,
+        "physionet:S061": 0.6222222222222222,
+        "physionet:S065": 0.76,
+        "physionet:S073": 0.7555555555555555,
+        "physionet:S076": 0.56,
+        "physionet:S081": 0.768888888888889,
+        "physionet:S095": 0.5333333333333333,
+        "physionet:S097": 0.6755555555555556,
+        "physionet:S098": 0.5822222222222222,
+        "physionet:S100": 0.6041666666666666,
+        "physionet:S103": 0.5688888888888889
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "combined",
+      "dataset": "physionet",
+      "participants": 22,
+      "participant_mean_auroc": 0.8181818181818182,
+      "participant_mean_auroc_95_ci": [
+        0.7674696969696969,
+        0.8648686868686868
+      ],
+      "per_participant_auroc": {
+        "physionet:S005": 0.7777777777777779,
+        "physionet:S007": 0.9600000000000001,
+        "physionet:S010": 0.4622222222222222,
+        "physionet:S020": 0.9155555555555556,
+        "physionet:S021": 0.9022222222222223,
+        "physionet:S025": 0.9911111111111112,
+        "physionet:S036": 0.9066666666666666,
+        "physionet:S044": 0.8088888888888889,
+        "physionet:S047": 0.6933333333333334,
+        "physionet:S048": 0.7466666666666667,
+        "physionet:S054": 0.8533333333333334,
+        "physionet:S058": 0.8311111111111111,
+        "physionet:S061": 0.72,
+        "physionet:S065": 0.8622222222222222,
+        "physionet:S073": 0.9555555555555556,
+        "physionet:S076": 0.7422222222222222,
+        "physionet:S081": 0.6622222222222223,
+        "physionet:S095": 0.9022222222222223,
+        "physionet:S097": 0.9511111111111111,
+        "physionet:S098": 0.8088888888888889,
+        "physionet:S100": 0.7777777777777778,
+        "physionet:S103": 0.7688888888888888
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "amplitude",
+      "dataset": "openbmi",
+      "participants": 6,
+      "participant_mean_auroc": 0.9278314814814815,
+      "participant_mean_auroc_95_ci": [
+        0.8855241666666668,
+        0.9574444444444444
+      ],
+      "per_participant_auroc": {
+        "openbmi:S009": 0.9288666666666667,
+        "openbmi:S036": 0.92,
+        "openbmi:S042": 0.8344666666666667,
+        "openbmi:S047": 0.9551222222222223,
+        "openbmi:S049": 0.9698,
+        "openbmi:S052": 0.9587333333333333
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "combined",
+      "dataset": "openbmi",
+      "participants": 6,
+      "participant_mean_auroc": 0.916388888888889,
+      "participant_mean_auroc_95_ci": [
+        0.8713826851851851,
+        0.9527833333333332
+      ],
+      "per_participant_auroc": {
+        "openbmi:S009": 0.8940666666666667,
+        "openbmi:S036": 0.9016666666666667,
+        "openbmi:S042": 0.8236333333333333,
+        "openbmi:S047": 0.9589111111111112,
+        "openbmi:S049": 0.9749222222222222,
+        "openbmi:S052": 0.9451333333333333
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "amplitude",
+      "dataset": "liu2024",
+      "participants": 10,
+      "participant_mean_auroc": 0.6095,
+      "participant_mean_auroc_95_ci": [
+        0.5360065789473684,
+        0.6937177631578948
+      ],
+      "per_participant_auroc": {
+        "liu2024:S006": 0.4342105263157895,
+        "liu2024:S022": 0.7450000000000001,
+        "liu2024:S025": 0.6026315789473684,
+        "liu2024:S027": 0.5,
+        "liu2024:S031": 0.5078947368421053,
+        "liu2024:S034": 0.4789473684210527,
+        "liu2024:S036": 0.718421052631579,
+        "liu2024:S040": 0.6447368421052632,
+        "liu2024:S048": 0.5842105263157894,
+        "liu2024:S050": 0.8789473684210527
+      }
+    },
+    {
+      "condition": "original_causal",
+      "model": "combined",
+      "dataset": "liu2024",
+      "participants": 10,
+      "participant_mean_auroc": 0.6542105263157895,
+      "participant_mean_auroc_95_ci": [
+        0.5613092105263158,
+        0.7597434210526316
+      ],
+      "per_participant_auroc": {
+        "liu2024:S006": 0.4368421052631579,
+        "liu2024:S022": 0.95,
+        "liu2024:S025": 0.4868421052631579,
+        "liu2024:S027": 0.5052631578947369,
+        "liu2024:S031": 0.6210526315789474,
+        "liu2024:S034": 0.7578947368421053,
+        "liu2024:S036": 0.6236842105263158,
+        "liu2024:S040": 0.8710526315789474,
+        "liu2024:S048": 0.5789473684210525,
+        "liu2024:S050": 0.7105263157894738
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "amplitude",
+      "dataset": "physionet",
+      "participants": 22,
+      "participant_mean_auroc": 0.6456565656565656,
+      "participant_mean_auroc_95_ci": [
+        0.5690808080808082,
+        0.7151565656565655
+      ],
+      "per_participant_auroc": {
+        "physionet:S005": 0.7066666666666666,
+        "physionet:S007": 0.8711111111111112,
+        "physionet:S010": 0.7155555555555555,
+        "physionet:S020": 0.7822222222222223,
+        "physionet:S021": 0.528888888888889,
+        "physionet:S025": 0.8977777777777778,
+        "physionet:S036": 0.8622222222222222,
+        "physionet:S044": 0.5688888888888889,
+        "physionet:S047": 0.7022222222222222,
+        "physionet:S048": 0.6488888888888888,
+        "physionet:S054": 0.6666666666666666,
+        "physionet:S058": 0.29333333333333333,
+        "physionet:S061": 0.6888888888888889,
+        "physionet:S065": 0.688888888888889,
+        "physionet:S073": 0.8088888888888889,
+        "physionet:S076": 0.5111111111111111,
+        "physionet:S081": 0.24444444444444444,
+        "physionet:S095": 0.6444444444444444,
+        "physionet:S097": 0.8355555555555555,
+        "physionet:S098": 0.4666666666666667,
+        "physionet:S100": 0.6666666666666666,
+        "physionet:S103": 0.40444444444444444
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "combined",
+      "dataset": "physionet",
+      "participants": 22,
+      "participant_mean_auroc": 0.8108459595959595,
+      "participant_mean_auroc_95_ci": [
+        0.7550700757575758,
+        0.8589902146464645
+      ],
+      "per_participant_auroc": {
+        "physionet:S005": 0.6088888888888889,
+        "physionet:S007": 0.8311111111111111,
+        "physionet:S010": 0.52,
+        "physionet:S020": 0.88,
+        "physionet:S021": 0.8533333333333334,
+        "physionet:S025": 0.9066666666666667,
+        "physionet:S036": 0.9288888888888889,
+        "physionet:S044": 0.7244444444444444,
+        "physionet:S047": 0.8044444444444445,
+        "physionet:S048": 0.7866666666666666,
+        "physionet:S054": 0.9733333333333334,
+        "physionet:S058": 0.9733333333333334,
+        "physionet:S061": 0.8311111111111111,
+        "physionet:S065": 0.8888888888888888,
+        "physionet:S073": 0.9644444444444444,
+        "physionet:S076": 0.7377777777777778,
+        "physionet:S081": 0.7866666666666667,
+        "physionet:S095": 0.8577777777777778,
+        "physionet:S097": 0.8533333333333333,
+        "physionet:S098": 0.6311111111111112,
+        "physionet:S100": 0.7986111111111112,
+        "physionet:S103": 0.6977777777777778
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "amplitude",
+      "dataset": "openbmi",
+      "participants": 6,
+      "participant_mean_auroc": 0.80205,
+      "participant_mean_auroc_95_ci": [
+        0.7536827777777777,
+        0.8460404166666667
+      ],
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6972666666666666,
+        "openbmi:S036": 0.7725333333333334,
+        "openbmi:S042": 0.7868666666666667,
+        "openbmi:S047": 0.8359,
+        "openbmi:S049": 0.8486333333333334,
+        "openbmi:S052": 0.8711
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "combined",
+      "dataset": "openbmi",
+      "participants": 6,
+      "participant_mean_auroc": 0.7877370370370372,
+      "participant_mean_auroc_95_ci": [
+        0.6756931944444445,
+        0.8765285185185185
+      ],
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5345222222222222,
+        "openbmi:S036": 0.8052444444444444,
+        "openbmi:S042": 0.8055444444444445,
+        "openbmi:S047": 0.8960222222222222,
+        "openbmi:S049": 0.7490333333333334,
+        "openbmi:S052": 0.9360555555555555
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "amplitude",
+      "dataset": "liu2024",
+      "participants": 10,
+      "participant_mean_auroc": 0.727,
+      "participant_mean_auroc_95_ci": [
+        0.618675,
+        0.8162562499999999
+      ],
+      "per_participant_auroc": {
+        "liu2024:S006": 0.6575,
+        "liu2024:S022": 0.9325,
+        "liu2024:S025": 0.6625000000000001,
+        "liu2024:S027": 0.6699999999999999,
+        "liu2024:S031": 0.7150000000000001,
+        "liu2024:S034": 0.59,
+        "liu2024:S036": 0.8724999999999999,
+        "liu2024:S040": 0.8949999999999999,
+        "liu2024:S048": 0.3825,
+        "liu2024:S050": 0.8925000000000001
+      }
+    },
+    {
+      "condition": "precue_rest",
+      "model": "combined",
+      "dataset": "liu2024",
+      "participants": 10,
+      "participant_mean_auroc": 0.7244999999999999,
+      "participant_mean_auroc_95_ci": [
+        0.61420625,
+        0.8230000000000001
+      ],
+      "per_participant_auroc": {
+        "liu2024:S006": 0.39,
+        "liu2024:S022": 0.9249999999999999,
+        "liu2024:S025": 0.7525,
+        "liu2024:S027": 0.55,
+        "liu2024:S031": 0.7975,
+        "liu2024:S034": 0.69,
+        "liu2024:S036": 0.8325,
+        "liu2024:S040": 0.915,
+        "liu2024:S048": 0.5449999999999999,
+        "liu2024:S050": 0.8475
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "amplitude",
+      "dataset": "physionet",
+      "participants": 22,
+      "participant_mean_auroc": 0.6382954545454546,
+      "participant_mean_auroc_95_ci": [
+        0.5795959595959597,
+        0.693966856060606
+      ],
+      "per_participant_auroc": {
+        "physionet:S005": 0.7955555555555556,
+        "physionet:S007": 0.7377777777777778,
+        "physionet:S010": 0.6000000000000001,
+        "physionet:S020": 0.8266666666666667,
+        "physionet:S021": 0.5688888888888889,
+        "physionet:S025": 0.808888888888889,
+        "physionet:S036": 0.8444444444444444,
+        "physionet:S044": 0.5466666666666666,
+        "physionet:S047": 0.6177777777777778,
+        "physionet:S048": 0.6222222222222222,
+        "physionet:S054": 0.6844444444444444,
+        "physionet:S058": 0.40888888888888886,
+        "physionet:S061": 0.5511111111111111,
+        "physionet:S065": 0.5777777777777777,
+        "physionet:S073": 0.68,
+        "physionet:S076": 0.528888888888889,
+        "physionet:S081": 0.4222222222222222,
+        "physionet:S095": 0.6755555555555556,
+        "physionet:S097": 0.8311111111111111,
+        "physionet:S098": 0.4622222222222222,
+        "physionet:S100": 0.7847222222222222,
+        "physionet:S103": 0.4666666666666667
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "combined",
+      "dataset": "physionet",
+      "participants": 22,
+      "participant_mean_auroc": 0.7182575757575758,
+      "participant_mean_auroc_95_ci": [
+        0.6588636363636362,
+        0.7696969696969695
+      ],
+      "per_participant_auroc": {
+        "physionet:S005": 0.4488888888888889,
+        "physionet:S007": 0.8977777777777778,
+        "physionet:S010": 0.6355555555555554,
+        "physionet:S020": 0.8222222222222222,
+        "physionet:S021": 0.5644444444444444,
+        "physionet:S025": 0.808888888888889,
+        "physionet:S036": 0.7377777777777778,
+        "physionet:S044": 0.6577777777777778,
+        "physionet:S047": 0.7866666666666667,
+        "physionet:S048": 0.7511111111111112,
+        "physionet:S054": 0.8844444444444445,
+        "physionet:S058": 0.8888888888888888,
+        "physionet:S061": 0.7244444444444444,
+        "physionet:S065": 0.49777777777777776,
+        "physionet:S073": 0.9377777777777778,
+        "physionet:S076": 0.7466666666666666,
+        "physionet:S081": 0.7288888888888889,
+        "physionet:S095": 0.6533333333333333,
+        "physionet:S097": 0.7022222222222222,
+        "physionet:S098": 0.5422222222222222,
+        "physionet:S100": 0.7083333333333334,
+        "physionet:S103": 0.6755555555555556
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "amplitude",
+      "dataset": "openbmi",
+      "participants": 6,
+      "participant_mean_auroc": 0.7703962962962964,
+      "participant_mean_auroc_95_ci": [
+        0.71215,
+        0.8393504166666667
+      ],
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6802555555555556,
+        "openbmi:S036": 0.6981222222222222,
+        "openbmi:S042": 0.7968000000000001,
+        "openbmi:S047": 0.7014777777777778,
+        "openbmi:S049": 0.8643000000000002,
+        "openbmi:S052": 0.8814222222222222
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "combined",
+      "dataset": "openbmi",
+      "participants": 6,
+      "participant_mean_auroc": 0.7777111111111111,
+      "participant_mean_auroc_95_ci": [
+        0.6928222222222223,
+        0.8594351851851852
+      ],
+      "per_participant_auroc": {
+        "openbmi:S009": 0.5880444444444445,
+        "openbmi:S036": 0.7152555555555555,
+        "openbmi:S042": 0.8095111111111111,
+        "openbmi:S047": 0.8091222222222221,
+        "openbmi:S049": 0.7916444444444445,
+        "openbmi:S052": 0.9526888888888888
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "amplitude",
+      "dataset": "liu2024",
+      "participants": 10,
+      "participant_mean_auroc": 0.7422500000000001,
+      "participant_mean_auroc_95_ci": [
+        0.64995,
+        0.8165687500000001
+      ],
+      "per_participant_auroc": {
+        "liu2024:S006": 0.6725,
+        "liu2024:S022": 0.93,
+        "liu2024:S025": 0.595,
+        "liu2024:S027": 0.6575000000000001,
+        "liu2024:S031": 0.74,
+        "liu2024:S034": 0.78,
+        "liu2024:S036": 0.815,
+        "liu2024:S040": 0.8825000000000001,
+        "liu2024:S048": 0.48000000000000004,
+        "liu2024:S050": 0.87
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent",
+      "model": "combined",
+      "dataset": "liu2024",
+      "participants": 10,
+      "participant_mean_auroc": 0.74875,
+      "participant_mean_auroc_95_ci": [
+        0.6804749999999999,
+        0.81525625
+      ],
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5900000000000001,
+        "liu2024:S022": 0.8825000000000001,
+        "liu2024:S025": 0.7949999999999999,
+        "liu2024:S027": 0.6375,
+        "liu2024:S031": 0.8,
+        "liu2024:S034": 0.5625,
+        "liu2024:S036": 0.8075,
+        "liu2024:S040": 0.8975,
+        "liu2024:S048": 0.7000000000000001,
+        "liu2024:S050": 0.815
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "amplitude",
+      "dataset": "physionet",
+      "participants": 22,
+      "participant_mean_auroc": 0.6309848484848485,
+      "participant_mean_auroc_95_ci": [
+        0.5626919191919192,
+        0.6938181818181819
+      ],
+      "per_participant_auroc": {
+        "physionet:S005": 0.7733333333333334,
+        "physionet:S007": 0.7422222222222222,
+        "physionet:S010": 0.6933333333333334,
+        "physionet:S020": 0.8222222222222222,
+        "physionet:S021": 0.48888888888888893,
+        "physionet:S025": 0.8355555555555556,
+        "physionet:S036": 0.8488888888888889,
+        "physionet:S044": 0.5377777777777778,
+        "physionet:S047": 0.6444444444444444,
+        "physionet:S048": 0.6088888888888889,
+        "physionet:S054": 0.7155555555555556,
+        "physionet:S058": 0.22666666666666668,
+        "physionet:S061": 0.46222222222222226,
+        "physionet:S065": 0.5777777777777777,
+        "physionet:S073": 0.6977777777777778,
+        "physionet:S076": 0.5599999999999999,
+        "physionet:S081": 0.4311111111111111,
+        "physionet:S095": 0.6577777777777778,
+        "physionet:S097": 0.7866666666666666,
+        "physionet:S098": 0.4177777777777778,
+        "physionet:S100": 0.7083333333333334,
+        "physionet:S103": 0.6444444444444444
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "combined",
+      "dataset": "physionet",
+      "participants": 22,
+      "participant_mean_auroc": 0.7563257575757576,
+      "participant_mean_auroc_95_ci": [
+        0.7011641414141414,
+        0.8087455808080808
+      ],
+      "per_participant_auroc": {
+        "physionet:S005": 0.5733333333333333,
+        "physionet:S007": 0.8266666666666668,
+        "physionet:S010": 0.6622222222222222,
+        "physionet:S020": 0.8311111111111111,
+        "physionet:S021": 0.4266666666666667,
+        "physionet:S025": 0.8933333333333335,
+        "physionet:S036": 0.848888888888889,
+        "physionet:S044": 0.7866666666666666,
+        "physionet:S047": 0.7377777777777778,
+        "physionet:S048": 0.7822222222222223,
+        "physionet:S054": 0.9422222222222223,
+        "physionet:S058": 0.9244444444444444,
+        "physionet:S061": 0.7288888888888889,
+        "physionet:S065": 0.6666666666666666,
+        "physionet:S073": 0.9244444444444445,
+        "physionet:S076": 0.8044444444444445,
+        "physionet:S081": 0.7288888888888889,
+        "physionet:S095": 0.92,
+        "physionet:S097": 0.7244444444444444,
+        "physionet:S098": 0.5377777777777777,
+        "physionet:S100": 0.701388888888889,
+        "physionet:S103": 0.6666666666666666
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "amplitude",
+      "dataset": "openbmi",
+      "participants": 6,
+      "participant_mean_auroc": 0.8168388888888889,
+      "participant_mean_auroc_95_ci": [
+        0.78147375,
+        0.8599685185185185
+      ],
+      "per_participant_auroc": {
+        "openbmi:S009": 0.7511222222222222,
+        "openbmi:S036": 0.7726888888888889,
+        "openbmi:S042": 0.8023000000000001,
+        "openbmi:S047": 0.8094888888888889,
+        "openbmi:S049": 0.8777333333333334,
+        "openbmi:S052": 0.8877
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "combined",
+      "dataset": "openbmi",
+      "participants": 6,
+      "participant_mean_auroc": 0.8399555555555557,
+      "participant_mean_auroc_95_ci": [
+        0.7656054629629628,
+        0.9041580555555556
+      ],
+      "per_participant_auroc": {
+        "openbmi:S009": 0.6760666666666666,
+        "openbmi:S036": 0.8353666666666666,
+        "openbmi:S042": 0.8180777777777778,
+        "openbmi:S047": 0.8491666666666666,
+        "openbmi:S049": 0.8985333333333334,
+        "openbmi:S052": 0.9625222222222223
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "amplitude",
+      "dataset": "liu2024",
+      "participants": 10,
+      "participant_mean_auroc": 0.7735000000000001,
+      "participant_mean_auroc_95_ci": [
+        0.681975,
+        0.8380062499999998
+      ],
+      "per_participant_auroc": {
+        "liu2024:S006": 0.6925,
+        "liu2024:S022": 0.9325,
+        "liu2024:S025": 0.7975000000000001,
+        "liu2024:S027": 0.7449999999999999,
+        "liu2024:S031": 0.8099999999999999,
+        "liu2024:S034": 0.765,
+        "liu2024:S036": 0.8225,
+        "liu2024:S040": 0.815,
+        "liu2024:S048": 0.46249999999999997,
+        "liu2024:S050": 0.8925
+      }
+    },
+    {
+      "condition": "precue_rest_late_intent_causal",
+      "model": "combined",
+      "dataset": "liu2024",
+      "participants": 10,
+      "participant_mean_auroc": 0.76875,
+      "participant_mean_auroc_95_ci": [
+        0.70174375,
+        0.8290125
+      ],
+      "per_participant_auroc": {
+        "liu2024:S006": 0.5800000000000001,
+        "liu2024:S022": 0.8999999999999999,
+        "liu2024:S025": 0.8425,
+        "liu2024:S027": 0.6824999999999999,
+        "liu2024:S031": 0.8175,
+        "liu2024:S034": 0.59,
+        "liu2024:S036": 0.8075000000000001,
+        "liu2024:S040": 0.8575,
+        "liu2024:S048": 0.77,
+        "liu2024:S050": 0.84
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "amplitude",
+      "dataset": "physionet",
+      "participants": 22,
+      "participant_mean_auroc": 0.601578282828283,
+      "participant_mean_auroc_95_ci": [
+        0.5610943813131314,
+        0.6413762626262627
+      ],
+      "per_participant_auroc": {
+        "physionet:S005": 0.49333333333333335,
+        "physionet:S007": 0.52,
+        "physionet:S010": 0.5288888888888889,
+        "physionet:S020": 0.6355555555555555,
+        "physionet:S021": 0.6933333333333334,
+        "physionet:S025": 0.6755555555555556,
+        "physionet:S036": 0.6666666666666667,
+        "physionet:S044": 0.6177777777777778,
+        "physionet:S047": 0.6266666666666667,
+        "physionet:S048": 0.52,
+        "physionet:S054": 0.8222222222222223,
+        "physionet:S058": 0.6444444444444445,
+        "physionet:S061": 0.5066666666666666,
+        "physionet:S065": 0.6133333333333333,
+        "physionet:S073": 0.47111111111111115,
+        "physionet:S076": 0.528888888888889,
+        "physionet:S081": 0.8,
+        "physionet:S095": 0.4577777777777778,
+        "physionet:S097": 0.7288888888888889,
+        "physionet:S098": 0.6177777777777778,
+        "physionet:S100": 0.5902777777777778,
+        "physionet:S103": 0.47555555555555556
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "combined",
+      "dataset": "physionet",
+      "participants": 22,
+      "participant_mean_auroc": 0.6271338383838384,
+      "participant_mean_auroc_95_ci": [
+        0.5748450126262628,
+        0.6853156565656566
+      ],
+      "per_participant_auroc": {
+        "physionet:S005": 0.5155555555555555,
+        "physionet:S007": 0.8,
+        "physionet:S010": 0.5911111111111111,
+        "physionet:S020": 0.5866666666666667,
+        "physionet:S021": 0.6444444444444444,
+        "physionet:S025": 0.9066666666666666,
+        "physionet:S036": 0.35555555555555557,
+        "physionet:S044": 0.5644444444444444,
+        "physionet:S047": 0.6399999999999999,
+        "physionet:S048": 0.6711111111111111,
+        "physionet:S054": 0.8266666666666667,
+        "physionet:S058": 0.5511111111111112,
+        "physionet:S061": 0.6222222222222222,
+        "physionet:S065": 0.7155555555555555,
+        "physionet:S073": 0.6177777777777778,
+        "physionet:S076": 0.4444444444444444,
+        "physionet:S081": 0.6666666666666666,
+        "physionet:S095": 0.6488888888888888,
+        "physionet:S097": 0.4888888888888889,
+        "physionet:S098": 0.4488888888888889,
+        "physionet:S100": 0.7569444444444445,
+        "physionet:S103": 0.7333333333333334
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "amplitude",
+      "dataset": "openbmi",
+      "participants": 6,
+      "participant_mean_auroc": 0.7524444444444445,
+      "participant_mean_auroc_95_ci": [
+        0.6697139814814814,
+        0.8182074074074075
+      ],
+      "per_participant_auroc": {
+        "openbmi:S009": 0.7467333333333334,
+        "openbmi:S036": 0.6969222222222222,
+        "openbmi:S042": 0.5841888888888889,
+        "openbmi:S047": 0.8166666666666667,
+        "openbmi:S049": 0.8479555555555556,
+        "openbmi:S052": 0.8222
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "combined",
+      "dataset": "openbmi",
+      "participants": 6,
+      "participant_mean_auroc": 0.8229666666666667,
+      "participant_mean_auroc_95_ci": [
+        0.7456840277777778,
+        0.874510462962963
+      ],
+      "per_participant_auroc": {
+        "openbmi:S009": 0.8146111111111111,
+        "openbmi:S036": 0.8541888888888889,
+        "openbmi:S042": 0.6372666666666666,
+        "openbmi:S047": 0.8668222222222222,
+        "openbmi:S049": 0.8816444444444445,
+        "openbmi:S052": 0.8832666666666666
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "amplitude",
+      "dataset": "liu2024",
+      "participants": 10,
+      "participant_mean_auroc": 0.49428947368421056,
+      "participant_mean_auroc_95_ci": [
+        0.4204973684210526,
+        0.5584427631578947
+      ],
+      "per_participant_auroc": {
+        "liu2024:S006": 0.4578947368421052,
+        "liu2024:S022": 0.485,
+        "liu2024:S025": 0.49210526315789477,
+        "liu2024:S027": 0.3894736842105263,
+        "liu2024:S031": 0.5105263157894737,
+        "liu2024:S034": 0.7026315789473684,
+        "liu2024:S036": 0.513157894736842,
+        "liu2024:S040": 0.24210526315789477,
+        "liu2024:S048": 0.6105263157894737,
+        "liu2024:S050": 0.5394736842105263
+      }
+    },
+    {
+      "condition": "rest_vs_rest_control",
+      "model": "combined",
+      "dataset": "liu2024",
+      "participants": 10,
+      "participant_mean_auroc": 0.5583684210526316,
+      "participant_mean_auroc_95_ci": [
+        0.49176184210526325,
+        0.6268618421052631
+      ],
+      "per_participant_auroc": {
+        "liu2024:S006": 0.44473684210526315,
+        "liu2024:S022": 0.51,
+        "liu2024:S025": 0.5473684210526315,
+        "liu2024:S027": 0.55,
+        "liu2024:S031": 0.6342105263157894,
+        "liu2024:S034": 0.631578947368421,
+        "liu2024:S036": 0.3842105263157895,
+        "liu2024:S040": 0.7842105263157895,
+        "liu2024:S048": 0.6263157894736842,
+        "liu2024:S050": 0.47105263157894733
+      }
+    }
+  ],
+  "offset_sweeps": {
+    "physionet|amplitude|rest_original": [
+      {
+        "offset_seconds": 0.0,
+        "participant_mean_auroc": 0.5978156565656566,
+        "ci": [
+          0.5256751893939394,
+          0.6525691287878789
+        ]
+      },
+      {
+        "offset_seconds": 0.5,
+        "participant_mean_auroc": 0.6300126262626262,
+        "ci": [
+          0.56735101010101,
+          0.6861010101010101
+        ]
+      },
+      {
+        "offset_seconds": 1.0,
+        "participant_mean_auroc": 0.6412247474747476,
+        "ci": [
+          0.5888983585858586,
+          0.6945710227272727
+        ]
+      },
+      {
+        "offset_seconds": 1.5,
+        "participant_mean_auroc": 0.6212373737373738,
+        "ci": [
+          0.5599962121212122,
+          0.6826887626262627
+        ]
+      },
+      {
+        "offset_seconds": 2.0,
+        "participant_mean_auroc": 0.5993181818181816,
+        "ci": [
+          0.5401717171717173,
+          0.656508207070707
+        ]
+      }
+    ],
+    "physionet|amplitude|rest_precue": [
+      {
+        "offset_seconds": 0.0,
+        "participant_mean_auroc": 0.5708333333333333,
+        "ci": [
+          0.517479797979798,
+          0.6344160353535354
+        ]
+      },
+      {
+        "offset_seconds": 0.5,
+        "participant_mean_auroc": 0.5629671717171717,
+        "ci": [
+          0.5118529040404042,
+          0.6093491161616162
+        ]
+      },
+      {
+        "offset_seconds": 1.0,
+        "participant_mean_auroc": 0.5718181818181818,
+        "ci": [
+          0.5337121212121212,
+          0.6165757575757577
+        ]
+      },
+      {
+        "offset_seconds": 1.5,
+        "participant_mean_auroc": 0.5452272727272727,
+        "ci": [
+          0.49541982323232325,
+          0.5928282828282828
+        ]
+      },
+      {
+        "offset_seconds": 2.0,
+        "participant_mean_auroc": 0.5374494949494951,
+        "ci": [
+          0.48760669191919204,
+          0.5837203282828282
+        ]
+      }
+    ],
+    "physionet|combined|rest_original": [
+      {
+        "offset_seconds": 0.0,
+        "participant_mean_auroc": 0.7416035353535354,
+        "ci": [
+          0.6728260732323232,
+          0.8030328282828284
+        ]
+      },
+      {
+        "offset_seconds": 0.5,
+        "participant_mean_auroc": 0.7475631313131313,
+        "ci": [
+          0.6683560606060606,
+          0.8111183712121215
+        ]
+      },
+      {
+        "offset_seconds": 1.0,
+        "participant_mean_auroc": 0.6970328282828283,
+        "ci": [
+          0.6166919191919192,
+          0.7552960858585859
+        ]
+      },
+      {
+        "offset_seconds": 1.5,
+        "participant_mean_auroc": 0.701780303030303,
+        "ci": [
+          0.6275631313131314,
+          0.757858585858586
+        ]
+      },
+      {
+        "offset_seconds": 2.0,
+        "participant_mean_auroc": 0.6727020202020202,
+        "ci": [
+          0.592272095959596,
+          0.7307323232323232
+        ]
+      }
+    ],
+    "physionet|combined|rest_precue": [
+      {
+        "offset_seconds": 0.0,
+        "participant_mean_auroc": 0.7251767676767678,
+        "ci": [
+          0.6518686868686869,
+          0.7928554292929293
+        ]
+      },
+      {
+        "offset_seconds": 0.5,
+        "participant_mean_auroc": 0.7263636363636362,
+        "ci": [
+          0.6575303030303029,
+          0.7923914141414141
+        ]
+      },
+      {
+        "offset_seconds": 1.0,
+        "participant_mean_auroc": 0.6858080808080808,
+        "ci": [
+          0.6235972222222222,
+          0.7428282828282828
+        ]
+      },
+      {
+        "offset_seconds": 1.5,
+        "participant_mean_auroc": 0.6630176767676766,
+        "ci": [
+          0.6042001262626263,
+          0.7209725378787879
+        ]
+      },
+      {
+        "offset_seconds": 2.0,
+        "participant_mean_auroc": 0.6458080808080809,
+        "ci": [
+          0.58675,
+          0.7029318181818182
+        ]
+      }
+    ],
+    "openbmi|amplitude|rest_original": [
+      {
+        "offset_seconds": 0.0,
+        "participant_mean_auroc": 0.8884925925925926,
+        "ci": [
+          0.8431698148148148,
+          0.9292216666666666
+        ]
+      },
+      {
+        "offset_seconds": 0.5,
+        "participant_mean_auroc": 0.9096851851851852,
+        "ci": [
+          0.8739080092592593,
+          0.9471277777777778
+        ]
+      },
+      {
+        "offset_seconds": 1.0,
+        "participant_mean_auroc": 0.9086,
+        "ci": [
+          0.8712206018518517,
+          0.9526796296296296
+        ]
+      },
+      {
+        "offset_seconds": 1.5,
+        "participant_mean_auroc": 0.9025055555555556,
+        "ci": [
+          0.8552783796296297,
+          0.9562364351851852
+        ]
+      },
+      {
+        "offset_seconds": 2.0,
+        "participant_mean_auroc": 0.8977722222222222,
+        "ci": [
+          0.8413334259259257,
+          0.9591962962962962
+        ]
+      }
+    ],
+    "openbmi|amplitude|rest_precue": [
+      {
+        "offset_seconds": 0.0,
+        "participant_mean_auroc": 0.7493722222222222,
+        "ci": [
+          0.7038204166666667,
+          0.7953555555555556
+        ]
+      },
+      {
+        "offset_seconds": 0.5,
+        "participant_mean_auroc": 0.7821277777777778,
+        "ci": [
+          0.7448715277777778,
+          0.8214079166666668
+        ]
+      },
+      {
+        "offset_seconds": 1.0,
+        "participant_mean_auroc": 0.7733222222222222,
+        "ci": [
+          0.7405026388888887,
+          0.8202833333333333
+        ]
+      },
+      {
+        "offset_seconds": 1.5,
+        "participant_mean_auroc": 0.758137037037037,
+        "ci": [
+          0.7170481481481482,
+          0.8148106944444445
+        ]
+      },
+      {
+        "offset_seconds": 2.0,
+        "participant_mean_auroc": 0.7454166666666667,
+        "ci": [
+          0.7017962962962964,
+          0.8100481481481482
+        ]
+      }
+    ],
+    "openbmi|combined|rest_original": [
+      {
+        "offset_seconds": 0.0,
+        "participant_mean_auroc": 0.8483240740740742,
+        "ci": [
+          0.8003351851851853,
+          0.8929767592592592
+        ]
+      },
+      {
+        "offset_seconds": 0.5,
+        "participant_mean_auroc": 0.8436333333333333,
+        "ci": [
+          0.7922462962962964,
+          0.8890486574074074
+        ]
+      },
+      {
+        "offset_seconds": 1.0,
+        "participant_mean_auroc": 0.849512962962963,
+        "ci": [
+          0.8018796296296298,
+          0.8925580555555556
+        ]
+      },
+      {
+        "offset_seconds": 1.5,
+        "participant_mean_auroc": 0.8467962962962963,
+        "ci": [
+          0.7981357407407409,
+          0.8923619444444447
+        ]
+      },
+      {
+        "offset_seconds": 2.0,
+        "participant_mean_auroc": 0.8470574074074073,
+        "ci": [
+          0.7926343518518517,
+          0.899435787037037
+        ]
+      }
+    ],
+    "openbmi|combined|rest_precue": [
+      {
+        "offset_seconds": 0.0,
+        "participant_mean_auroc": 0.8033259259259259,
+        "ci": [
+          0.7503756481481482,
+          0.8598800462962962
+        ]
+      },
+      {
+        "offset_seconds": 0.5,
+        "participant_mean_auroc": 0.7793833333333332,
+        "ci": [
+          0.7126338888888888,
+          0.8416518518518518
+        ]
+      },
+      {
+        "offset_seconds": 1.0,
+        "participant_mean_auroc": 0.7793333333333333,
+        "ci": [
+          0.70609875,
+          0.854724074074074
+        ]
+      },
+      {
+        "offset_seconds": 1.5,
+        "participant_mean_auroc": 0.7893425925925927,
+        "ci": [
+          0.7122620833333335,
+          0.8711537037037038
+        ]
+      },
+      {
+        "offset_seconds": 2.0,
+        "participant_mean_auroc": 0.8015111111111111,
+        "ci": [
+          0.7225437962962963,
+          0.8827436574074075
+        ]
+      }
+    ],
+    "liu2024|amplitude|rest_original": [
+      {
+        "offset_seconds": 0.0,
+        "participant_mean_auroc": 0.7230263157894736,
+        "ci": [
+          0.6389342105263158,
+          0.788171052631579
+        ]
+      },
+      {
+        "offset_seconds": 0.5,
+        "participant_mean_auroc": 0.7188289473684211,
+        "ci": [
+          0.6447105263157895,
+          0.7710819078947367
+        ]
+      },
+      {
+        "offset_seconds": 1.0,
+        "participant_mean_auroc": 0.7015526315789473,
+        "ci": [
+          0.6281907894736842,
+          0.7602118421052632
+        ]
+      },
+      {
+        "offset_seconds": 1.5,
+        "participant_mean_auroc": 0.692578947368421,
+        "ci": [
+          0.6117434210526315,
+          0.7497710526315791
+        ]
+      },
+      {
+        "offset_seconds": 2.0,
+        "participant_mean_auroc": 0.7176315789473684,
+        "ci": [
+          0.638921052631579,
+          0.7742302631578948
+        ]
+      }
+    ],
+    "liu2024|amplitude|rest_precue": [
+      {
+        "offset_seconds": 0.0,
+        "participant_mean_auroc": 0.64425,
+        "ci": [
+          0.5603375,
+          0.7342437500000001
+        ]
+      },
+      {
+        "offset_seconds": 0.5,
+        "participant_mean_auroc": 0.62525,
+        "ci": [
+          0.5467375000000001,
+          0.7128
+        ]
+      },
+      {
+        "offset_seconds": 1.0,
+        "participant_mean_auroc": 0.6184999999999999,
+        "ci": [
+          0.5292625,
+          0.7002625
+        ]
+      },
+      {
+        "offset_seconds": 1.5,
+        "participant_mean_auroc": 0.6065,
+        "ci": [
+          0.51506875,
+          0.6995562500000001
+        ]
+      },
+      {
+        "offset_seconds": 2.0,
+        "participant_mean_auroc": 0.613,
+        "ci": [
+          0.52421875,
+          0.7049999999999998
+        ]
+      }
+    ],
+    "liu2024|combined|rest_original": [
+      {
+        "offset_seconds": 0.0,
+        "participant_mean_auroc": 0.6007763157894737,
+        "ci": [
+          0.4873424342105263,
+          0.7115720394736842
+        ]
+      },
+      {
+        "offset_seconds": 0.5,
+        "participant_mean_auroc": 0.6559605263157896,
+        "ci": [
+          0.555673355263158,
+          0.7337980263157895
+        ]
+      },
+      {
+        "offset_seconds": 1.0,
+        "participant_mean_auroc": 0.6665263157894736,
+        "ci": [
+          0.5823552631578948,
+          0.7538736842105263
+        ]
+      },
+      {
+        "offset_seconds": 1.5,
+        "participant_mean_auroc": 0.6552105263157896,
+        "ci": [
+          0.5823684210526316,
+          0.7412118421052631
+        ]
+      },
+      {
+        "offset_seconds": 2.0,
+        "participant_mean_auroc": 0.6133947368421053,
+        "ci": [
+          0.5554276315789475,
+          0.6732243421052633
+        ]
+      }
+    ],
+    "liu2024|combined|rest_precue": [
+      {
+        "offset_seconds": 0.0,
+        "participant_mean_auroc": 0.6365,
+        "ci": [
+          0.5542125,
+          0.71895
+        ]
+      },
+      {
+        "offset_seconds": 0.5,
+        "participant_mean_auroc": 0.66425,
+        "ci": [
+          0.6054875,
+          0.71451875
+        ]
+      },
+      {
+        "offset_seconds": 1.0,
+        "participant_mean_auroc": 0.64825,
+        "ci": [
+          0.57958125,
+          0.7126125000000001
+        ]
+      },
+      {
+        "offset_seconds": 1.5,
+        "participant_mean_auroc": 0.64375,
+        "ci": [
+          0.6044625,
+          0.69461875
+        ]
+      },
+      {
+        "offset_seconds": 2.0,
+        "participant_mean_auroc": 0.6637500000000001,
+        "ci": [
+          0.59449375,
+          0.72038125
+        ]
+      }
+    ]
+  },
+  "runtime_minutes": 0.20630233287811278
+}

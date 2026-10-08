@@ -1,5 +1,10 @@
 # EEG BCI Project Manifest
 
+> Updated 2026-10-07 after the audit. The canonical results summary is
+> `docs/final/PROJECT_STATUS_AND_RESULTS.md`; `docs/README.md` labels every
+> document's status. V7's headline is now reported per participant (66.0% BA,
+> 38 participants), and the confound controls are in `artifacts/confound_controls/`.
+
 ## Final Entry Points
 
 | File | Role |
@@ -17,11 +22,18 @@
 | `scripts/41_mrcp_phase_ablation.py` | Development-only grouped ablation of explicit MRCP phase features |
 | `scripts/42_hs_stroke_locked_external.py` | One-shot corrected-v6 HS-Stroke adapter and frozen-v4 external evaluation |
 | `scripts/43_hs_stroke_post_lock_audit.py` | Post-lock quality-gate and probability-shift failure audit without retuning |
+| `scripts/52_cho2017_locked_external_v7.py` | One-shot Cho2017 locked external evaluation of V7 |
+| `scripts/53_cho2017_post_lock_quality_audit.py` | Post-lock Cho2017 quality audit (exploratory; uses gate scoring version 1) |
+| `scripts/54_confound_control_benchmark.py` | Cue and trial-phase confound controls with amplitude, EOG/EMG, and rest-vs-rest baselines |
+| `scripts/project_python.sh` | Interpreter selection shared by every launcher |
 | `scripts/50_download_mind.py` | Official ScienceDB MIND V3 manifest reader and resumable profile downloader |
 | `scripts/51_v7h_mind_benchmark.py` | Participant-isolated V7-H EEG-fNIRS benchmark, patient calibration, safety modes, and figures |
 | `EEG_BCI_Project_RUN_GUI.command` | One-click macOS GUI launcher |
-| `EEG_BCI_Project_RUN_FINAL_PIPELINE.command` | Reproduce the final cached experiment |
-| `EEG_BCI_Project_VERIFY.command` | Syntax, GUI backend, data-link, and unit-test verification |
+| `EEG_BCI_Project_SETUP_ENV.command` | Create the project `.venv` (framework Python 3.12 stack plus scipy 1.16.3) |
+| `EEG_BCI_Project_RUN_FINAL_PIPELINE.command` | Reproduce V7 with participant-level metrics and per-window predictions |
+| `EEG_BCI_Project_RUN_CONFOUND_CONTROLS.command` | Run the confound-control benchmark |
+| `EEG_BCI_Project_RUN_V3_REFERENCE.command` | Re-run the fixed v3 reference |
+| `EEG_BCI_Project_VERIFY.command` | Syntax, GUI backend, frozen-hash, data-link, and unit-test verification (115 tests) |
 | `EEG_BCI_Project_RUN_MULTIMODAL_AUDIT.command` | Rebuild the EEG-EMG readiness audit and three figures |
 | `EEG_BCI_Project_RUN_EMG_SUPERVISED_TRANSFER.command` | Inspect or run EMG-confirmed source to EEG-only target transfer |
 | `EEG_BCI_Project_DOWNLOAD_WAY_EEG_GAL.command` | Resume, verify, and extract all official WAY-EEG-GAL participant archives |
@@ -36,9 +48,10 @@
 | `EEG_BCI_Project_DOWNLOAD_MIND.command` | One-click macOS MIND derivative downloader |
 | `EEG_BCI_Project_RUN_V7H_MIND.sh` | Bash entry point for the V7-H MIND benchmark |
 | `EEG_BCI_Project_RUN_V7H_MIND.command` | One-click macOS V7-H benchmark launcher |
-| `EEG_BCI_Project_FINAL_REPORT.md` | Top-level shortcut to the calibrated report |
-| `EEG_BCI_Project_RESULTS_OVERVIEW.png` | Top-level shortcut to the operating-point comparison |
-| `EEG_BCI_Project_IMPLEMENTATION.md` | Top-level shortcut to the implementation guide |
+| `EEG_BCI_Project_FINAL_REPORT.md` | Top-level shortcut to `docs/final/PROJECT_STATUS_AND_RESULTS.md` |
+| `EEG_BCI_Project_RESULTS_OVERVIEW.png` | Top-level shortcut to the confound-control figure |
+| `EEG_BCI_Project_AUDIT_2026-10-07.md` | Independent audit and its follow-up status |
+| `EEG_BCI_Project_IMPLEMENTATION.md` | Top-level shortcut to the base (v3) pipeline implementation guide |
 | `EEG_BCI_Project_PRESENTATION_GUIDE.md` | Top-level shortcut to the complete project study and presentation guide |
 | `EEG_BCI_Project_COMPARABLE_BCI_RESEARCH.md` | Top-level shortcut to the comparable-project methods and results review |
 | `EEG_BCI_Project_PROSPECTIVE_CONTROLLER.md` | Top-level shortcut to the prospective controller protocol and current ablation |
@@ -99,13 +112,18 @@ folder remains unchanged as the historical reference.
 
 ## Final Artifacts
 
-`EEG_BCI_Project_Final_Results` points to:
+`EEG_BCI_Project_Final_Results` points to the V7 reproduction:
 
 ```text
-artifacts/gui_experiments/translational_v3_calibrated
+artifacts/gui_experiments/translational_v7_graph_lda_reproduction
 ```
 
-It contains:
+It contains the V7 report with participant-level results, metrics JSON,
+per-window predictions CSV, models, general model bundle, and eleven figures.
+It reproduces the original `translational_v7_graph_lda` pooled metrics exactly.
+
+The fixed v3 reference remains in `artifacts/gui_experiments/translational_v3_calibrated`,
+which contains:
 
 - `TRANSLATIONAL_V3_REPORT.md`
 - `translational_v3_metrics.json`
@@ -214,8 +232,10 @@ The following are links, not duplicated files:
 - `data_links/EEG_BCI_Project_OpenBMI`
 - `data_links/EEG_BCI_Project_Liu_Stroke`
 
-Keeping the datasets external avoids adding approximately 41 GB to this
-consolidated folder.
+Those three are kept outside the project folder (about 41 GB). Three other
+releases do live inside it and are excluded from git: WAY-EEG-GAL (about 20 GB),
+HS-Stroke in `30747806/` (about 13 GB), and Cho2017 in `files/external/cho2017/`
+(about 33 GB).
 
 WAY-EEG-GAL is intentionally stored locally under `WAY-EEG-GAL/` rather than
 linked. Its 12 official archives and extracted MATLAB files occupy about 20 GB;

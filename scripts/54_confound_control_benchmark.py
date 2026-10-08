@@ -189,22 +189,28 @@ def plot_conditions(payload, path: Path) -> None:
         axis.set_xticks(range(len(conditions)))
         axis.set_xticklabels([CONDITION_LABELS[c] for c in conditions], fontsize=8.5, color=INK["secondary"])
         axis.set_title(DATASET_LABELS[dataset], fontsize=11.5, color=INK["primary"], loc="left", pad=10)
-        axis.text(len(conditions) - 0.55, 0.505, "chance", fontsize=8.5, color=INK["muted"], ha="right", va="bottom")
+        axis.text(-0.45, 0.505, "chance", fontsize=8.5, color=INK["muted"], ha="left", va="bottom")
     axes[0].set_ylabel("Participant-mean AUROC\n(later recordings, 95% CI)", color=INK["secondary"], fontsize=10)
     axes[0].set_ylim(0.35, 1.0)
-    handles, labels = axes[1].get_legend_handles_labels()
-    figure.legend(handles, labels, loc="upper right", ncol=3, frameon=False, fontsize=9.5, bbox_to_anchor=(0.99, 1.0))
+    from matplotlib.lines import Line2D
+
+    handles = [
+        Line2D([], [], linestyle="none", marker=marker, color=color, markersize=8,
+               markeredgecolor=INK["surface"], markeredgewidth=1.5, label=MODEL_LABELS[model])
+        for model, (color, marker) in SERIES.items()
+    ]
+    figure.legend(handles=handles, loc="upper right", ncol=3, frameon=False, fontsize=9.5, bbox_to_anchor=(0.99, 1.0))
     figure.suptitle(
         "Rest-vs-intent separability under cue and trial-phase controls",
         x=0.01, ha="left", fontsize=13, color=INK["primary"], y=0.99,
     )
     figure.text(
-        0.01, 0.925,
+        0.01, 0.94,
         "Population models trained on development + controller participants; V7 evaluation participants scored. "
         "EOG/EMG unavailable for PhysioNet.",
         fontsize=9, color=INK["secondary"],
     )
-    figure.tight_layout(rect=(0, 0, 1, 0.9))
+    figure.tight_layout(rect=(0, 0, 1, 0.93))
     figure.savefig(path, dpi=160, facecolor=INK["surface"])
     plt.close(figure)
 
@@ -236,6 +242,7 @@ def plot_offset_sweep(payload, path: Path) -> None:
                       markeredgecolor=INK["surface"], markeredgewidth=1.5, label=label, zorder=3)
             axis.annotate(f"{ys[-1]:.2f}", (xs[-1], ys[-1]), xytext=(6, 0), textcoords="offset points",
                           fontsize=8.5, color=INK["secondary"], va="center")
+        axis.text(-0.1, 0.505, "chance", fontsize=8.5, color=INK["muted"], ha="left", va="bottom")
         axis.set_title(DATASET_LABELS[dataset], fontsize=11.5, color=INK["primary"], loc="left", pad=10)
         axis.set_xlabel("Intent window start (s after cue; 2-s window)", fontsize=9.5, color=INK["secondary"])
         axis.set_xticks([0.0, 0.5, 1.0, 1.5, 2.0])
@@ -246,10 +253,10 @@ def plot_offset_sweep(payload, path: Path) -> None:
     figure.legend(handles, labels, loc="upper right", ncol=2, frameon=False, fontsize=9.5, bbox_to_anchor=(0.99, 1.0))
     figure.suptitle("How separability changes as the intent window moves away from the cue",
                     x=0.01, ha="left", fontsize=13, color=INK["primary"], y=0.99)
-    figure.text(0.01, 0.9, "Liu offsets are relative to the motor-imagery stage onset (V7 used 1.0 s); "
+    figure.text(0.01, 0.925, "Liu offsets are relative to the motor-imagery stage onset (V7 used 1.0 s); "
                 "Liu 'pre-cue' is the instruction stage. Shaded: 95% CI over participants.",
                 fontsize=9, color=INK["secondary"])
-    figure.tight_layout(rect=(0, 0, 1, 0.88))
+    figure.tight_layout(rect=(0, 0, 1, 0.91))
     figure.savefig(path, dpi=160, facecolor=INK["surface"])
     plt.close(figure)
 
@@ -309,6 +316,25 @@ def write_report(payload, path: Path) -> None:
         for negative in ("rest_original", "rest_precue"):
             sweep = payload["offset_sweeps"].get(f"{dataset}|combined|{negative}", [])
             lines.append(f"| {label} | `{negative}` | " + " | ".join(f"{p['participant_mean_auroc']:.3f}" for p in sweep) + " |")
+    lines += ["", "## Does physiology beat amplitude? Paired participant AUROC difference (combined minus amplitude-only)", "",
+              "Positive values mean the physiological features carry information beyond overall signal amplitude. 95% CI from a participant bootstrap (seed 1, 2000 resamples).", "",
+              "| Model fit | Dataset | " + " | ".join(CONDITION_LABELS[c].replace(chr(10), " ") for c in conditions) + " |",
+              "|---|---|" + "---:|" * len(conditions)]
+    rng = np.random.default_rng(1)
+    for source, source_label in (("population", "Population"), ("within_subject_calibration", "Within-subject")):
+        for dataset, label in DATASET_LABELS.items():
+            cells = []
+            for c in conditions:
+                combined = _lookup(payload[source], c, "combined", dataset)
+                amplitude = _lookup(payload[source], c, "amplitude", dataset)
+                if combined is None or amplitude is None:
+                    cells.append("-")
+                    continue
+                shared = sorted(set(combined["per_participant_auroc"]) & set(amplitude["per_participant_auroc"]))
+                diff = np.asarray([combined["per_participant_auroc"][s] - amplitude["per_participant_auroc"][s] for s in shared])
+                boots = [diff[rng.integers(0, len(diff), len(diff))].mean() for _ in range(2000)]
+                cells.append(f"{diff.mean():+.3f} ({np.quantile(boots, 0.025):+.2f} to {np.quantile(boots, 0.975):+.2f})")
+            lines.append(f"| {source_label} | {label} | " + " | ".join(cells) + " |")
     lines += ["", "## Participant-level balanced accuracy at threshold 0.5 (combined physiology)", "",
               "| Dataset | " + " | ".join(CONDITION_LABELS[c].replace(chr(10), " ") for c in conditions) + " |",
               "|---|" + "---:|" * len(conditions)]

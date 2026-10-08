@@ -4,6 +4,8 @@ Scope: code, evaluation methodology, results, external tests, reproducibility,
 poster/claims, and a literature + clinical-application review. Read-only audit;
 no project file other than this one was created or changed.
 
+File:line references point to the pre-audit baseline commit (`git show df2279e:<path>`); later fixes moved some lines.
+
 Evidence labels: **[verified]** = re-computed or read directly during the audit;
 **[reported]** = from a delegated code/literature pass, spot-checked but not
 fully re-derived. Literature items marked *(verify link)* were found by search
@@ -44,7 +46,50 @@ is not yet supported, for four reasons:
 "cue period" vs "post-task period" windows at ~66% participant-level BA, with
 a well-engineered pipeline and protocol ready for a properly controlled test.
 
+> **Update after the follow-up experiments (same day; see §0).**
+> - The confound controls refine this claim. PhysioNet retains about 0.70
+>   AUROC of imagery-related signal under pre-cue rest, later windows, and
+>   causal filters, and beats amplitude-only by 0.12–0.16.
+> - OpenBMI's separability is matched by amplitude alone, and Liu stroke shows
+>   no physiology advantage over amplitude or EOG.
+> - See `docs/final/CONFOUND_CONTROL_FINDINGS.md`.
+
 ---
+
+## 0. Follow-up status (2026-10-07)
+
+All changes are on git branch `audit-fixes`. `main` is the pre-audit baseline.
+
+| # | Recommendation | Status |
+|---|---|---|
+| 1 | Trivial baselines in every table | **Done** for the confound benchmark: amplitude-only, EOG/EMG-only, and a rest-vs-rest control. Not yet added to the V7 pipeline report. |
+| 2 | Pre-cue negatives | **Done** (`scripts/54_confound_control_benchmark.py`). Liu has no cue-free rest, so its instruction stage is used instead. |
+| 3 | Later intent windows / offset curve | **Done**: offsets 0–2 s against both rest definitions. |
+| 4 | Baseline-normalized ERD | **Done**: bandpower normalized to each participant's recording-0 pre-cue windows, plus Riemannian re-centering. |
+| 5 | Causal filtering | **Done** in the confound benchmark. V7 itself has not been re-run causally. |
+| 6 | Participant-level headline | **Done**: script 30 reports it. V7 reproduction gives 66.0% (62.3–69.6), 21/38 above chance, plus per-window predictions. |
+| 7 | Treat the 38 as a validation set | **Done** in the reports, `docs/README.md`, and `PROJECT_STATUS_AND_RESULTS.md` |
+| 8 | Report external tests honestly | **Done** in the README and status doc. Cho2017 is reported as zero-shot 0.575. |
+| 9 | Safety wording | **Done** in the README and status doc. Poster not edited (on hold). |
+| 10 | Citation and window label | Citation **fixed** in the docs. Poster window label still on hold, as is `scripts/47` (poster mockup generator). |
+| 11 | Gate fix | **Done** (scoring version 2). HS-Stroke availability went from 0% to 95.1%. Cho2017 stays at 0% because of a separate 20× amplitude-scale shift. |
+| 12 | Per-recording re-centering | **Done**: optional within-recording gate mode, and Riemannian re-centering in the controls |
+| 13 | Gate regression test | **Done**: `tests/test_quality_gate.py` (9 tests) |
+| 14 | Freeze one pipeline | **Not done.** The controls show V7 should first be rebuilt on controlled windows. |
+| 15 | Pre-register | **Drafted**: `docs/final/PREREGISTRATION_DRAFT_EXTERNAL_TEST.md` |
+| 16 | Untouched cohort | **Not done.** It needs a dataset download and licence acceptance by you. |
+| 17 | git | **Done**: repository plus a baseline commit. Data, caches, and poster binaries are ignored. |
+| 18 | Environment | **Done**: `.venv` with scipy 1.16.3, all launchers on one interpreter, pins added. VERIFY passes 115 tests. |
+| 19 | Canonical docs and shortcuts | **Done**: status doc, docs index, root shortcuts repointed to V7 and the controls, duplicate archive docs removed. Older docs are labelled rather than rewritten. |
+
+### Corrections to this audit
+
+- **PhysioNet (C1).** This audit said a large share of PhysioNet's signal
+  looks like a cue transient. The controls show a cue-locked component of
+  about 0.05–0.08 AUROC, with most of the signal surviving.
+- **Cho2017 confound (C3).** The recording-identity feature separates the
+  classes at about 0.87 within-subject |AUROC| (re-verified on all 32
+  participants), not 0.958 as first reported. The conclusion is unchanged.
 
 ## 2. What is genuinely strong
 
@@ -125,6 +170,10 @@ dataset that drives the headline, a trivial artifact-sensitive baseline is as
 good or better, and the contrast cannot distinguish motor intent from
 trial-phase effects. **This is the single most important issue to fix.**
 
+*Follow-up:* the controls in `docs/final/CONFOUND_CONTROL_FINDINGS.md` show
+PhysioNet keeps about 0.70 AUROC and beats amplitude under every control.
+OpenBMI and Liu do not beat amplitude.
+
 ### C2. Headline metric construction [verified]
 
 - `score_intent_operating_point` (`bci_pipeline/translational_metrics.py:188-231`)
@@ -172,7 +221,8 @@ trial-phase effects. **This is the single most important issue to fix.**
     preprocessed resting recording.
   - Calibration is drawn from the same arrays.
   - A per-recording constant (`recording_bad_channel_fraction`) alone separates
-    the classes at within-subject |AUROC| 0.958.
+    the classes at within-subject |AUROC| ≈0.87 (corrected from 0.958 on
+    re-verification).
   - So 0.925 measures "which recording", and the bolded post-hoc 72.0% BA in
     the README should not be presented as evidence. The honest number is
     **zero-shot AUROC 0.575**.
@@ -224,7 +274,7 @@ trial-phase effects. **This is the single most important issue to fix.**
     the pinned Python 3.12. As a result `RUN_GUI.command` and `--check` crash.
   - `VERIFY.command` uses the anaconda `python3` (numpy 1.26), where
     `np.trapezoid` doesn't exist, so it aborts.
-  - With an import workaround, **99/99 tests pass in ~21 s**.
+  - With an import workaround, **99/99 tests pass in ~21 s**. *(Fixed: project `.venv`; VERIFY now runs 115 tests.)*
 - **M6. Tests are mostly smoke tests [reported].**
   - About 45% of asserts check shape or finiteness on synthetic data.
   - Untested: the window builders (where timing/label bugs would live), exact
