@@ -10,6 +10,7 @@ COMPARISON_MODEL="$PROJECT_DIR/artifacts/multisource_privileged_ensemble/multiso
 OUTPUT_DIR="$PROJECT_DIR/artifacts/way_eeg_only_ssl"
 
 cd "$PROJECT_DIR"
+source scripts/project_python.sh
 
 for required in "$TARGET_RAW" "$TARGET_FEATURES" "$COMPARISON_MODEL"; do
   if [[ ! -f "$required" ]]; then
@@ -19,7 +20,7 @@ for required in "$TARGET_RAW" "$TARGET_FEATURES" "$COMPARISON_MODEL"; do
   fi
 done
 
-python3 -u scripts/37_way_eeg_only_ssl_transfer.py \
+"$PYTHON_BIN" -u scripts/37_way_eeg_only_ssl_transfer.py \
   --way-dir "$WAY_DIR" \
   --way-cache "$WAY_CACHE" \
   --target-raw-cache "$TARGET_RAW" \

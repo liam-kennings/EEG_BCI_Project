@@ -7,6 +7,7 @@ OUTPUT_DIR="$PROJECT_DIR/artifacts/way_eeg_gal_transfer"
 TARGET_CACHE="$PROJECT_DIR/artifacts/emg_supervised_transfer/pure_eeg_target_features.npz"
 
 cd "$PROJECT_DIR"
+source scripts/project_python.sh
 
 if [[ ! -f "$SOURCE_DIR/.way_eeg_gal_ready" ]]; then
   echo "WAY-EEG-GAL is not marked ready. Run EEG_BCI_Project_DOWNLOAD_WAY_EEG_GAL.command first."
@@ -20,12 +21,12 @@ if [[ ! -f "$TARGET_CACHE" ]]; then
   exit 1
 fi
 
-python3 scripts/35_prepare_way_eeg_gal_transfer.py \
+"$PYTHON_BIN" scripts/35_prepare_way_eeg_gal_transfer.py \
   --data-dir "$SOURCE_DIR" \
   --target-cache "$TARGET_CACHE" \
   --output-dir "$OUTPUT_DIR"
 
-python3 scripts/32_emg_supervised_eeg_transfer.py \
+"$PYTHON_BIN" scripts/32_emg_supervised_eeg_transfer.py \
   --source-cache "$OUTPUT_DIR/way_eeg_gal_source_features.npz" \
   --target-cache "$TARGET_CACHE" \
   --output-dir "$OUTPUT_DIR"

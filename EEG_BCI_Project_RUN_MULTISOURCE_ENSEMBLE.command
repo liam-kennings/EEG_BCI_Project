@@ -8,6 +8,7 @@ TARGET_CACHE="$PROJECT_DIR/artifacts/emg_supervised_transfer/pure_eeg_target_fea
 OUTPUT_DIR="$PROJECT_DIR/artifacts/multisource_privileged_ensemble"
 
 cd "$PROJECT_DIR"
+source scripts/project_python.sh
 
 for required in "$MRCP_SOURCE" "$WAY_SOURCE" "$TARGET_CACHE"; do
   if [[ ! -f "$required" ]]; then
@@ -18,7 +19,7 @@ for required in "$MRCP_SOURCE" "$WAY_SOURCE" "$TARGET_CACHE"; do
   fi
 done
 
-python3 scripts/36_multisource_privileged_ensemble.py \
+"$PYTHON_BIN" scripts/36_multisource_privileged_ensemble.py \
   --mrcp-source-cache "$MRCP_SOURCE" \
   --way-source-cache "$WAY_SOURCE" \
   --target-cache "$TARGET_CACHE" \

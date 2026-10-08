@@ -3,11 +3,14 @@ set -euo pipefail
 
 PROJECT_DIR="${0:A:h}"
 cd "$PROJECT_DIR"
+source scripts/project_python.sh
 
 export MPLCONFIGDIR="$PROJECT_DIR/.matplotlib"
 export NUMBA_CACHE_DIR="$PROJECT_DIR/.numba_cache"
 
-python3 -m py_compile \
+print "Using Python: $PYTHON_BIN"
+
+"$PYTHON_BIN" -m py_compile \
   bci_pipeline/*.py \
   bci_pipeline/models/*.py \
   bci_pipeline/representations/*.py \
@@ -22,11 +25,12 @@ python3 -m py_compile \
   scripts/50_download_mind.py \
   scripts/51_v7h_mind_benchmark.py
 
-python3 scripts/22_bci_pipeline_gui.py --check
-python3 scripts/32_emg_supervised_eeg_transfer.py --check
-python3 scripts/40_prepare_prospective_controller.py --verify-only
-python3 -m unittest tests.test_bci_pipeline
-python3 -m unittest tests.test_v7h
+"$PYTHON_BIN" scripts/22_bci_pipeline_gui.py --check
+"$PYTHON_BIN" scripts/32_emg_supervised_eeg_transfer.py --check
+"$PYTHON_BIN" scripts/40_prepare_prospective_controller.py --verify-only
+"$PYTHON_BIN" -m unittest tests.test_bci_pipeline
+"$PYTHON_BIN" -m unittest tests.test_v7h
+"$PYTHON_BIN" -m unittest tests.test_cho2017
 
 test -d files/eegmmidb/1.0.0
 test -d files/external/openbmi/nm000338

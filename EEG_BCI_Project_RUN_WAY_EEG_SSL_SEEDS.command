@@ -3,8 +3,9 @@ set -euo pipefail
 
 PROJECT_DIR="${0:A:h}"
 cd "$PROJECT_DIR"
+source scripts/project_python.sh
 
-python3 -u scripts/38_way_eeg_ssl_seed_stability.py "$@"
+"$PYTHON_BIN" -u scripts/38_way_eeg_ssl_seed_stability.py "$@"
 
 echo ""
 echo "Five-seed WAY EEG-only SSL stability experiment complete."

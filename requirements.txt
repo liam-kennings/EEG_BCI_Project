@@ -3,8 +3,12 @@ matplotlib==3.10.1
 mne==1.11.0
 numpy==2.2.3
 pandas==2.2.3
+# scikit-learn must stay at 1.6.1 so the saved .joblib models load unchanged.
 scikit-learn==1.6.1
-scipy==1.15.2
+# scipy 1.15.2 Fortran extensions fail to load on macOS 27 (Darwin 27);
+# 1.16.3 is the tested replacement and is compatible with numpy 2.2.3.
+scipy==1.16.3
 edfio==0.4.13
 h5py==3.14.0
-
+pyriemann==0.10
+pytest==9.0.2

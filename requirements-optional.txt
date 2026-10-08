@@ -1,7 +1,7 @@
-# EEGNet experiments
+# Neural decoders (EEGNet, ShallowConvNet, FBCNet, MRCP-FBCNet) and Metal/CUDA.
 torch==2.10.0
 
-# Future live acquisition
-brainflow
-pylsl
-
+# Future live acquisition. Pinned to the current releases; not exercised by
+# the test suite.
+brainflow==5.23.0
+pylsl==1.18.5
