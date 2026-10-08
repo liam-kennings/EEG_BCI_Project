@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="607.68pt" height="1370.88pt" viewBox="0 0 607.68 1370.88" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-08T10:34:09.281275</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 1370.88 
+L 607.68 1370.88 
+L 607.68 0 
+L 0 0 
+z
+" style="fill: #f4f1e8"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 55.872 540.6048 
+L 551.808 540.6048 
+Q 562.4352 540.6048 562.4352 516.24 
+L 562.4352 181.9008 
+Q 562.4352 157.536 551.808 157.536 
+L 55.872 157.536 
+Q 45.2448 157.536 45.2448 181.9008 
+L 45.2448 516.24 
+Q 45.2448 540.6048 55.872 540.6048 
+z
+" clip-path="url(#p78a95f2dad)" style="fill: #fffdf8; stroke: #2d7fa8; stroke-width: 1.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 55.872 933.1488 
+L 551.808 933.1488 
+Q 562.4352 933.1488 562.4352 908.784 
+L 562.4352 574.4448 
+Q 562.4352 550.08 551.808 550.08 
+L 55.872 550.08 
+Q 45.2448 550.08 45.2448 574.4448 
+L 45.2448 908.784 
+Q 45.2448 933.1488 55.872 933.1488 
+z
+" clip-path="url(#p78a95f2dad)" style="fill: #fffdf8; stroke: #248b7f; stroke-width: 1.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 55.872 1325.6928 
+L 551.808 1325.6928 
+Q 562.4352 1325.6928 562.4352 1301.328 
+L 562.4352 966.9888 
+Q 562.4352 942.624 551.808 942.624 
+L 55.872 942.624 
+Q 45.2448 942.624 45.2448 966.9888 
+L 45.2448 1301.328 
+Q 45.2448 1325.6928 55.872 1325.6928 
+z
+" clip-path="url(#p78a95f2dad)" style="fill: #fffdf8; stroke: #d96b3b; stroke-width: 1.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 20.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #607080" x="49.968" y="54.536359" transform="rotate(-0 49.968 54.536359)">CLOSEST PUBLISHED COMPARISONS</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #17324d" x="49.968" y="96.174763" transform="rotate(-0 49.968 96.174763)">MOTOR INTENT / IMAGERY vs REST</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 67.0896 257.7024 
+L 540.5904 257.7024 
+Q 547.6752 257.7024 547.6752 241.4592 
+L 547.6752 200.8512 
+Q 547.6752 184.608 540.5904 184.608 
+L 67.0896 184.608 
+Q 60.0048 184.608 60.0048 200.8512 
+L 60.0048 241.4592 
+Q 60.0048 257.7024 67.0896 257.7024 
+z
+" clip-path="url(#p78a95f2dad)" style="fill: #e8f2f7; stroke: #2d7fa8; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 33px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2d7fa8" x="70.632" y="319.005769" transform="rotate(-0 70.632 319.005769)">74%</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #607080" x="537.048" y="313.459441" transform="rotate(-0 537.048 313.459441)">mean accuracy</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #17324d" x="70.632" y="380.9467" transform="rotate(-0 70.632 380.9467)">Ang et al., 2011 [1]</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #17324d" x="70.632" y="445.2695" transform="rotate(-0 70.632 445.2695)">Affected-hand motor imagery versus rest</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #607080" transform="translate(70.632 477.966)">46 stroke patients | offline</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #607080" transform="translate(70.632 493.056)">Patient-specific calibration</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 67.0896 650.2464 
+L 540.5904 650.2464 
+Q 547.6752 650.2464 547.6752 634.0032 
+L 547.6752 593.3952 
+Q 547.6752 577.152 540.5904 577.152 
+L 67.0896 577.152 
+Q 60.0048 577.152 60.0048 593.3952 
+L 60.0048 634.0032 
+Q 60.0048 650.2464 67.0896 650.2464 
+z
+" clip-path="url(#p78a95f2dad)" style="fill: #e5f3ef; stroke: #248b7f; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 33px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #248b7f" x="70.632" y="711.549769" transform="rotate(-0 70.632 711.549769)">71.15%</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #607080" x="537.048" y="706.003441" transform="rotate(-0 537.048 706.003441)">mean accuracy</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #17324d" x="70.632" y="773.4907" transform="rotate(-0 70.632 773.4907)">Nagarajan et al., 2024 [2]</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #17324d" x="70.632" y="837.8135" transform="rotate(-0 70.632 837.8135)">Stroke motor imagery versus rest after transfer</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #607080" transform="translate(70.632 870.807375)">71 stroke patients | healthy pretraining</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #607080" transform="translate(70.632 885.6)">Target-domain adaptation</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 67.0896 1042.7904 
+L 540.5904 1042.7904 
+Q 547.6752 1042.7904 547.6752 1026.5472 
+L 547.6752 985.9392 
+Q 547.6752 969.696 540.5904 969.696 
+L 67.0896 969.696 
+Q 60.0048 969.696 60.0048 985.9392 
+L 60.0048 1026.5472 
+Q 60.0048 1042.7904 67.0896 1042.7904 
+z
+" clip-path="url(#p78a95f2dad)" style="fill: #f8e8df; stroke: #d96b3b; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 33px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #d96b3b" x="70.632" y="1104.093769" transform="rotate(-0 70.632 1104.093769)">69.7%</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #607080" x="537.048" y="1098.547441" transform="rotate(-0 537.048 1098.547441)">mean accuracy</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #17324d" x="70.632" y="1166.0347" transform="rotate(-0 70.632 1166.0347)">Lopez-Larraz et al., 2025 [3]</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #17324d" x="70.632" y="1230.233594" transform="rotate(-0 70.632 1230.233594)">Paralyzed-hand attempt versus rest using EEG + EMG</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #607080" transform="translate(70.632 1263.471375)">34 analyzed stroke patients</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #607080" transform="translate(70.632 1278.144)">Within-patient block validation</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607080" x="303.84" y="1348.4043" transform="rotate(-0 303.84 1348.4043)">Context, not a leaderboard: metrics, modalities, calibration, and validation designs differ.</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 12.2px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #2d7fa8" x="303.84" y="224.302419" transform="rotate(-0 303.84 224.302419)">CLOSEST HISTORICAL ENDPOINT</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 12.2px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #248b7f" x="303.84" y="616.846419" transform="rotate(-0 303.84 616.846419)">HEALTHY-TO-STROKE TRANSFER</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 12.2px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #d96b3b" x="303.84" y="1009.390419" transform="rotate(-0 303.84 1009.390419)">MULTIMODAL ATTEMPT DETECTION</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p78a95f2dad">
+   <rect x="8.64" y="8.64" width="590.4" height="1353.6"/>
+  </clipPath>
+ </defs>
+</svg>

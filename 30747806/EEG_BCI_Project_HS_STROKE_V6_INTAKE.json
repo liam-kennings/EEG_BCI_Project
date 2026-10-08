@@ -1,0 +1,49 @@
+{
+  "dataset": "HS-Stroke Upper-limb Motor Imagery",
+  "release": "Figshare 30747806 v6",
+  "license": "CC BY 4.0",
+  "intake_date": "2026-08-03",
+  "local_root": "EEG_BCI_Project/30747806",
+  "declared_participants": 14,
+  "declared_trials": 23382,
+  "declared_one_second_samples": 93528,
+  "eeg_channels": 11,
+  "sampling_hz": 256,
+  "archive_integrity": {
+    "sourcedata.zip": {
+      "bytes": 4894533454,
+      "entries": 1739,
+      "sha256": "bcfebde5f177db510c2dbc854f122d685e84a6f19f343a124ad0cdb7fd21e07e",
+      "crc_test": "passed"
+    },
+    "derivatives.zip": {
+      "bytes": 2005900019,
+      "entries": 848,
+      "sha256": "0231c458d7f96cd901987a02510be6b25202873896c6ffe8dcfe1fa0907aa88b",
+      "crc_test": "passed"
+    },
+    "Code.zip": {
+      "bytes": 201824,
+      "entries": 68,
+      "sha256": "43cff3b6ac667b72a4c3c15df8657ddf72d6bb5a67ae335dd184b697c3c067ce",
+      "crc_test": "passed"
+    }
+  },
+  "intake_boundary": {
+    "public_metadata_reviewed": true,
+    "archive_filenames_reviewed": true,
+    "eeg_arrays_opened": false,
+    "trial_direction_labels_opened": true,
+    "clinical_outcomes_used": false,
+    "model_predictions_run": false,
+    "thresholds_or_models_changed": false
+  },
+  "planned_role": "Locked chronic-stroke external evaluation before any HS-Stroke-specific adaptation",
+  "notes": [
+    "Use the corrected v6 release only.",
+    "Exclude feedback from the primary evaluation to reduce visual-feedback leakage.",
+    "Treat sessions as repeated observations nested within participants, not as independent subjects.",
+    "The preparation stage is structured cue-locked rest and does not establish natural-idle false activations per minute.",
+    "Only one MAT label vector and non-signal configuration metadata were opened while freezing the adapter contract; EEG arrays and model outcomes remained unopened."
+  ]
+}

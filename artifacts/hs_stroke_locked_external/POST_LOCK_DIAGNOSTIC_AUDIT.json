@@ -1,0 +1,57 @@
+{
+  "status": "post_lock_diagnostic_not_confirmatory_and_not_for_selection",
+  "locked_metrics_sha256": "2dc1cd61eda4584fd8e1542e80ba9b1833330d9103592be0331b5db31da13290",
+  "sessions_total": 278,
+  "sessions_accepted_by_recording_qc": 172,
+  "sessions_rejected_by_recording_qc": 106,
+  "windows_theoretical": 46764,
+  "windows_retained": 26483,
+  "window_retention_fraction": 0.5663116927551107,
+  "frozen_quality_gate": {
+    "threshold": 301511.3446524719,
+    "minimum_external_score": 426401.4327114483,
+    "median_external_score": 426401.4327125136,
+    "available_fraction": 0.0,
+    "component_median_absolute_z": {
+      "eeg_max_peak_to_peak_uv": 0.9041001657567651,
+      "eeg_median_peak_to_peak_uv": 0.9261233196838541,
+      "eeg_max_rms_uv": 0.9006844643044857,
+      "eeg_median_rms_uv": 0.928719841571058,
+      "eeg_max_absolute_uv": 0.9045402196601332,
+      "eeg_mean_absolute_difference_uv": 0.7886611961576703,
+      "auxiliary_available": 1000000.0,
+      "auxiliary_max_peak_to_peak_uv": 0.8379992715531691,
+      "auxiliary_max_rms_uv": 0.9813523310957051,
+      "recording_bad_channel_fraction": 1.2263469487107441,
+      "csd_available": 1000000.0
+    },
+    "root_cause": "auxiliary_available and csd_available were invariant at one in the frozen gate reference but are zero for HS-Stroke"
+  },
+  "frozen_probabilities_post_hoc_description": {
+    "intent_auroc": 0.5238761802309417,
+    "numeric_direction_balanced_accuracy": 0.5109992855439948,
+    "rest_quantiles_05_50_95": [
+      0.7309321438535733,
+      0.7953931571247113,
+      0.9171961061652065
+    ],
+    "imagery_quantiles_05_50_95": [
+      0.738030161556797,
+      0.8003660427647371,
+      0.9272605563914215
+    ],
+    "ungated_frozen_thresholds": {
+      "conservative": {
+        "intent_sensitivity": 0.9993245271690183,
+        "preparation_specificity": 0.0005319553157534767,
+        "false_activation_fraction": 0.9994680446842465
+      },
+      "sensitivity_targeted": {
+        "intent_sensitivity": 0.9999249474632242,
+        "preparation_specificity": 7.599361653621096e-05,
+        "false_activation_fraction": 0.9999240063834638
+      }
+    }
+  },
+  "interpretation": "The frozen system failed external transfer. The availability gate rejects the montage deterministically, while bypassing it would issue commands on almost every rest window because probabilities are shifted high and only weakly discriminate imagery from preparation."
+}

@@ -1,0 +1,3836 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="2800"
+   height="1650"
+   viewBox="0 0 2800 1650"
+   version="1.1"
+   id="svg312"
+   sodipodi:docname="eeg_motor_intent_compact_pipeline_only.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview312"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.55851908"
+     inkscape:cx="1389.3885"
+     inkscape:cy="897.91024"
+     inkscape:window-width="2056"
+     inkscape:window-height="1290"
+     inkscape:window-x="0"
+     inkscape:window-y="39"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg312" />
+  <defs
+     id="defs1">
+    <marker
+       markerWidth="6"
+       markerHeight="6"
+       refX="6"
+       refY="3"
+       orient="auto"
+       id="a">
+      <path
+         d="M0,0 L6,3 L0,6 z"
+         fill="#3B5268"
+         id="path1" />
+    </marker>
+  </defs>
+  <rect
+     x="0"
+     y="0"
+     width="2800"
+     height="1650"
+     rx="0"
+     fill="#FAFBFD"
+     id="rect1" />
+  <text
+     x="1400.0"
+     y="54"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="47"
+     font-weight="900"
+     fill="#102A43"
+     text-anchor="middle"
+     id="text1">Weak Motor-Intent EEG Pipeline for Rehabilitation BCI</text>
+  <text
+     x="1400.0"
+     y="99"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="24"
+     font-weight="600"
+     fill="#415B74"
+     text-anchor="middle"
+     font-style="italic"
+     id="text2">Matched movement and imagery decoding with patient-calibrated, safety-aware continuous control</text>
+  <rect
+     x="35.0"
+     y="135"
+     width="329.0"
+     height="1465"
+     rx="20"
+     fill="#FFFFFF"
+     stroke="#C4D2E0"
+     stroke-width="3"
+     id="rect2" />
+  <rect
+     x="35.0"
+     y="135"
+     width="329.0"
+     height="61"
+     rx="18"
+     fill="#075EB5"
+     id="rect3" />
+  <rect
+     x="35.0"
+     y="172"
+     width="329.0"
+     height="24"
+     rx="0"
+     fill="#075EB5"
+     id="rect4" />
+  <text
+     x="199.5"
+     y="176"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="20"
+     font-weight="850"
+     fill="#FFFFFF"
+     text-anchor="middle"
+     id="text4">1. DATASET + TASKS</text>
+  <rect
+     x="378.0"
+     y="135"
+     width="329.0"
+     height="1465"
+     rx="20"
+     fill="#FFFFFF"
+     stroke="#C4D2E0"
+     stroke-width="3"
+     id="rect5" />
+  <rect
+     x="378.0"
+     y="135"
+     width="329.0"
+     height="61"
+     rx="18"
+     fill="#16833D"
+     id="rect6" />
+  <rect
+     x="378.0"
+     y="172"
+     width="329.0"
+     height="24"
+     rx="0"
+     fill="#16833D"
+     id="rect7" />
+  <text
+     x="542.5"
+     y="176"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="20"
+     font-weight="850"
+     fill="#FFFFFF"
+     text-anchor="middle"
+     id="text7">2. PREPROCESSING</text>
+  <rect
+     x="721.0"
+     y="135"
+     width="329.0"
+     height="1465"
+     rx="20"
+     fill="#FFFFFF"
+     stroke="#C4D2E0"
+     stroke-width="3"
+     id="rect8" />
+  <rect
+     x="721.0"
+     y="135"
+     width="329.0"
+     height="61"
+     rx="18"
+     fill="#C98200"
+     id="rect9" />
+  <rect
+     x="721.0"
+     y="172"
+     width="329.0"
+     height="24"
+     rx="0"
+     fill="#C98200"
+     id="rect10" />
+  <text
+     x="885.5"
+     y="176"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="20"
+     font-weight="850"
+     fill="#FFFFFF"
+     text-anchor="middle"
+     id="text10">3. EPOCH EXTRACTION</text>
+  <rect
+     x="1064.0"
+     y="135"
+     width="329.0"
+     height="1465"
+     rx="20"
+     fill="#FFFFFF"
+     stroke="#C4D2E0"
+     stroke-width="3"
+     id="rect11" />
+  <rect
+     x="1064.0"
+     y="135"
+     width="329.0"
+     height="61"
+     rx="18"
+     fill="#2176B8"
+     id="rect12" />
+  <rect
+     x="1064.0"
+     y="172"
+     width="329.0"
+     height="24"
+     rx="0"
+     fill="#2176B8"
+     id="rect13" />
+  <text
+     x="1228.5"
+     y="176"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="20"
+     font-weight="850"
+     fill="#FFFFFF"
+     text-anchor="middle"
+     id="text13">4. FBCSP FEATURES</text>
+  <rect
+     x="1407.0"
+     y="135"
+     width="329.0"
+     height="1465"
+     rx="20"
+     fill="#FFFFFF"
+     stroke="#C4D2E0"
+     stroke-width="3"
+     id="rect14" />
+  <rect
+     x="1407.0"
+     y="135"
+     width="329.0"
+     height="61"
+     rx="18"
+     fill="#6D3BB7"
+     id="rect15" />
+  <rect
+     x="1407.0"
+     y="172"
+     width="329.0"
+     height="24"
+     rx="0"
+     fill="#6D3BB7"
+     id="rect16" />
+  <text
+     x="1571.5"
+     y="176"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="20"
+     font-weight="850"
+     fill="#FFFFFF"
+     text-anchor="middle"
+     id="text16">5. TASK DECODERS</text>
+  <rect
+     x="1750.0"
+     y="135"
+     width="329.0"
+     height="1465"
+     rx="20"
+     fill="#FFFFFF"
+     stroke="#C4D2E0"
+     stroke-width="3"
+     id="rect17" />
+  <rect
+     x="1750.0"
+     y="135"
+     width="329.0"
+     height="61"
+     rx="18"
+     fill="#8C3DA6"
+     id="rect18" />
+  <rect
+     x="1750.0"
+     y="172"
+     width="329.0"
+     height="24"
+     rx="0"
+     fill="#8C3DA6"
+     id="rect19" />
+  <text
+     x="1914.5"
+     y="176"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="20"
+     font-weight="850"
+     fill="#FFFFFF"
+     text-anchor="middle"
+     id="text19">6. TRAIN + CALIBRATE</text>
+  <rect
+     x="2093.0"
+     y="135"
+     width="329.0"
+     height="1465"
+     rx="20"
+     fill="#FFFFFF"
+     stroke="#C4D2E0"
+     stroke-width="3"
+     id="rect20" />
+  <rect
+     x="2093.0"
+     y="135"
+     width="329.0"
+     height="61"
+     rx="18"
+     fill="#D44B1D"
+     id="rect21" />
+  <rect
+     x="2093.0"
+     y="172"
+     width="329.0"
+     height="24"
+     rx="0"
+     fill="#D44B1D"
+     id="rect22" />
+  <text
+     x="2257.5"
+     y="176"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="20"
+     font-weight="850"
+     fill="#FFFFFF"
+     text-anchor="middle"
+     id="text22">7. CONTINUOUS CONTROL</text>
+  <rect
+     x="2436.0"
+     y="135"
+     width="329.0"
+     height="1465"
+     rx="20"
+     fill="#FFFFFF"
+     stroke="#C4D2E0"
+     stroke-width="3"
+     id="rect23" />
+  <rect
+     x="2436.0"
+     y="135"
+     width="329.0"
+     height="61"
+     rx="18"
+     fill="#E2681B"
+     id="rect24" />
+  <rect
+     x="2436.0"
+     y="172"
+     width="329.0"
+     height="24"
+     rx="0"
+     fill="#E2681B"
+     id="rect25" />
+  <text
+     x="2600.5"
+     y="176"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="20"
+     font-weight="850"
+     fill="#FFFFFF"
+     text-anchor="middle"
+     id="text25">8. EVALUATION + OUTPUT</text>
+  <text
+     x="199.5"
+     y="231"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="21"
+     font-weight="850"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text26">EEGMMIDB (PhysioNet)</text>
+  <path
+     d="M161.5,286 C161.5,271 237.5,271 237.5,286 L237.5,347 C237.5,362 161.5,362 161.5,347 Z"
+     fill="#075EB5"
+     id="path26" />
+  <path
+     d="M161.5,308 C161.5,321 237.5,321 237.5,308"
+     fill="none"
+     stroke="#C7E1F6"
+     stroke-width="3"
+     id="path27" />
+  <path
+     d="M161.5,328 C161.5,341 237.5,341 237.5,328"
+     fill="none"
+     stroke="#C7E1F6"
+     stroke-width="3"
+     id="path28" />
+  <path
+     d="M161.5,348 C161.5,361 237.5,361 237.5,348"
+     fill="none"
+     stroke="#C7E1F6"
+     stroke-width="3"
+     id="path29" />
+  <rect
+     x="50.0"
+     y="380"
+     width="299.0"
+     height="145"
+     rx="13"
+     fill="#F1F7FD"
+     stroke="#075EB5"
+     stroke-width="2.2"
+     id="rect29" />
+  <text
+     x="199.5"
+     y="407"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#075EB5"
+     text-anchor="middle"
+     id="text29">GENERAL OVERVIEW</text>
+  <text
+     x="199.5"
+     y="440"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text30">109 healthy participants</text>
+  <text
+     x="199.5"
+     y="465"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text31">108 represented after QC</text>
+  <text
+     x="199.5"
+     y="490"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text32">64 EEG channels | 160 Hz</text>
+  <text
+     x="199.5"
+     y="515"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text33">EDF+ event annotations</text>
+  <rect
+     x="50.0"
+     y="548"
+     width="299.0"
+     height="154"
+     rx="13"
+     fill="#F1F7FD"
+     stroke="#075EB5"
+     stroke-width="2.2"
+     id="rect33" />
+  <text
+     x="199.5"
+     y="575"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#075EB5"
+     text-anchor="middle"
+     id="text34">RUN PROTOCOL</text>
+  <text
+     x="199.5"
+     y="605"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text35">2 baseline runs</text>
+  <text
+     x="199.5"
+     y="630"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text36">12 task runs (3-14)</text>
+  <text
+     x="199.5"
+     y="655"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text37">2 minutes each</text>
+  <text
+     x="199.5"
+     y="680"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text38">T0 = REST</text>
+  <line
+     x1="77.0"
+     y1="679"
+     x2="322.0"
+     y2="679"
+     stroke="#075EB5"
+     stroke-width="3"
+     stroke-linecap="round"
+     id="line38" />
+  <circle
+     cx="77.0"
+     cy="679"
+     r="6"
+     fill="#075EB5"
+     id="circle38" />
+  <circle
+     cx="322.0"
+     cy="679"
+     r="6"
+     fill="#075EB5"
+     id="circle39" />
+  <rect
+     x="50.229618"
+     y="725.22961"
+     width="298.54077"
+     height="531.18079"
+     rx="12.980033"
+     fill="#f1f7fd"
+     stroke="#075eb5"
+     stroke-width="2.2"
+     id="rect39" />
+  <text
+     x="199.5"
+     y="752"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#075EB5"
+     text-anchor="middle"
+     id="text39">TASK FAMILY / T1-T2</text>
+  <rect
+     x="64"
+     y="788.34369"
+     width="271"
+     height="62"
+     rx="10"
+     fill="#ffffff"
+     stroke="#159873"
+     stroke-width="2"
+     id="rect40" />
+  <text
+     x="82"
+     y="812.34369"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="850"
+     fill="#159873"
+     text-anchor="start"
+     id="text40">3/7/11</text>
+  <text
+     x="215.5"
+     y="812.34369"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="850"
+     fill="#159873"
+     text-anchor="middle"
+     id="text41">MOVE</text>
+  <text
+     x="199.5"
+     y="838.34369"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="700"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text42">LEFT / RIGHT</text>
+  <rect
+     x="64"
+     y="860.34369"
+     width="271"
+     height="62"
+     rx="10"
+     fill="#ffffff"
+     stroke="#7656b4"
+     stroke-width="2"
+     id="rect42" />
+  <text
+     x="82"
+     y="884.34369"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="850"
+     fill="#7656b4"
+     text-anchor="start"
+     id="text43">4/8/12</text>
+  <text
+     x="215.5"
+     y="884.34369"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="850"
+     fill="#7656b4"
+     text-anchor="middle"
+     id="text44">IMAGINE</text>
+  <text
+     x="199.5"
+     y="910.34369"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="700"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text45">LEFT / RIGHT</text>
+  <rect
+     x="64"
+     y="932.34369"
+     width="271"
+     height="62"
+     rx="10"
+     fill="#ffffff"
+     stroke="#e1831f"
+     stroke-width="2"
+     id="rect45" />
+  <text
+     x="82"
+     y="956.34369"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="850"
+     fill="#e1831f"
+     text-anchor="start"
+     id="text46">5/9/13</text>
+  <text
+     x="215.5"
+     y="956.34369"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="850"
+     fill="#e1831f"
+     text-anchor="middle"
+     id="text47">MOVE</text>
+  <text
+     x="199.5"
+     y="982.34369"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="700"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text48">FISTS / FEET</text>
+  <rect
+     x="64"
+     y="1004.3437"
+     width="271"
+     height="62"
+     rx="10"
+     fill="#ffffff"
+     stroke="#cc4c79"
+     stroke-width="2"
+     id="rect48" />
+  <text
+     x="82"
+     y="1028.3438"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="850"
+     fill="#cc4c79"
+     text-anchor="start"
+     id="text49">6/10/14</text>
+  <text
+     x="215.5"
+     y="1028.3438"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="850"
+     fill="#cc4c79"
+     text-anchor="middle"
+     id="text50">IMAGINE</text>
+  <text
+     x="199.5"
+     y="1054.3438"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="700"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text51">FISTS / FEET</text>
+  <text
+     x="200.50983"
+     y="1132.1178"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="16px"
+     font-weight="850"
+     fill="#075eb5"
+     text-anchor="middle"
+     id="text52">CONTEXT-DEPENDENT LABELS</text>
+  <rect
+     x="71.137482"
+     y="1150.0687"
+     width="79"
+     height="29"
+     rx="14"
+     fill="#1769aa"
+     opacity="0.14"
+     stroke="#1769aa"
+     stroke-width="1.5"
+     id="rect52" />
+  <text
+     x="110.63748"
+     y="1171.0687"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="800"
+     fill="#1769aa"
+     text-anchor="middle"
+     id="text53">REST</text>
+  <rect
+     x="158.13748"
+     y="1150.0687"
+     width="70"
+     height="29"
+     rx="14"
+     fill="#269345"
+     opacity="0.14"
+     stroke="#269345"
+     stroke-width="1.5"
+     id="rect53" />
+  <text
+     x="193.13748"
+     y="1171.0687"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="800"
+     fill="#269345"
+     text-anchor="middle"
+     id="text54">LEFT</text>
+  <rect
+     x="236.13748"
+     y="1150.0687"
+     width="83"
+     height="29"
+     rx="14"
+     fill="#f08a18"
+     opacity="0.14"
+     stroke="#f08a18"
+     stroke-width="1.5"
+     id="rect54" />
+  <text
+     x="277.63748"
+     y="1171.0687"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="800"
+     fill="#f08a18"
+     text-anchor="middle"
+     id="text55">RIGHT</text>
+  <rect
+     x="93.137482"
+     y="1190.0687"
+     width="112"
+     height="29"
+     rx="14"
+     fill="#d54b3d"
+     opacity="0.14"
+     stroke="#d54b3d"
+     stroke-width="1.5"
+     id="rect55" />
+  <text
+     x="149.13748"
+     y="1211.0687"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="800"
+     fill="#d54b3d"
+     text-anchor="middle"
+     id="text56">BOTH FISTS</text>
+  <rect
+     x="215.13748"
+     y="1190.0687"
+     width="107"
+     height="29"
+     rx="14"
+     fill="#7450aa"
+     opacity="0.14"
+     stroke="#7450aa"
+     stroke-width="1.5"
+     id="rect56" />
+  <text
+     x="268.63748"
+     y="1211.0687"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="800"
+     fill="#7450aa"
+     text-anchor="middle"
+     id="text57">BOTH FEET</text>
+  <rect
+     x="50"
+     y="1311.6482"
+     width="299"
+     height="272"
+     rx="13"
+     fill="#f1f7fd"
+     stroke="#075eb5"
+     stroke-width="2.2"
+     id="rect57" />
+  <text
+     x="199.5"
+     y="1334.6089"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="850"
+     fill="#075eb5"
+     text-anchor="middle"
+     id="text58">SIGNAL STRUCTURE</text>
+  <polyline
+     points="(70.0, 1305.0),(85.23529411764706, 1302.8),(100.47058823529412, 1307.2),(115.70588235294117, 1300.6),(130.94117647058823, 1311.6),(146.1764705882353, 1294.0),(161.41176470588235, 1320.4),(176.6470588235294, 1283.0),(191.88235294117646, 1322.6),(207.11764705882354, 1294.0),(222.35294117647058, 1311.6),(237.58823529411765, 1300.6),(252.8235294117647, 1309.4),(268.05882352941177, 1302.8),(283.2941176470588, 1305.0),(298.52941176470586, 1302.8),(313.7647058823529, 1307.2),(329.0, 1305.0)"
+     fill="none"
+     stroke="#075EB5"
+     stroke-width="3.5"
+     stroke-linejoin="round"
+     id="polyline58" />
+  <polyline
+     points="(70.0, 1353.0),(85.23529411764706, 1351.3),(100.47058823529412, 1354.7),(115.70588235294117, 1349.6),(130.94117647058823, 1358.1),(146.1764705882353, 1344.5),(161.41176470588235, 1364.9),(176.6470588235294, 1336.0),(191.88235294117646, 1366.6),(207.11764705882354, 1344.5),(222.35294117647058, 1358.1),(237.58823529411765, 1349.6),(252.8235294117647, 1356.4),(268.05882352941177, 1351.3),(283.2941176470588, 1353.0),(298.52941176470586, 1351.3),(313.7647058823529, 1354.7),(329.0, 1353.0)"
+     fill="none"
+     stroke="#5D93BE"
+     stroke-width="3.5"
+     stroke-linejoin="round"
+     id="polyline59" />
+  <polyline
+     points="(70.0, 1401.0),(85.23529411764706, 1399.0),(100.47058823529412, 1403.0),(115.70588235294117, 1397.0),(130.94117647058823, 1407.0),(146.1764705882353, 1391.0),(161.41176470588235, 1415.0),(176.6470588235294, 1381.0),(191.88235294117646, 1417.0),(207.11764705882354, 1391.0),(222.35294117647058, 1407.0),(237.58823529411765, 1397.0),(252.8235294117647, 1405.0),(268.05882352941177, 1399.0),(283.2941176470588, 1401.0),(298.52941176470586, 1399.0),(313.7647058823529, 1403.0),(329.0, 1401.0)"
+     fill="none"
+     stroke="#87B5D5"
+     stroke-width="3.5"
+     stroke-linejoin="round"
+     id="polyline60" />
+  <line
+     x1="90.0"
+     y1="1459"
+     x2="309.0"
+     y2="1459"
+     stroke="#3B5268"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="line60" />
+  <line
+     x1="160.0"
+     y1="1449"
+     x2="160.0"
+     y2="1469"
+     stroke="#C64F39"
+     stroke-width="3"
+     stroke-linecap="round"
+     id="line61" />
+  <text
+     x="160.0"
+     y="1497"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14"
+     font-weight="700"
+     fill="#C64F39"
+     text-anchor="middle"
+     id="text61">event</text>
+  <rect
+     x="393.0"
+     y="218"
+     width="299.0"
+     height="222"
+     rx="13"
+     fill="#F1FAF4"
+     stroke="#16833D"
+     stroke-width="2.2"
+     id="rect61" />
+  <text
+     x="542.5"
+     y="245"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#16833D"
+     text-anchor="middle"
+     id="text62">BAND-PASS FILTER</text>
+  <text
+     x="542.5"
+     y="280"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text63">4th-order Butterworth</text>
+  <text
+     x="542.5"
+     y="306"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text64">4-35 Hz</text>
+  <text
+     x="542.5"
+     y="332"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text65">Offline zero-phase benchmark</text>
+  <line
+     x1="438.01965"
+     y1="420.19641"
+     x2="651.01965"
+     y2="420.19641"
+     stroke="#7e909f"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="line65" />
+  <line
+     x1="438.01965"
+     y1="420.19641"
+     x2="438.01965"
+     y2="350.19641"
+     stroke="#7e909f"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="line66" />
+  <path
+     d="m 438.01964,418.19641 c 25,0 35,-61 60,-61 h 104 c 25,0 37,61 49,61"
+     fill="none"
+     stroke="#16833d"
+     stroke-width="4"
+     id="path66" />
+  <rect
+     x="393.0"
+     y="464"
+     width="299.0"
+     height="190"
+     rx="13"
+     fill="#F1FAF4"
+     stroke="#16833D"
+     stroke-width="2.2"
+     id="rect66" />
+  <text
+     x="542.5"
+     y="491"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#16833D"
+     text-anchor="middle"
+     id="text66">ARTIFACT HANDLING</text>
+  <polyline
+     points="(420.0, 553.0),(434.4117647058824, 550.1),(448.8235294117647, 555.9),(463.2352941176471, 547.2),(477.6470588235294, 561.7),(492.05882352941177, 538.5),(506.47058823529414, 573.3),(520.8823529411765, 524.0),(535.2941176470588, 576.2),(549.7058823529412, 538.5),(564.1176470588235, 561.7),(578.5294117647059, 547.2),(592.9411764705883, 558.8),(607.3529411764706, 550.1),(621.7647058823529, 553.0),(636.1764705882354, 550.1),(650.5882352941177, 555.9),(665.0, 553.0)"
+     fill="none"
+     stroke="#16833D"
+     stroke-width="3.5"
+     stroke-linejoin="round"
+     id="polyline66" />
+  <text
+     x="542.5"
+     y="603"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text67">Reject nonfinite trials</text>
+  <text
+     x="542.5"
+     y="628"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text68">&gt;250 uV peak-to-peak</text>
+  <path
+     d="M542.5,664 L542.5,703"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="3"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path68" />
+  <rect
+     x="393.0"
+     y="712"
+     width="299.0"
+     height="128"
+     rx="13"
+     fill="#F1FAF4"
+     stroke="#16833D"
+     stroke-width="2.2"
+     id="rect68" />
+  <text
+     x="542.5"
+     y="739"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#16833D"
+     text-anchor="middle"
+     id="text69">RE-REFERENCING</text>
+  <text
+     x="542.5"
+     y="770"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text70">Common-average reference</text>
+  <text
+     x="542.5"
+     y="798"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text71">over full scalp</text>
+  <path
+     d="M542.5,850 L542.5,888"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="3"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path71" />
+  <rect
+     x="393.0"
+     y="897"
+     width="299.0"
+     height="280"
+     rx="13"
+     fill="#F1FAF4"
+     stroke="#16833D"
+     stroke-width="2.2"
+     id="rect71" />
+  <text
+     x="542.5"
+     y="924"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#16833D"
+     text-anchor="middle"
+     id="text72">MOTOR MONTAGE</text>
+  <circle
+     cx="542.5"
+     cy="1015"
+     r="50"
+     fill="#FBFDFF"
+     stroke="#16833D"
+     stroke-width="3"
+     id="circle72" />
+  <path
+     d="M491.5,1008q-13,9 0,20 M593.5,1008q13,9 0,20"
+     fill="none"
+     stroke="#16833D"
+     stroke-width="3"
+     id="path72" />
+  <circle
+     cx="522.5"
+     cy="999"
+     r="4"
+     fill="#16833D"
+     id="circle73" />
+  <circle
+     cx="542.5"
+     cy="993"
+     r="4"
+     fill="#16833D"
+     id="circle74" />
+  <circle
+     cx="562.5"
+     cy="999"
+     r="4"
+     fill="#16833D"
+     id="circle75" />
+  <circle
+     cx="517.5"
+     cy="1020"
+     r="4"
+     fill="#16833D"
+     id="circle76" />
+  <circle
+     cx="542.5"
+     cy="1015"
+     r="4"
+     fill="#16833D"
+     id="circle77" />
+  <circle
+     cx="567.5"
+     cy="1020"
+     r="4"
+     fill="#16833D"
+     id="circle78" />
+  <circle
+     cx="527.5"
+     cy="1038"
+     r="4"
+     fill="#16833D"
+     id="circle79" />
+  <circle
+     cx="557.5"
+     cy="1038"
+     r="4"
+     fill="#16833D"
+     id="circle80" />
+  <text
+     x="542.5"
+     y="1093"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="16"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text80">FC3 FC4 | C3 C1 Cz C2 C4</text>
+  <text
+     x="542.5"
+     y="1118"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="16"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text81">CP3 CP4</text>
+  <text
+     x="542.5"
+     y="1143"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="16"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text82">Cz retained for feet tasks</text>
+  <rect
+     x="393.0"
+     y="1207"
+     width="299.0"
+     height="310"
+     rx="13"
+     fill="#F1FAF4"
+     stroke="#16833D"
+     stroke-width="2.2"
+     id="rect82" />
+  <text
+     x="542.5"
+     y="1234"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#16833D"
+     text-anchor="middle"
+     id="text83">MATCHED PROCESSING</text>
+  <text
+     x="542.5"
+     y="1259"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text84">Movement and imagery use</text>
+  <text
+     x="542.5"
+     y="1290"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text85">the same filter, reference,</text>
+  <text
+     x="542.5"
+     y="1321"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text86">channel set, epoch timing,</text>
+  <text
+     x="542.5"
+     y="1352"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text87">features, models, and splits</text>
+  <text
+     x="542.5"
+     y="1425"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="16"
+     font-weight="850"
+     fill="#16833D"
+     text-anchor="middle"
+     id="text88">Only modality + task family differ</text>
+  <text
+     x="885.5"
+     y="240"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="21"
+     font-weight="850"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text89">Cue-locked window</text>
+  <line
+     x1="756.0"
+     y1="390"
+     x2="1015.0"
+     y2="390"
+     stroke="#3B5268"
+     stroke-width="3"
+     stroke-linecap="round"
+     id="line89" />
+  <line
+     x1="759.0"
+     y1="382"
+     x2="759.0"
+     y2="398"
+     stroke="#3B5268"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="line90" />
+  <text
+     x="759.0"
+     y="419"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14"
+     font-weight="650"
+     fill="#5B738A"
+     text-anchor="middle"
+     id="text90">-1</text>
+  <line
+     x1="839.0"
+     y1="382"
+     x2="839.0"
+     y2="398"
+     stroke="#3B5268"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="line91" />
+  <text
+     x="839.0"
+     y="419"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14"
+     font-weight="650"
+     fill="#5B738A"
+     text-anchor="middle"
+     id="text91">0</text>
+  <line
+     x1="879.0"
+     y1="382"
+     x2="879.0"
+     y2="398"
+     stroke="#3B5268"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="line92" />
+  <text
+     x="879.0"
+     y="419"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14"
+     font-weight="650"
+     fill="#5B738A"
+     text-anchor="middle"
+     id="text92">0.5</text>
+  <line
+     x1="1012.0"
+     y1="382"
+     x2="1012.0"
+     y2="398"
+     stroke="#3B5268"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="line93" />
+  <text
+     x="1012.0"
+     y="419"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14"
+     font-weight="650"
+     fill="#5B738A"
+     text-anchor="middle"
+     id="text93">3.5</text>
+  <rect
+     x="759.0"
+     y="335"
+     width="80"
+     height="43"
+     rx="5"
+     fill="#D9E8F3"
+     id="rect93" />
+  <text
+     x="799.0"
+     y="363"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text94">baseline</text>
+  <rect
+     x="879.0"
+     y="335"
+     width="133.0"
+     height="43"
+     rx="5"
+     fill="#F9DDA5"
+     id="rect94" />
+  <text
+     x="945.5"
+     y="363"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text95">analysis</text>
+  <text
+     x="839.0"
+     y="317"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14"
+     font-weight="850"
+     fill="#C98200"
+     text-anchor="middle"
+     id="text96">CUE</text>
+  <rect
+     x="736.0"
+     y="456"
+     width="299.0"
+     height="166"
+     rx="13"
+     fill="#FFF9EC"
+     stroke="#C98200"
+     stroke-width="2.2"
+     id="rect96" />
+  <text
+     x="885.5"
+     y="483"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#C98200"
+     text-anchor="middle"
+     id="text97">BASELINE CENTERING</text>
+  <text
+     x="885.5"
+     y="517"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text98">Each channel centered by</text>
+  <text
+     x="885.5"
+     y="544"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text99">its own pre-cue mean</text>
+  <text
+     x="885.5"
+     y="571"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text100">0.5 s delay reduces visual ERP</text>
+  <rect
+     x="736.0"
+     y="651"
+     width="299.0"
+     height="162"
+     rx="13"
+     fill="#FFF9EC"
+     stroke="#C98200"
+     stroke-width="2.2"
+     id="rect100" />
+  <text
+     x="885.5"
+     y="678"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#C98200"
+     text-anchor="middle"
+     id="text101">EPOCH SHAPE</text>
+  <text
+     x="885.5"
+     y="710"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text102">9 channels x 480 samples</text>
+  <text
+     x="885.5"
+     y="738"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text103">3.0 s at 160 Hz</text>
+  <text
+     x="885.5"
+     y="766"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text104">One label per cue</text>
+  <rect
+     x="736.08783"
+     y="843.08783"
+     width="298.82437"
+     height="253.1779"
+     rx="12.992364"
+     fill="#fff9ec"
+     stroke="#c98200"
+     stroke-width="2.2"
+     id="rect104" />
+  <text
+     x="885.5"
+     y="870"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#C98200"
+     text-anchor="middle"
+     id="text105">QUALITY CONTROL</text>
+  <text
+     x="885.5"
+     y="905"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text106">Check baseline + epoch</text>
+  <text
+     x="885.5"
+     y="933"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text107">Finite values required</text>
+  <text
+     x="885.5"
+     y="961"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text108">Amplitude threshold applied</text>
+  <text
+     x="885.5"
+     y="989"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text109">before feature extraction</text>
+  <path
+     d="m 814.99018,1075.5401 a 70,70 0 0 1 139,0"
+     fill="none"
+     stroke="#e4b454"
+     stroke-width="8"
+     id="path109" />
+  <line
+     x1="884.49017"
+     y1="1074.5402"
+     x2="917.49017"
+     y2="1037.5402"
+     stroke="#a56600"
+     stroke-width="5"
+     stroke-linecap="round"
+     id="line109" />
+  <rect
+     x="737.00983"
+     y="1139.4812"
+     width="299"
+     height="203"
+     rx="13"
+     fill="#fff9ec"
+     stroke="#c98200"
+     stroke-width="2.2"
+     id="rect109" />
+  <text
+     x="886.50983"
+     y="1166.4812"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="850"
+     fill="#c98200"
+     text-anchor="middle"
+     id="text110">CACHE OUTPUT</text>
+  <text
+     x="886.50983"
+     y="1202.4812"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text111">36,650 accepted trials</text>
+  <text
+     x="886.50983"
+     y="1232.4812"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text112">108 represented subjects</text>
+  <text
+     x="886.50983"
+     y="1262.4812"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text113">Fixed reusable epoch cache</text>
+  <rect
+     x="736.99017"
+     y="1366.4321"
+     width="299"
+     height="195"
+     rx="13"
+     fill="#fff9ec"
+     stroke="#c98200"
+     stroke-width="2.2"
+     id="rect113" />
+  <text
+     x="886.49017"
+     y="1393.4321"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="850"
+     fill="#c98200"
+     text-anchor="middle"
+     id="text114">FAIR COMPARISON</text>
+  <text
+     x="886.49017"
+     y="1429.4321"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="700"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text115">Identical trial definition</text>
+  <text
+     x="886.49017"
+     y="1456.4321"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="700"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text116">across all four conditions</text>
+  <text
+     x="886.49017"
+     y="1483.4321"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="700"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text117">No execution data pooled into</text>
+  <text
+     x="886.49017"
+     y="1510.4321"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="700"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text118">an imagery task decoder</text>
+  <rect
+     x="1079.0"
+     y="218"
+     width="299.0"
+     height="305"
+     rx="13"
+     fill="#EFF7FD"
+     stroke="#2176B8"
+     stroke-width="2.2"
+     id="rect118" />
+  <text
+     x="1228.5"
+     y="245"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#2176B8"
+     text-anchor="middle"
+     id="text119">FIVE FREQUENCY VIEWS</text>
+  <rect
+     x="1092"
+     y="274"
+     width="92"
+     height="24"
+     rx="5"
+     fill="#65b4e9"
+     id="rect119" />
+  <text
+     x="1196"
+     y="291"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="start"
+     id="text120">LOW MU</text>
+  <text
+     x="1369"
+     y="291"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="650"
+     fill="#5b738a"
+     text-anchor="end"
+     id="text121">7-10 Hz</text>
+  <rect
+     x="1092"
+     y="320"
+     width="92"
+     height="24"
+     rx="5"
+     fill="#3184c2"
+     id="rect121" />
+  <text
+     x="1196"
+     y="337"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="start"
+     id="text122">HIGH MU</text>
+  <text
+     x="1369"
+     y="337"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="650"
+     fill="#5b738a"
+     text-anchor="end"
+     id="text123">10-13 Hz</text>
+  <rect
+     x="1092"
+     y="366"
+     width="92"
+     height="24"
+     rx="5"
+     fill="#50b89f"
+     id="rect123" />
+  <text
+     x="1196"
+     y="383"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="start"
+     id="text124">LOW BETA</text>
+  <text
+     x="1369"
+     y="383"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="650"
+     fill="#5b738a"
+     text-anchor="end"
+     id="text125">13-20 Hz</text>
+  <rect
+     x="1092"
+     y="412"
+     width="92"
+     height="24"
+     rx="5"
+     fill="#168b78"
+     id="rect125" />
+  <text
+     x="1196"
+     y="429"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="start"
+     id="text126">HIGH BETA</text>
+  <text
+     x="1369"
+     y="429"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="650"
+     fill="#5b738a"
+     text-anchor="end"
+     id="text127">20-30 Hz</text>
+  <rect
+     x="1092"
+     y="458"
+     width="92"
+     height="24"
+     rx="5"
+     fill="#7554b6"
+     id="rect127" />
+  <text
+     x="1196"
+     y="475"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="start"
+     id="text128">COMBINED</text>
+  <text
+     x="1369"
+     y="475"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     font-weight="650"
+     fill="#5b738a"
+     text-anchor="end"
+     id="text129">8-30 Hz</text>
+  <rect
+     x="1079.0"
+     y="553"
+     width="299.0"
+     height="238"
+     rx="13"
+     fill="#EFF7FD"
+     stroke="#2176B8"
+     stroke-width="2.2"
+     id="rect129" />
+  <text
+     x="1228.5"
+     y="580"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#2176B8"
+     text-anchor="middle"
+     id="text130">COMMON SPATIAL PATTERNS</text>
+  <circle
+     cx="1155.0"
+     cy="673"
+     r="39"
+     fill="#FBFDFF"
+     stroke="#2176B8"
+     stroke-width="3"
+     id="circle130" />
+  <path
+     d="M1115.0,666q-13,9 0,20 M1195.0,666q13,9 0,20"
+     fill="none"
+     stroke="#2176B8"
+     stroke-width="3"
+     id="path130" />
+  <circle
+     cx="1135.0"
+     cy="657"
+     r="4"
+     fill="#2176B8"
+     id="circle131" />
+  <circle
+     cx="1155.0"
+     cy="651"
+     r="4"
+     fill="#2176B8"
+     id="circle132" />
+  <circle
+     cx="1175.0"
+     cy="657"
+     r="4"
+     fill="#2176B8"
+     id="circle133" />
+  <circle
+     cx="1130.0"
+     cy="678"
+     r="4"
+     fill="#2176B8"
+     id="circle134" />
+  <circle
+     cx="1155.0"
+     cy="673"
+     r="4"
+     fill="#2176B8"
+     id="circle135" />
+  <circle
+     cx="1180.0"
+     cy="678"
+     r="4"
+     fill="#2176B8"
+     id="circle136" />
+  <circle
+     cx="1140.0"
+     cy="696"
+     r="4"
+     fill="#2176B8"
+     id="circle137" />
+  <circle
+     cx="1170.0"
+     cy="696"
+     r="4"
+     fill="#2176B8"
+     id="circle138" />
+  <circle
+     cx="1302.0"
+     cy="673"
+     r="39"
+     fill="#FBFDFF"
+     stroke="#6D3BB7"
+     stroke-width="3"
+     id="circle139" />
+  <path
+     d="M1262.0,666q-13,9 0,20 M1342.0,666q13,9 0,20"
+     fill="none"
+     stroke="#6D3BB7"
+     stroke-width="3"
+     id="path139" />
+  <circle
+     cx="1282.0"
+     cy="657"
+     r="4"
+     fill="#6D3BB7"
+     id="circle140" />
+  <circle
+     cx="1302.0"
+     cy="651"
+     r="4"
+     fill="#6D3BB7"
+     id="circle141" />
+  <circle
+     cx="1322.0"
+     cy="657"
+     r="4"
+     fill="#6D3BB7"
+     id="circle142" />
+  <circle
+     cx="1277.0"
+     cy="678"
+     r="4"
+     fill="#6D3BB7"
+     id="circle143" />
+  <circle
+     cx="1302.0"
+     cy="673"
+     r="4"
+     fill="#6D3BB7"
+     id="circle144" />
+  <circle
+     cx="1327.0"
+     cy="678"
+     r="4"
+     fill="#6D3BB7"
+     id="circle145" />
+  <circle
+     cx="1287.0"
+     cy="696"
+     r="4"
+     fill="#6D3BB7"
+     id="circle146" />
+  <circle
+     cx="1317.0"
+     cy="696"
+     r="4"
+     fill="#6D3BB7"
+     id="circle147" />
+  <text
+     x="1155.0"
+     y="739"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14"
+     font-weight="700"
+     fill="#5B738A"
+     text-anchor="middle"
+     id="text147">motor pattern +</text>
+  <text
+     x="1302.0"
+     y="739"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14"
+     font-weight="700"
+     fill="#5B738A"
+     text-anchor="middle"
+     id="text148">motor pattern -</text>
+  <text
+     x="1228.5"
+     y="769"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="16"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text149">4 CSP filters per view</text>
+  <text
+     x="1228.5"
+     y="794"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="16"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text150">Fit on development only</text>
+  <path
+     d="m 1228.5,818.59666 v 26.98345"
+     fill="none"
+     stroke="#3b5268"
+     stroke-width="3"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path150" />
+  <rect
+     x="1079.0"
+     y="853"
+     width="299.0"
+     height="244"
+     rx="13"
+     fill="#EFF7FD"
+     stroke="#2176B8"
+     stroke-width="2.2"
+     id="rect150" />
+  <text
+     x="1228.5"
+     y="880"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#2176B8"
+     text-anchor="middle"
+     id="text151">FEATURE VECTOR</text>
+  <rect
+     x="1118.0"
+     y="915"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#D8EDF9"
+     id="rect151" />
+  <rect
+     x="1147.0"
+     y="915"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#A7D3EC"
+     id="rect152" />
+  <rect
+     x="1176.0"
+     y="915"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#68B5DD"
+     id="rect153" />
+  <rect
+     x="1205.0"
+     y="915"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#2B83BE"
+     id="rect154" />
+  <rect
+     x="1118.0"
+     y="941"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#A7D3EC"
+     id="rect155" />
+  <rect
+     x="1147.0"
+     y="941"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#68B5DD"
+     id="rect156" />
+  <rect
+     x="1176.0"
+     y="941"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#2B83BE"
+     id="rect157" />
+  <rect
+     x="1205.0"
+     y="941"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#D8EDF9"
+     id="rect158" />
+  <rect
+     x="1118.0"
+     y="967"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#68B5DD"
+     id="rect159" />
+  <rect
+     x="1147.0"
+     y="967"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#2B83BE"
+     id="rect160" />
+  <rect
+     x="1176.0"
+     y="967"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#D8EDF9"
+     id="rect161" />
+  <rect
+     x="1205.0"
+     y="967"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#A7D3EC"
+     id="rect162" />
+  <rect
+     x="1118.0"
+     y="993"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#2B83BE"
+     id="rect163" />
+  <rect
+     x="1147.0"
+     y="993"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#D8EDF9"
+     id="rect164" />
+  <rect
+     x="1176.0"
+     y="993"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#A7D3EC"
+     id="rect165" />
+  <rect
+     x="1205.0"
+     y="993"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#68B5DD"
+     id="rect166" />
+  <rect
+     x="1118.0"
+     y="1019"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#D8EDF9"
+     id="rect167" />
+  <rect
+     x="1147.0"
+     y="1019"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#A7D3EC"
+     id="rect168" />
+  <rect
+     x="1176.0"
+     y="1019"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#68B5DD"
+     id="rect169" />
+  <rect
+     x="1205.0"
+     y="1019"
+     width="22"
+     height="19"
+     rx="2"
+     fill="#2B83BE"
+     id="rect170" />
+  <path
+     d="M1248.0,977 L1293.0,977"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="3"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path170" />
+  <rect
+     x="1293.8527"
+     y="985.0589"
+     width="14"
+     height="38"
+     rx="2"
+     fill="#2176b8"
+     id="rect171" />
+  <rect
+     x="1315.8527"
+     y="954.0589"
+     width="14"
+     height="69"
+     rx="2"
+     fill="#2176b8"
+     id="rect172" />
+  <rect
+     x="1337.8527"
+     y="969.0589"
+     width="14"
+     height="54"
+     rx="2"
+     fill="#2176b8"
+     id="rect173" />
+  <rect
+     x="1359.8527"
+     y="941.0589"
+     width="14"
+     height="82"
+     rx="2"
+     fill="#2176b8"
+     id="rect174" />
+  <text
+     x="1228.5"
+     y="1060"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text174">Log-normalized projection variance</text>
+  <rect
+     x="1079.0"
+     y="1128"
+     width="299.0"
+     height="190"
+     rx="13"
+     fill="#EFF7FD"
+     stroke="#2176B8"
+     stroke-width="2.2"
+     id="rect175" />
+  <text
+     x="1228.5"
+     y="1155"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#2176B8"
+     text-anchor="middle"
+     id="text175">INTERPRETABLE SIGNAL</text>
+  <text
+     x="1228.5"
+     y="1192"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text176">Spatial mu/beta modulation</text>
+  <text
+     x="1228.5"
+     y="1220"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text177">rather than visual inspection</text>
+  <text
+     x="1228.5"
+     y="1248"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text178">of raw band waveforms</text>
+  <rect
+     x="1079.0"
+     y="1349"
+     width="299.0"
+     height="168"
+     rx="13"
+     fill="#EFF7FD"
+     stroke="#2176B8"
+     stroke-width="2.2"
+     id="rect178" />
+  <text
+     x="1228.5"
+     y="1376"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#2176B8"
+     text-anchor="middle"
+     id="text179">MODEL INPUT</text>
+  <text
+     x="1228.5"
+     y="1413"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text180">Standardized feature vectors</text>
+  <text
+     x="1228.5"
+     y="1443"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text181">separate for each task family</text>
+  <text
+     x="1571.5"
+     y="237"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="21"
+     font-weight="850"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text182">Four matched models</text>
+  <rect
+     x="1433.0"
+     y="261"
+     width="277.0"
+     height="55"
+     rx="10"
+     fill="#149A72"
+     id="rect182" />
+  <text
+     x="1571.5"
+     y="297"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15"
+     font-weight="850"
+     fill="#FFFFFF"
+     text-anchor="middle"
+     id="text183">UNILATERAL MOVE</text>
+  <rect
+     x="1433.0"
+     y="328"
+     width="277.0"
+     height="55"
+     rx="10"
+     fill="#7556B4"
+     id="rect183" />
+  <text
+     x="1571.5"
+     y="364"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15"
+     font-weight="850"
+     fill="#FFFFFF"
+     text-anchor="middle"
+     id="text184">UNILATERAL IMAGERY</text>
+  <rect
+     x="1433.0"
+     y="395"
+     width="277.0"
+     height="55"
+     rx="10"
+     fill="#E18320"
+     id="rect184" />
+  <text
+     x="1571.5"
+     y="431"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15"
+     font-weight="850"
+     fill="#FFFFFF"
+     text-anchor="middle"
+     id="text185">BILATERAL MOVE</text>
+  <rect
+     x="1433.0"
+     y="462"
+     width="277.0"
+     height="55"
+     rx="10"
+     fill="#CC4C79"
+     id="rect185" />
+  <text
+     x="1571.5"
+     y="498"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15"
+     font-weight="850"
+     fill="#FFFFFF"
+     text-anchor="middle"
+     id="text186">BILATERAL IMAGERY</text>
+  <path
+     d="M1571.5,545 L1571.5,588"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="3"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path186" />
+  <rect
+     x="1422.0"
+     y="596"
+     width="299.0"
+     height="178"
+     rx="13"
+     fill="#F5F0FB"
+     stroke="#6D3BB7"
+     stroke-width="2.2"
+     id="rect186" />
+  <text
+     x="1571.5"
+     y="623"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#6D3BB7"
+     text-anchor="middle"
+     id="text187">STAGE 1: INTENT GATE</text>
+  <text
+     x="1571.5"
+     y="645"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="19"
+     font-weight="850"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text188">REST</text>
+  <text
+     x="1571.5"
+     y="674"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="19"
+     font-weight="850"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text189">vs</text>
+  <text
+     x="1571.5"
+     y="703"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="19"
+     font-weight="850"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text190">ANY MOTOR INTENT</text>
+  <path
+     d="M1571.5,785 L1571.5,830"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="3"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path190" />
+  <rect
+     x="1422.0"
+     y="838"
+     width="299.0"
+     height="194"
+     rx="13"
+     fill="#F5F0FB"
+     stroke="#6D3BB7"
+     stroke-width="2.2"
+     id="rect190" />
+  <text
+     x="1571.5"
+     y="865"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#6D3BB7"
+     text-anchor="middle"
+     id="text191">STAGE 2: TASK HEAD</text>
+  <text
+     x="1571.5"
+     y="884"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text192">Unilateral: LEFT vs RIGHT</text>
+  <text
+     x="1571.5"
+     y="913"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text193">Bilateral: FISTS vs FEET</text>
+  <text
+     x="1571.5"
+     y="942"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text194">Only evaluated after intent</text>
+  <rect
+     x="1422.0"
+     y="1062"
+     width="299.0"
+     height="194"
+     rx="13"
+     fill="#F5F0FB"
+     stroke="#6D3BB7"
+     stroke-width="2.2"
+     id="rect194" />
+  <text
+     x="1571.5"
+     y="1089"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#6D3BB7"
+     text-anchor="middle"
+     id="text195">CLASSIFIER</text>
+  <text
+     x="1571.5"
+     y="1108"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text196">Class-balanced</text>
+  <text
+     x="1571.5"
+     y="1137"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text197">logistic regression</text>
+  <text
+     x="1571.5"
+     y="1166"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text198">Calibrated probabilities</text>
+  <rect
+     x="1422.0"
+     y="1286"
+     width="299.0"
+     height="231"
+     rx="13"
+     fill="#F5F0FB"
+     stroke="#6D3BB7"
+     stroke-width="2.2"
+     id="rect198" />
+  <text
+     x="1571.5"
+     y="1313"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#6D3BB7"
+     text-anchor="middle"
+     id="text199">HIERARCHICAL OUTPUT</text>
+  <text
+     x="1571.5"
+     y="1336"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text200">p(intent) &lt; threshold -&gt; REST</text>
+  <text
+     x="1571.5"
+     y="1365"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text201">otherwise task head selects</text>
+  <text
+     x="1571.5"
+     y="1394"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text202">LEFT / RIGHT</text>
+  <text
+     x="1571.5"
+     y="1423"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text203">or FISTS / FEET</text>
+  <rect
+     x="1765.0"
+     y="218"
+     width="299.0"
+     height="222"
+     rx="13"
+     fill="#FAF1FB"
+     stroke="#8C3DA6"
+     stroke-width="2.2"
+     id="rect203" />
+  <text
+     x="1914.5"
+     y="245"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#8C3DA6"
+     text-anchor="middle"
+     id="text204">SUBJECT-ISOLATED SPLIT</text>
+  <circle
+     cx="1812.0"
+     cy="286"
+     r="18"
+     fill="#335E8E"
+     id="circle204" />
+  <path
+     d="M1784.0,334 Q1812.0,300 1840.0,334 Z"
+     fill="#335E8E"
+     id="path204" />
+  <text
+     x="1812.0"
+     y="363"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="13"
+     font-weight="800"
+     fill="#335E8E"
+     text-anchor="middle"
+     id="text205">DEV</text>
+  <text
+     x="1812.0"
+     y="387"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text206">68</text>
+  <circle
+     cx="1914.5"
+     cy="286"
+     r="18"
+     fill="#9C5BB0"
+     id="circle206" />
+  <path
+     d="M1886.5,334 Q1914.5,300 1942.5,334 Z"
+     fill="#9C5BB0"
+     id="path206" />
+  <text
+     x="1914.5"
+     y="363"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="13"
+     font-weight="800"
+     fill="#9C5BB0"
+     text-anchor="middle"
+     id="text207">VALIDATE</text>
+  <text
+     x="1914.5"
+     y="387"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text208">18</text>
+  <circle
+     cx="2017.0"
+     cy="286"
+     r="18"
+     fill="#D25C3C"
+     id="circle208" />
+  <path
+     d="M1989.0,334 Q2017.0,300 2045.0,334 Z"
+     fill="#D25C3C"
+     id="path208" />
+  <text
+     x="2017.0"
+     y="363"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="13"
+     font-weight="800"
+     fill="#D25C3C"
+     text-anchor="middle"
+     id="text209">TEST</text>
+  <text
+     x="2017.0"
+     y="387"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text210">22</text>
+  <text
+     x="1914.5"
+     y="425"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="16"
+     font-weight="800"
+     fill="#8C3DA6"
+     text-anchor="middle"
+     id="text211">No final-test leakage</text>
+  <rect
+     x="1765.0"
+     y="469"
+     width="299.0"
+     height="205"
+     rx="13"
+     fill="#FAF1FB"
+     stroke="#8C3DA6"
+     stroke-width="2.2"
+     id="rect211" />
+  <text
+     x="1914.5"
+     y="496"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#8C3DA6"
+     text-anchor="middle"
+     id="text212">POOLED BINARY GATE</text>
+  <text
+     x="1914.5"
+     y="515"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text213">All 12 task runs</text>
+  <text
+     x="1914.5"
+     y="543"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text214">REST vs ANY INTENT</text>
+  <text
+     x="1914.5"
+     y="571"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text215">Task-class output ignored</text>
+  <text
+     x="1914.5"
+     y="599"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text216">No invalid 5-class mapping</text>
+  <rect
+     x="1765.1409"
+     y="704.14093"
+     width="298.71817"
+     height="299.34668"
+     rx="12.987747"
+     fill="#faf1fb"
+     stroke="#8c3da6"
+     stroke-width="2.2"
+     id="rect216" />
+  <text
+     x="1914.5"
+     y="731"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#8C3DA6"
+     text-anchor="middle"
+     id="text217">PATIENT CALIBRATION</text>
+  <text
+     x="1914.5"
+     y="749"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text218">Euclidean alignment</text>
+  <text
+     x="1914.5"
+     y="778"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text219">Riemannian covariance</text>
+  <text
+     x="1914.5"
+     y="807"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text220">10 labeled segments / class</text>
+  <text
+     x="1914.5"
+     y="836"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text221">Calibrated intent score</text>
+  <rect
+     x="1849.5"
+     y="882"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#EADFF0"
+     id="rect221" />
+  <rect
+     x="1881.5"
+     y="882"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#C7A8D3"
+     id="rect222" />
+  <rect
+     x="1913.5"
+     y="882"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#9B6BB0"
+     id="rect223" />
+  <rect
+     x="1945.5"
+     y="882"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#713D88"
+     id="rect224" />
+  <rect
+     x="1849.5"
+     y="905"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#C7A8D3"
+     id="rect225" />
+  <rect
+     x="1881.5"
+     y="905"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#9B6BB0"
+     id="rect226" />
+  <rect
+     x="1913.5"
+     y="905"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#713D88"
+     id="rect227" />
+  <rect
+     x="1945.5"
+     y="905"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#EADFF0"
+     id="rect228" />
+  <rect
+     x="1849.5"
+     y="928"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#9B6BB0"
+     id="rect229" />
+  <rect
+     x="1881.5"
+     y="928"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#713D88"
+     id="rect230" />
+  <rect
+     x="1913.5"
+     y="928"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#EADFF0"
+     id="rect231" />
+  <rect
+     x="1945.5"
+     y="928"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#C7A8D3"
+     id="rect232" />
+  <rect
+     x="1849.5"
+     y="951"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#713D88"
+     id="rect233" />
+  <rect
+     x="1881.5"
+     y="951"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#EADFF0"
+     id="rect234" />
+  <rect
+     x="1913.5"
+     y="951"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#C7A8D3"
+     id="rect235" />
+  <rect
+     x="1945.5"
+     y="951"
+     width="25"
+     height="17"
+     rx="2"
+     fill="#9B6BB0"
+     id="rect236" />
+  <rect
+     x="1766.0098"
+     y="1031.599"
+     width="299"
+     height="219"
+     rx="13"
+     fill="#faf1fb"
+     stroke="#8c3da6"
+     stroke-width="2.2"
+     id="rect237" />
+  <text
+     x="1914.5"
+     y="1065.6677"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="850"
+     fill="#8c3da6"
+     text-anchor="middle"
+     id="text237">THRESHOLD SELECTION</text>
+  <text
+     x="1914.5"
+     y="1099.8248"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text238">Controller-validation only</text>
+  <text
+     x="1914.5"
+     y="1127.8248"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text239">Balanced operating point</text>
+  <text
+     x="1914.5"
+     y="1155.8248"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text240">Safety operating point</text>
+  <text
+     x="1914.5"
+     y="1183.8248"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text241">Thresholds fixed before test</text>
+  <rect
+     x="1764.866"
+     y="1287.5338"
+     width="299.26807"
+     height="229.60027"
+     rx="13.011655"
+     fill="#faf1fb"
+     stroke="#8c3da6"
+     stroke-width="2.2"
+     id="rect241" />
+  <text
+     x="1914.5"
+     y="1323.7562"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17px"
+     font-weight="850"
+     fill="#8c3da6"
+     text-anchor="middle"
+     id="text242">UNCERTAINTY HANDLING</text>
+  <text
+     x="1914.5"
+     y="1347.7562"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text243">Artifact abstention</text>
+  <text
+     x="1914.5"
+     y="1378.7562"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text244">Low-confidence abstention</text>
+  <text
+     x="1914.5"
+     y="1409.7562"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text245">Patient-specific threshold</text>
+  <text
+     x="1914.5"
+     y="1440.7562"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text246">Report calibration burden</text>
+  <text
+     x="1914.5"
+     y="1471.7562"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18px"
+     font-weight="750"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text247">Later sessions held out</text>
+  <rect
+     x="2108.0"
+     y="218"
+     width="299.0"
+     height="210"
+     rx="13"
+     fill="#FFF1ED"
+     stroke="#D44B1D"
+     stroke-width="2.2"
+     id="rect247" />
+  <text
+     x="2257.5"
+     y="245"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#D44B1D"
+     text-anchor="middle"
+     id="text248">CAUSAL STREAMING</text>
+  <text
+     x="2257.5"
+     y="280"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="800"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text249">Complete imagery runs</text>
+  <text
+     x="2257.5"
+     y="309"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="800"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text250">1.0 s windows</text>
+  <text
+     x="2257.5"
+     y="338"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="800"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text251">Updated every 250 ms</text>
+  <rect
+     x="2143.0"
+     y="363"
+     width="150"
+     height="30"
+     rx="5"
+     fill="#D44B1D"
+     opacity="0.2"
+     stroke="#D44B1D"
+     stroke-width="1.5"
+     id="rect251" />
+  <rect
+     x="2171.0"
+     y="363"
+     width="150"
+     height="30"
+     rx="5"
+     fill="#D44B1D"
+     opacity="0.38"
+     stroke="#D44B1D"
+     stroke-width="1.5"
+     id="rect252" />
+  <rect
+     x="2199.0"
+     y="363"
+     width="150"
+     height="30"
+     rx="5"
+     fill="#D44B1D"
+     opacity="0.56"
+     stroke="#D44B1D"
+     stroke-width="1.5"
+     id="rect253" />
+  <rect
+     x="2108.0"
+     y="458"
+     width="299.0"
+     height="190"
+     rx="13"
+     fill="#FFF1ED"
+     stroke="#D44B1D"
+     stroke-width="2.2"
+     id="rect254" />
+  <text
+     x="2257.5"
+     y="485"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#D44B1D"
+     text-anchor="middle"
+     id="text254">CALIBRATED FUSION</text>
+  <text
+     x="2257.5"
+     y="521"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text255">Fixed-band ERD</text>
+  <text
+     x="2257.5"
+     y="550"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text256">Aligned covariance evidence</text>
+  <text
+     x="2257.5"
+     y="579"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="18"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text257">Patient-calibrated scores</text>
+  <path
+     d="M2257.5,659 L2257.5,700"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="3"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path257" />
+  <rect
+     x="2108.0"
+     y="708"
+     width="299.0"
+     height="247"
+     rx="13"
+     fill="#FFF1ED"
+     stroke="#D44B1D"
+     stroke-width="2.2"
+     id="rect257" />
+  <text
+     x="2257.5"
+     y="735"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#D44B1D"
+     text-anchor="middle"
+     id="text258">EVIDENCE ACCUMULATION</text>
+  <line
+     x1="2135.0"
+     y1="883"
+     x2="2380.0"
+     y2="883"
+     stroke="#748A9D"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="line258" />
+  <line
+     x1="2135.0"
+     y1="883"
+     x2="2135.0"
+     y2="773"
+     stroke="#748A9D"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="line259" />
+  <line
+     x1="2135.0"
+     y1="807"
+     x2="2380.0"
+     y2="807"
+     stroke="#E19C2C"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-dasharray="7,6"
+     id="line260" />
+  <path
+     d="M2135.0,875 L2173.0,869 L2211.0,856 L2249.0,828 L2287.0,800 L2325.0,789 L2380.0,787"
+     fill="none"
+     stroke="#D44B1D"
+     stroke-width="4"
+     id="path260" />
+  <text
+     x="2257.5"
+     y="926"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text260">Leaky evidence + hysteresis + cooldown</text>
+  <rect
+     x="2108.0"
+     y="985"
+     width="299.0"
+     height="220"
+     rx="13"
+     fill="#FFF1ED"
+     stroke="#D44B1D"
+     stroke-width="2.2"
+     id="rect260" />
+  <text
+     x="2257.5"
+     y="1012"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#D44B1D"
+     text-anchor="middle"
+     id="text261">ARTIFACT ABSTENTION</text>
+  <text
+     x="2257.5"
+     y="1033"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text262">150 uV streaming gate</text>
+  <text
+     x="2257.5"
+     y="1061"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text263">Suppress contaminated windows</text>
+  <text
+     x="2257.5"
+     y="1089"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text264">Do not convert uncertainty</text>
+  <text
+     x="2257.5"
+     y="1117"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text265">into a device command</text>
+  <rect
+     x="2108.0"
+     y="1235"
+     width="299.0"
+     height="282"
+     rx="13"
+     fill="#FFF1ED"
+     stroke="#D44B1D"
+     stroke-width="2.2"
+     id="rect265" />
+  <text
+     x="2257.5"
+     y="1262"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#D44B1D"
+     text-anchor="middle"
+     id="text266">CONTROLLER STATES</text>
+  <rect
+     x="2131.0"
+     y="1289"
+     width="253.0"
+     height="38"
+     rx="9"
+     fill="#FFF9F6"
+     stroke="#D44B1D"
+     stroke-width="1.8"
+     id="rect266" />
+  <text
+     x="2257.5"
+     y="1315"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15"
+     font-weight="800"
+     fill="#D44B1D"
+     text-anchor="middle"
+     id="text267">REST / DISARMED</text>
+  <path
+     d="M2257.5,1328 L2257.5,1341"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="2.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path267" />
+  <rect
+     x="2131.0"
+     y="1345"
+     width="253.0"
+     height="38"
+     rx="9"
+     fill="#FFF9F6"
+     stroke="#D44B1D"
+     stroke-width="1.8"
+     id="rect267" />
+  <text
+     x="2257.5"
+     y="1371"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15"
+     font-weight="800"
+     fill="#D44B1D"
+     text-anchor="middle"
+     id="text268">EVIDENCE RISING</text>
+  <path
+     d="M2257.5,1384 L2257.5,1397"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="2.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path268" />
+  <rect
+     x="2131.0"
+     y="1401"
+     width="253.0"
+     height="38"
+     rx="9"
+     fill="#FFF9F6"
+     stroke="#D44B1D"
+     stroke-width="1.8"
+     id="rect268" />
+  <text
+     x="2257.5"
+     y="1427"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15"
+     font-weight="800"
+     fill="#D44B1D"
+     text-anchor="middle"
+     id="text269">INTENT PROPOSED</text>
+  <path
+     d="M2257.5,1440 L2257.5,1453"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="2.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path269" />
+  <rect
+     x="2131.0"
+     y="1457"
+     width="253.0"
+     height="38"
+     rx="9"
+     fill="#FFF9F6"
+     stroke="#D44B1D"
+     stroke-width="1.8"
+     id="rect269" />
+  <text
+     x="2257.5"
+     y="1483"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15"
+     font-weight="800"
+     fill="#D44B1D"
+     text-anchor="middle"
+     id="text270">COOLDOWN / TIMEOUT</text>
+  <rect
+     x="2451.0"
+     y="218"
+     width="299.0"
+     height="185"
+     rx="13"
+     fill="#FFF5EF"
+     stroke="#E2681B"
+     stroke-width="2.2"
+     id="rect270" />
+  <text
+     x="2600.5"
+     y="245"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#E2681B"
+     text-anchor="middle"
+     id="text271">LOCKED FINAL TEST</text>
+  <text
+     x="2600.5"
+     y="263"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text272">22 completely unseen subjects</text>
+  <text
+     x="2600.5"
+     y="292"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text273">All models + thresholds frozen</text>
+  <text
+     x="2600.5"
+     y="321"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text274">Runs 11 / 12 / 13 / 14</text>
+  <rect
+     x="2451.0"
+     y="433"
+     width="299.0"
+     height="225"
+     rx="13"
+     fill="#FFF5EF"
+     stroke="#E2681B"
+     stroke-width="2.2"
+     id="rect274" />
+  <text
+     x="2600.5"
+     y="460"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#E2681B"
+     text-anchor="middle"
+     id="text275">TRIAL-LEVEL OUTPUTS</text>
+  <rect
+     x="2458.7544"
+     y="510.09821"
+     width="27"
+     height="24"
+     rx="2"
+     fill="#c94e20"
+     id="rect275" />
+  <rect
+     x="2492.7544"
+     y="510.09821"
+     width="27"
+     height="24"
+     rx="2"
+     fill="#f0b79b"
+     id="rect276" />
+  <rect
+     x="2526.7544"
+     y="510.09821"
+     width="27"
+     height="24"
+     rx="2"
+     fill="#f4d8cb"
+     id="rect277" />
+  <rect
+     x="2458.7544"
+     y="541.09821"
+     width="27"
+     height="24"
+     rx="2"
+     fill="#f0b79b"
+     id="rect278" />
+  <rect
+     x="2492.7544"
+     y="541.09821"
+     width="27"
+     height="24"
+     rx="2"
+     fill="#c94e20"
+     id="rect279" />
+  <rect
+     x="2526.7544"
+     y="541.09821"
+     width="27"
+     height="24"
+     rx="2"
+     fill="#f0b79b"
+     id="rect280" />
+  <rect
+     x="2458.7544"
+     y="572.09821"
+     width="27"
+     height="24"
+     rx="2"
+     fill="#f4d8cb"
+     id="rect281" />
+  <rect
+     x="2492.7544"
+     y="572.09821"
+     width="27"
+     height="24"
+     rx="2"
+     fill="#f0b79b"
+     id="rect282" />
+  <rect
+     x="2526.7544"
+     y="572.09821"
+     width="27"
+     height="24"
+     rx="2"
+     fill="#c94e20"
+     id="rect283" />
+  <text
+     x="2636.833"
+     y="492.79376"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="700"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text283">Accuracy / balanced accuracy</text>
+  <text
+     x="2654"
+     y="530.91162"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15px"
+     font-weight="700"
+     fill="#173b57"
+     text-anchor="middle"
+     id="text284">Macro F1</text>
+  <text
+     x="2654.0"
+     y="566"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="15"
+     font-weight="700"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text285">Intent BA / task-class BA</text>
+  <rect
+     x="2451.0"
+     y="688"
+     width="299.0"
+     height="237"
+     rx="13"
+     fill="#FFF5EF"
+     stroke="#E2681B"
+     stroke-width="2.2"
+     id="rect285" />
+  <text
+     x="2600.5"
+     y="715"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#E2681B"
+     text-anchor="middle"
+     id="text286">CONTINUOUS SAFETY</text>
+  <text
+     x="2600.5"
+     y="734"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text287">False activations / rest min</text>
+  <text
+     x="2600.5"
+     y="763"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text288">Intent sensitivity</text>
+  <text
+     x="2600.5"
+     y="792"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text289">Missed-intent rate</text>
+  <text
+     x="2600.5"
+     y="821"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text290">Median decision latency</text>
+  <rect
+     x="2522.0"
+     y="855"
+     width="35"
+     height="38"
+     rx="4"
+     fill="#79A9CE"
+     id="rect290" />
+  <rect
+     x="2581.0"
+     y="811"
+     width="35"
+     height="82"
+     rx="4"
+     fill="#E2681B"
+     id="rect291" />
+  <rect
+     x="2640.0"
+     y="832"
+     width="35"
+     height="61"
+     rx="4"
+     fill="#A67BC0"
+     id="rect292" />
+  <rect
+     x="2451.0"
+     y="955"
+     width="299.0"
+     height="224"
+     rx="13"
+     fill="#FFF5EF"
+     stroke="#E2681B"
+     stroke-width="2.2"
+     id="rect293" />
+  <text
+     x="2600.5"
+     y="982"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#E2681B"
+     text-anchor="middle"
+     id="text293">CURRENT READOUT</text>
+  <text
+     x="2600.5"
+     y="1001"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="16"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text294">Safety: 1.06 FP/min | 8.8% sens.</text>
+  <text
+     x="2600.5"
+     y="1030"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="16"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text295">Sensitivity: 7.94 FP/min | 70.9%</text>
+  <text
+     x="2600.5"
+     y="1059"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="16"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text296">Latency: 1.72-1.95 s</text>
+  <text
+     x="2600.5"
+     y="1088"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="16"
+     font-weight="750"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text297">Joint target not met</text>
+  <rect
+     x="2451.0"
+     y="1209"
+     width="299.0"
+     height="308"
+     rx="13"
+     fill="#FFF5EF"
+     stroke="#E2681B"
+     stroke-width="2.2"
+     id="rect297" />
+  <text
+     x="2600.5"
+     y="1236"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="850"
+     fill="#E2681B"
+     text-anchor="middle"
+     id="text298">PROJECT CONCLUSION</text>
+  <text
+     x="2600.5"
+     y="1258"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="800"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text299">Movement is more separable</text>
+  <text
+     x="2600.5"
+     y="1287"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="800"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text300">than motor imagery</text>
+  <text
+     x="2600.5"
+     y="1316"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="800"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text301" />
+  <text
+     x="2600.5"
+     y="1345"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="800"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text302">Main bottleneck:</text>
+  <text
+     x="2600.5"
+     y="1374"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="800"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text303">weak intent overlaps rest</text>
+  <text
+     x="2600.5"
+     y="1403"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="800"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text304" />
+  <text
+     x="2600.5"
+     y="1432"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="800"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text305">EEG should propose intent;</text>
+  <text
+     x="2600.5"
+     y="1461"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="17"
+     font-weight="800"
+     fill="#173B57"
+     text-anchor="middle"
+     id="text306">confirmation authorizes movement</text>
+  <path
+     d="M365.0,880 L373.0,880"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="4"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path306" />
+  <path
+     d="M708.0,880 L716.0,880"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="4"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path307" />
+  <path
+     d="M1051.0,880 L1059.0,880"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="4"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path308" />
+  <path
+     d="M1394.0,880 L1402.0,880"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="4"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path309" />
+  <path
+     d="M1737.0,880 L1745.0,880"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="4"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path310" />
+  <path
+     d="M2080.0,880 L2088.0,880"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="4"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path311" />
+  <path
+     d="M2423.0,880 L2431.0,880"
+     fill="none"
+     stroke="#3B5268"
+     stroke-width="4"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     marker-end="url(#a)"
+     id="path312" />
+  <text
+     x="1400.0"
+     y="1630"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="22"
+     font-weight="850"
+     fill="#234E70"
+     text-anchor="middle"
+     id="text312">Pipeline focus: safe intent-versus-rest detection, not only left/right or fists/feet classification.</text>
+</svg>

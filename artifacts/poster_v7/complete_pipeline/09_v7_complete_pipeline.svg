@@ -1,0 +1,1299 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1169.28pt"
+   height="665.28pt"
+   viewBox="0 0 1169.28 665.28"
+   version="1.1"
+   id="svg120"
+   sodipodi:docname="09_v7_complete_pipeline.svg"
+   inkscape:export-filename="09_v7_complete_pipeline.png"
+   inkscape:export-xdpi="400"
+   inkscape:export-ydpi="400"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview120"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     inkscape:zoom="0.98902951"
+     inkscape:cx="778.03543"
+     inkscape:cy="397.86477"
+     inkscape:window-width="2056"
+     inkscape:window-height="1290"
+     inkscape:window-x="0"
+     inkscape:window-y="39"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="axes_1" />
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:date>2026-08-09T18:46:51.770289</dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Matplotlib v3.10.1, https://matplotlib.org/</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1">
+    <style
+       type="text/css"
+       id="style1">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+  </defs>
+  <g
+     id="figure_1">
+    <g
+       id="patch_1">
+      <path
+         d="M 0 665.28  L 1169.28 665.28  L 1169.28 0  L 0 0  z "
+         style="fill: #f4f1e8"
+         id="path1" />
+    </g>
+    <g
+       id="axes_1">
+      <g
+         id="patch_2">
+        <path
+           d="M 65.088 77.328  L 153.792 77.328  Q 179.136 77.328 179.136 63.072  L 179.136 48.816  Q 179.136 34.56 153.792 34.56  L 65.088 34.56  Q 39.744 34.56 39.744 48.816  L 39.744 63.072  Q 39.744 77.328 65.088 77.328  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #173a59; stroke: #173a59; stroke-width: 1.25; stroke-linejoin: miter"
+           id="path2" />
+      </g>
+      <g
+         id="line2d_1"
+         transform="translate(0,6)">
+        <path
+           d="M 259.776,112.32 H 1120.32"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:none;stroke:#cbd3d7;stroke-width:1.3;stroke-linecap:square"
+           id="path3" />
+      </g>
+      <g
+         id="patch_3">
+        <path
+           d="M 65.088 344.304  L 251.712 344.304  Q 277.056 344.304 277.056 330.048  L 277.056 163.512  Q 277.056 149.256 251.712 149.256  L 65.088 149.256  Q 39.744 149.256 39.744 163.512  L 39.744 330.048  Q 39.744 344.304 65.088 344.304  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #fffdf8; stroke: #2d7fa8; stroke-width: 1.35; stroke-linejoin: miter"
+           id="path4" />
+      </g>
+      <g
+         id="patch_4">
+        <path
+           d="M 318.528 344.304  L 505.152 344.304  Q 530.496 344.304 530.496 330.048  L 530.496 163.512  Q 530.496 149.256 505.152 149.256  L 318.528 149.256  Q 293.184 149.256 293.184 163.512  L 293.184 330.048  Q 293.184 344.304 318.528 344.304  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #fffdf8; stroke: #248b7f; stroke-width: 1.35; stroke-linejoin: miter"
+           id="path5" />
+      </g>
+      <g
+         id="patch_5">
+        <path
+           d="M 571.968 344.304  L 821.952 344.304  Q 847.296 344.304 847.296 330.048  L 847.296 163.512  Q 847.296 149.256 821.952 149.256  L 571.968 149.256  Q 546.624 149.256 546.624 163.512  L 546.624 330.048  Q 546.624 344.304 571.968 344.304  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #fffdf8; stroke: #e9a437; stroke-width: 1.35; stroke-linejoin: miter"
+           id="path6" />
+      </g>
+      <g
+         id="patch_6">
+        <path
+           d="M 888.768 344.304  L 1104.192 344.304  Q 1129.536 344.304 1129.536 330.048  L 1129.536 163.512  Q 1129.536 149.256 1104.192 149.256  L 888.768 149.256  Q 863.424 149.256 863.424 163.512  L 863.424 330.048  Q 863.424 344.304 888.768 344.304  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #fffdf8; stroke: #d96b3b; stroke-width: 1.35; stroke-linejoin: miter"
+           id="path7" />
+      </g>
+      <g
+         id="line2d_2"
+         transform="translate(0,4.5)">
+        <path
+           d="M 281.664,370.872 H 1120.32"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:none;stroke:#cbd3d7;stroke-width:1.3;stroke-linecap:square"
+           id="path8" />
+      </g>
+      <g
+         id="patch_7">
+        <path
+           d="M 65.088 574.344  L 303.552 574.344  Q 328.896 574.344 328.896 560.088  L 328.896 422.712  Q 328.896 408.456 303.552 408.456  L 65.088 408.456  Q 39.744 408.456 39.744 422.712  L 39.744 560.088  Q 39.744 574.344 65.088 574.344  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #fffdf8; stroke: #d96b3b; stroke-width: 1.35; stroke-linejoin: miter"
+           id="path9" />
+      </g>
+      <g
+         id="patch_8">
+        <path
+           d="M 387.648 574.344  L 626.112 574.344  Q 651.456 574.344 651.456 560.088  L 651.456 422.712  Q 651.456 408.456 626.112 408.456  L 387.648 408.456  Q 362.304 408.456 362.304 422.712  L 362.304 560.088  Q 362.304 574.344 387.648 574.344  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #fffdf8; stroke: #248b7f; stroke-width: 1.35; stroke-linejoin: miter"
+           id="path10" />
+      </g>
+      <g
+         id="patch_9">
+        <path
+           d="M 710.208 574.344  L 873.792 574.344  Q 899.136 574.344 899.136 560.088  L 899.136 422.712  Q 899.136 408.456 873.792 408.456  L 710.208 408.456  Q 684.864 408.456 684.864 422.712  L 684.864 560.088  Q 684.864 574.344 710.208 574.344  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #fffdf8; stroke: #2d7fa8; stroke-width: 1.35; stroke-linejoin: miter"
+           id="path11" />
+      </g>
+      <g
+         id="patch_10">
+        <path
+           d="M 957.888 574.344  L 1104.192 574.344  Q 1129.536 574.344 1129.536 560.088  L 1129.536 422.712  Q 1129.536 408.456 1104.192 408.456  L 957.888 408.456  Q 932.544 408.456 932.544 422.712  L 932.544 560.088  Q 932.544 574.344 957.888 574.344  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #fffdf8; stroke: #e9a437; stroke-width: 1.35; stroke-linejoin: miter"
+           id="path12" />
+      </g>
+      <g
+         id="patch_11">
+        <path
+           d="M 60.48 639.144  L 1108.8 639.144  Q 1129.536 639.144 1129.536 627.48  L 1129.536 600.264  Q 1129.536 588.6 1108.8 588.6  L 60.48 588.6  Q 39.744 588.6 39.744 600.264  L 39.744 627.48  Q 39.744 639.144 60.48 639.144  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #17324d; stroke: #17324d; stroke-width: 1.25; stroke-linejoin: miter"
+           id="path13" />
+      </g>
+      <g
+         id="text_1">
+        <text
+           style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff"
+           x="109.44"
+           y="59.168609"
+           transform="rotate(-0 109.44 59.168609)"
+           id="text13">V7 PIPELINE</text>
+      </g>
+      <g
+         id="text_2">
+        <text
+           style="font-weight: 700; font-size: 23px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #17324d"
+           x="198.72"
+           y="57.778562"
+           transform="rotate(-0 198.72 57.778562)"
+           id="text14">General EEG Model to Rapid Patient-Adapted Motor-Intent Detection</text>
+      </g>
+      <g
+         id="text_3">
+        <text
+           style="font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #34424e"
+           x="201.024"
+           y="80.4085"
+           transform="rotate(-0 201.024 80.4085)"
+           id="text15">Population learning and patient calibration remain separated; the device-facing output is strictly REST or INTENT</text>
+      </g>
+      <g
+         id="text_4">
+        <text
+           style="font-weight:bold;font-size:13px;font-family:Sans;text-anchor:start;fill:#17324d;-inkscape-font-specification:'Sans, Bold';font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-linecap:butt;stroke-linejoin:round"
+           x="106.56"
+           y="244.757656"
+           transform="rotate(-0 106.56 244.757656)"
+           id="text16">PhysioNet</text>
+      </g>
+      <g
+         id="text_5">
+        <text
+           style="font-weight:bold;font-size:13px;font-family:Sans;text-anchor:start;fill:#17324d;-inkscape-font-specification:'Sans, Bold';font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-linecap:butt;stroke-linejoin:round"
+           x="106.56"
+           y="273.917656"
+           transform="rotate(-0 106.56 273.917656)"
+           id="text17">OpenBMI</text>
+      </g>
+      <g
+         id="text_6">
+        <text
+           style="font-weight:bold;font-size:13px;font-family:Sans;text-anchor:start;fill:#17324d;-inkscape-font-specification:'Sans, Bold';font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-linecap:butt;stroke-linejoin:round"
+           x="106.56"
+           y="303.077656"
+           transform="rotate(-0 106.56 303.077656)"
+           id="text18">Liu stroke</text>
+      </g>
+      <g
+         id="text_7">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;fill:#34424e"
+           transform="translate(72,321.46092)"
+           id="text19" />
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;fill:#34424e"
+           transform="translate(72,332.712)"
+           id="text20" />
+      </g>
+      <g
+         id="text_8"
+         transform="translate(-31.5)">
+        <text
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="348.48001"
+           y="214.82068"
+           id="text21"><tspan
+             style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan123">Detect and repair bad channels</tspan></text>
+      </g>
+      <g
+         id="text_9"
+         transform="translate(-31.5)">
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="348.48001"
+           y="239.54475"
+           id="text22"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan124">Common-average reference (CAR)</tspan></text>
+      </g>
+      <g
+         id="text_10"
+         transform="translate(-31.5)">
+        <text
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="348.48001"
+           y="264.06866"
+           id="text23"><tspan
+             style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan125">Resample to 100 Hz</tspan></text>
+      </g>
+      <g
+         id="text_11"
+         transform="translate(-31.5)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="348.48001"
+           y="288.69266"
+           id="text24"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan126">Select 7 shared motor channels</tspan></text>
+      </g>
+      <g
+         id="text_12"
+         transform="translate(-31.5)">
+        <text
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="348.48001"
+           y="313.31668"
+           id="text25"><tspan
+             style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan127">Preserve dataset identity</tspan></text>
+      </g>
+      <g
+         id="text_13"
+         transform="translate(-9,1.5)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#248b7f"
+           x="325.44"
+           y="324.86401"
+           id="text26">FC3 FC4 C3 Cz C4 CP3 CP4</text>
+      </g>
+      <g
+         id="patch_12">
+        <path
+           d="M 583.488 230.904  L 810.432 230.904  Q 824.256 230.904 824.256 223.128  L 824.256 200.448  Q 824.256 192.672 810.432 192.672  L 583.488 192.672  Q 569.664 192.672 569.664 200.448  L 569.664 223.128  Q 569.664 230.904 583.488 230.904  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #e8f2f7; stroke: #2d7fa8; stroke-linejoin: miter"
+           id="path26" />
+      </g>
+      <g
+         id="text_14"
+         transform="translate(-4.5)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#2d7fa8;stroke-linecap:butt;stroke-linejoin:round"
+           x="596.15997"
+           y="210.28467"
+           id="text27"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan129">MRCP 0.1-4 Hz</tspan></text>
+      </g>
+      <g
+         id="text_15"
+         transform="translate(-4.5,3)">
+        <text
+           style="font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#34424e;stroke-linecap:butt;stroke-linejoin:round"
+           x="596.15997"
+           y="220.65268"
+           id="text28"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan128">slow preparation + 5-seed FBCNet</tspan></text>
+      </g>
+      <g
+         id="patch_13">
+        <path
+           d="M 583.488 269.784  L 810.432 269.784  Q 824.256 269.784 824.256 262.008  L 824.256 239.328  Q 824.256 231.552 810.432 231.552  L 583.488 231.552  Q 569.664 231.552 569.664 239.328  L 569.664 262.008  Q 569.664 269.784 583.488 269.784  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #e5f3ef; stroke: #248b7f; stroke-linejoin: miter"
+           id="path28" />
+      </g>
+      <g
+         id="text_16"
+         transform="translate(-4.5)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#248b7f;stroke-linecap:butt;stroke-linejoin:round"
+           x="596.15997"
+           y="249.16467"
+           id="text29"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan133">SMR 7-35 Hz</tspan></text>
+      </g>
+      <g
+         id="text_17"
+         transform="translate(-4.5,3)">
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#34424e;stroke-linecap:butt;stroke-linejoin:round"
+           x="596.15997"
+           y="259.56467"
+           id="text30">mu/beta desynchronization statistics</text>
+      </g>
+      <g
+         id="patch_14">
+        <path
+           d="M 583.488 308.664  L 810.432 308.664  Q 824.256 308.664 824.256 300.888  L 824.256 278.208  Q 824.256 270.432 810.432 270.432  L 583.488 270.432  Q 569.664 270.432 569.664 278.208  L 569.664 300.888  Q 569.664 308.664 583.488 308.664  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #fbf0d6; stroke: #e9a437; stroke-linejoin: miter"
+           id="path30" />
+      </g>
+      <g
+         id="text_18"
+         transform="translate(-4.5)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#e9a437;stroke-linecap:butt;stroke-linejoin:round"
+           x="596.15997"
+           y="288.04468"
+           id="text31"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan130">RIEMANNIAN COVARIANCE</tspan></text>
+      </g>
+      <g
+         id="text_19"
+         transform="translate(-4.5,3)">
+        <text
+           style="font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#34424e;stroke-linecap:butt;stroke-linejoin:round"
+           x="596.15997"
+           y="298.51276"
+           id="text32"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan132">four-band sensorimotor spatial structure</tspan></text>
+      </g>
+      <g
+         id="text_20">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#d96b3b"
+           x="562.38"
+           y="324.86401"
+           id="text33">Quality / OOD evidence remains available for rejection</text>
+      </g>
+      <g
+         id="text_21">
+        <text
+           style="font-weight:700;font-size:10.8px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="903.74402"
+           y="206.28"
+           id="text34"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan136">Controller-selected late fusion</tspan></text>
+      </g>
+      <g
+         id="patch_15">
+        <path
+           d="M 906.048 247.104  L 1085.76 247.104  Q 1097.28 247.104 1097.28 240.624  L 1097.28 224.424  Q 1097.28 217.944 1085.76 217.944  L 906.048 217.944  Q 894.528 217.944 894.528 224.424  L 894.528 240.624  Q 894.528 247.104 906.048 247.104  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #e8f2f7; stroke: #2d7fa8; stroke-width: 0.9; stroke-linejoin: miter"
+           id="path34" />
+      </g>
+      <g
+         id="text_22">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="917.56799"
+           y="235.23267"
+           id="text35"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan131">MRCP + FBCNet</tspan></text>
+      </g>
+      <g
+         id="text_23">
+        <text
+           style="font-weight:bold;font-size:12px;font-family:Sans;text-anchor:end;fill:#2d7fa8;-inkscape-font-specification:'Sans, Bold';font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-linecap:butt;stroke-linejoin:round"
+           x="1074.24"
+           y="235.310062"
+           transform="rotate(-0 1074.24 235.310062)"
+           id="text36">60%</text>
+      </g>
+      <g
+         id="patch_16">
+        <path
+           d="M 906.048 277.56  L 1085.76 277.56  Q 1097.28 277.56 1097.28 271.08  L 1097.28 254.88  Q 1097.28 248.4 1085.76 248.4  L 906.048 248.4  Q 894.528 248.4 894.528 254.88  L 894.528 271.08  Q 894.528 277.56 906.048 277.56  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #fbf0d6; stroke: #e9a437; stroke-width: 0.9; stroke-linejoin: miter"
+           id="path36" />
+      </g>
+      <g
+         id="text_24">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="917.56799"
+           y="265.68866"
+           id="text37"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan134">Riemannian</tspan></text>
+      </g>
+      <g
+         id="text_25">
+        <text
+           style="font-weight:bold;font-size:12px;font-family:Sans;text-anchor:end;fill:#e9a437;-inkscape-font-specification:'Sans, Bold';font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-linecap:butt;stroke-linejoin:round"
+           x="1074.24"
+           y="265.766062"
+           transform="rotate(-0 1074.24 265.766062)"
+           id="text38">25%</text>
+      </g>
+      <g
+         id="patch_17">
+        <path
+           d="M 906.048 308.016  L 1085.76 308.016  Q 1097.28 308.016 1097.28 301.536  L 1097.28 285.336  Q 1097.28 278.856 1085.76 278.856  L 906.048 278.856  Q 894.528 278.856 894.528 285.336  L 894.528 301.536  Q 894.528 308.016 906.048 308.016  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #e5f3ef; stroke: #248b7f; stroke-width: 0.9; stroke-linejoin: miter"
+           id="path38" />
+      </g>
+      <g
+         id="text_26">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="917.56799"
+           y="296.14468"
+           id="text39"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan135">SMR statistics</tspan></text>
+      </g>
+      <g
+         id="text_27">
+        <text
+           style="font-weight:bold;font-size:12px;font-family:Sans;text-anchor:end;fill:#248b7f;-inkscape-font-specification:'Sans, Bold';font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-linecap:butt;stroke-linejoin:round"
+           x="1074.24"
+           y="296.222062"
+           transform="rotate(-0 1074.24 296.222062)"
+           id="text40">15%</text>
+      </g>
+      <g
+         id="text_28">
+        <text
+           style="font-weight: 700; font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #34424e"
+           transform="translate(903.744 320.164922)"
+           id="text41">Per-dataset Platt calibration</text>
+        <text
+           style="font-weight: 700; font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #34424e"
+           transform="translate(903.744 331.416)"
+           id="text42">+ operating threshold</text>
+      </g>
+      <g
+         id="text_29"
+         transform="translate(-12.77553,-2.017189)">
+        <text
+           style="font-weight:700;font-size:11px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#d96b3b"
+           x="72"
+           y="462.23999"
+           id="text43">Recording 0 only</text>
+      </g>
+      <g
+         id="text_30"
+         transform="translate(41.688574,-4.7067744)">
+        <text
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;white-space:pre;inline-size:150.363;fill:#34424e;stroke-width:0.995206;stroke-linecap:butt;stroke-linejoin:round"
+           x="62.698021"
+           y="517.83221"
+           id="text44"
+           transform="matrix(1.0048155,0,0,0.9952076,0.67239634,9.4135488)"
+           xml:space="preserve"><tspan
+             x="62.698021"
+             y="517.83221"
+             id="tspan1">Auxiliary direction </tspan><tspan
+             x="62.698021"
+             y="534.08221"
+             id="tspan2">labels are internal only</tspan></text>
+      </g>
+      <g
+         id="text_31"
+         transform="translate(8.7411524,16.809908)">
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="72"
+           y="542.59198"
+           id="text45">P(intent) = P(left) + P(right)</text>
+      </g>
+      <g
+         id="text_32">
+        <text
+           style="font-weight:bold;font-size:13px;font-family:Sans;text-anchor:start;fill:#17324d;-inkscape-font-specification:'Sans, Bold';font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-linecap:butt;stroke-linejoin:round"
+           x="398.016"
+           y="469.484672"
+           transform="rotate(-0 398.016 469.484672)"
+           id="text46">General population probability</text>
+      </g>
+      <g
+         id="text_33">
+        <text
+           style="font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="398.01599"
+           y="492.91275"
+           id="text47"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan122">+ patient-specific calibration evidence</tspan></text>
+      </g>
+      <g
+         id="text_34">
+        <text
+           style="font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="398.01599"
+           y="516.24072"
+           id="text48"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan121">+ dataset-specific threshold</tspan></text>
+      </g>
+      <g
+         id="text_35">
+        <text
+           style="font-weight: 700; font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #d96b3b"
+           x="792"
+           y="539.352"
+           transform="rotate(-0 792 539.352)"
+           id="text49">Known cue supplies movement</text>
+      </g>
+      <g
+         id="text_36">
+        <text
+           style="font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #34424e"
+           x="792"
+           y="554.256"
+           transform="rotate(-0 792 554.256)"
+           id="text50">3-window confirmation prepared</text>
+      </g>
+      <g
+         id="text_37"
+         transform="translate(0,3)">
+        <text
+           style="font-weight:700;font-size:22px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#248b7f"
+           x="967.104"
+           y="464.02731"
+           id="text51">73.6%</text>
+      </g>
+      <g
+         id="text_38"
+         transform="translate(0,3)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#34424e;stroke-linecap:butt;stroke-linejoin:round"
+           x="967.104"
+           y="479.20468"
+           id="text52"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan146">balanced accuracy</tspan></text>
+      </g>
+      <g
+         id="text_39"
+         transform="translate(0,3)">
+        <text
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#34424e;stroke-linecap:butt;stroke-linejoin:round"
+           x="967.104"
+           y="499.94067"
+           id="text53"><tspan
+             style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan147">Sensitivity</tspan></text>
+      </g>
+      <g
+         id="text_40"
+         transform="translate(0,3)">
+        <text
+           style="font-weight:700;font-size:10.8px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:end;fill:#17324d"
+           x="1093.824"
+           y="500.01807"
+           id="text54">53.5%</text>
+      </g>
+      <g
+         id="text_41"
+         transform="translate(0,3)">
+        <text
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#34424e;stroke-linecap:butt;stroke-linejoin:round"
+           x="967.104"
+           y="519.48077"
+           id="text55"><tspan
+             style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan148">Specificity</tspan></text>
+      </g>
+      <g
+         id="text_42"
+         transform="translate(0,3)">
+        <text
+           style="font-weight:700;font-size:10.8px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:end;fill:#17324d"
+           x="1093.824"
+           y="519.45807"
+           id="text56">93.7%</text>
+      </g>
+      <g
+         id="text_43"
+         transform="translate(0,3)">
+        <text
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#34424e;stroke-linecap:butt;stroke-linejoin:round"
+           x="967.104"
+           y="538.82068"
+           id="text57"><tspan
+             style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan149">AUROC</tspan></text>
+      </g>
+      <g
+         id="text_44"
+         transform="translate(0,3)">
+        <text
+           style="font-weight:700;font-size:10.8px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:end;fill:#17324d"
+           x="1093.824"
+           y="538.89807"
+           id="text58">0.896</text>
+      </g>
+      <g
+         id="text_45"
+         transform="translate(0,3)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;fill:#d96b3b"
+           transform="translate(967.104,553.84179)"
+           id="text59">Development-observed</text>
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;fill:#d96b3b"
+           transform="translate(967.104,564.696)"
+           id="text60">Cue-locked</text>
+      </g>
+      <g
+         id="text_47">
+        <text
+           style="font-weight: 700; font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #248b7f"
+           x="72"
+           y="616.580672"
+           transform="rotate(-0 72 616.580672)"
+           id="text62">VALIDATION BOUNDARY</text>
+      </g>
+      <g
+         id="text_48">
+        <text
+           style="font-weight: 700; font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ffffff"
+           x="221.76"
+           y="616.528172"
+           transform="rotate(-0 221.76 616.528172)"
+           id="text63">Develop model on population roles  |  Calibrate on recording 0  |  Evaluate on later recordings only</text>
+      </g>
+      <g
+         id="text_49">
+        <text
+           style="font-weight: 700; font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #d96b3b"
+           x="912.96"
+           y="616.580672"
+           transform="rotate(-0 912.96 616.580672)"
+           id="text64">LOCKED EXTERNAL: NOT YET AVAILABLE</text>
+      </g>
+      <g
+         id="patch_18"
+         transform="translate(0,6)">
+        <path
+           d="m 52.416,127.872 h 191.232 q 12.672,0 12.672,-7.128 v -16.848 q 0,-7.128 -12.672,-7.128 H 52.416 q -12.672,0 -12.672,7.128 v 16.848 q 0,7.128 12.672,7.128 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#e8f2f7;stroke:#2d7fa8;stroke-linejoin:miter"
+           id="path64" />
+      </g>
+      <g
+         id="patch_19">
+        <path
+           d="M 83.52 252.288  C 88.408224 252.288 93.096896 251.195562 96.553392 249.251283  C 100.009888 247.307004 101.952 244.669626 101.952 241.92  C 101.952 239.170374 100.009888 236.532996 96.553392 234.588717  C 93.096896 232.644438 88.408224 231.552 83.52 231.552  C 78.631776 231.552 73.943104 232.644438 70.486608 234.588717  C 67.030112 236.532996 65.088 239.170374 65.088 241.92  C 65.088 244.669626 67.030112 247.307004 70.486608 249.251283  C 73.943104 251.195562 78.631776 252.288 83.52 252.288  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #2d7fa8; stroke: #2d7fa8; stroke-linejoin: miter"
+           id="path65" />
+      </g>
+      <g
+         id="patch_20">
+        <path
+           d="M 83.52 281.448  C 88.408224 281.448 93.096896 280.355562 96.553392 278.411283  C 100.009888 276.467004 101.952 273.829626 101.952 271.08  C 101.952 268.330374 100.009888 265.692996 96.553392 263.748717  C 93.096896 261.804438 88.408224 260.712 83.52 260.712  C 78.631776 260.712 73.943104 261.804438 70.486608 263.748717  C 67.030112 265.692996 65.088 268.330374 65.088 271.08  C 65.088 273.829626 67.030112 276.467004 70.486608 278.411283  C 73.943104 280.355562 78.631776 281.448 83.52 281.448  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #248b7f; stroke: #248b7f; stroke-linejoin: miter"
+           id="path66" />
+      </g>
+      <g
+         id="patch_21">
+        <path
+           d="M 83.52 310.608  C 88.408224 310.608 93.096896 309.515562 96.553392 307.571283  C 100.009888 305.627004 101.952 302.989626 101.952 300.24  C 101.952 297.490374 100.009888 294.852996 96.553392 292.908717  C 93.096896 290.964438 88.408224 289.872 83.52 289.872  C 78.631776 289.872 73.943104 290.964438 70.486608 292.908717  C 67.030112 294.852996 65.088 297.490374 65.088 300.24  C 65.088 302.989626 67.030112 305.627004 70.486608 307.571283  C 73.943104 309.515562 78.631776 310.608 83.52 310.608  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #d96b3b; stroke: #d96b3b; stroke-linejoin: miter"
+           id="path67" />
+      </g>
+      <g
+         id="patch_22"
+         transform="translate(-28.5)">
+        <path
+           d="m 333.504,216.648 c 2.1386,0 4.18989,-0.47794 5.70211,-1.32856 1.51222,-0.85063 2.36189,-2.00448 2.36189,-3.20744 0,-1.20296 -0.84967,-2.35681 -2.36189,-3.20744 -1.51222,-0.85062 -3.56351,-1.32856 -5.70211,-1.32856 -2.1386,0 -4.18989,0.47794 -5.70211,1.32856 -1.51222,0.85063 -2.36189,2.00448 -2.36189,3.20744 0,1.20296 0.84967,2.35681 2.36189,3.20744 1.51222,0.85062 3.56351,1.32856 5.70211,1.32856 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#248b7f;stroke:#248b7f;stroke-linejoin:miter"
+           id="path68" />
+      </g>
+      <g
+         id="patch_23"
+         transform="translate(-28.5)">
+        <path
+           d="m 333.504,241.272 c 2.1386,0 4.18989,-0.47794 5.70211,-1.32856 1.51222,-0.85063 2.36189,-2.00448 2.36189,-3.20744 0,-1.20296 -0.84967,-2.35681 -2.36189,-3.20744 C 337.69389,232.67794 335.6426,232.2 333.504,232.2 c -2.1386,0 -4.18989,0.47794 -5.70211,1.32856 -1.51222,0.85063 -2.36189,2.00448 -2.36189,3.20744 0,1.20296 0.84967,2.35681 2.36189,3.20744 1.51222,0.85062 3.56351,1.32856 5.70211,1.32856 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#248b7f;stroke:#248b7f;stroke-linejoin:miter"
+           id="path69" />
+      </g>
+      <g
+         id="patch_24"
+         transform="translate(-28.5)">
+        <path
+           d="m 333.504,265.896 c 2.1386,0 4.18989,-0.47794 5.70211,-1.32856 1.51222,-0.85063 2.36189,-2.00448 2.36189,-3.20744 0,-1.20296 -0.84967,-2.35681 -2.36189,-3.20744 -1.51222,-0.85062 -3.56351,-1.32856 -5.70211,-1.32856 -2.1386,0 -4.18989,0.47794 -5.70211,1.32856 -1.51222,0.85063 -2.36189,2.00448 -2.36189,3.20744 0,1.20296 0.84967,2.35681 2.36189,3.20744 1.51222,0.85062 3.56351,1.32856 5.70211,1.32856 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#248b7f;stroke:#248b7f;stroke-linejoin:miter"
+           id="path70" />
+      </g>
+      <g
+         id="patch_25"
+         transform="translate(-28.5)">
+        <path
+           d="m 333.504,290.52 c 2.1386,0 4.18989,-0.47794 5.70211,-1.32856 1.51222,-0.85063 2.36189,-2.00448 2.36189,-3.20744 0,-1.20296 -0.84967,-2.35681 -2.36189,-3.20744 -1.51222,-0.85062 -3.56351,-1.32856 -5.70211,-1.32856 -2.1386,0 -4.18989,0.47794 -5.70211,1.32856 -1.51222,0.85063 -2.36189,2.00448 -2.36189,3.20744 0,1.20296 0.84967,2.35681 2.36189,3.20744 1.51222,0.85062 3.56351,1.32856 5.70211,1.32856 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#248b7f;stroke:#248b7f;stroke-linejoin:miter"
+           id="path71" />
+      </g>
+      <g
+         id="patch_26"
+         transform="translate(-28.5)">
+        <path
+           d="m 333.504,315.144 c 2.1386,0 4.18989,-0.47794 5.70211,-1.32856 1.51222,-0.85063 2.36189,-2.00448 2.36189,-3.20744 0,-1.20296 -0.84967,-2.35681 -2.36189,-3.20744 -1.51222,-0.85062 -3.56351,-1.32856 -5.70211,-1.32856 -2.1386,0 -4.18989,0.47794 -5.70211,1.32856 -1.51222,0.85063 -2.36189,2.00448 -2.36189,3.20744 0,1.20296 0.84967,2.35681 2.36189,3.20744 1.51222,0.85062 3.56351,1.32856 5.70211,1.32856 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#248b7f;stroke:#248b7f;stroke-linejoin:miter"
+           id="path72" />
+      </g>
+      <g
+         id="patch_27"
+         transform="translate(0,4.5)">
+        <path
+           d="m 52.416,386.424 h 211.968 q 12.672,0 12.672,-7.128 v -16.848 q 0,-7.128 -12.672,-7.128 H 52.416 q -12.672,0 -12.672,7.128 v 16.848 q 0,7.128 12.672,7.128 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#f8e8df;stroke:#d96b3b;stroke-linejoin:miter"
+           id="path73" />
+      </g>
+      <g
+         id="patch_28"
+         transform="translate(-12)">
+        <path
+           d="m 75.456,498.528 h 58.752 q 12.672,0 12.672,-7.128 v -16.848 q 0,-7.128 -12.672,-7.128 H 75.456 q -12.672,0 -12.672,7.128 V 491.4 q 0,7.128 12.672,7.128 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#eef1f2;stroke:#34424e;stroke-linejoin:miter"
+           id="path74" />
+      </g>
+      <g
+         id="patch_29">
+        <path
+           d="M 152.64 498.528  L 211.392 498.528  Q 224.064 498.528 224.064 491.4  L 224.064 474.552  Q 224.064 467.424 211.392 467.424  L 152.64 467.424  Q 139.968 467.424 139.968 474.552  L 139.968 491.4  Q 139.968 498.528 152.64 498.528  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #e8f2f7; stroke: #2d7fa8; stroke-linejoin: miter"
+           id="path75" />
+      </g>
+      <g
+         id="patch_30"
+         transform="translate(12)">
+        <path
+           d="m 229.824,498.528 h 58.752 q 12.672,0 12.672,-7.128 v -16.848 q 0,-7.128 -12.672,-7.128 h -58.752 q -12.672,0 -12.672,7.128 V 491.4 q 0,7.128 12.672,7.128 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#e5f3ef;stroke:#248b7f;stroke-linejoin:miter"
+           id="path76" />
+      </g>
+      <g
+         id="patch_31"
+         transform="translate(0,7.5)">
+        <path
+           d="m 401.472,552.312 h 205.056 q 12.672,0 12.672,-7.128 v -16.848 q 0,-7.128 -12.672,-7.128 H 401.472 q -12.672,0 -12.672,7.128 v 16.848 q 0,7.128 12.672,7.128 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#e5f3ef;stroke:#248b7f;stroke-linejoin:miter"
+           id="path77" />
+      </g>
+      <g
+         id="patch_32">
+        <path
+           d="M 720.576 483.624  L 863.424 483.624  Q 876.096 483.624 876.096 476.496  L 876.096 459.648  Q 876.096 452.52 863.424 452.52  L 720.576 452.52  Q 707.904 452.52 707.904 459.648  L 707.904 476.496  Q 707.904 483.624 720.576 483.624  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #eef1f2; stroke: #34424e; stroke-linejoin: miter"
+           id="path78" />
+      </g>
+      <g
+         id="patch_33">
+        <path
+           d="M 720.576 517.968  L 863.424 517.968  Q 876.096 517.968 876.096 510.84  L 876.096 493.992  Q 876.096 486.864 863.424 486.864  L 720.576 486.864  Q 707.904 486.864 707.904 493.992  L 707.904 510.84  Q 707.904 517.968 720.576 517.968  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #e5f3ef; stroke: #248b7f; stroke-linejoin: miter"
+           id="path79" />
+      </g>
+      <g
+         id="text_50"
+         transform="translate(0,6)">
+        <text
+           style="font-weight:700;font-size:10.8px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:middle;fill:#2d7fa8"
+           x="148.032"
+           y="115.10606"
+           id="text79">A POPULATION DEVELOPMENT</text>
+      </g>
+      <g
+         id="patch_34"
+         transform="translate(-15,-4.5)">
+        <path
+           d="m 90.432,188.46 c 5.957522,0 11.67184,-1.33141 15.88445,-3.701 4.2126,-2.36959 6.57955,-5.58389 6.57955,-8.935 0,-3.35111 -2.36695,-6.56541 -6.57955,-8.935 -4.21261,-2.36959 -9.926928,-3.701 -15.88445,-3.701 -5.957522,0 -11.671842,1.33141 -15.884447,3.701 -4.212604,2.36959 -6.579553,5.58389 -6.579553,8.935 0,3.35111 2.366949,6.56541 6.579553,8.935 4.212605,2.36959 9.926925,3.701 15.884447,3.701 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#2d7fa8;stroke:#2d7fa8;stroke-linejoin:miter"
+           id="path80" />
+      </g>
+      <g
+         id="text_51">
+        <text
+           style="font-weight: 700; font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff"
+           x="83.52"
+           y="244.628672"
+           transform="rotate(-0 83.52 244.628672)"
+           id="text80">109</text>
+      </g>
+      <g
+         id="text_52">
+        <text
+           style="font-weight: 700; font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff"
+           x="83.52"
+           y="273.788672"
+           transform="rotate(-0 83.52 273.788672)"
+           id="text81">29</text>
+      </g>
+      <g
+         id="text_53">
+        <text
+           style="font-weight: 700; font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff"
+           x="83.52"
+           y="302.948672"
+           transform="rotate(-0 83.52 302.948672)"
+           id="text82">49</text>
+      </g>
+      <g
+         id="patch_35"
+         transform="translate(-13.5,-4.5)">
+        <path
+           d="m 343.872,188.46 c 5.95752,0 11.67184,-1.33141 15.88445,-3.701 4.2126,-2.36959 6.57955,-5.58389 6.57955,-8.935 0,-3.35111 -2.36695,-6.56541 -6.57955,-8.935 -4.21261,-2.36959 -9.92693,-3.701 -15.88445,-3.701 -5.95752,0 -11.67184,1.33141 -15.88445,3.701 -4.2126,2.36959 -6.57955,5.58389 -6.57955,8.935 0,3.35111 2.36695,6.56541 6.57955,8.935 4.21261,2.36959 9.92693,3.701 15.88445,3.701 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#248b7f;stroke:#248b7f;stroke-linejoin:miter"
+           id="path82" />
+      </g>
+      <g
+         id="patch_36"
+         transform="translate(-13.5,-4.5)">
+        <path
+           d="m 597.312,188.46 c 5.95752,0 11.67184,-1.33141 15.88445,-3.701 4.2126,-2.36959 6.57955,-5.58389 6.57955,-8.935 0,-3.35111 -2.36695,-6.56541 -6.57955,-8.935 -4.21261,-2.36959 -9.92693,-3.701 -15.88445,-3.701 -5.95752,0 -11.67184,1.33141 -15.88445,3.701 -4.2126,2.36959 -6.57955,5.58389 -6.57955,8.935 0,3.35111 2.36695,6.56541 6.57955,8.935 4.21261,2.36959 9.92693,3.701 15.88445,3.701 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#e9a437;stroke:#e9a437;stroke-linejoin:miter"
+           id="path83" />
+      </g>
+      <g
+         id="patch_37"
+         transform="translate(-13.5,-4.5)">
+        <path
+           d="m 914.112,188.46 c 5.95752,0 11.67184,-1.33141 15.88445,-3.701 4.2126,-2.36959 6.57955,-5.58389 6.57955,-8.935 0,-3.35111 -2.36695,-6.56541 -6.57955,-8.935 -4.21261,-2.36959 -9.92693,-3.701 -15.88445,-3.701 -5.95752,0 -11.67184,1.33141 -15.88445,3.701 -4.2126,2.36959 -6.57955,5.58389 -6.57955,8.935 0,3.35111 2.36695,6.56541 6.57955,8.935 4.21261,2.36959 9.92693,3.701 15.88445,3.701 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#d96b3b;stroke:#d96b3b;stroke-linejoin:miter"
+           id="path84" />
+      </g>
+      <g
+         id="text_54"
+         transform="translate(0,4.5)">
+        <text
+           style="font-weight:700;font-size:10.8px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:middle;fill:#d96b3b"
+           x="158.39999"
+           y="373.65805"
+           id="text84">B RAPID PATIENT ADAPTATION</text>
+      </g>
+      <g
+         id="patch_38"
+         transform="translate(-15.465116,-4.034378)">
+        <path
+           d="m 90.432,447.012 c 5.957522,0 11.67184,-1.33141 15.88445,-3.701 4.2126,-2.36959 6.57955,-5.58389 6.57955,-8.935 0,-3.35111 -2.36695,-6.56541 -6.57955,-8.935 -4.21261,-2.36959 -9.926928,-3.701 -15.88445,-3.701 -5.957522,0 -11.671842,1.33141 -15.884447,3.701 -4.212604,2.36959 -6.579553,5.58389 -6.579553,8.935 0,3.35111 2.366949,6.56541 6.579553,8.935 4.212605,2.36959 9.926925,3.701 15.884447,3.701 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#d96b3b;stroke:#d96b3b;stroke-linejoin:miter"
+           id="path85" />
+      </g>
+      <g
+         id="text_55"
+         transform="translate(-12)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:middle;fill:#34424e"
+           x="104.832"
+           y="485.68466"
+           id="text85">10 REST</text>
+      </g>
+      <g
+         id="text_56">
+        <text
+           style="font-weight: 700; font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #2d7fa8"
+           x="182.016"
+           y="485.684672"
+           transform="rotate(-0 182.016 485.684672)"
+           id="text86">10 LEFT</text>
+      </g>
+      <g
+         id="text_57"
+         transform="translate(12)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:middle;fill:#248b7f"
+           x="259.20001"
+           y="485.68466"
+           id="text87">10 RIGHT</text>
+      </g>
+      <g
+         id="patch_39"
+         transform="translate(-13.447927,-4.7067744)">
+        <path
+           d="m 412.992,447.012 c 5.95752,0 11.67184,-1.33141 15.88445,-3.701 4.2126,-2.36959 6.57955,-5.58389 6.57955,-8.935 0,-3.35111 -2.36695,-6.56541 -6.57955,-8.935 -4.21261,-2.36959 -9.92693,-3.701 -15.88445,-3.701 -5.95752,0 -11.67184,1.33141 -15.88445,3.701 -4.2126,2.36959 -6.57955,5.58389 -6.57955,8.935 0,3.35111 2.36695,6.56541 6.57955,8.935 4.21261,2.36959 9.92693,3.701 15.88445,3.701 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#248b7f;stroke:#248b7f;stroke-linejoin:miter"
+           id="path87" />
+      </g>
+      <g
+         id="text_58"
+         transform="translate(0,7.5)">
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#248b7f;stroke-linecap:butt;stroke-linejoin:round"
+           x="504"
+           y="539.46869"
+           id="text88">PERSONALIZED P(INTENT)</text>
+      </g>
+      <g
+         id="patch_40"
+         transform="translate(-15.465116,-5.3791707)">
+        <path
+           d="m 735.552,447.012 c 5.95752,0 11.67184,-1.33141 15.88445,-3.701 4.2126,-2.36959 6.57955,-5.58389 6.57955,-8.935 0,-3.35111 -2.36695,-6.56541 -6.57955,-8.935 -4.21261,-2.36959 -9.92693,-3.701 -15.88445,-3.701 -5.95752,0 -11.67184,1.33141 -15.88445,3.701 -4.2126,2.36959 -6.57955,5.58389 -6.57955,8.935 0,3.35111 2.36695,6.56541 6.57955,8.935 4.21261,2.36959 9.92693,3.701 15.88445,3.701 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#2d7fa8;stroke:#2d7fa8;stroke-linejoin:miter"
+           id="path88" />
+      </g>
+      <g
+         id="text_59">
+        <text
+           style="font-weight: 700; font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #34424e"
+           x="792"
+           y="470.780672"
+           transform="rotate(-0 792 470.780672)"
+           id="text89">REST = NO COMMAND</text>
+      </g>
+      <g
+         id="text_60">
+        <text
+           style="font-weight: 700; font-size: 10.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #248b7f"
+           x="792"
+           y="505.124672"
+           transform="rotate(-0 792 505.124672)"
+           id="text90">INTENT = CONFIRM</text>
+      </g>
+      <g
+         id="patch_41"
+         transform="translate(-13.5,-4.5)">
+        <path
+           d="m 983.232,447.012 c 5.95752,0 11.67184,-1.33141 15.88445,-3.701 4.21265,-2.36959 6.57955,-5.58389 6.57955,-8.935 0,-3.35111 -2.3669,-6.56541 -6.57955,-8.935 -4.21261,-2.36959 -9.92693,-3.701 -15.88445,-3.701 -5.95752,0 -11.67184,1.33141 -15.88445,3.701 -4.2126,2.36959 -6.57955,5.58389 -6.57955,8.935 0,3.35111 2.36695,6.56541 6.57955,8.935 4.21261,2.36959 9.92693,3.701 15.88445,3.701 z"
+           clip-path="url(#pfed930a1f6)"
+           style="fill:#e9a437;stroke:#e9a437;stroke-linejoin:miter"
+           id="path90" />
+      </g>
+      <g
+         id="text_61"
+         transform="translate(-15,-4.5)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:middle;fill:#ffffff"
+           x="90.431999"
+           y="178.53267"
+           id="text91">01</text>
+      </g>
+      <g
+         id="text_62"
+         transform="translate(-12.133106,-3.7915957)">
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="123.84"
+           y="178.79063"
+           id="text92"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan141">MULTI-DATASET EEG</tspan></text>
+      </g>
+      <g
+         id="line2d_3">
+        <path
+           d="M 72 206.211832  L 72.789041 203.529092  L 73.578082 201.942935  L 74.367123 199.201993  L 75.156164 201.921764  L 75.945205 198.548856  L 76.734247 200.41384  L 77.523288 198.36505  L 78.312329 199.445351  L 79.10137 199.95265  L 80.679452 204.322673  L 81.468493 203.466612  L 82.257534 202.800275  L 83.046575 206.537424  L 83.835616 204.586768  L 84.624658 205.792361  L 85.413699 203.620989  L 86.20274 207.779529  L 87.780822 207.224257  L 88.569863 208.23208  L 89.358904 212.099344  L 90.147945 209.367147  L 90.936986 210.322577  L 91.726027 210.217938  L 92.515068 209.247427  L 93.30411 207.288347  L 94.093151 208.844272  L 94.882192 201.285829  L 95.671233 203.114198  L 96.460274 203.401386  L 97.249315 198.265181  L 98.038356 194.689212  L 98.827397 197.528819  L 99.616438 194.455958  L 100.405479 195.424334  L 101.194521 200.906498  L 101.983562 205.420187  L 102.772603 205.456484  L 103.561644 203.479176  L 104.350685 208.485431  L 105.139726 210.943919  L 105.928767 211.498042  L 106.717808 209.649569  L 107.506849 209.590735  L 108.29589 207.685548  L 109.084932 206.860975  L 109.873973 209.314776  L 110.663014 207.424359  L 111.452055 208.548067  L 112.241096 206.27886  L 113.030137 208.132367  L 113.819178 208.147868  L 114.608219 202.626077  L 115.39726 205.825019  L 116.186301 204.380617  L 116.975342 200.555052  L 117.764384 202.405355  L 118.553425 202.63406  L 119.342466 201.00169  L 120.131507 200.992166  L 120.920548 196.893025  L 121.709589 198.514737  L 122.49863 194.922667  L 123.287671 198.799913  L 124.076712 199.873412  L 124.865753 201.593752  L 125.654795 201.91628  L 126.443836 204.874666  L 127.232877 205.176075  L 128.021918 210.299157  L 128.810959 210.46974  L 129.6 208.742447  L 130.389041 212.569936  L 131.178082 210.939562  L 131.967123 208.302055  L 133.545205 208.866495  L 134.334247 209.496157  L 135.123288 200.746478  L 135.912329 202.64411  L 136.70137 200.388489  L 137.490411 202.642025  L 138.279452 198.744995  L 139.068493 200.86881  L 139.857534 201.789658  L 140.646575 203.491715  L 141.435616 201.566511  L 142.224658 202.890461  L 143.013699 202.291546  L 143.80274 204.227149  L 144.591781 202.151621  L 145.380822 200.950281  L 146.169863 203.207596  L 146.958904 201.506398  L 147.747945 201.343458  L 148.536986 203.980511  L 150.115068 207.548838  L 150.90411 206.83471  L 151.693151 212.11023  L 152.482192 211.402154  L 153.271233 212.246448  L 154.060274 211.47334  L 154.849315 211.234341  L 155.638356 211.622208  L 156.427397 205.407679  L 157.216438 206.230359  L 158.005479 206.425759  L 158.794521 203.887524  L 159.583562 200.895525  L 160.372603 199.028856  L 161.161644 201.124982  L 161.950685 198.170234  L 162.739726 201.384938  L 163.528767 201.306362  L 164.317808 200.038091  L 165.106849 199.952209  L 165.89589 203.286488  L 166.684932 204.394595  L 167.473973 202.978209  L 168.263014 206.356443  L 169.052055 204.865747  L 169.841096 205.030588  L 170.630137 204.161217  L 172.208219 206.082247  L 172.99726 205.408852  L 173.786301 207.944378  L 174.575342 206.245541  L 175.364384 208.498595  L 176.153425 209.187919  L 176.942466 208.786743  L 177.731507 208.249083  L 178.520548 207.106706  L 179.309589 207.357818  L 180.09863 205.278496  L 180.887671 203.758949  L 181.676712 203.544648  L 182.465753 203.142115  L 183.254795 200.017665  L 184.043836 199.858884  L 184.832877 201.883539  L 185.621918 200.716262  L 186.410959 199.985197  L 187.2 202.33181  L 187.989041 202.71175  L 188.778082 205.00007  L 189.567123 204.121585  L 190.356164 205.449824  L 191.145205 206.474256  L 191.934247 205.859829  L 192.723288 208.068385  L 193.512329 208.084868  L 194.30137 205.542011  L 195.090411 208.638144  L 195.879452 206.114027  L 196.668493 207.841864  L 198.246575 203.618272  L 199.035616 205.452868  L 199.824658 206.531107  L 200.613699 203.044968  L 201.40274 206.178517  L 202.191781 205.595196  L 202.980822 204.623363  L 203.769863 205.895885  L 204.558904 202.257404  L 205.347945 200.695915  L 206.136986 200.684249  L 206.926027 200.249809  L 207.715068 200.095657  L 208.50411 198.428922  L 209.293151 203.459838  L 210.082192 200.225091  L 210.871233 200.739816  L 211.660274 205.022505  L 212.449315 203.616741  L 213.238356 206.156975  L 214.027397 207.790763  L 214.816438 209.11515  L 215.605479 209.571961  L 216.394521 210.308197  L 217.183562 212.387524  L 217.972603 210.600301  L 218.761644 209.719773  L 219.550685 208.115905  L 220.339726 207.565779  L 221.128767 203.886594  L 221.917808 202.114042  L 223.49589 199.513057  L 224.284932 199.746217  L 225.073973 202.556266  L 225.863014 202.879524  L 226.652055 202.714671  L 227.441096 201.390894  L 228.230137 202.454009  L 229.019178 200.611126  L 229.808219 199.339287  L 230.59726 202.241089  L 231.386301 199.786821  L 232.175342 201.820415  L 232.964384 203.366279  L 233.753425 203.916702  L 234.542466 203.368024  L 235.331507 207.188948  L 236.120548 205.005205  L 236.909589 205.150956  L 237.69863 211.124209  L 238.487671 211.273534  L 239.276712 209.309915  L 240.065753 211.68568  L 240.854795 211.725964  L 241.643836 211.587171  L 242.432877 208.051783  L 243.221918 207.23627  L 244.010959 207.340227  L 244.8 207.31732  L 244.8 207.31732  "
+           style="fill: none; stroke: #2d7fa8; stroke-width: 1.15; stroke-linecap: square"
+           id="path92" />
+      </g>
+      <g
+         id="text_63"
+         transform="translate(-13.5,-4.5)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:middle;fill:#ffffff"
+           x="343.87201"
+           y="178.53267"
+           id="text93">02</text>
+      </g>
+      <g
+         id="text_64"
+         transform="translate(-10.758341,-0.67239634)">
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           transform="translate(377.28,172.19467)"
+           id="text94"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan137">NATIVE QC +</tspan></text>
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           transform="translate(377.28,185.38661)"
+           id="text95"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan138">HARMONIZATION</tspan></text>
+      </g>
+      <g
+         id="text_65"
+         transform="translate(-13.5,-4.5)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:middle;fill:#ffffff"
+           x="597.31201"
+           y="178.53267"
+           id="text96">03</text>
+      </g>
+      <g
+         id="text_66"
+         transform="translate(-6.0515672,-10.085945)">
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="630.71997"
+           y="178.79063"
+           id="text97"><tspan
+             sodipodi:role="line"
+             id="tspan150"
+             x="630.71997"
+             y="178.79063"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+               id="tspan139">PARALLEL EEG</tspan></tspan><tspan
+             sodipodi:role="line"
+             id="tspan151"
+             x="630.71997"
+             y="195.04063"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+               id="tspan152">REPRESENTATIONS</tspan></tspan></text>
+      </g>
+      <g
+         id="text_67"
+         transform="translate(-13.5,-4.5)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:middle;fill:#ffffff"
+           x="914.112"
+           y="178.53267"
+           id="text98">04</text>
+      </g>
+      <g
+         id="text_68"
+         transform="translate(-11.430738,-2.6895854)">
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="947.52002"
+           y="178.79063"
+           id="text99"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan140">GENERAL INTENT MODEL</tspan></text>
+      </g>
+      <g
+         id="text_69">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:middle;fill:#ffffff"
+           x="74.966881"
+           y="433.05032"
+           id="text100">05</text>
+      </g>
+      <g
+         id="text_70"
+         transform="translate(-10.085945,-2.6895854)">
+        <text
+           style="font-weight:bold;font-size:13px;font-family:Sans;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round;-inkscape-font-specification:'Sans, Bold';font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+           x="123.84"
+           y="437.34265"
+           id="text101"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan142">30-WINDOW CALIBRATION</tspan></text>
+      </g>
+      <g
+         id="text_71"
+         transform="translate(-13.447927,-4.7067744)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:middle;fill:#ffffff"
+           x="412.992"
+           y="437.08469"
+           id="text102">06</text>
+      </g>
+      <g
+         id="text_72">
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="434.29684"
+           y="433.98068"
+           id="text103"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="tspan143">PATIENT-ADAPTED DECODER</tspan></text>
+      </g>
+      <g
+         id="text_73"
+         transform="translate(-15.465116,-5.3791707)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:middle;fill:#ffffff"
+           x="735.552"
+           y="437.08469"
+           id="text104">07</text>
+      </g>
+      <g
+         id="text_74"
+         transform="translate(-14.120323,-1.3447927)">
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="766.27039"
+           y="427.92911"
+           id="text105"><tspan
+             sodipodi:role="line"
+             id="tspan156"
+             x="766.27039"
+             y="427.92911"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+               id="tspan144">BINARY SAFETY</tspan></tspan><tspan
+             sodipodi:role="line"
+             id="tspan157"
+             x="766.27039"
+             y="444.17911"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+               id="tspan158">GATE</tspan></tspan></text>
+      </g>
+      <g
+         id="text_75"
+         transform="translate(-13.5,-4.5)">
+        <text
+           style="font-weight:700;font-size:10.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:middle;fill:#ffffff"
+           x="983.23199"
+           y="437.08469"
+           id="text106">08</text>
+      </g>
+      <g
+         id="text_76"
+         transform="translate(-8.741153,-12.77553)">
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:start;fill:#17324d;stroke-linecap:butt;stroke-linejoin:round"
+           x="1010.5884"
+           y="435.99786"
+           id="text107"><tspan
+             sodipodi:role="line"
+             id="tspan153"
+             x="1010.5884"
+             y="435.99786"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+               id="tspan145">LATER</tspan></tspan><tspan
+             sodipodi:role="line"
+             id="tspan154"
+             x="1010.5884"
+             y="452.24786"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+               id="tspan155">RECORDINGS</tspan></tspan></text>
+      </g>
+      <g
+         id="patch_42">
+        <path
+           d="M 270.992953 247.104  Q 284.544415 247.104 296.083415 247.104  "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: none; stroke: #34424e; stroke-width: 1.8; stroke-linecap: round"
+           id="path107" />
+        <path
+           d="M 290.883415 244.504  L 296.083415 247.104  L 290.883415 249.704  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #34424e; stroke: #34424e; stroke-width: 1.8; stroke-linecap: round"
+           id="path108" />
+      </g>
+      <g
+         id="patch_43">
+        <path
+           d="M 524.432953 247.104  Q 537.984415 247.104 549.523415 247.104  "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: none; stroke: #34424e; stroke-width: 1.8; stroke-linecap: round"
+           id="path109" />
+        <path
+           d="M 544.323415 244.504  L 549.523415 247.104  L 544.323415 249.704  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #34424e; stroke: #34424e; stroke-width: 1.8; stroke-linecap: round"
+           id="path110" />
+      </g>
+      <g
+         id="patch_44">
+        <path
+           d="M 841.232953 247.104  Q 854.784415 247.104 866.323415 247.104  "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: none; stroke: #34424e; stroke-width: 1.8; stroke-linecap: round"
+           id="path111" />
+        <path
+           d="M 861.123415 244.504  L 866.323415 247.104  L 861.123415 249.704  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #34424e; stroke: #34424e; stroke-width: 1.8; stroke-linecap: round"
+           id="path112" />
+      </g>
+      <g
+         id="patch_45">
+        <path
+           d="M 322.831266 491.4  Q 345.022839 491.4 365.201951 491.4  "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: none; stroke: #34424e; stroke-width: 1.8; stroke-linecap: round"
+           id="path113" />
+        <path
+           d="M 360.001951 488.8  L 365.201951 491.4  L 360.001951 494  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #34424e; stroke: #34424e; stroke-width: 1.8; stroke-linecap: round"
+           id="path114" />
+      </g>
+      <g
+         id="patch_46">
+        <path
+           d="M 645.391266 491.4  Q 667.582839 491.4 687.761951 491.4  "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: none; stroke: #34424e; stroke-width: 1.8; stroke-linecap: round"
+           id="path115" />
+        <path
+           d="M 682.561951 488.8  L 687.761951 491.4  L 682.561951 494  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #34424e; stroke: #34424e; stroke-width: 1.8; stroke-linecap: round"
+           id="path116" />
+      </g>
+      <g
+         id="patch_47">
+        <path
+           d="M 893.071266 491.4  Q 915.262839 491.4 935.441951 491.4  "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: none; stroke: #34424e; stroke-width: 1.8; stroke-linecap: round"
+           id="path117" />
+        <path
+           d="M 930.241951 488.8  L 935.441951 491.4  L 930.241951 494  z "
+           clip-path="url(#pfed930a1f6)"
+           style="fill: #34424e; stroke: #34424e; stroke-width: 1.8; stroke-linecap: round"
+           id="path118" />
+      </g>
+    </g>
+  </g>
+  <defs
+     id="defs120">
+    <clipPath
+       id="pfed930a1f6">
+      <rect
+         x="8.64"
+         y="8.64"
+         width="1152"
+         height="648"
+         id="rect120" />
+    </clipPath>
+  </defs>
+</svg>

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "controller": {
+    "intent_threshold": 0.6100000000000001,
+    "confirmation_windows": 2,
+    "arming_seconds": 4.0,
+    "refractory_seconds": 2.0,
+    "minimum_direction_probability": 0.55,
+    "reset_on_unavailable": true
+  },
+  "cue_role": "arming_only_not_a_command_or_direction_label_at_inference",
+  "decoder_role": "EEG supplies intent and left/right command",
+  "quality_layers": [
+    "frozen_v4_OOD_availability_gate",
+    "prospective_full_montage_EOG_EMG_contamination_veto"
+  ],
+  "device_output_enabled": false
+}

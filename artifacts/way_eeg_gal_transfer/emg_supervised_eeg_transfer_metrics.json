@@ -1,0 +1,577 @@
+{
+  "schema_version": 1,
+  "experiment": "emg_confirmed_source_to_eeg_only_target",
+  "source_dataset": "way_eeg_gal_2014",
+  "leakage_boundary": {
+    "emg_used_at_target_inference": false,
+    "positive_source_eeg_ends_at_or_before_confirmed_movement_onset": true,
+    "direction_head_modified": false
+  },
+  "fit_summary": {
+    "source_rows": 7024,
+    "accepted_source_rows": 4835,
+    "source_acceptance_fraction": 0.6883542141230068,
+    "emg_cross_validated_balanced_accuracy": 0.7457289293849658,
+    "emg_cross_validated_auroc": 0.8326787817622366,
+    "source_weight": 0.35,
+    "confidence_floor": 0.6
+  },
+  "selected_source_weight": 0.35,
+  "controller_selection": [
+    {
+      "source_weight": 0.05,
+      "threshold": 0.715,
+      "metrics": {
+        "rows": 6162,
+        "balanced_accuracy": 0.5899845088961917,
+        "sensitivity": 0.2794165316045381,
+        "specificity": 0.9005524861878453,
+        "missed_intent_rate": 0.720583468395462,
+        "false_activation_rate_per_window": 0.09944751381215469,
+        "auroc": 0.7219619185371257,
+        "auprc": 0.6892736268451821,
+        "threshold": 0.715
+      }
+    },
+    {
+      "source_weight": 0.1,
+      "threshold": 0.715,
+      "metrics": {
+        "rows": 6162,
+        "balanced_accuracy": 0.5903137146044607,
+        "sensitivity": 0.27617504051863856,
+        "specificity": 0.9044523886902828,
+        "missed_intent_rate": 0.7238249594813614,
+        "false_activation_rate_per_window": 0.09554761130971726,
+        "auroc": 0.7237195083088888,
+        "auprc": 0.6897421061816349,
+        "threshold": 0.715
+      }
+    },
+    {
+      "source_weight": 0.2,
+      "threshold": 0.71,
+      "metrics": {
+        "rows": 6162,
+        "balanced_accuracy": 0.5914490792511387,
+        "sensitivity": 0.27779578606158833,
+        "specificity": 0.905102372440689,
+        "missed_intent_rate": 0.7222042139384117,
+        "false_activation_rate_per_window": 0.09489762755931101,
+        "auroc": 0.727108694243746,
+        "auprc": 0.6909694667438777,
+        "threshold": 0.71
+      }
+    },
+    {
+      "source_weight": 0.35,
+      "threshold": 0.7,
+      "metrics": {
+        "rows": 6162,
+        "balanced_accuracy": 0.5972782852227722,
+        "sensitivity": 0.29367909238249595,
+        "specificity": 0.9008774780630484,
+        "missed_intent_rate": 0.7063209076175041,
+        "false_activation_rate_per_window": 0.09912252193695158,
+        "auroc": 0.7299384938391127,
+        "auprc": 0.6912960589310556,
+        "threshold": 0.7
+      }
+    }
+  ],
+  "thresholds": {
+    "target_only": 0.72,
+    "emg_supervised_eeg": 0.7
+  },
+  "evaluation": {
+    "target_only": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5302271459434809,
+      "sensitivity": 0.1073790002644803,
+      "specificity": 0.9530752916224814,
+      "missed_intent_rate": 0.8926209997355197,
+      "false_activation_rate_per_window": 0.04692470837751856,
+      "auroc": 0.6830902012434221,
+      "auprc": 0.6451725790656493,
+      "threshold": 0.72
+    },
+    "emg_supervised_eeg": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5294346516306486,
+      "sensitivity": 0.10499867759851891,
+      "specificity": 0.9538706256627784,
+      "missed_intent_rate": 0.8950013224014811,
+      "false_activation_rate_per_window": 0.04612937433722163,
+      "auroc": 0.6970006588167719,
+      "auprc": 0.6560355807496119,
+      "threshold": 0.7
+    }
+  },
+  "evaluation_by_dataset": {
+    "liu2024": {
+      "target_only": {
+        "rows": 791,
+        "balanced_accuracy": 0.5607161125319693,
+        "sensitivity": 0.28,
+        "specificity": 0.8414322250639387,
+        "missed_intent_rate": 0.72,
+        "false_activation_rate_per_window": 0.1585677749360614,
+        "auroc": 0.6478516624040921,
+        "auprc": 0.6317087669138146,
+        "threshold": 0.72
+      },
+      "emg_supervised_eeg": {
+        "rows": 791,
+        "balanced_accuracy": 0.5694948849104859,
+        "sensitivity": 0.295,
+        "specificity": 0.8439897698209718,
+        "missed_intent_rate": 0.705,
+        "false_activation_rate_per_window": 0.15601023017902813,
+        "auroc": 0.6351598465473146,
+        "auprc": 0.6227755248252895,
+        "threshold": 0.7
+      }
+    },
+    "openbmi": {
+      "target_only": {
+        "rows": 4800,
+        "balanced_accuracy": 0.5254166666666666,
+        "sensitivity": 0.075,
+        "specificity": 0.9758333333333333,
+        "missed_intent_rate": 0.925,
+        "false_activation_rate_per_window": 0.024166666666666666,
+        "auroc": 0.7206501736111111,
+        "auprc": 0.674158132266764,
+        "threshold": 0.72
+      },
+      "emg_supervised_eeg": {
+        "rows": 4800,
+        "balanced_accuracy": 0.519375,
+        "sensitivity": 0.06375,
+        "specificity": 0.975,
+        "missed_intent_rate": 0.93625,
+        "false_activation_rate_per_window": 0.025,
+        "auroc": 0.7376446180555556,
+        "auprc": 0.6859477608387048,
+        "threshold": 0.7
+      }
+    },
+    "physionet": {
+      "target_only": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5290519877675841,
+        "sensitivity": 0.1162079510703364,
+        "specificity": 0.9418960244648318,
+        "missed_intent_rate": 0.8837920489296636,
+        "false_activation_rate_per_window": 0.0581039755351682,
+        "auroc": 0.6358591006909049,
+        "auprc": 0.611805042218082,
+        "threshold": 0.72
+      },
+      "emg_supervised_eeg": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5372069317023446,
+        "sensitivity": 0.12844036697247707,
+        "specificity": 0.9459734964322121,
+        "missed_intent_rate": 0.8715596330275229,
+        "false_activation_rate_per_window": 0.05402650356778797,
+        "auroc": 0.6564522045261603,
+        "auprc": 0.632943297504122,
+        "threshold": 0.7
+      }
+    }
+  },
+  "participant_analysis": {
+    "participants": 38,
+    "mean_balanced_accuracy_delta": 0.006035481331533966,
+    "median_balanced_accuracy_delta": 0.0,
+    "bootstrap_95_ci": [
+      0.0010128626855600564,
+      0.011589729532163735
+    ],
+    "participants_improved_fraction": 0.47368421052631576,
+    "bootstrap_iterations": 2000,
+    "records": [
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S006",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5448717948717949,
+        "emg_supervised_balanced_accuracy": 0.5573717948717949,
+        "balanced_accuracy_delta": 0.012499999999999956,
+        "target_only_sensitivity": 0.5,
+        "emg_supervised_sensitivity": 0.525
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S022",
+        "rows": 80,
+        "target_only_balanced_accuracy": 0.6,
+        "emg_supervised_balanced_accuracy": 0.625,
+        "balanced_accuracy_delta": 0.025000000000000022,
+        "target_only_sensitivity": 0.3,
+        "emg_supervised_sensitivity": 0.35
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S025",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5980769230769231,
+        "emg_supervised_balanced_accuracy": 0.5849358974358974,
+        "balanced_accuracy_delta": -0.013141025641025705,
+        "target_only_sensitivity": 0.35,
+        "emg_supervised_sensitivity": 0.375
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S027",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5868589743589744,
+        "emg_supervised_balanced_accuracy": 0.5740384615384616,
+        "balanced_accuracy_delta": -0.012820512820512775,
+        "target_only_sensitivity": 0.225,
+        "emg_supervised_sensitivity": 0.225
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S031",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5371794871794872,
+        "emg_supervised_balanced_accuracy": 0.5496794871794872,
+        "balanced_accuracy_delta": 0.012500000000000067,
+        "target_only_sensitivity": 0.1,
+        "emg_supervised_sensitivity": 0.125
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S034",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5365384615384615,
+        "emg_supervised_balanced_accuracy": 0.5490384615384616,
+        "balanced_accuracy_delta": 0.012500000000000067,
+        "target_only_sensitivity": 0.15,
+        "emg_supervised_sensitivity": 0.175
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S036",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5618589743589744,
+        "emg_supervised_balanced_accuracy": 0.5496794871794872,
+        "balanced_accuracy_delta": -0.012179487179487136,
+        "target_only_sensitivity": 0.175,
+        "emg_supervised_sensitivity": 0.125
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S040",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.6080128205128206,
+        "emg_supervised_balanced_accuracy": 0.6205128205128205,
+        "balanced_accuracy_delta": 0.012499999999999956,
+        "target_only_sensitivity": 0.575,
+        "emg_supervised_sensitivity": 0.6
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S048",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.4987179487179487,
+        "emg_supervised_balanced_accuracy": 0.5240384615384616,
+        "balanced_accuracy_delta": 0.02532051282051284,
+        "target_only_sensitivity": 0.1,
+        "emg_supervised_sensitivity": 0.125
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S050",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5342948717948718,
+        "emg_supervised_balanced_accuracy": 0.5599358974358974,
+        "balanced_accuracy_delta": 0.02564102564102566,
+        "target_only_sensitivity": 0.325,
+        "emg_supervised_sensitivity": 0.325
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S009",
+        "rows": 800,
+        "target_only_balanced_accuracy": 0.525,
+        "emg_supervised_balanced_accuracy": 0.5287499999999999,
+        "balanced_accuracy_delta": 0.00374999999999992,
+        "target_only_sensitivity": 0.08,
+        "emg_supervised_sensitivity": 0.0875
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S036",
+        "rows": 800,
+        "target_only_balanced_accuracy": 0.51625,
+        "emg_supervised_balanced_accuracy": 0.51125,
+        "balanced_accuracy_delta": -0.0050000000000000044,
+        "target_only_sensitivity": 0.045,
+        "emg_supervised_sensitivity": 0.0425
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S042",
+        "rows": 800,
+        "target_only_balanced_accuracy": 0.5337500000000001,
+        "emg_supervised_balanced_accuracy": 0.5237499999999999,
+        "balanced_accuracy_delta": -0.01000000000000012,
+        "target_only_sensitivity": 0.095,
+        "emg_supervised_sensitivity": 0.0725
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S047",
+        "rows": 800,
+        "target_only_balanced_accuracy": 0.535,
+        "emg_supervised_balanced_accuracy": 0.51125,
+        "balanced_accuracy_delta": -0.02375000000000005,
+        "target_only_sensitivity": 0.08,
+        "emg_supervised_sensitivity": 0.03
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S049",
+        "rows": 800,
+        "target_only_balanced_accuracy": 0.54,
+        "emg_supervised_balanced_accuracy": 0.5325,
+        "balanced_accuracy_delta": -0.007500000000000062,
+        "target_only_sensitivity": 0.125,
+        "emg_supervised_sensitivity": 0.12
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S052",
+        "rows": 800,
+        "target_only_balanced_accuracy": 0.5025,
+        "emg_supervised_balanced_accuracy": 0.50875,
+        "balanced_accuracy_delta": 0.006250000000000089,
+        "target_only_sensitivity": 0.025,
+        "emg_supervised_sensitivity": 0.03
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S005",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5,
+        "emg_supervised_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.0,
+        "emg_supervised_sensitivity": 0.0
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S007",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5,
+        "emg_supervised_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.0,
+        "emg_supervised_sensitivity": 0.0
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S010",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5888888888888889,
+        "emg_supervised_balanced_accuracy": 0.5777777777777777,
+        "balanced_accuracy_delta": -0.011111111111111183,
+        "target_only_sensitivity": 0.37777777777777777,
+        "emg_supervised_sensitivity": 0.37777777777777777
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S020",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5666666666666667,
+        "emg_supervised_balanced_accuracy": 0.6111111111111112,
+        "balanced_accuracy_delta": 0.04444444444444451,
+        "target_only_sensitivity": 0.2,
+        "emg_supervised_sensitivity": 0.26666666666666666
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S021",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5111111111111111,
+        "emg_supervised_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": -0.011111111111111072,
+        "target_only_sensitivity": 0.044444444444444446,
+        "emg_supervised_sensitivity": 0.0
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S025",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5,
+        "emg_supervised_balanced_accuracy": 0.5444444444444444,
+        "balanced_accuracy_delta": 0.0444444444444444,
+        "target_only_sensitivity": 0.022222222222222223,
+        "emg_supervised_sensitivity": 0.1111111111111111
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S036",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5666666666666667,
+        "emg_supervised_balanced_accuracy": 0.5666666666666667,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.13333333333333333,
+        "emg_supervised_sensitivity": 0.13333333333333333
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S044",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5222222222222223,
+        "emg_supervised_balanced_accuracy": 0.5333333333333333,
+        "balanced_accuracy_delta": 0.011111111111111072,
+        "target_only_sensitivity": 0.06666666666666667,
+        "emg_supervised_sensitivity": 0.08888888888888889
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S047",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.45555555555555555,
+        "emg_supervised_balanced_accuracy": 0.45555555555555555,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.08888888888888889,
+        "emg_supervised_sensitivity": 0.022222222222222223
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S048",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5777777777777777,
+        "emg_supervised_balanced_accuracy": 0.5777777777777777,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.15555555555555556,
+        "emg_supervised_sensitivity": 0.15555555555555556
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S054",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5444444444444444,
+        "emg_supervised_balanced_accuracy": 0.5333333333333333,
+        "balanced_accuracy_delta": -0.011111111111111072,
+        "target_only_sensitivity": 0.08888888888888889,
+        "emg_supervised_sensitivity": 0.06666666666666667
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S058",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5222222222222223,
+        "emg_supervised_balanced_accuracy": 0.5333333333333333,
+        "balanced_accuracy_delta": 0.011111111111111072,
+        "target_only_sensitivity": 0.044444444444444446,
+        "emg_supervised_sensitivity": 0.06666666666666667
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S061",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5111111111111111,
+        "emg_supervised_balanced_accuracy": 0.5333333333333333,
+        "balanced_accuracy_delta": 0.022222222222222254,
+        "target_only_sensitivity": 0.044444444444444446,
+        "emg_supervised_sensitivity": 0.06666666666666667
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S065",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5777777777777777,
+        "emg_supervised_balanced_accuracy": 0.5777777777777777,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.17777777777777778,
+        "emg_supervised_sensitivity": 0.17777777777777778
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S073",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5444444444444444,
+        "emg_supervised_balanced_accuracy": 0.5444444444444444,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.1111111111111111,
+        "emg_supervised_sensitivity": 0.08888888888888889
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S076",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.4888888888888889,
+        "emg_supervised_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": 0.011111111111111127,
+        "target_only_sensitivity": 0.15555555555555556,
+        "emg_supervised_sensitivity": 0.2222222222222222
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S081",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5,
+        "emg_supervised_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.0,
+        "emg_supervised_sensitivity": 0.0
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S095",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5777777777777777,
+        "emg_supervised_balanced_accuracy": 0.6222222222222222,
+        "balanced_accuracy_delta": 0.04444444444444451,
+        "target_only_sensitivity": 0.5777777777777777,
+        "emg_supervised_sensitivity": 0.6444444444444445
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S097",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5333333333333333,
+        "emg_supervised_balanced_accuracy": 0.5555555555555556,
+        "balanced_accuracy_delta": 0.022222222222222254,
+        "target_only_sensitivity": 0.06666666666666667,
+        "emg_supervised_sensitivity": 0.1111111111111111
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S098",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5333333333333333,
+        "emg_supervised_balanced_accuracy": 0.5222222222222223,
+        "balanced_accuracy_delta": -0.011111111111111072,
+        "target_only_sensitivity": 0.06666666666666667,
+        "emg_supervised_sensitivity": 0.06666666666666667
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S100",
+        "rows": 72,
+        "target_only_balanced_accuracy": 0.5,
+        "emg_supervised_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.0,
+        "emg_supervised_sensitivity": 0.0
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S103",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5111111111111111,
+        "emg_supervised_balanced_accuracy": 0.5222222222222223,
+        "balanced_accuracy_delta": 0.011111111111111183,
+        "target_only_sensitivity": 0.1111111111111111,
+        "emg_supervised_sensitivity": 0.13333333333333333
+      }
+    ]
+  }
+}

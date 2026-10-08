@@ -1,0 +1,1375 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1199.947813pt"
+   height="702.72pt"
+   viewBox="0 0 1199.947813 702.72"
+   version="1.1"
+   id="svg91"
+   sodipodi:docname="03_v7_poster_results_dashboard.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   inkscape:export-filename="03_v7_poster_results_dashboard.png"
+   inkscape:export-xdpi="400"
+   inkscape:export-ydpi="400"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview91"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     inkscape:zoom="1.1385793"
+     inkscape:cx="799.68082"
+     inkscape:cy="460.66182"
+     inkscape:window-width="2056"
+     inkscape:window-height="1290"
+     inkscape:window-x="0"
+     inkscape:window-y="39"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="figure_1" />
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:date>2026-08-12T13:53:29.236809</dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Matplotlib v3.10.1, https://matplotlib.org/</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1">
+    <style
+       type="text/css"
+       id="style1">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+    <clipPath
+       id="pd510588221-2">
+      <rect
+         x="32.107815"
+         y="95.040001"
+         width="1159.2"
+         height="122.4"
+         id="rect88-1" />
+    </clipPath>
+  </defs>
+  <g
+     id="figure_1">
+    <g
+       id="patch_1">
+      <path
+         d="M 0 702.72  L 1199.947813 702.72  L 1199.947813 0  L 0 0  z "
+         style="fill: #f4f1e8"
+         id="path1" />
+    </g>
+    <g
+       id="axes_1">
+      <g
+         id="text_1">
+        <text
+           style="font-weight: 700; font-size: 28px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+           x="32.107813"
+           y="38.44625"
+           transform="rotate(-0 32.107813 38.44625)"
+           id="text1">V7 Results: Better Intent Recovery with High Rest Rejection</text>
+      </g>
+      <g
+         id="text_2">
+        <text
+           style="font-weight: 700; font-size: 15px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+           x="32.107813"
+           y="76.139062"
+           transform="rotate(-0 32.107813 76.139062)"
+           id="text2">Patient-adapted, binary REST versus INTENT evaluation on later recordings</text>
+      </g>
+      <g
+         id="text_3">
+        <text
+           style="font-weight: 700; font-size: 12px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #d96b3b"
+           x="1191.307813"
+           y="73.8"
+           transform="rotate(-0 1191.307813 73.8)"
+           id="text3">DEVELOPMENT-OBSERVED  |  4,645 EVALUATION WINDOWS</text>
+      </g>
+    </g>
+    <g
+       id="axes_2">
+      <g
+         id="patch_2">
+        <path
+           d="M 57.610213 211.0752  L 279.017413 211.0752  Q 307.997413 211.0752 307.997413 208.0152  L 307.997413 109.3608  Q 307.997413 106.3008 279.017413 106.3008  L 57.610213 106.3008  Q 28.630213 106.3008 28.630213 109.3608  L 28.630213 208.0152  Q 28.630213 211.0752 57.610213 211.0752  z "
+           clip-path="url(#pd510588221)"
+           style="fill: #fffdf8; stroke: #173a59; stroke-width: 1.8; stroke-linejoin: miter"
+           id="path3" />
+      </g>
+      <g
+         id="patch_3">
+        <path
+           d="M 347.410213 211.0752  L 568.817413 211.0752  Q 597.797413 211.0752 597.797413 208.0152  L 597.797413 109.3608  Q 597.797413 106.3008 568.817413 106.3008  L 347.410213 106.3008  Q 318.430213 106.3008 318.430213 109.3608  L 318.430213 208.0152  Q 318.430213 211.0752 347.410213 211.0752  z "
+           clip-path="url(#pd510588221)"
+           style="fill: #fffdf8; stroke: #248b7f; stroke-width: 1.8; stroke-linejoin: miter"
+           id="path4" />
+      </g>
+      <g
+         id="patch_3-6"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         transform="translate(-289.86132,-0.07553366)">
+        <path
+           d="m 347.41021,211.0752 h 221.4072 q 28.98,0 28.98,-3.06 v -98.6544 q 0,-3.06 -28.98,-3.06 h -221.4072 q -28.98,0 -28.98,3.06 v 98.6544 q 0,3.06 28.98,3.06 z"
+           clip-path="url(#pd510588221-2)"
+           style="fill:#fffdf8;stroke:#000000;stroke-width:1.8;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           id="path4-8" />
+      </g>
+      <g
+         id="patch_4">
+        <path
+           d="M 637.210213 211.0752  L 858.617413 211.0752  Q 887.597413 211.0752 887.597413 208.0152  L 887.597413 109.3608  Q 887.597413 106.3008 858.617413 106.3008  L 637.210213 106.3008  Q 608.230213 106.3008 608.230213 109.3608  L 608.230213 208.0152  Q 608.230213 211.0752 637.210213 211.0752  z "
+           clip-path="url(#pd510588221)"
+           style="fill: #fbf0d6; stroke: #e9a437; stroke-width: 3; stroke-linejoin: miter"
+           id="path5" />
+      </g>
+      <g
+         id="patch_5">
+        <path
+           d="M 927.010213 211.0752  L 1148.417413 211.0752  Q 1177.397413 211.0752 1177.397413 208.0152  L 1177.397413 109.3608  Q 1177.397413 106.3008 1148.417413 106.3008  L 927.010213 106.3008  Q 898.030213 106.3008 898.030213 109.3608  L 898.030213 208.0152  Q 898.030213 211.0752 927.010213 211.0752  z "
+           clip-path="url(#pd510588221)"
+           style="fill: #fffdf8; stroke: #d96b3b; stroke-width: 1.8; stroke-linejoin: miter"
+           id="path6" />
+      </g>
+      <g
+         id="text_4">
+        <text
+           style="font-weight: 700; font-size: 12px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+           x="58.769413"
+           y="124.416"
+           transform="rotate(-0 58.769413 124.416)"
+           id="text6">BALANCED ACCURACY</text>
+      </g>
+      <g
+         id="text_5">
+        <text
+           style="font-weight: 700; font-size: 29px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #173a59"
+           x="58.769413"
+           y="169.704"
+           transform="rotate(-0 58.769413 169.704)"
+           id="text7">73.6%</text>
+      </g>
+      <g
+         id="text_6">
+        <text
+           style="font-weight: 700; font-size: 10.8px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+           x="58.769413"
+           y="197.856"
+           transform="rotate(-0 58.769413 197.856)"
+           id="text8">95% CI 67.5-78.7%</text>
+      </g>
+      <g
+         id="text_7"
+         transform="translate(1.5)">
+        <text
+           style="font-weight:700;font-size:12px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#111111"
+           x="348.56943"
+           y="124.416"
+           id="text9">INTENT SENSITIVITY</text>
+      </g>
+      <g
+         id="text_8"
+         transform="translate(1.5)">
+        <text
+           style="font-weight:700;font-size:29px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#248b7f"
+           x="348.56943"
+           y="169.70399"
+           id="text10">53.5%</text>
+      </g>
+      <g
+         id="text_9"
+         transform="translate(1.5)">
+        <text
+           style="font-weight:700;font-size:10.8px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#111111"
+           x="348.56943"
+           y="197.856"
+           id="text11">MISSED INTENT: 46.5%</text>
+      </g>
+      <g
+         id="text_10"
+         transform="translate(-7.5)">
+        <text
+           style="font-weight:700;font-size:12.4px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#111111"
+           x="638.36938"
+           y="124.416"
+           id="text12">SAFETY RESULT: REST SPECIFICITY</text>
+      </g>
+      <g
+         id="text_11"
+         transform="translate(-7.5)">
+        <text
+           style="font-weight:700;font-size:31px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#e9a437"
+           x="638.36938"
+           y="169.70399"
+           id="text13">93.7%</text>
+      </g>
+      <g
+         id="text_12"
+         transform="translate(-25.5)">
+        <text
+           style="font-weight:700;font-size:11.5px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#111111"
+           x="638.36938"
+           y="197.856"
+           id="text14">ONLY 6.3% FALSE ACTIVATION / REST WINDOW</text>
+      </g>
+      <g
+         id="text_13"
+         transform="translate(-15)">
+        <text
+           style="font-weight:700;font-size:12px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#111111"
+           x="928.16943"
+           y="124.416"
+           id="text15">INTENT AUROC</text>
+      </g>
+      <g
+         id="text_14"
+         transform="translate(-15)">
+        <text
+           style="font-weight:700;font-size:29px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#d96b3b"
+           x="928.16943"
+           y="169.70399"
+           id="text16">0.896</text>
+      </g>
+      <g
+         id="text_15"
+         transform="translate(-14.008255,-2.6348627)">
+        <text
+           style="font-weight:700;font-size:10.8px;font-family:'Avenir Next', 'DejaVu Sans', sans-serif;text-anchor:start;fill:#111111"
+           x="928.16943"
+           y="197.856"
+           id="text17">THRESHOLD-INDEPENDENT DISCRIMINATION</text>
+      </g>
+    </g>
+    <g
+       id="axes_3">
+      <g
+         id="patch_6">
+        <path
+           d="M 57.307813 581.04  L 573.907812 581.04  L 573.907812 275.04  L 57.307813 275.04  z "
+           style="fill: #fffdf8"
+           id="path17" />
+      </g>
+      <g
+         id="patch_7">
+        <path
+           d="M 80.789631 581.04  L 119.631736 581.04  L 119.631736 385.880324  L 80.789631 385.880324  z "
+           clip-path="url(#pad12072ecd)"
+           style="fill: #173a59"
+           id="path18" />
+      </g>
+      <g
+         id="patch_8">
+        <path
+           d="M 257.344655 581.04  L 296.18676 581.04  L 296.18676 389.763926  L 257.344655 389.763926  z "
+           clip-path="url(#pad12072ecd)"
+           style="fill: #173a59"
+           id="path19" />
+      </g>
+      <g
+         id="patch_9">
+        <path
+           d="M 433.899679 581.04  L 472.741784 581.04  L 472.741784 385.195126  L 433.899679 385.195126  z "
+           clip-path="url(#pad12072ecd)"
+           style="fill: #173a59"
+           id="path20" />
+      </g>
+      <g
+         id="patch_10">
+        <path
+           d="M 119.631736 581.04  L 158.473841 581.04  L 158.473841 440.392404  L 119.631736 440.392404  z "
+           clip-path="url(#pad12072ecd)"
+           style="fill: #248b7f"
+           id="path21" />
+      </g>
+      <g
+         id="patch_11">
+        <path
+           d="M 296.18676 581.04  L 335.028865 581.04  L 335.028865 450.340648  L 296.18676 450.340648  z "
+           clip-path="url(#pad12072ecd)"
+           style="fill: #248b7f"
+           id="path22" />
+      </g>
+      <g
+         id="patch_12">
+        <path
+           d="M 472.741784 581.04  L 511.583889 581.04  L 511.583889 438.562842  L 472.741784 438.562842  z "
+           clip-path="url(#pad12072ecd)"
+           style="fill: #248b7f"
+           id="path23" />
+      </g>
+      <g
+         id="patch_13">
+        <path
+           d="M 158.473841 581.04  L 197.315946 581.04  L 197.315946 331.368244  L 158.473841 331.368244  z "
+           clip-path="url(#pad12072ecd)"
+           style="fill: #e9a437"
+           id="path24" />
+      </g>
+      <g
+         id="patch_14">
+        <path
+           d="M 335.028865 581.04  L 373.87097 581.04  L 373.87097 329.187203  L 335.028865 329.187203  z "
+           clip-path="url(#pad12072ecd)"
+           style="fill: #e9a437"
+           id="path25" />
+      </g>
+      <g
+         id="patch_15">
+        <path
+           d="M 511.583889 581.04  L 550.425994 581.04  L 550.425994 331.82741  L 511.583889 331.82741  z "
+           clip-path="url(#pad12072ecd)"
+           style="fill: #e9a437"
+           id="path26" />
+      </g>
+      <g
+         id="matplotlib.axis_1">
+        <g
+           id="xtick_1">
+          <g
+             id="line2d_1">
+            <defs
+               id="defs26">
+              <path
+                 id="mda09a33f05"
+                 d="M 0 0  L 0 3.5  "
+                 style="stroke: #111111; stroke-width: 0.8" />
+            </defs>
+            <g
+               id="g26">
+              <use
+                 xlink:href="#mda09a33f05"
+                 x="139.052789"
+                 y="581.04"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use26" />
+            </g>
+          </g>
+          <g
+             id="text_16">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #111111"
+               transform="translate(130.752984 597.489219)"
+               id="text26">V5</text>
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #111111"
+               transform="translate(106.483453 611.828281)"
+               id="text27">directional</text>
+          </g>
+        </g>
+        <g
+           id="xtick_2">
+          <g
+             id="line2d_2">
+            <g
+               id="g27">
+              <use
+                 xlink:href="#mda09a33f05"
+                 x="315.607812"
+                 y="581.04"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use27" />
+            </g>
+          </g>
+          <g
+             id="text_17">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #111111"
+               transform="translate(307.308008 597.489219)"
+               id="text28">V6</text>
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #111111"
+               transform="translate(296.233789 611.828281)"
+               id="text29">binary</text>
+          </g>
+        </g>
+        <g
+           id="xtick_3">
+          <g
+             id="line2d_3">
+            <g
+               id="g29">
+              <use
+                 xlink:href="#mda09a33f05"
+                 x="492.162836"
+                 y="581.04"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use29" />
+            </g>
+          </g>
+          <g
+             id="text_18">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #111111"
+               transform="translate(483.863032 597.489219)"
+               id="text30">V7</text>
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #111111"
+               transform="translate(465.957758 611.828281)"
+               id="text31">auxiliary</text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="matplotlib.axis_2">
+        <g
+           id="ytick_1">
+          <g
+             id="line2d_4">
+            <path
+               d="M 57.307813 581.04  L 573.907812 581.04  "
+               clip-path="url(#pad12072ecd)"
+               style="fill: none; stroke: #cbd3d7; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"
+               id="path31" />
+          </g>
+          <g
+             id="line2d_5">
+            <defs
+               id="defs31">
+              <path
+                 id="ma8e2c9eefa"
+                 d="M 0 0  L -3.5 0  "
+                 style="stroke: #111111; stroke-width: 0.8" />
+            </defs>
+            <g
+               id="g31">
+              <use
+                 xlink:href="#ma8e2c9eefa"
+                 x="57.307813"
+                 y="581.04"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use31" />
+            </g>
+          </g>
+          <g
+             id="text_19">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+               x="50.307813"
+               y="585.764609"
+               transform="rotate(-0 50.307813 585.764609)"
+               id="text32">0</text>
+          </g>
+        </g>
+        <g
+           id="ytick_2">
+          <g
+             id="line2d_6">
+            <path
+               d="M 57.307813 527.822609  L 573.907812 527.822609  "
+               clip-path="url(#pad12072ecd)"
+               style="fill: none; stroke: #cbd3d7; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"
+               id="path32" />
+          </g>
+          <g
+             id="line2d_7">
+            <g
+               id="g32">
+              <use
+                 xlink:href="#ma8e2c9eefa"
+                 x="57.307813"
+                 y="527.822609"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use32" />
+            </g>
+          </g>
+          <g
+             id="text_20">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+               x="50.307813"
+               y="532.547218"
+               transform="rotate(-0 50.307813 532.547218)"
+               id="text33">20</text>
+          </g>
+        </g>
+        <g
+           id="ytick_3">
+          <g
+             id="line2d_8">
+            <path
+               d="M 57.307813 474.605217  L 573.907812 474.605217  "
+               clip-path="url(#pad12072ecd)"
+               style="fill: none; stroke: #cbd3d7; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"
+               id="path33" />
+          </g>
+          <g
+             id="line2d_9">
+            <g
+               id="g33">
+              <use
+                 xlink:href="#ma8e2c9eefa"
+                 x="57.307813"
+                 y="474.605217"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use33" />
+            </g>
+          </g>
+          <g
+             id="text_21">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+               x="50.307813"
+               y="479.329827"
+               transform="rotate(-0 50.307813 479.329827)"
+               id="text34">40</text>
+          </g>
+        </g>
+        <g
+           id="ytick_4">
+          <g
+             id="line2d_10">
+            <path
+               d="M 57.307813 421.387826  L 573.907812 421.387826  "
+               clip-path="url(#pad12072ecd)"
+               style="fill: none; stroke: #cbd3d7; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"
+               id="path34" />
+          </g>
+          <g
+             id="line2d_11">
+            <g
+               id="g34">
+              <use
+                 xlink:href="#ma8e2c9eefa"
+                 x="57.307813"
+                 y="421.387826"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use34" />
+            </g>
+          </g>
+          <g
+             id="text_22">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+               x="50.307813"
+               y="426.112435"
+               transform="rotate(-0 50.307813 426.112435)"
+               id="text35">60</text>
+          </g>
+        </g>
+        <g
+           id="ytick_5">
+          <g
+             id="line2d_12">
+            <path
+               d="M 57.307813 368.170435  L 573.907812 368.170435  "
+               clip-path="url(#pad12072ecd)"
+               style="fill: none; stroke: #cbd3d7; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"
+               id="path35" />
+          </g>
+          <g
+             id="line2d_13">
+            <g
+               id="g35">
+              <use
+                 xlink:href="#ma8e2c9eefa"
+                 x="57.307813"
+                 y="368.170435"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use35" />
+            </g>
+          </g>
+          <g
+             id="text_23">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+               x="50.307813"
+               y="372.895044"
+               transform="rotate(-0 50.307813 372.895044)"
+               id="text36">80</text>
+          </g>
+        </g>
+        <g
+           id="ytick_6">
+          <g
+             id="line2d_14">
+            <path
+               d="M 57.307813 314.953043  L 573.907812 314.953043  "
+               clip-path="url(#pad12072ecd)"
+               style="fill: none; stroke: #cbd3d7; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"
+               id="path36" />
+          </g>
+          <g
+             id="line2d_15">
+            <g
+               id="g36">
+              <use
+                 xlink:href="#ma8e2c9eefa"
+                 x="57.307813"
+                 y="314.953043"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use36" />
+            </g>
+          </g>
+          <g
+             id="text_24">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+               x="50.307813"
+               y="319.677653"
+               transform="rotate(-0 50.307813 319.677653)"
+               id="text37">100</text>
+          </g>
+        </g>
+        <g
+           id="text_25">
+          <text
+             style="font-weight: 700; font-size: 13.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+             x="18.845156"
+             y="428.04"
+             transform="rotate(-90 18.845156 428.04)"
+             id="text38">Development-observed result (%)</text>
+        </g>
+      </g>
+      <g
+         id="patch_16">
+        <path
+           d="M 57.307813 581.04  L 57.307813 275.04  "
+           style="fill: none; stroke: #cbd3d7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"
+           id="path38" />
+      </g>
+      <g
+         id="patch_17">
+        <path
+           d="M 57.307813 581.04  L 573.907812 581.04  "
+           style="fill: none; stroke: #cbd3d7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"
+           id="path39" />
+      </g>
+      <g
+         id="text_26">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="100.210683"
+           y="379.92728"
+           transform="rotate(-0 100.210683 379.92728)"
+           id="text39">73.3</text>
+      </g>
+      <g
+         id="text_27">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="276.765707"
+           y="383.810882"
+           transform="rotate(-0 276.765707 383.810882)"
+           id="text40">71.9</text>
+      </g>
+      <g
+         id="text_28">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="453.320731"
+           y="379.242082"
+           transform="rotate(-0 453.320731 379.242082)"
+           id="text41">73.6</text>
+      </g>
+      <g
+         id="text_29">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="139.052789"
+           y="434.43936"
+           transform="rotate(-0 139.052789 434.43936)"
+           id="text42">52.9</text>
+      </g>
+      <g
+         id="text_30">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="315.607812"
+           y="444.387605"
+           transform="rotate(-0 315.607812 444.387605)"
+           id="text43">49.1</text>
+      </g>
+      <g
+         id="text_31">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="492.162836"
+           y="432.609798"
+           transform="rotate(-0 492.162836 432.609798)"
+           id="text44">53.5</text>
+      </g>
+      <g
+         id="text_32">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="177.894894"
+           y="325.415201"
+           transform="rotate(-0 177.894894 325.415201)"
+           id="text45">93.8</text>
+      </g>
+      <g
+         id="text_33">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="354.449918"
+           y="323.23416"
+           transform="rotate(-0 354.449918 323.23416)"
+           id="text46">94.7</text>
+      </g>
+      <g
+         id="text_34">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="531.004942"
+           y="325.874367"
+           transform="rotate(-0 531.004942 325.874367)"
+           id="text47">93.7</text>
+      </g>
+      <g
+         id="text_35">
+        <text
+           style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+           x="57.307813"
+           y="267.39"
+           transform="rotate(-0 57.307813 267.39)"
+           id="text48">Conservative operating point</text>
+      </g>
+      <g
+         id="text_36">
+        <text
+           style="font-weight: 700; font-size: 19px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+           x="57.307813"
+           y="251.04"
+           transform="rotate(-0 57.307813 251.04)"
+           id="text49">Model Progression</text>
+      </g>
+      <g
+         id="legend_1">
+        <g
+           id="patch_18">
+          <path
+             d="M 135.05332 294.3025  L 158.05332 294.3025  L 158.05332 286.2525  L 135.05332 286.2525  z "
+             style="fill: #173a59"
+             id="path49" />
+        </g>
+        <g
+           id="text_37">
+          <text
+             style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+             x="167.25332"
+             y="294.3025"
+             transform="rotate(-0 167.25332 294.3025)"
+             id="text50">Balanced accuracy</text>
+        </g>
+        <g
+           id="patch_19">
+          <path
+             d="M 292.824336 294.3025  L 315.824336 294.3025  L 315.824336 286.2525  L 292.824336 286.2525  z "
+             style="fill: #248b7f"
+             id="path50" />
+        </g>
+        <g
+           id="text_38">
+          <text
+             style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+             x="325.024336"
+             y="294.3025"
+             transform="rotate(-0 325.024336 294.3025)"
+             id="text51">Sensitivity</text>
+        </g>
+        <g
+           id="patch_20">
+          <path
+             d="M 405.99332 294.3025  L 428.99332 294.3025  L 428.99332 286.2525  L 405.99332 286.2525  z "
+             style="fill: #e9a437"
+             id="path51" />
+        </g>
+        <g
+           id="text_39">
+          <text
+             style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+             x="438.19332"
+             y="294.3025"
+             transform="rotate(-0 438.19332 294.3025)"
+             id="text52">Specificity</text>
+        </g>
+      </g>
+    </g>
+    <g
+       id="axes_4">
+      <g
+         id="patch_21">
+        <path
+           d="M 662.107813 581.04  L 1178.707813 581.04  L 1178.707813 275.04  L 662.107813 275.04  z "
+           style="fill: #fffdf8"
+           id="path52" />
+      </g>
+      <g
+         id="patch_22">
+        <path
+           d="M 685.589631 581.04  L 724.431736 581.04  L 724.431736 411.379051  L 685.589631 411.379051  z "
+           clip-path="url(#pa3241acabd)"
+           style="fill: #173a59"
+           id="path53" />
+      </g>
+      <g
+         id="patch_23">
+        <path
+           d="M 862.144655 581.04  L 900.98676 581.04  L 900.98676 377.926957  L 862.144655 377.926957  z "
+           clip-path="url(#pa3241acabd)"
+           style="fill: #173a59"
+           id="path54" />
+      </g>
+      <g
+         id="patch_24">
+        <path
+           d="M 1038.699679 581.04  L 1077.541784 581.04  L 1077.541784 408.045167  L 1038.699679 408.045167  z "
+           clip-path="url(#pa3241acabd)"
+           style="fill: #173a59"
+           id="path55" />
+      </g>
+      <g
+         id="patch_25">
+        <path
+           d="M 724.431736 581.04  L 763.273841 581.04  L 763.273841 472.81503  L 724.431736 472.81503  z "
+           clip-path="url(#pa3241acabd)"
+           style="fill: #248b7f"
+           id="path56" />
+      </g>
+      <g
+         id="patch_26">
+        <path
+           d="M 900.98676 581.04  L 939.828865 581.04  L 939.828865 428.483478  L 900.98676 428.483478  z "
+           clip-path="url(#pa3241acabd)"
+           style="fill: #248b7f"
+           id="path57" />
+      </g>
+      <g
+         id="patch_27">
+        <path
+           d="M 1077.541784 581.04  L 1116.383889 581.04  L 1116.383889 473.274783  L 1077.541784 473.274783  z "
+           clip-path="url(#pa3241acabd)"
+           style="fill: #248b7f"
+           id="path58" />
+      </g>
+      <g
+         id="patch_28">
+        <path
+           d="M 763.273841 581.04  L 802.115946 581.04  L 802.115946 349.943071  L 763.273841 349.943071  z "
+           clip-path="url(#pa3241acabd)"
+           style="fill: #e9a437"
+           id="path59" />
+      </g>
+      <g
+         id="patch_29">
+        <path
+           d="M 939.828865 581.04  L 978.67097 581.04  L 978.67097 327.370435  L 939.828865 327.370435  z "
+           clip-path="url(#pa3241acabd)"
+           style="fill: #e9a437"
+           id="path60" />
+      </g>
+      <g
+         id="patch_30">
+        <path
+           d="M 1116.383889 581.04  L 1155.225994 581.04  L 1155.225994 342.815552  L 1116.383889 342.815552  z "
+           clip-path="url(#pa3241acabd)"
+           style="fill: #e9a437"
+           id="path61" />
+      </g>
+      <g
+         id="matplotlib.axis_3">
+        <g
+           id="xtick_4">
+          <g
+             id="line2d_16">
+            <g
+               id="g61">
+              <use
+                 xlink:href="#mda09a33f05"
+                 x="743.852789"
+                 y="581.04"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use61" />
+            </g>
+          </g>
+          <g
+             id="text_40">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #111111"
+               transform="translate(712.715093 597.489219)"
+               id="text61">PhysioNet</text>
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #111111"
+               transform="translate(707.610601 611.828281)"
+               id="text62">aux w=0.25</text>
+          </g>
+        </g>
+        <g
+           id="xtick_5">
+          <g
+             id="line2d_17">
+            <g
+               id="g62">
+              <use
+                 xlink:href="#mda09a33f05"
+                 x="920.407813"
+                 y="581.04"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use62" />
+            </g>
+          </g>
+          <g
+             id="text_41">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #111111"
+               transform="translate(891.296484 597.489219)"
+               id="text63">OpenBMI</text>
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #111111"
+               transform="translate(884.165625 611.828281)"
+               id="text64">aux w=0.50</text>
+          </g>
+        </g>
+        <g
+           id="xtick_6">
+          <g
+             id="line2d_18">
+            <g
+               id="g64">
+              <use
+                 xlink:href="#mda09a33f05"
+                 x="1096.962836"
+                 y="581.04"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use64" />
+            </g>
+          </g>
+          <g
+             id="text_42">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #111111"
+               transform="translate(1067.500922 597.489219)"
+               id="text65">Liu stroke</text>
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; fill: #111111"
+               transform="translate(1060.720649 611.828281)"
+               id="text66">aux w=0.00</text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="matplotlib.axis_4">
+        <g
+           id="ytick_7">
+          <g
+             id="line2d_19">
+            <path
+               d="M 662.107813 581.04  L 1178.707813 581.04  "
+               clip-path="url(#pa3241acabd)"
+               style="fill: none; stroke: #cbd3d7; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"
+               id="path66" />
+          </g>
+          <g
+             id="line2d_20">
+            <g
+               id="g66">
+              <use
+                 xlink:href="#ma8e2c9eefa"
+                 x="662.107813"
+                 y="581.04"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use66" />
+            </g>
+          </g>
+          <g
+             id="text_43">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+               x="655.107813"
+               y="585.764609"
+               transform="rotate(-0 655.107813 585.764609)"
+               id="text67">0</text>
+          </g>
+        </g>
+        <g
+           id="ytick_8">
+          <g
+             id="line2d_21">
+            <path
+               d="M 662.107813 527.822609  L 1178.707813 527.822609  "
+               clip-path="url(#pa3241acabd)"
+               style="fill: none; stroke: #cbd3d7; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"
+               id="path67" />
+          </g>
+          <g
+             id="line2d_22">
+            <g
+               id="g67">
+              <use
+                 xlink:href="#ma8e2c9eefa"
+                 x="662.107813"
+                 y="527.822609"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use67" />
+            </g>
+          </g>
+          <g
+             id="text_44">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+               x="655.107813"
+               y="532.547218"
+               transform="rotate(-0 655.107813 532.547218)"
+               id="text68">20</text>
+          </g>
+        </g>
+        <g
+           id="ytick_9">
+          <g
+             id="line2d_23">
+            <path
+               d="M 662.107813 474.605217  L 1178.707813 474.605217  "
+               clip-path="url(#pa3241acabd)"
+               style="fill: none; stroke: #cbd3d7; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"
+               id="path68" />
+          </g>
+          <g
+             id="line2d_24">
+            <g
+               id="g68">
+              <use
+                 xlink:href="#ma8e2c9eefa"
+                 x="662.107813"
+                 y="474.605217"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use68" />
+            </g>
+          </g>
+          <g
+             id="text_45">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+               x="655.107813"
+               y="479.329827"
+               transform="rotate(-0 655.107813 479.329827)"
+               id="text69">40</text>
+          </g>
+        </g>
+        <g
+           id="ytick_10">
+          <g
+             id="line2d_25">
+            <path
+               d="M 662.107813 421.387826  L 1178.707813 421.387826  "
+               clip-path="url(#pa3241acabd)"
+               style="fill: none; stroke: #cbd3d7; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"
+               id="path69" />
+          </g>
+          <g
+             id="line2d_26">
+            <g
+               id="g69">
+              <use
+                 xlink:href="#ma8e2c9eefa"
+                 x="662.107813"
+                 y="421.387826"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use69" />
+            </g>
+          </g>
+          <g
+             id="text_46">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+               x="655.107813"
+               y="426.112435"
+               transform="rotate(-0 655.107813 426.112435)"
+               id="text70">60</text>
+          </g>
+        </g>
+        <g
+           id="ytick_11">
+          <g
+             id="line2d_27">
+            <path
+               d="M 662.107813 368.170435  L 1178.707813 368.170435  "
+               clip-path="url(#pa3241acabd)"
+               style="fill: none; stroke: #cbd3d7; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"
+               id="path70" />
+          </g>
+          <g
+             id="line2d_28">
+            <g
+               id="g70">
+              <use
+                 xlink:href="#ma8e2c9eefa"
+                 x="662.107813"
+                 y="368.170435"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use70" />
+            </g>
+          </g>
+          <g
+             id="text_47">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+               x="655.107813"
+               y="372.895044"
+               transform="rotate(-0 655.107813 372.895044)"
+               id="text71">80</text>
+          </g>
+        </g>
+        <g
+           id="ytick_12">
+          <g
+             id="line2d_29">
+            <path
+               d="M 662.107813 314.953043  L 1178.707813 314.953043  "
+               clip-path="url(#pa3241acabd)"
+               style="fill: none; stroke: #cbd3d7; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"
+               id="path71" />
+          </g>
+          <g
+             id="line2d_30">
+            <g
+               id="g71">
+              <use
+                 xlink:href="#ma8e2c9eefa"
+                 x="662.107813"
+                 y="314.953043"
+                 style="fill: #111111; stroke: #111111; stroke-width: 0.8"
+                 id="use71" />
+            </g>
+          </g>
+          <g
+             id="text_48">
+            <text
+               style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+               x="655.107813"
+               y="319.677653"
+               transform="rotate(-0 655.107813 319.677653)"
+               id="text72">100</text>
+          </g>
+        </g>
+        <g
+           id="text_49">
+          <text
+             style="font-weight: 700; font-size: 13.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+             x="623.645156"
+             y="428.04"
+             transform="rotate(-90 623.645156 428.04)"
+             id="text73">Result (%)</text>
+        </g>
+      </g>
+      <g
+         id="patch_31">
+        <path
+           d="M 662.107813 581.04  L 662.107813 275.04  "
+           style="fill: none; stroke: #cbd3d7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"
+           id="path73" />
+      </g>
+      <g
+         id="patch_32">
+        <path
+           d="M 662.107813 581.04  L 1178.707813 581.04  "
+           style="fill: none; stroke: #cbd3d7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"
+           id="path74" />
+      </g>
+      <g
+         id="text_50">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="705.010683"
+           y="405.426007"
+           transform="rotate(-0 705.010683 405.426007)"
+           id="text74">63.8</text>
+      </g>
+      <g
+         id="text_51">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="881.565707"
+           y="371.973913"
+           transform="rotate(-0 881.565707 371.973913)"
+           id="text75">76.3</text>
+      </g>
+      <g
+         id="text_52">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="1058.120731"
+           y="402.092124"
+           transform="rotate(-0 1058.120731 402.092124)"
+           id="text76">65.0</text>
+      </g>
+      <g
+         id="text_53">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="743.852789"
+           y="466.861986"
+           transform="rotate(-0 743.852789 466.861986)"
+           id="text77">40.7</text>
+      </g>
+      <g
+         id="text_54">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="920.407813"
+           y="422.530435"
+           transform="rotate(-0 920.407813 422.530435)"
+           id="text78">57.3</text>
+      </g>
+      <g
+         id="text_55">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="1096.962836"
+           y="467.321739"
+           transform="rotate(-0 1096.962836 467.321739)"
+           id="text79">40.5</text>
+      </g>
+      <g
+         id="text_56">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="782.694894"
+           y="343.990028"
+           transform="rotate(-0 782.694894 343.990028)"
+           id="text80">86.9</text>
+      </g>
+      <g
+         id="text_57">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="959.249918"
+           y="321.417391"
+           transform="rotate(-0 959.249918 321.417391)"
+           id="text81">95.3</text>
+      </g>
+      <g
+         id="text_58">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111111"
+           x="1135.804942"
+           y="336.862509"
+           transform="rotate(-0 1135.804942 336.862509)"
+           id="text82">89.5</text>
+      </g>
+      <g
+         id="text_59">
+        <text
+           style="font-weight: 700; font-size: 12.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+           x="662.107813"
+           y="267.39"
+           transform="rotate(-0 662.107813 267.39)"
+           id="text83">V7 patient-adapted conservative result</text>
+      </g>
+      <g
+         id="text_60">
+        <text
+           style="font-weight: 700; font-size: 19px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+           x="662.107813"
+           y="251.04"
+           transform="rotate(-0 662.107813 251.04)"
+           id="text84">Performance Remains Domain Dependent</text>
+      </g>
+    </g>
+    <g
+       id="axes_5">
+      <g
+         id="patch_33">
+        <path
+           d="M 51.814213 690.9048  L 1171.601413 690.9048  Q 1200.581413 690.9048 1200.581413 689.0148  L 1200.581413 623.5452  Q 1200.581413 621.6552 1171.601413 621.6552  L 51.814213 621.6552  Q 22.834213 621.6552 22.834213 623.5452  L 22.834213 689.0148  Q 22.834213 690.9048 51.814213 690.9048  z "
+           clip-path="url(#pf77a6bfb1f)"
+           style="fill: #fbf0d6; stroke: #e9a437; stroke-width: 2.6; stroke-linejoin: miter"
+           id="path84" />
+      </g>
+      <g
+         id="text_61">
+        <text
+           style="font-weight: 700; font-size: 14px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+           x="55.291813"
+           y="646.283562"
+           transform="rotate(-0 55.291813 646.283562)"
+           id="text85">LOW FALSE ACTIVATION</text>
+      </g>
+      <g
+         id="text_62">
+        <text
+           style="font-weight: 700; font-size: 14px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+           x="316.111813"
+           y="646.172"
+           transform="rotate(-0 316.111813 646.172)"
+           id="text86">93.7% REST SPECIFICITY  |  ONLY 6.3% FALSE ACTIVATION PER ANALYZED REST WINDOW</text>
+      </g>
+      <g
+         id="text_63">
+        <text
+           style="font-weight: 700; font-size: 11.5px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111111"
+           x="55.291813"
+           y="675.93075"
+           transform="rotate(-0 55.291813 675.93075)"
+           id="text87">Conservative sensitivity 53.5%  |  Sensitivity-targeted option 58.5% sensitivity / 89.6% specificity</text>
+      </g>
+      <g
+         id="text_64">
+        <text
+           style="font-weight: 700; font-size: 10.8px; font-family: 'Avenir Next', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111111"
+           x="1168.123813"
+           y="675.801"
+           transform="rotate(-0 1168.123813 675.801)"
+           id="text88">Cue-locked result; continuous false activations/min not yet measured</text>
+      </g>
+    </g>
+  </g>
+  <defs
+     id="defs91">
+    <clipPath
+       id="pd510588221">
+      <rect
+         x="32.107813"
+         y="95.04"
+         width="1159.2"
+         height="122.4"
+         id="rect88" />
+    </clipPath>
+    <clipPath
+       id="pad12072ecd">
+      <rect
+         x="57.307813"
+         y="275.04"
+         width="516.6"
+         height="306"
+         id="rect89" />
+    </clipPath>
+    <clipPath
+       id="pa3241acabd">
+      <rect
+         x="662.107813"
+         y="275.04"
+         width="516.6"
+         height="306"
+         id="rect90" />
+    </clipPath>
+    <clipPath
+       id="pf77a6bfb1f">
+      <rect
+         x="32.107813"
+         y="618.48"
+         width="1159.2"
+         height="75.6"
+         id="rect91" />
+    </clipPath>
+  </defs>
+</svg>

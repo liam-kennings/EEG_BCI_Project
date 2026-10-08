@@ -1,0 +1,2 @@
+timestamp_seconds,cue_id,cue_onset,expected_label,intent_probability,left_probability,right_probability,available,contamination_veto
+0.0,left_001,1,1,0.2,0.55,0.45,1,0

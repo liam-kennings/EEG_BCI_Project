@@ -1,0 +1,4389 @@
+{
+  "seed": 43,
+  "training": {
+    "conv1d_target": {
+      "parameters": 75890,
+      "losses": [
+        0.6679714429997191,
+        0.6247111676547773,
+        0.5868543860116184,
+        0.5576165131671503,
+        0.5142793686700916,
+        0.4929867185721631,
+        0.44764973993363094,
+        0.4008251334688658,
+        0.36271525992574705,
+        0.329797989800677
+      ],
+      "runtime_seconds": 78.3908269579988,
+      "normalization_source": "target_development_only"
+    },
+    "eegnet": {
+      "parameters": 9338,
+      "losses": [
+        0.6765206423560133,
+        0.6580496713454289,
+        0.6486869953022238,
+        0.6402905174312841,
+        0.6370490047859568,
+        0.6329751913381098,
+        0.6283052724428827,
+        0.6230403000248894,
+        0.6194576680970605,
+        0.619318553321442
+      ],
+      "runtime_seconds": 143.84797029200126,
+      "normalization_source": "target_development_only"
+    },
+    "shallow_convnet": {
+      "parameters": 17162,
+      "losses": [
+        0.6860495671404148,
+        0.6401666893435514,
+        0.6243434735928493,
+        0.602368653231127,
+        0.598644120094643,
+        0.5791069121723708,
+        0.5738274231992466,
+        0.5658490125567383,
+        0.5605997655100288,
+        0.5582594612651616
+      ],
+      "runtime_seconds": 39.81400804099394,
+      "normalization_source": "target_development_only"
+    },
+    "fbcnet": {
+      "parameters": 2314,
+      "losses": [
+        0.700071184521621,
+        0.6807000166867716,
+        0.6749111915032932,
+        0.6735848724131432,
+        0.672750257744023,
+        0.66580533659193,
+        0.6659781888644681,
+        0.6637524031870988,
+        0.6645562873597048,
+        0.6654815154483792
+      ],
+      "runtime_seconds": 25.808518874982838,
+      "normalization_source": "target_development_only"
+    },
+    "mrcp_fbcnet": {
+      "parameters": 18166,
+      "losses": [
+        0.6672582831243358,
+        0.6317122023290122,
+        0.6181558103632474,
+        0.6090228344438618,
+        0.5961949376841664,
+        0.5873240335837339,
+        0.5763510889458261,
+        0.5693217146569455,
+        0.5727038012446946,
+        0.5621754894484304
+      ],
+      "runtime_seconds": 164.4719498330087,
+      "normalization_source": "target_development_only"
+    },
+    "conv1d_way_ssl": {
+      "parameters": 75890,
+      "runtime_seconds": null,
+      "normalization_source": "unlabeled_way_pretraining_source",
+      "reused_completed_seed_model": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/way_eeg_only_ssl_seed_stability/seeds/seed_43/way_eeg_ssl_intent_decoder.pt"
+    }
+  },
+  "thresholds": {
+    "statistical_target_only": {
+      "liu2024": 0.7549999999999999,
+      "openbmi": 0.725,
+      "physionet": 0.6849999999999999
+    },
+    "riemannian": {
+      "liu2024": 0.7599999999999999,
+      "openbmi": 0.715,
+      "physionet": 0.62
+    },
+    "physiology_late_fusion": {
+      "liu2024": 0.61,
+      "openbmi": 0.6499999999999999,
+      "physionet": 0.565
+    },
+    "conv1d_target": {
+      "liu2024": 0.83,
+      "openbmi": 0.735,
+      "physionet": 0.82
+    },
+    "eegnet": {
+      "liu2024": 0.705,
+      "openbmi": 0.695,
+      "physionet": 0.635
+    },
+    "shallow_convnet": {
+      "liu2024": 0.7799999999999999,
+      "openbmi": 0.605,
+      "physionet": 0.69
+    },
+    "fbcnet": {
+      "liu2024": 0.62,
+      "openbmi": 0.595,
+      "physionet": 0.5599999999999999
+    },
+    "mrcp_fbcnet": {
+      "liu2024": 0.71,
+      "openbmi": 0.6749999999999999,
+      "physionet": 0.5599999999999999
+    },
+    "conv1d_way_ssl": {
+      "liu2024": 0.8599999999999999,
+      "openbmi": 0.8649999999999999,
+      "physionet": 0.8499999999999999
+    }
+  },
+  "evaluation": {
+    "statistical_target_only": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5282407039943817,
+      "sensitivity": 0.10579211848717271,
+      "specificity": 0.9506892895015907,
+      "false_activation_rate_per_window": 0.049310710498409335,
+      "missed_intent_rate": 0.8942078815128273,
+      "auroc": 0.6830902012434221,
+      "auprc": 0.6451725790656493,
+      "brier_score": 0.2272811013798053
+    },
+    "riemannian": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5586237544815106,
+      "sensitivity": 0.19359957683152604,
+      "specificity": 0.9236479321314952,
+      "false_activation_rate_per_window": 0.07635206786850478,
+      "missed_intent_rate": 0.8064004231684739,
+      "auroc": 0.6934139778537719,
+      "auprc": 0.6726172091267657,
+      "brier_score": 0.22225415964826342
+    },
+    "physiology_late_fusion": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5851008124284984,
+      "sensitivity": 0.2221634488230627,
+      "specificity": 0.9480381760339343,
+      "false_activation_rate_per_window": 0.051961823966065745,
+      "missed_intent_rate": 0.7778365511769373,
+      "auroc": 0.7800359726858885,
+      "auprc": 0.7671853300399554,
+      "brier_score": 0.20635043192146746
+    },
+    "conv1d_target": {
+      "rows": 7553,
+      "balanced_accuracy": 0.6067702117777591,
+      "sensitivity": 0.2806135942872256,
+      "specificity": 0.9329268292682927,
+      "false_activation_rate_per_window": 0.06707317073170732,
+      "missed_intent_rate": 0.7193864057127743,
+      "auroc": 0.7450636070905401,
+      "auprc": 0.726574238415102,
+      "brier_score": 0.24778302107551148
+    },
+    "eegnet": {
+      "rows": 7553,
+      "balanced_accuracy": 0.584427937252821,
+      "sensitivity": 0.2306268183020365,
+      "specificity": 0.9382290562036055,
+      "false_activation_rate_per_window": 0.06177094379639449,
+      "missed_intent_rate": 0.7693731816979635,
+      "auroc": 0.75735016125445,
+      "auprc": 0.725551990996619,
+      "brier_score": 0.2036320420670721
+    },
+    "shallow_convnet": {
+      "rows": 7553,
+      "balanced_accuracy": 0.6303181083740969,
+      "sensitivity": 0.32002115842369744,
+      "specificity": 0.9406150583244963,
+      "false_activation_rate_per_window": 0.05938494167550371,
+      "missed_intent_rate": 0.6799788415763026,
+      "auroc": 0.7754806992488814,
+      "auprc": 0.7575297137448437,
+      "brier_score": 0.20898626133475676
+    },
+    "fbcnet": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5818730940520541,
+      "sensitivity": 0.26104205236709865,
+      "specificity": 0.9027041357370096,
+      "false_activation_rate_per_window": 0.09729586426299046,
+      "missed_intent_rate": 0.7389579476329013,
+      "auroc": 0.690643630890962,
+      "auprc": 0.6792248567053345,
+      "brier_score": 0.22628255151728
+    },
+    "mrcp_fbcnet": {
+      "rows": 7553,
+      "balanced_accuracy": 0.6197382654748319,
+      "sensitivity": 0.29939169531869875,
+      "specificity": 0.940084835630965,
+      "false_activation_rate_per_window": 0.059915164369035,
+      "missed_intent_rate": 0.7006083046813012,
+      "auroc": 0.7944973023290253,
+      "auprc": 0.7809424046846764,
+      "brier_score": 0.1931666819433129
+    },
+    "conv1d_way_ssl": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5668358957257684,
+      "sensitivity": 0.19888918275588469,
+      "specificity": 0.9347826086956522,
+      "false_activation_rate_per_window": 0.06521739130434782,
+      "missed_intent_rate": 0.8011108172441153,
+      "auroc": 0.6947827264917544,
+      "auprc": 0.6735618684703737,
+      "brier_score": 0.23405000274618684
+    }
+  },
+  "evaluation_by_dataset": {
+    "liu2024": {
+      "statistical_target_only": {
+        "rows": 791,
+        "balanced_accuracy": 0.5485326086956521,
+        "sensitivity": 0.2275,
+        "specificity": 0.8695652173913043,
+        "false_activation_rate_per_window": 0.13043478260869565,
+        "missed_intent_rate": 0.7725,
+        "auroc": 0.6478516624040921,
+        "auprc": 0.6317087669138146,
+        "brier_score": 0.24958514718553568
+      },
+      "riemannian": {
+        "rows": 791,
+        "balanced_accuracy": 0.5086061381074168,
+        "sensitivity": 0.03,
+        "specificity": 0.9872122762148338,
+        "false_activation_rate_per_window": 0.01278772378516624,
+        "missed_intent_rate": 0.97,
+        "auroc": 0.6327237851662404,
+        "auprc": 0.6208672379520657,
+        "brier_score": 0.2376361532775948
+      },
+      "physiology_late_fusion": {
+        "rows": 791,
+        "balanced_accuracy": 0.5768094629156011,
+        "sensitivity": 0.215,
+        "specificity": 0.9386189258312021,
+        "false_activation_rate_per_window": 0.061381074168797956,
+        "missed_intent_rate": 0.785,
+        "auroc": 0.7051662404092072,
+        "auprc": 0.6977632148430084,
+        "brier_score": 0.22593388236840062
+      },
+      "conv1d_target": {
+        "rows": 791,
+        "balanced_accuracy": 0.5160326086956522,
+        "sensitivity": 0.1625,
+        "specificity": 0.8695652173913043,
+        "false_activation_rate_per_window": 0.13043478260869565,
+        "missed_intent_rate": 0.8375,
+        "auroc": 0.5135997442455243,
+        "auprc": 0.5253315696572911,
+        "brier_score": 0.3377095495043182
+      },
+      "eegnet": {
+        "rows": 791,
+        "balanced_accuracy": 0.5177141943734015,
+        "sensitivity": 0.1275,
+        "specificity": 0.907928388746803,
+        "false_activation_rate_per_window": 0.09207161125319693,
+        "missed_intent_rate": 0.8725,
+        "auroc": 0.5542774936061381,
+        "auprc": 0.5516405295875864,
+        "brier_score": 0.25995749063277485
+      },
+      "shallow_convnet": {
+        "rows": 791,
+        "balanced_accuracy": 0.5275415601023018,
+        "sensitivity": 0.1625,
+        "specificity": 0.8925831202046036,
+        "false_activation_rate_per_window": 0.10741687979539642,
+        "missed_intent_rate": 0.8375,
+        "auroc": 0.5725895140664962,
+        "auprc": 0.5754163061784261,
+        "brier_score": 0.2718176787676531
+      },
+      "fbcnet": {
+        "rows": 791,
+        "balanced_accuracy": 0.5944533248081841,
+        "sensitivity": 0.2375,
+        "specificity": 0.9514066496163683,
+        "false_activation_rate_per_window": 0.04859335038363171,
+        "missed_intent_rate": 0.7625,
+        "auroc": 0.7067199488491049,
+        "auprc": 0.7203093054131052,
+        "brier_score": 0.2386005928976666
+      },
+      "mrcp_fbcnet": {
+        "rows": 791,
+        "balanced_accuracy": 0.5215217391304348,
+        "sensitivity": 0.13,
+        "specificity": 0.9130434782608695,
+        "false_activation_rate_per_window": 0.08695652173913043,
+        "missed_intent_rate": 0.87,
+        "auroc": 0.6061572890025576,
+        "auprc": 0.5863180608504236,
+        "brier_score": 0.24585522520736286
+      },
+      "conv1d_way_ssl": {
+        "rows": 791,
+        "balanced_accuracy": 0.507685421994885,
+        "sensitivity": 0.11,
+        "specificity": 0.9053708439897699,
+        "false_activation_rate_per_window": 0.09462915601023018,
+        "missed_intent_rate": 0.89,
+        "auroc": 0.5580306905370844,
+        "auprc": 0.5406946544856148,
+        "brier_score": 0.2818743589313978
+      }
+    },
+    "openbmi": {
+      "statistical_target_only": {
+        "rows": 4800,
+        "balanced_accuracy": 0.5225,
+        "sensitivity": 0.06708333333333333,
+        "specificity": 0.9779166666666667,
+        "false_activation_rate_per_window": 0.022083333333333333,
+        "missed_intent_rate": 0.9329166666666666,
+        "auroc": 0.7206501736111111,
+        "auprc": 0.674158132266764,
+        "brier_score": 0.2154477208791337
+      },
+      "riemannian": {
+        "rows": 4800,
+        "balanced_accuracy": 0.5733333333333333,
+        "sensitivity": 0.19458333333333333,
+        "specificity": 0.9520833333333333,
+        "false_activation_rate_per_window": 0.04791666666666667,
+        "missed_intent_rate": 0.8054166666666667,
+        "auroc": 0.734856076388889,
+        "auprc": 0.7152336162159317,
+        "brier_score": 0.20970030550983107
+      },
+      "physiology_late_fusion": {
+        "rows": 4800,
+        "balanced_accuracy": 0.5829166666666667,
+        "sensitivity": 0.18541666666666667,
+        "specificity": 0.9804166666666667,
+        "false_activation_rate_per_window": 0.019583333333333335,
+        "missed_intent_rate": 0.8145833333333333,
+        "auroc": 0.8266685763888888,
+        "auprc": 0.8148675825323723,
+        "brier_score": 0.1946307206676268
+      },
+      "conv1d_target": {
+        "rows": 4800,
+        "balanced_accuracy": 0.6360416666666666,
+        "sensitivity": 0.31875,
+        "specificity": 0.9533333333333334,
+        "false_activation_rate_per_window": 0.04666666666666667,
+        "missed_intent_rate": 0.68125,
+        "auroc": 0.8035125,
+        "auprc": 0.795973022508211,
+        "brier_score": 0.22443055713229793
+      },
+      "eegnet": {
+        "rows": 4800,
+        "balanced_accuracy": 0.5902083333333333,
+        "sensitivity": 0.2125,
+        "specificity": 0.9679166666666666,
+        "false_activation_rate_per_window": 0.03208333333333333,
+        "missed_intent_rate": 0.7875,
+        "auroc": 0.8212256944444444,
+        "auprc": 0.7961225594645176,
+        "brier_score": 0.18470478382688252
+      },
+      "shallow_convnet": {
+        "rows": 4800,
+        "balanced_accuracy": 0.68125,
+        "sensitivity": 0.3975,
+        "specificity": 0.965,
+        "false_activation_rate_per_window": 0.035,
+        "missed_intent_rate": 0.6025,
+        "auroc": 0.8585430555555557,
+        "auprc": 0.8609880098464097,
+        "brier_score": 0.18479060985566245
+      },
+      "fbcnet": {
+        "rows": 4800,
+        "balanced_accuracy": 0.6104166666666666,
+        "sensitivity": 0.32375,
+        "specificity": 0.8970833333333333,
+        "false_activation_rate_per_window": 0.10291666666666667,
+        "missed_intent_rate": 0.67625,
+        "auroc": 0.7512715277777777,
+        "auprc": 0.7204772251309594,
+        "brier_score": 0.21476917806653237
+      },
+      "mrcp_fbcnet": {
+        "rows": 4800,
+        "balanced_accuracy": 0.6441666666666667,
+        "sensitivity": 0.32083333333333336,
+        "specificity": 0.9675,
+        "false_activation_rate_per_window": 0.0325,
+        "missed_intent_rate": 0.6791666666666667,
+        "auroc": 0.8606139756944444,
+        "auprc": 0.8498066618772936,
+        "brier_score": 0.1660926175375647
+      },
+      "conv1d_way_ssl": {
+        "rows": 4800,
+        "balanced_accuracy": 0.5760416666666667,
+        "sensitivity": 0.21166666666666667,
+        "specificity": 0.9404166666666667,
+        "false_activation_rate_per_window": 0.059583333333333335,
+        "missed_intent_rate": 0.7883333333333333,
+        "auroc": 0.7283715277777778,
+        "auprc": 0.7024103283220002,
+        "brier_score": 0.2207552347874875
+      }
+    },
+    "physionet": {
+      "statistical_target_only": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5336391437308868,
+        "sensitivity": 0.15086646279306828,
+        "specificity": 0.9164118246687054,
+        "false_activation_rate_per_window": 0.0835881753312946,
+        "missed_intent_rate": 0.8491335372069317,
+        "auroc": 0.6358591006909049,
+        "auprc": 0.611805042218082,
+        "brier_score": 0.24723916772582522
+      },
+      "riemannian": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5433231396534148,
+        "sensitivity": 0.2579001019367992,
+        "specificity": 0.8287461773700305,
+        "false_activation_rate_per_window": 0.1712538226299694,
+        "missed_intent_rate": 0.7420998980632009,
+        "auroc": 0.6021347498495886,
+        "auprc": 0.5694866860028978,
+        "brier_score": 0.24676554746868853
+      },
+      "physiology_late_fusion": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5937818552497451,
+        "sensitivity": 0.3149847094801223,
+        "specificity": 0.872579001019368,
+        "false_activation_rate_per_window": 0.127420998980632,
+        "missed_intent_rate": 0.6850152905198776,
+        "auroc": 0.6843523376362924,
+        "auprc": 0.6625060159081677,
+        "brier_score": 0.22712724370276757
+      },
+      "conv1d_target": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5718654434250765,
+        "sensitivity": 0.23547400611620795,
+        "specificity": 0.908256880733945,
+        "false_activation_rate_per_window": 0.09174311926605505,
+        "missed_intent_rate": 0.764525993883792,
+        "auroc": 0.6838743465290051,
+        "auprc": 0.67023146399774,
+        "brier_score": 0.26865964846605117
+      },
+      "eegnet": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5973496432212029,
+        "sensitivity": 0.31702344546381245,
+        "specificity": 0.8776758409785933,
+        "false_activation_rate_per_window": 0.12232415902140673,
+        "missed_intent_rate": 0.6829765545361876,
+        "auroc": 0.6908530166953981,
+        "auprc": 0.6632658193669714,
+        "brier_score": 0.2272290908629128
+      },
+      "shallow_convnet": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5474006116207951,
+        "sensitivity": 0.1946992864424057,
+        "specificity": 0.9001019367991845,
+        "false_activation_rate_per_window": 0.0998980632008155,
+        "missed_intent_rate": 0.8053007135575942,
+        "auroc": 0.6515465610098498,
+        "auprc": 0.6205998439924381,
+        "brier_score": 0.2428493989036822
+      },
+      "fbcnet": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5071355759429154,
+        "sensitivity": 0.11722731906218145,
+        "specificity": 0.8970438328236493,
+        "false_activation_rate_per_window": 0.10295616717635066,
+        "missed_intent_rate": 0.8827726809378186,
+        "auroc": 0.5571843622091918,
+        "auprc": 0.5327641172123985,
+        "brier_score": 0.24948368394934037
+      },
+      "mrcp_fbcnet": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5998980632008155,
+        "sensitivity": 0.3160040774719674,
+        "specificity": 0.8837920489296636,
+        "false_activation_rate_per_window": 0.1162079510703364,
+        "missed_intent_rate": 0.6839959225280327,
+        "auroc": 0.6891805673754443,
+        "auprc": 0.6704865762411243,
+        "brier_score": 0.2381610098871089
+      },
+      "conv1d_way_ssl": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5682976554536188,
+        "sensitivity": 0.2038735983690112,
+        "specificity": 0.9327217125382263,
+        "false_activation_rate_per_window": 0.0672782874617737,
+        "missed_intent_rate": 0.7961264016309888,
+        "auroc": 0.6577791494044335,
+        "auprc": 0.6519554750067602,
+        "brier_score": 0.24729455955518528
+      }
+    }
+  },
+  "participant_evaluation": {
+    "liu2024:liu2024:S006": {
+      "statistical_target_only": {
+        "rows": 79,
+        "balanced_accuracy": 0.5458333333333333,
+        "sensitivity": 0.425,
+        "specificity": 0.6666666666666666,
+        "false_activation_rate_per_window": 0.3333333333333333,
+        "missed_intent_rate": 0.575,
+        "auroc": 0.5987179487179487,
+        "auprc": 0.5708110166008529,
+        "brier_score": 0.2823358203794071
+      },
+      "riemannian": {
+        "rows": 79,
+        "balanced_accuracy": 0.5365384615384615,
+        "sensitivity": 0.15,
+        "specificity": 0.9230769230769231,
+        "false_activation_rate_per_window": 0.07692307692307693,
+        "missed_intent_rate": 0.85,
+        "auroc": 0.5801282051282052,
+        "auprc": 0.6083627530601508,
+        "brier_score": 0.2653625993299716
+      },
+      "physiology_late_fusion": {
+        "rows": 79,
+        "balanced_accuracy": 0.5717948717948718,
+        "sensitivity": 0.4,
+        "specificity": 0.7435897435897436,
+        "false_activation_rate_per_window": 0.2564102564102564,
+        "missed_intent_rate": 0.6,
+        "auroc": 0.5641025641025641,
+        "auprc": 0.5788763915180113,
+        "brier_score": 0.2517708327091444
+      },
+      "conv1d_target": {
+        "rows": 79,
+        "balanced_accuracy": 0.49903846153846154,
+        "sensitivity": 0.075,
+        "specificity": 0.9230769230769231,
+        "false_activation_rate_per_window": 0.07692307692307693,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.5230769230769231,
+        "auprc": 0.5199128568920416,
+        "brier_score": 0.35190843472687516
+      },
+      "eegnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5365384615384615,
+        "sensitivity": 0.15,
+        "specificity": 0.9230769230769231,
+        "false_activation_rate_per_window": 0.07692307692307693,
+        "missed_intent_rate": 0.85,
+        "auroc": 0.5602564102564103,
+        "auprc": 0.5889092549146582,
+        "brier_score": 0.2621680556014789
+      },
+      "shallow_convnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.4987179487179487,
+        "sensitivity": 0.1,
+        "specificity": 0.8974358974358975,
+        "false_activation_rate_per_window": 0.10256410256410256,
+        "missed_intent_rate": 0.9,
+        "auroc": 0.39743589743589747,
+        "auprc": 0.4705209548616698,
+        "brier_score": 0.33281583812724846
+      },
+      "fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5121794871794871,
+        "sensitivity": 0.05,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.95,
+        "auroc": 0.5634615384615385,
+        "auprc": 0.5386713471271066,
+        "brier_score": 0.24541545898350195
+      },
+      "mrcp_fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5246794871794872,
+        "sensitivity": 0.075,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.617948717948718,
+        "auprc": 0.6652685839265083,
+        "brier_score": 0.25268726784888906
+      },
+      "conv1d_way_ssl": {
+        "rows": 79,
+        "balanced_accuracy": 0.5246794871794872,
+        "sensitivity": 0.075,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.5435897435897437,
+        "auprc": 0.595915129830896,
+        "brier_score": 0.28035747387773985
+      }
+    },
+    "liu2024:liu2024:S022": {
+      "statistical_target_only": {
+        "rows": 80,
+        "balanced_accuracy": 0.6125,
+        "sensitivity": 0.25,
+        "specificity": 0.975,
+        "false_activation_rate_per_window": 0.025,
+        "missed_intent_rate": 0.75,
+        "auroc": 0.763125,
+        "auprc": 0.7723620063620089,
+        "brier_score": 0.2086294183743739
+      },
+      "riemannian": {
+        "rows": 80,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.6475,
+        "auprc": 0.6591567695465986,
+        "brier_score": 0.23184363819990123
+      },
+      "physiology_late_fusion": {
+        "rows": 80,
+        "balanced_accuracy": 0.6000000000000001,
+        "sensitivity": 0.275,
+        "specificity": 0.925,
+        "false_activation_rate_per_window": 0.075,
+        "missed_intent_rate": 0.725,
+        "auroc": 0.799375,
+        "auprc": 0.8083566396754331,
+        "brier_score": 0.2198392193963116
+      },
+      "conv1d_target": {
+        "rows": 80,
+        "balanced_accuracy": 0.65,
+        "sensitivity": 0.625,
+        "specificity": 0.675,
+        "false_activation_rate_per_window": 0.325,
+        "missed_intent_rate": 0.375,
+        "auroc": 0.7018750000000001,
+        "auprc": 0.6369372551782619,
+        "brier_score": 0.26008231956742645
+      },
+      "eegnet": {
+        "rows": 80,
+        "balanced_accuracy": 0.5625,
+        "sensitivity": 0.2,
+        "specificity": 0.925,
+        "false_activation_rate_per_window": 0.075,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.6775,
+        "auprc": 0.6718593968729397,
+        "brier_score": 0.2317689599984279
+      },
+      "shallow_convnet": {
+        "rows": 80,
+        "balanced_accuracy": 0.6625,
+        "sensitivity": 0.45,
+        "specificity": 0.875,
+        "false_activation_rate_per_window": 0.125,
+        "missed_intent_rate": 0.55,
+        "auroc": 0.7943749999999999,
+        "auprc": 0.813061687036087,
+        "brier_score": 0.22114192399603505
+      },
+      "fbcnet": {
+        "rows": 80,
+        "balanced_accuracy": 0.55,
+        "sensitivity": 0.1,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9,
+        "auroc": 0.799375,
+        "auprc": 0.8005058659478517,
+        "brier_score": 0.23470348797660576
+      },
+      "mrcp_fbcnet": {
+        "rows": 80,
+        "balanced_accuracy": 0.65,
+        "sensitivity": 0.375,
+        "specificity": 0.925,
+        "false_activation_rate_per_window": 0.075,
+        "missed_intent_rate": 0.625,
+        "auroc": 0.765625,
+        "auprc": 0.7175452773036478,
+        "brier_score": 0.21264664693638533
+      },
+      "conv1d_way_ssl": {
+        "rows": 80,
+        "balanced_accuracy": 0.5125,
+        "sensitivity": 0.075,
+        "specificity": 0.95,
+        "false_activation_rate_per_window": 0.05,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.7375,
+        "auprc": 0.6696649117911648,
+        "brier_score": 0.21918439003602597
+      }
+    },
+    "liu2024:liu2024:S025": {
+      "statistical_target_only": {
+        "rows": 79,
+        "balanced_accuracy": 0.610897435897436,
+        "sensitivity": 0.35,
+        "specificity": 0.8717948717948718,
+        "false_activation_rate_per_window": 0.1282051282051282,
+        "missed_intent_rate": 0.65,
+        "auroc": 0.6705128205128206,
+        "auprc": 0.7110621080036863,
+        "brier_score": 0.2365814341581214
+      },
+      "riemannian": {
+        "rows": 79,
+        "balanced_accuracy": 0.4996794871794872,
+        "sensitivity": 0.025,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.975,
+        "auroc": 0.6301282051282051,
+        "auprc": 0.6205608123978578,
+        "brier_score": 0.2367965905672908
+      },
+      "physiology_late_fusion": {
+        "rows": 79,
+        "balanced_accuracy": 0.5996794871794872,
+        "sensitivity": 0.225,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.775,
+        "auroc": 0.7423076923076923,
+        "auprc": 0.7889739769698864,
+        "brier_score": 0.2213952747055611
+      },
+      "conv1d_target": {
+        "rows": 79,
+        "balanced_accuracy": 0.47307692307692306,
+        "sensitivity": 0.1,
+        "specificity": 0.8461538461538461,
+        "false_activation_rate_per_window": 0.15384615384615385,
+        "missed_intent_rate": 0.9,
+        "auroc": 0.45961538461538465,
+        "auprc": 0.5036343179756065,
+        "brier_score": 0.3378321977384747
+      },
+      "eegnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5349358974358974,
+        "sensitivity": 0.275,
+        "specificity": 0.7948717948717948,
+        "false_activation_rate_per_window": 0.20512820512820512,
+        "missed_intent_rate": 0.725,
+        "auroc": 0.5262820512820513,
+        "auprc": 0.5371544449303051,
+        "brier_score": 0.2717703485841824
+      },
+      "shallow_convnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5583333333333333,
+        "sensitivity": 0.45,
+        "specificity": 0.6666666666666666,
+        "false_activation_rate_per_window": 0.3333333333333333,
+        "missed_intent_rate": 0.55,
+        "auroc": 0.6051282051282052,
+        "auprc": 0.6022104048427938,
+        "brier_score": 0.27579649854954785
+      },
+      "fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5625,
+        "sensitivity": 0.125,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.875,
+        "auroc": 0.8275641025641026,
+        "auprc": 0.8472255570355326,
+        "brier_score": 0.2322500454611596
+      },
+      "mrcp_fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5471153846153847,
+        "sensitivity": 0.325,
+        "specificity": 0.7692307692307693,
+        "false_activation_rate_per_window": 0.23076923076923078,
+        "missed_intent_rate": 0.675,
+        "auroc": 0.6044871794871796,
+        "auprc": 0.5909347937731659,
+        "brier_score": 0.25497109149392105
+      },
+      "conv1d_way_ssl": {
+        "rows": 79,
+        "balanced_accuracy": 0.4740384615384616,
+        "sensitivity": 0.025,
+        "specificity": 0.9230769230769231,
+        "false_activation_rate_per_window": 0.07692307692307693,
+        "missed_intent_rate": 0.975,
+        "auroc": 0.6121794871794871,
+        "auprc": 0.5661496072716631,
+        "brier_score": 0.265740004454328
+      }
+    },
+    "liu2024:liu2024:S027": {
+      "statistical_target_only": {
+        "rows": 79,
+        "balanced_accuracy": 0.5746794871794871,
+        "sensitivity": 0.175,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.825,
+        "auroc": 0.6423076923076922,
+        "auprc": 0.6822246898482152,
+        "brier_score": 0.2357279709126447
+      },
+      "riemannian": {
+        "rows": 79,
+        "balanced_accuracy": 0.4996794871794872,
+        "sensitivity": 0.025,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.975,
+        "auroc": 0.6006410256410257,
+        "auprc": 0.5806119955951651,
+        "brier_score": 0.2443130652790259
+      },
+      "physiology_late_fusion": {
+        "rows": 79,
+        "balanced_accuracy": 0.5868589743589744,
+        "sensitivity": 0.225,
+        "specificity": 0.9487179487179487,
+        "false_activation_rate_per_window": 0.05128205128205128,
+        "missed_intent_rate": 0.775,
+        "auroc": 0.6698717948717949,
+        "auprc": 0.6926511898527642,
+        "brier_score": 0.23262865274319058
+      },
+      "conv1d_target": {
+        "rows": 79,
+        "balanced_accuracy": 0.5487179487179488,
+        "sensitivity": 0.2,
+        "specificity": 0.8974358974358975,
+        "false_activation_rate_per_window": 0.10256410256410256,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.6243589743589744,
+        "auprc": 0.617803811871685,
+        "brier_score": 0.2674285486031225
+      },
+      "eegnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5868589743589744,
+        "sensitivity": 0.225,
+        "specificity": 0.9487179487179487,
+        "false_activation_rate_per_window": 0.05128205128205128,
+        "missed_intent_rate": 0.775,
+        "auroc": 0.6410256410256411,
+        "auprc": 0.6996047143191001,
+        "brier_score": 0.23967413346612212
+      },
+      "shallow_convnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.525,
+        "sensitivity": 0.05,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.95,
+        "auroc": 0.6237179487179487,
+        "auprc": 0.6343293770576293,
+        "brier_score": 0.24560066336729927
+      },
+      "fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.4996794871794872,
+        "sensitivity": 0.025,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.975,
+        "auroc": 0.7115384615384616,
+        "auprc": 0.7288531659004137,
+        "brier_score": 0.24076280845104905
+      },
+      "mrcp_fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5375,
+        "sensitivity": 0.075,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.7070512820512821,
+        "auprc": 0.7778054327990778,
+        "brier_score": 0.22461134686180706
+      },
+      "conv1d_way_ssl": {
+        "rows": 79,
+        "balanced_accuracy": 0.525,
+        "sensitivity": 0.05,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.95,
+        "auroc": 0.5692307692307692,
+        "auprc": 0.6004061645092409,
+        "brier_score": 0.2530677842938473
+      }
+    },
+    "liu2024:liu2024:S031": {
+      "statistical_target_only": {
+        "rows": 79,
+        "balanced_accuracy": 0.5246794871794872,
+        "sensitivity": 0.075,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.6717948717948719,
+        "auprc": 0.7076035347316997,
+        "brier_score": 0.23220025351210916
+      },
+      "riemannian": {
+        "rows": 79,
+        "balanced_accuracy": 0.5125,
+        "sensitivity": 0.025,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.975,
+        "auroc": 0.6820512820512821,
+        "auprc": 0.667306185596194,
+        "brier_score": 0.22768327808454805
+      },
+      "physiology_late_fusion": {
+        "rows": 79,
+        "balanced_accuracy": 0.5746794871794871,
+        "sensitivity": 0.175,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.825,
+        "auroc": 0.7147435897435898,
+        "auprc": 0.7228558734317501,
+        "brier_score": 0.22726009496116048
+      },
+      "conv1d_target": {
+        "rows": 79,
+        "balanced_accuracy": 0.4865384615384616,
+        "sensitivity": 0.05,
+        "specificity": 0.9230769230769231,
+        "false_activation_rate_per_window": 0.07692307692307693,
+        "missed_intent_rate": 0.95,
+        "auroc": 0.4634615384615385,
+        "auprc": 0.5098248131709516,
+        "brier_score": 0.3592351310540857
+      },
+      "eegnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5112179487179487,
+        "sensitivity": 0.125,
+        "specificity": 0.8974358974358975,
+        "false_activation_rate_per_window": 0.10256410256410256,
+        "missed_intent_rate": 0.875,
+        "auroc": 0.5301282051282052,
+        "auprc": 0.5702300764050483,
+        "brier_score": 0.2637055752187646
+      },
+      "shallow_convnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5121794871794871,
+        "sensitivity": 0.05,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.95,
+        "auroc": 0.6326923076923078,
+        "auprc": 0.6273549469932218,
+        "brier_score": 0.2379464383907624
+      },
+      "fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5375,
+        "sensitivity": 0.075,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.7698717948717949,
+        "auprc": 0.7677119294130772,
+        "brier_score": 0.24118713225981336
+      },
+      "mrcp_fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.48717948717948717,
+        "sensitivity": 0.0,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.5916666666666667,
+        "auprc": 0.5626635655586066,
+        "brier_score": 0.24727518863384818
+      },
+      "conv1d_way_ssl": {
+        "rows": 79,
+        "balanced_accuracy": 0.4717948717948718,
+        "sensitivity": 0.2,
+        "specificity": 0.7435897435897436,
+        "false_activation_rate_per_window": 0.2564102564102564,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.44679487179487176,
+        "auprc": 0.49234566798303303,
+        "brier_score": 0.3312728991204606
+      }
+    },
+    "liu2024:liu2024:S034": {
+      "statistical_target_only": {
+        "rows": 79,
+        "balanced_accuracy": 0.5368589743589743,
+        "sensitivity": 0.125,
+        "specificity": 0.9487179487179487,
+        "false_activation_rate_per_window": 0.05128205128205128,
+        "missed_intent_rate": 0.875,
+        "auroc": 0.6660256410256411,
+        "auprc": 0.6698019346228937,
+        "brier_score": 0.23289385395421094
+      },
+      "riemannian": {
+        "rows": 79,
+        "balanced_accuracy": 0.5125,
+        "sensitivity": 0.025,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.975,
+        "auroc": 0.7564102564102565,
+        "auprc": 0.7006607312387559,
+        "brier_score": 0.2083862205470996
+      },
+      "physiology_late_fusion": {
+        "rows": 79,
+        "balanced_accuracy": 0.5615384615384615,
+        "sensitivity": 0.2,
+        "specificity": 0.9230769230769231,
+        "false_activation_rate_per_window": 0.07692307692307693,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.7794871794871795,
+        "auprc": 0.7080634024576461,
+        "brier_score": 0.2156610012236467
+      },
+      "conv1d_target": {
+        "rows": 79,
+        "balanced_accuracy": 0.5118589743589743,
+        "sensitivity": 0.075,
+        "specificity": 0.9487179487179487,
+        "false_activation_rate_per_window": 0.05128205128205128,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.5673076923076923,
+        "auprc": 0.5826899928665156,
+        "brier_score": 0.34834814177371115
+      },
+      "eegnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.592948717948718,
+        "auprc": 0.6072377142625826,
+        "brier_score": 0.24405953083154178
+      },
+      "shallow_convnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5371794871794872,
+        "sensitivity": 0.1,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.9,
+        "auroc": 0.617948717948718,
+        "auprc": 0.6460483725954607,
+        "brier_score": 0.31443589935206473
+      },
+      "fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.6464743589743589,
+        "sensitivity": 0.575,
+        "specificity": 0.717948717948718,
+        "false_activation_rate_per_window": 0.28205128205128205,
+        "missed_intent_rate": 0.425,
+        "auroc": 0.660897435897436,
+        "auprc": 0.6901307352394337,
+        "brier_score": 0.25069973104835036
+      },
+      "mrcp_fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5496794871794872,
+        "sensitivity": 0.125,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.875,
+        "auroc": 0.7019230769230769,
+        "auprc": 0.6610031445194817,
+        "brier_score": 0.2326258679539435
+      },
+      "conv1d_way_ssl": {
+        "rows": 79,
+        "balanced_accuracy": 0.49935897435897436,
+        "sensitivity": 0.05,
+        "specificity": 0.9487179487179487,
+        "false_activation_rate_per_window": 0.05128205128205128,
+        "missed_intent_rate": 0.95,
+        "auroc": 0.5012820512820513,
+        "auprc": 0.5203616049303643,
+        "brier_score": 0.29248069935431964
+      }
+    },
+    "liu2024:liu2024:S036": {
+      "statistical_target_only": {
+        "rows": 79,
+        "balanced_accuracy": 0.5246794871794872,
+        "sensitivity": 0.075,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.6884615384615386,
+        "auprc": 0.7119767150824335,
+        "brier_score": 0.2349365086524676
+      },
+      "riemannian": {
+        "rows": 79,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.5493589743589744,
+        "auprc": 0.5455474993145952,
+        "brier_score": 0.2643459387817566
+      },
+      "physiology_late_fusion": {
+        "rows": 79,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.708974358974359,
+        "auprc": 0.6954815937275869,
+        "brier_score": 0.23282911795583955
+      },
+      "conv1d_target": {
+        "rows": 79,
+        "balanced_accuracy": 0.5487179487179488,
+        "sensitivity": 0.2,
+        "specificity": 0.8974358974358975,
+        "false_activation_rate_per_window": 0.10256410256410256,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.5897435897435898,
+        "auprc": 0.6218184815582604,
+        "brier_score": 0.29869319617992696
+      },
+      "eegnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.4996794871794872,
+        "sensitivity": 0.025,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.975,
+        "auroc": 0.6,
+        "auprc": 0.612974837956456,
+        "brier_score": 0.2449339278787403
+      },
+      "shallow_convnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.5705128205128206,
+        "auprc": 0.5803058247627487,
+        "brier_score": 0.2613209780138735
+      },
+      "fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.6740384615384616,
+        "sensitivity": 0.425,
+        "specificity": 0.9230769230769231,
+        "false_activation_rate_per_window": 0.07692307692307693,
+        "missed_intent_rate": 0.575,
+        "auroc": 0.8243589743589744,
+        "auprc": 0.8447275374132556,
+        "brier_score": 0.24323087251327083
+      },
+      "mrcp_fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5246794871794872,
+        "sensitivity": 0.075,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.632051282051282,
+        "auprc": 0.6433851143026426,
+        "brier_score": 0.23611432789157216
+      },
+      "conv1d_way_ssl": {
+        "rows": 79,
+        "balanced_accuracy": 0.5096153846153846,
+        "sensitivity": 0.25,
+        "specificity": 0.7692307692307693,
+        "false_activation_rate_per_window": 0.23076923076923078,
+        "missed_intent_rate": 0.75,
+        "auroc": 0.5224358974358975,
+        "auprc": 0.5874528736195326,
+        "brier_score": 0.3217868426719923
+      }
+    },
+    "liu2024:liu2024:S040": {
+      "statistical_target_only": {
+        "rows": 79,
+        "balanced_accuracy": 0.5830128205128206,
+        "sensitivity": 0.525,
+        "specificity": 0.6410256410256411,
+        "false_activation_rate_per_window": 0.358974358974359,
+        "missed_intent_rate": 0.475,
+        "auroc": 0.576923076923077,
+        "auprc": 0.6017071903197057,
+        "brier_score": 0.3198635339126596
+      },
+      "riemannian": {
+        "rows": 79,
+        "balanced_accuracy": 0.525,
+        "sensitivity": 0.05,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.95,
+        "auroc": 0.7769230769230769,
+        "auprc": 0.7882599163244784,
+        "brier_score": 0.19866663100937684
+      },
+      "physiology_late_fusion": {
+        "rows": 79,
+        "balanced_accuracy": 0.7493589743589744,
+        "sensitivity": 0.55,
+        "specificity": 0.9487179487179487,
+        "false_activation_rate_per_window": 0.05128205128205128,
+        "missed_intent_rate": 0.45,
+        "auroc": 0.8500000000000001,
+        "auprc": 0.8535228484920848,
+        "brier_score": 0.1925218034380549
+      },
+      "conv1d_target": {
+        "rows": 79,
+        "balanced_accuracy": 0.4477564102564102,
+        "sensitivity": 0.075,
+        "specificity": 0.8205128205128205,
+        "false_activation_rate_per_window": 0.1794871794871795,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.2596153846153847,
+        "auprc": 0.39697006037485333,
+        "brier_score": 0.4011484798451464
+      },
+      "eegnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5108974358974359,
+        "sensitivity": 0.15,
+        "specificity": 0.8717948717948718,
+        "false_activation_rate_per_window": 0.1282051282051282,
+        "missed_intent_rate": 0.85,
+        "auroc": 0.5455128205128205,
+        "auprc": 0.5389853307951787,
+        "brier_score": 0.2750148996231208
+      },
+      "shallow_convnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.496474358974359,
+        "sensitivity": 0.275,
+        "specificity": 0.717948717948718,
+        "false_activation_rate_per_window": 0.28205128205128205,
+        "missed_intent_rate": 0.725,
+        "auroc": 0.5032051282051282,
+        "auprc": 0.5427340651553113,
+        "brier_score": 0.30207742606478366
+      },
+      "fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.8868589743589743,
+        "sensitivity": 0.825,
+        "specificity": 0.9487179487179487,
+        "false_activation_rate_per_window": 0.05128205128205128,
+        "missed_intent_rate": 0.175,
+        "auroc": 0.958974358974359,
+        "auprc": 0.9460117668352314,
+        "brier_score": 0.2239465332974402
+      },
+      "mrcp_fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.43333333333333335,
+        "sensitivity": 0.2,
+        "specificity": 0.6666666666666666,
+        "false_activation_rate_per_window": 0.3333333333333333,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.5057692307692307,
+        "auprc": 0.5521051004591289,
+        "brier_score": 0.2665333263043698
+      },
+      "conv1d_way_ssl": {
+        "rows": 79,
+        "balanced_accuracy": 0.4862179487179487,
+        "sensitivity": 0.075,
+        "specificity": 0.8974358974358975,
+        "false_activation_rate_per_window": 0.10256410256410256,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.6121794871794871,
+        "auprc": 0.5767138294063759,
+        "brier_score": 0.2815316260335362
+      }
+    },
+    "liu2024:liu2024:S048": {
+      "statistical_target_only": {
+        "rows": 79,
+        "balanced_accuracy": 0.4740384615384616,
+        "sensitivity": 0.025,
+        "specificity": 0.9230769230769231,
+        "false_activation_rate_per_window": 0.07692307692307693,
+        "missed_intent_rate": 0.975,
+        "auroc": 0.6339743589743589,
+        "auprc": 0.5895650391512993,
+        "brier_score": 0.245763950936542
+      },
+      "riemannian": {
+        "rows": 79,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.5846153846153846,
+        "auprc": 0.6482898698536461,
+        "brier_score": 0.250730592633969
+      },
+      "physiology_late_fusion": {
+        "rows": 79,
+        "balanced_accuracy": 0.5243589743589744,
+        "sensitivity": 0.1,
+        "specificity": 0.9487179487179487,
+        "false_activation_rate_per_window": 0.05128205128205128,
+        "missed_intent_rate": 0.9,
+        "auroc": 0.6826923076923077,
+        "auprc": 0.6636157193183018,
+        "brier_score": 0.23308111940653048
+      },
+      "conv1d_target": {
+        "rows": 79,
+        "balanced_accuracy": 0.5121794871794871,
+        "sensitivity": 0.05,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.95,
+        "auroc": 0.45769230769230773,
+        "auprc": 0.4975125431326696,
+        "brier_score": 0.3683262165547223
+      },
+      "eegnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.47435897435897434,
+        "sensitivity": 0.0,
+        "specificity": 0.9487179487179487,
+        "false_activation_rate_per_window": 0.05128205128205128,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.45000000000000007,
+        "auprc": 0.48292391450512795,
+        "brier_score": 0.2740554018711811
+      },
+      "shallow_convnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5125,
+        "sensitivity": 0.025,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.975,
+        "auroc": 0.6634615384615384,
+        "auprc": 0.6971358674265585,
+        "brier_score": 0.2473763563283968
+      },
+      "fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5375,
+        "sensitivity": 0.075,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.6897435897435897,
+        "auprc": 0.7030797620936029,
+        "brier_score": 0.23850478818579818
+      },
+      "mrcp_fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5125,
+        "sensitivity": 0.025,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.975,
+        "auroc": 0.5288461538461539,
+        "auprc": 0.5520233340680089,
+        "brier_score": 0.25835094983586127
+      },
+      "conv1d_way_ssl": {
+        "rows": 79,
+        "balanced_accuracy": 0.5996794871794872,
+        "sensitivity": 0.225,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.775,
+        "auroc": 0.6538461538461539,
+        "auprc": 0.6806692811368115,
+        "brier_score": 0.252855411408033
+      }
+    },
+    "liu2024:liu2024:S050": {
+      "statistical_target_only": {
+        "rows": 79,
+        "balanced_accuracy": 0.4967948717948718,
+        "sensitivity": 0.25,
+        "specificity": 0.7435897435897436,
+        "false_activation_rate_per_window": 0.2564102564102564,
+        "missed_intent_rate": 0.75,
+        "auroc": 0.6378205128205129,
+        "auprc": 0.6498980192506287,
+        "brier_score": 0.2674371540097972
+      },
+      "riemannian": {
+        "rows": 79,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.6166666666666667,
+        "auprc": 0.5829448120914058,
+        "brier_score": 0.24830630131867545
+      },
+      "physiology_late_fusion": {
+        "rows": 79,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.6782051282051282,
+        "auprc": 0.6398424483685264,
+        "brier_score": 0.23242885477712488
+      },
+      "conv1d_target": {
+        "rows": 79,
+        "balanced_accuracy": 0.4849358974358974,
+        "sensitivity": 0.175,
+        "specificity": 0.7948717948717948,
+        "false_activation_rate_per_window": 0.20512820512820512,
+        "missed_intent_rate": 0.825,
+        "auroc": 0.41282051282051285,
+        "auprc": 0.46678333399431027,
+        "brier_score": 0.38507545216344935
+      },
+      "eegnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.4599358974358974,
+        "sensitivity": 0.125,
+        "specificity": 0.7948717948717948,
+        "false_activation_rate_per_window": 0.20512820512820512,
+        "missed_intent_rate": 0.875,
+        "auroc": 0.4102564102564103,
+        "auprc": 0.4580220556189898,
+        "brier_score": 0.2927808900976611
+      },
+      "shallow_convnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.47275641025641024,
+        "sensitivity": 0.125,
+        "specificity": 0.8205128205128205,
+        "false_activation_rate_per_window": 0.1794871794871795,
+        "missed_intent_rate": 0.875,
+        "auroc": 0.514102564102564,
+        "auprc": 0.5210350098311604,
+        "brier_score": 0.2803062307367932
+      },
+      "fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.5371794871794872,
+        "sensitivity": 0.1,
+        "specificity": 0.9743589743589743,
+        "false_activation_rate_per_window": 0.02564102564102564,
+        "missed_intent_rate": 0.9,
+        "auroc": 0.7307692307692308,
+        "auprc": 0.7257415768240281,
+        "brier_score": 0.23535440124171536
+      },
+      "mrcp_fbcnet": {
+        "rows": 79,
+        "balanced_accuracy": 0.4483974358974359,
+        "sensitivity": 0.025,
+        "specificity": 0.8717948717948718,
+        "false_activation_rate_per_window": 0.1282051282051282,
+        "missed_intent_rate": 0.975,
+        "auroc": 0.47500000000000003,
+        "auprc": 0.4979899227899574,
+        "brier_score": 0.27315660006329656
+      },
+      "conv1d_way_ssl": {
+        "rows": 79,
+        "balanced_accuracy": 0.4733974358974359,
+        "sensitivity": 0.075,
+        "specificity": 0.8717948717948718,
+        "false_activation_rate_per_window": 0.1282051282051282,
+        "missed_intent_rate": 0.925,
+        "auroc": 0.4673076923076923,
+        "auprc": 0.47996623891012913,
+        "brier_score": 0.32126000197376336
+      }
+    },
+    "openbmi:openbmi:S009": {
+      "statistical_target_only": {
+        "rows": 800,
+        "balanced_accuracy": 0.5237499999999999,
+        "sensitivity": 0.0725,
+        "specificity": 0.975,
+        "false_activation_rate_per_window": 0.025,
+        "missed_intent_rate": 0.9275,
+        "auroc": 0.76333125,
+        "auprc": 0.6965532262528419,
+        "brier_score": 0.20479195401213918
+      },
+      "riemannian": {
+        "rows": 800,
+        "balanced_accuracy": 0.565,
+        "sensitivity": 0.175,
+        "specificity": 0.955,
+        "false_activation_rate_per_window": 0.045,
+        "missed_intent_rate": 0.825,
+        "auroc": 0.7692937500000001,
+        "auprc": 0.7320781201400559,
+        "brier_score": 0.20086463731962254
+      },
+      "physiology_late_fusion": {
+        "rows": 800,
+        "balanced_accuracy": 0.59125,
+        "sensitivity": 0.1925,
+        "specificity": 0.99,
+        "false_activation_rate_per_window": 0.01,
+        "missed_intent_rate": 0.8075,
+        "auroc": 0.89838125,
+        "auprc": 0.8814780943411341,
+        "brier_score": 0.1847303249719325
+      },
+      "conv1d_target": {
+        "rows": 800,
+        "balanced_accuracy": 0.6625,
+        "sensitivity": 0.4125,
+        "specificity": 0.9125,
+        "false_activation_rate_per_window": 0.0875,
+        "missed_intent_rate": 0.5875,
+        "auroc": 0.8065562500000001,
+        "auprc": 0.7922838774778609,
+        "brier_score": 0.19542763191068757
+      },
+      "eegnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.63,
+        "sensitivity": 0.315,
+        "specificity": 0.945,
+        "false_activation_rate_per_window": 0.055,
+        "missed_intent_rate": 0.685,
+        "auroc": 0.7916937500000001,
+        "auprc": 0.7824868023138712,
+        "brier_score": 0.19864846190726898
+      },
+      "shallow_convnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.86625,
+        "sensitivity": 0.83,
+        "specificity": 0.9025,
+        "false_activation_rate_per_window": 0.0975,
+        "missed_intent_rate": 0.17,
+        "auroc": 0.951525,
+        "auprc": 0.9524241629831087,
+        "brier_score": 0.10936183573314259
+      },
+      "fbcnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.605,
+        "sensitivity": 0.295,
+        "specificity": 0.915,
+        "false_activation_rate_per_window": 0.085,
+        "missed_intent_rate": 0.705,
+        "auroc": 0.80519375,
+        "auprc": 0.7646502646022246,
+        "brier_score": 0.22568774483496917
+      },
+      "mrcp_fbcnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.755,
+        "sensitivity": 0.6,
+        "specificity": 0.91,
+        "false_activation_rate_per_window": 0.09,
+        "missed_intent_rate": 0.4,
+        "auroc": 0.89054375,
+        "auprc": 0.8541388987507375,
+        "brier_score": 0.1505404357870342
+      },
+      "conv1d_way_ssl": {
+        "rows": 800,
+        "balanced_accuracy": 0.6025,
+        "sensitivity": 0.2825,
+        "specificity": 0.9225,
+        "false_activation_rate_per_window": 0.0775,
+        "missed_intent_rate": 0.7175,
+        "auroc": 0.76770625,
+        "auprc": 0.7544020807888379,
+        "brier_score": 0.2169559165149125
+      }
+    },
+    "openbmi:openbmi:S036": {
+      "statistical_target_only": {
+        "rows": 800,
+        "balanced_accuracy": 0.515,
+        "sensitivity": 0.04,
+        "specificity": 0.99,
+        "false_activation_rate_per_window": 0.01,
+        "missed_intent_rate": 0.96,
+        "auroc": 0.73769375,
+        "auprc": 0.7017679553854534,
+        "brier_score": 0.21507778929043941
+      },
+      "riemannian": {
+        "rows": 800,
+        "balanced_accuracy": 0.5425,
+        "sensitivity": 0.1525,
+        "specificity": 0.9325,
+        "false_activation_rate_per_window": 0.0675,
+        "missed_intent_rate": 0.8475,
+        "auroc": 0.6913750000000001,
+        "auprc": 0.644668466190724,
+        "brier_score": 0.22494261888750886
+      },
+      "physiology_late_fusion": {
+        "rows": 800,
+        "balanced_accuracy": 0.5475,
+        "sensitivity": 0.1325,
+        "specificity": 0.9625,
+        "false_activation_rate_per_window": 0.0375,
+        "missed_intent_rate": 0.8675,
+        "auroc": 0.8030375,
+        "auprc": 0.7505809410656444,
+        "brier_score": 0.20163051500204943
+      },
+      "conv1d_target": {
+        "rows": 800,
+        "balanced_accuracy": 0.6575,
+        "sensitivity": 0.37,
+        "specificity": 0.945,
+        "false_activation_rate_per_window": 0.055,
+        "missed_intent_rate": 0.63,
+        "auroc": 0.81924375,
+        "auprc": 0.8084526998257504,
+        "brier_score": 0.20986696917036615
+      },
+      "eegnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.5750000000000001,
+        "sensitivity": 0.225,
+        "specificity": 0.925,
+        "false_activation_rate_per_window": 0.075,
+        "missed_intent_rate": 0.775,
+        "auroc": 0.7750750000000001,
+        "auprc": 0.7253300678394423,
+        "brier_score": 0.19653324977443698
+      },
+      "shallow_convnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.6012500000000001,
+        "sensitivity": 0.22,
+        "specificity": 0.9825,
+        "false_activation_rate_per_window": 0.0175,
+        "missed_intent_rate": 0.78,
+        "auroc": 0.83998125,
+        "auprc": 0.8317078023885247,
+        "brier_score": 0.2146249464892114
+      },
+      "fbcnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.015,
+        "specificity": 0.985,
+        "false_activation_rate_per_window": 0.015,
+        "missed_intent_rate": 0.985,
+        "auroc": 0.70428125,
+        "auprc": 0.6296319865882367,
+        "brier_score": 0.2269579174033678
+      },
+      "mrcp_fbcnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.57125,
+        "sensitivity": 0.1775,
+        "specificity": 0.965,
+        "false_activation_rate_per_window": 0.035,
+        "missed_intent_rate": 0.8225,
+        "auroc": 0.87340625,
+        "auprc": 0.8255723034586192,
+        "brier_score": 0.16576828466691232
+      },
+      "conv1d_way_ssl": {
+        "rows": 800,
+        "balanced_accuracy": 0.59875,
+        "sensitivity": 0.235,
+        "specificity": 0.9625,
+        "false_activation_rate_per_window": 0.0375,
+        "missed_intent_rate": 0.765,
+        "auroc": 0.7770250000000001,
+        "auprc": 0.7557839232765107,
+        "brier_score": 0.19647481387664048
+      }
+    },
+    "openbmi:openbmi:S042": {
+      "statistical_target_only": {
+        "rows": 800,
+        "balanced_accuracy": 0.53125,
+        "sensitivity": 0.09,
+        "specificity": 0.9725,
+        "false_activation_rate_per_window": 0.0275,
+        "missed_intent_rate": 0.91,
+        "auroc": 0.68189375,
+        "auprc": 0.6560894696840056,
+        "brier_score": 0.22369736061515297
+      },
+      "riemannian": {
+        "rows": 800,
+        "balanced_accuracy": 0.6125,
+        "sensitivity": 0.335,
+        "specificity": 0.89,
+        "false_activation_rate_per_window": 0.11,
+        "missed_intent_rate": 0.665,
+        "auroc": 0.7219062500000001,
+        "auprc": 0.7185513161691317,
+        "brier_score": 0.21394305740092115
+      },
+      "physiology_late_fusion": {
+        "rows": 800,
+        "balanced_accuracy": 0.5875,
+        "sensitivity": 0.195,
+        "specificity": 0.98,
+        "false_activation_rate_per_window": 0.02,
+        "missed_intent_rate": 0.805,
+        "auroc": 0.79621875,
+        "auprc": 0.7873479063660621,
+        "brier_score": 0.20169213842032196
+      },
+      "conv1d_target": {
+        "rows": 800,
+        "balanced_accuracy": 0.5700000000000001,
+        "sensitivity": 0.1575,
+        "specificity": 0.9825,
+        "false_activation_rate_per_window": 0.0175,
+        "missed_intent_rate": 0.8425,
+        "auroc": 0.76073125,
+        "auprc": 0.7658919425542017,
+        "brier_score": 0.2787599061847943
+      },
+      "eegnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.55625,
+        "sensitivity": 0.1225,
+        "specificity": 0.99,
+        "false_activation_rate_per_window": 0.01,
+        "missed_intent_rate": 0.8775,
+        "auroc": 0.7516,
+        "auprc": 0.7710523607701876,
+        "brier_score": 0.2087824334101818
+      },
+      "shallow_convnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.6325000000000001,
+        "sensitivity": 0.2825,
+        "specificity": 0.9825,
+        "false_activation_rate_per_window": 0.0175,
+        "missed_intent_rate": 0.7175,
+        "auroc": 0.8261000000000001,
+        "auprc": 0.842168884309253,
+        "brier_score": 0.221439644258468
+      },
+      "fbcnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.63375,
+        "sensitivity": 0.5425,
+        "specificity": 0.725,
+        "false_activation_rate_per_window": 0.275,
+        "missed_intent_rate": 0.4575,
+        "auroc": 0.698715625,
+        "auprc": 0.6687272372171956,
+        "brier_score": 0.2427625767731481
+      },
+      "mrcp_fbcnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.5762499999999999,
+        "sensitivity": 0.1925,
+        "specificity": 0.96,
+        "false_activation_rate_per_window": 0.04,
+        "missed_intent_rate": 0.8075,
+        "auroc": 0.7951937499999999,
+        "auprc": 0.7836228580671687,
+        "brier_score": 0.20941244997110978
+      },
+      "conv1d_way_ssl": {
+        "rows": 800,
+        "balanced_accuracy": 0.5475,
+        "sensitivity": 0.1675,
+        "specificity": 0.9275,
+        "false_activation_rate_per_window": 0.0725,
+        "missed_intent_rate": 0.8325,
+        "auroc": 0.66485625,
+        "auprc": 0.6330722705329361,
+        "brier_score": 0.2473872096877808
+      }
+    },
+    "openbmi:openbmi:S047": {
+      "statistical_target_only": {
+        "rows": 800,
+        "balanced_accuracy": 0.52875,
+        "sensitivity": 0.0675,
+        "specificity": 0.99,
+        "false_activation_rate_per_window": 0.01,
+        "missed_intent_rate": 0.9325,
+        "auroc": 0.72684375,
+        "auprc": 0.712298992805088,
+        "brier_score": 0.21759621218225075
+      },
+      "riemannian": {
+        "rows": 800,
+        "balanced_accuracy": 0.5475,
+        "sensitivity": 0.1225,
+        "specificity": 0.9725,
+        "false_activation_rate_per_window": 0.0275,
+        "missed_intent_rate": 0.8775,
+        "auroc": 0.6533875,
+        "auprc": 0.6538473751587593,
+        "brier_score": 0.23444268530927034
+      },
+      "physiology_late_fusion": {
+        "rows": 800,
+        "balanced_accuracy": 0.54,
+        "sensitivity": 0.085,
+        "specificity": 0.995,
+        "false_activation_rate_per_window": 0.005,
+        "missed_intent_rate": 0.915,
+        "auroc": 0.8107937500000001,
+        "auprc": 0.8292353739187622,
+        "brier_score": 0.2089317406901815
+      },
+      "conv1d_target": {
+        "rows": 800,
+        "balanced_accuracy": 0.6,
+        "sensitivity": 0.225,
+        "specificity": 0.975,
+        "false_activation_rate_per_window": 0.025,
+        "missed_intent_rate": 0.775,
+        "auroc": 0.7750625,
+        "auprc": 0.7737581655556349,
+        "brier_score": 0.2748504073230946
+      },
+      "eegnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.57875,
+        "sensitivity": 0.16,
+        "specificity": 0.9975,
+        "false_activation_rate_per_window": 0.0025,
+        "missed_intent_rate": 0.84,
+        "auroc": 0.92535,
+        "auprc": 0.9299331049008515,
+        "brier_score": 0.16154285957229766
+      },
+      "shallow_convnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.61,
+        "sensitivity": 0.22,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.78,
+        "auroc": 0.8748375,
+        "auprc": 0.8892464970145942,
+        "brier_score": 0.2257666592829613
+      },
+      "fbcnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.58125,
+        "sensitivity": 0.1625,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.8375,
+        "auroc": 0.854175,
+        "auprc": 0.8554749778975766,
+        "brier_score": 0.20644241521980952
+      },
+      "mrcp_fbcnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.5975,
+        "sensitivity": 0.195,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.805,
+        "auroc": 0.9195375000000001,
+        "auprc": 0.9241607254495938,
+        "brier_score": 0.19880783078800104
+      },
+      "conv1d_way_ssl": {
+        "rows": 800,
+        "balanced_accuracy": 0.55375,
+        "sensitivity": 0.1325,
+        "specificity": 0.975,
+        "false_activation_rate_per_window": 0.025,
+        "missed_intent_rate": 0.8675,
+        "auroc": 0.7075125,
+        "auprc": 0.6994050518909694,
+        "brier_score": 0.22391030938877898
+      }
+    },
+    "openbmi:openbmi:S049": {
+      "statistical_target_only": {
+        "rows": 800,
+        "balanced_accuracy": 0.53375,
+        "sensitivity": 0.1075,
+        "specificity": 0.96,
+        "false_activation_rate_per_window": 0.04,
+        "missed_intent_rate": 0.8925,
+        "auroc": 0.7484812500000001,
+        "auprc": 0.6804240330243775,
+        "brier_score": 0.20815440961904066
+      },
+      "riemannian": {
+        "rows": 800,
+        "balanced_accuracy": 0.6525,
+        "sensitivity": 0.33,
+        "specificity": 0.975,
+        "false_activation_rate_per_window": 0.025,
+        "missed_intent_rate": 0.67,
+        "auroc": 0.87266875,
+        "auprc": 0.8626078006337372,
+        "brier_score": 0.15445459784070936
+      },
+      "physiology_late_fusion": {
+        "rows": 800,
+        "balanced_accuracy": 0.72125,
+        "sensitivity": 0.4775,
+        "specificity": 0.965,
+        "false_activation_rate_per_window": 0.035,
+        "missed_intent_rate": 0.5225,
+        "auroc": 0.9196000000000001,
+        "auprc": 0.9139032199491097,
+        "brier_score": 0.16712075989977346
+      },
+      "conv1d_target": {
+        "rows": 800,
+        "balanced_accuracy": 0.69,
+        "sensitivity": 0.44,
+        "specificity": 0.94,
+        "false_activation_rate_per_window": 0.06,
+        "missed_intent_rate": 0.56,
+        "auroc": 0.8610375000000001,
+        "auprc": 0.841819233210227,
+        "brier_score": 0.1704413507220445
+      },
+      "eegnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.63375,
+        "sensitivity": 0.3,
+        "specificity": 0.9675,
+        "false_activation_rate_per_window": 0.0325,
+        "missed_intent_rate": 0.7,
+        "auroc": 0.8728125000000001,
+        "auprc": 0.8406407066383195,
+        "brier_score": 0.17328467599251696
+      },
+      "shallow_convnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.8125,
+        "sensitivity": 0.6925,
+        "specificity": 0.9325,
+        "false_activation_rate_per_window": 0.0675,
+        "missed_intent_rate": 0.3075,
+        "auroc": 0.93209375,
+        "auprc": 0.926540392604457,
+        "brier_score": 0.11285661247896893
+      },
+      "fbcnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.7825,
+        "sensitivity": 0.8025,
+        "specificity": 0.7625,
+        "false_activation_rate_per_window": 0.2375,
+        "missed_intent_rate": 0.1975,
+        "auroc": 0.8662875,
+        "auprc": 0.8267470550475666,
+        "brier_score": 0.20520347602138705
+      },
+      "mrcp_fbcnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.75875,
+        "sensitivity": 0.535,
+        "specificity": 0.9825,
+        "false_activation_rate_per_window": 0.0175,
+        "missed_intent_rate": 0.465,
+        "auroc": 0.9446875,
+        "auprc": 0.9431982179351054,
+        "brier_score": 0.12434059824860544
+      },
+      "conv1d_way_ssl": {
+        "rows": 800,
+        "balanced_accuracy": 0.60875,
+        "sensitivity": 0.3075,
+        "specificity": 0.91,
+        "false_activation_rate_per_window": 0.09,
+        "missed_intent_rate": 0.6925,
+        "auroc": 0.7697375000000001,
+        "auprc": 0.7251164839108888,
+        "brier_score": 0.20816026367590232
+      }
+    },
+    "openbmi:openbmi:S052": {
+      "statistical_target_only": {
+        "rows": 800,
+        "balanced_accuracy": 0.5025,
+        "sensitivity": 0.025,
+        "specificity": 0.98,
+        "false_activation_rate_per_window": 0.02,
+        "missed_intent_rate": 0.975,
+        "auroc": 0.74809375,
+        "auprc": 0.6733950582528585,
+        "brier_score": 0.22336859955577906
+      },
+      "riemannian": {
+        "rows": 800,
+        "balanced_accuracy": 0.52,
+        "sensitivity": 0.0525,
+        "specificity": 0.9875,
+        "false_activation_rate_per_window": 0.0125,
+        "missed_intent_rate": 0.9475,
+        "auroc": 0.76953125,
+        "auprc": 0.7335657404279112,
+        "brier_score": 0.22955423630095417
+      },
+      "physiology_late_fusion": {
+        "rows": 800,
+        "balanced_accuracy": 0.51,
+        "sensitivity": 0.03,
+        "specificity": 0.99,
+        "false_activation_rate_per_window": 0.01,
+        "missed_intent_rate": 0.97,
+        "auroc": 0.8627874999999999,
+        "auprc": 0.8070719279960752,
+        "brier_score": 0.20367884502150185
+      },
+      "conv1d_target": {
+        "rows": 800,
+        "balanced_accuracy": 0.63625,
+        "sensitivity": 0.3075,
+        "specificity": 0.965,
+        "false_activation_rate_per_window": 0.035,
+        "missed_intent_rate": 0.6925,
+        "auroc": 0.8260125,
+        "auprc": 0.8190038010665273,
+        "brier_score": 0.21723707748280038
+      },
+      "eegnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.5675,
+        "sensitivity": 0.1525,
+        "specificity": 0.9825,
+        "false_activation_rate_per_window": 0.0175,
+        "missed_intent_rate": 0.8475,
+        "auroc": 0.8771562500000001,
+        "auprc": 0.845545685095776,
+        "brier_score": 0.16943702230459262
+      },
+      "shallow_convnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.565,
+        "sensitivity": 0.14,
+        "specificity": 0.99,
+        "false_activation_rate_per_window": 0.01,
+        "missed_intent_rate": 0.86,
+        "auroc": 0.87913125,
+        "auprc": 0.8583035598461011,
+        "brier_score": 0.22469396089122232
+      },
+      "fbcnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.56,
+        "sensitivity": 0.125,
+        "specificity": 0.995,
+        "false_activation_rate_per_window": 0.005,
+        "missed_intent_rate": 0.875,
+        "auroc": 0.8818812500000001,
+        "auprc": 0.8536508270877423,
+        "brier_score": 0.18156093814651278
+      },
+      "mrcp_fbcnet": {
+        "rows": 800,
+        "balanced_accuracy": 0.6062500000000001,
+        "sensitivity": 0.225,
+        "specificity": 0.9875,
+        "false_activation_rate_per_window": 0.0125,
+        "missed_intent_rate": 0.775,
+        "auroc": 0.9203,
+        "auprc": 0.8969110688870219,
+        "brier_score": 0.14768610576372537
+      },
+      "conv1d_way_ssl": {
+        "rows": 800,
+        "balanced_accuracy": 0.5449999999999999,
+        "sensitivity": 0.145,
+        "specificity": 0.945,
+        "false_activation_rate_per_window": 0.055,
+        "missed_intent_rate": 0.855,
+        "auroc": 0.68641875,
+        "auprc": 0.6559085160737439,
+        "brier_score": 0.2316428955809098
+      }
+    },
+    "physionet:physionet:S005": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.4888888888888889,
+        "sensitivity": 0.0,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.6019753086419752,
+        "auprc": 0.5776621178858915,
+        "brier_score": 0.2444840836989003
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.6666666666666666,
+        "specificity": 0.4444444444444444,
+        "false_activation_rate_per_window": 0.5555555555555556,
+        "missed_intent_rate": 0.3333333333333333,
+        "auroc": 0.5170370370370371,
+        "auprc": 0.509375004254889,
+        "brier_score": 0.27559220193300227
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.6444444444444444,
+        "sensitivity": 0.6666666666666666,
+        "specificity": 0.6222222222222222,
+        "false_activation_rate_per_window": 0.37777777777777777,
+        "missed_intent_rate": 0.3333333333333333,
+        "auroc": 0.6409876543209877,
+        "auprc": 0.6438987420107105,
+        "brier_score": 0.2423827507700566
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5666666666666667,
+        "sensitivity": 0.2222222222222222,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.7777777777777778,
+        "auroc": 0.7135802469135802,
+        "auprc": 0.7212448287353146,
+        "brier_score": 0.2381174646663411
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5777777777777778,
+        "sensitivity": 0.2,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.7120987654320988,
+        "auprc": 0.6909798973733846,
+        "brier_score": 0.22084881082651778
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.7027160493827159,
+        "auprc": 0.7293416810354995,
+        "brier_score": 0.21904207343218524
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.4777777777777778,
+        "sensitivity": 0.0,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.5397530864197531,
+        "auprc": 0.5075815067109956,
+        "brier_score": 0.24991985084362792
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.7,
+        "sensitivity": 0.4222222222222222,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.5777777777777777,
+        "auroc": 0.8192592592592592,
+        "auprc": 0.832171961330184,
+        "brier_score": 0.19891280105382697
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.6222222222222222,
+        "sensitivity": 0.26666666666666666,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.7333333333333333,
+        "auroc": 0.6977777777777778,
+        "auprc": 0.7399033318486792,
+        "brier_score": 0.2532791389116052
+      }
+    },
+    "physionet:physionet:S007": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.8962962962962963,
+        "auprc": 0.8910893047199768,
+        "brier_score": 0.21888331201091143
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.022222222222222223,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9777777777777777,
+        "auroc": 0.6775308641975308,
+        "auprc": 0.6603345933199699,
+        "brier_score": 0.25621552637760125
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.022222222222222223,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9777777777777777,
+        "auroc": 0.8217283950617285,
+        "auprc": 0.804236623574616,
+        "brier_score": 0.22783608010385584
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5444444444444445,
+        "sensitivity": 0.13333333333333333,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.8666666666666667,
+        "auroc": 0.7308641975308642,
+        "auprc": 0.7066603625343593,
+        "brier_score": 0.25394456695100065
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.4888888888888889,
+        "sensitivity": 0.0,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.7377777777777778,
+        "auprc": 0.6801264745847211,
+        "brier_score": 0.24890156390952486
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5888888888888889,
+        "sensitivity": 0.2,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.8562962962962963,
+        "auprc": 0.8346061867918037,
+        "brier_score": 0.17862428955968188
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.7674074074074074,
+        "auprc": 0.726299879417826,
+        "brier_score": 0.2424048858327081
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5666666666666667,
+        "sensitivity": 0.15555555555555556,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8444444444444444,
+        "auroc": 0.9091358024691357,
+        "auprc": 0.8758587553217658,
+        "brier_score": 0.18966594453773852
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.6444444444444444,
+        "sensitivity": 0.3111111111111111,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.6888888888888889,
+        "auroc": 0.8162962962962962,
+        "auprc": 0.8040450065544109,
+        "brier_score": 0.1814154954359992
+      }
+    },
+    "physionet:physionet:S010": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5777777777777777,
+        "sensitivity": 0.37777777777777777,
+        "specificity": 0.7777777777777778,
+        "false_activation_rate_per_window": 0.2222222222222222,
+        "missed_intent_rate": 0.6222222222222222,
+        "auroc": 0.6093827160493828,
+        "auprc": 0.6525453518552949,
+        "brier_score": 0.3029281138812831
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5444444444444445,
+        "sensitivity": 0.2222222222222222,
+        "specificity": 0.8666666666666667,
+        "false_activation_rate_per_window": 0.13333333333333333,
+        "missed_intent_rate": 0.7777777777777778,
+        "auroc": 0.6271604938271605,
+        "auprc": 0.6119891995774115,
+        "brier_score": 0.2375247673109927
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.6333333333333333,
+        "sensitivity": 0.37777777777777777,
+        "specificity": 0.8888888888888888,
+        "false_activation_rate_per_window": 0.1111111111111111,
+        "missed_intent_rate": 0.6222222222222222,
+        "auroc": 0.6523456790123457,
+        "auprc": 0.6956361912322169,
+        "brier_score": 0.23125733090216088
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.6222222222222222,
+        "sensitivity": 0.4222222222222222,
+        "specificity": 0.8222222222222222,
+        "false_activation_rate_per_window": 0.17777777777777778,
+        "missed_intent_rate": 0.5777777777777777,
+        "auroc": 0.6879012345679012,
+        "auprc": 0.6659737762100583,
+        "brier_score": 0.2547100189490911
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5222222222222223,
+        "sensitivity": 0.24444444444444444,
+        "specificity": 0.8,
+        "false_activation_rate_per_window": 0.2,
+        "missed_intent_rate": 0.7555555555555555,
+        "auroc": 0.6301234567901235,
+        "auprc": 0.5654589690787318,
+        "brier_score": 0.2538064806499663
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.48888888888888893,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 0.8666666666666667,
+        "false_activation_rate_per_window": 0.13333333333333333,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.5348148148148149,
+        "auprc": 0.5469383693950698,
+        "brier_score": 0.2647113696659867
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.5145679012345679,
+        "auprc": 0.5128893633649945,
+        "brier_score": 0.251951582573931
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.26666666666666666,
+        "specificity": 0.8444444444444444,
+        "false_activation_rate_per_window": 0.15555555555555556,
+        "missed_intent_rate": 0.7333333333333333,
+        "auroc": 0.5955555555555556,
+        "auprc": 0.6270349448141654,
+        "brier_score": 0.26528884308359735
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5444444444444445,
+        "sensitivity": 0.13333333333333333,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.8666666666666667,
+        "auroc": 0.6212345679012345,
+        "auprc": 0.6290854777442871,
+        "brier_score": 0.2548269620988612
+      }
+    },
+    "physionet:physionet:S020": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.611111111111111,
+        "sensitivity": 0.3333333333333333,
+        "specificity": 0.8888888888888888,
+        "false_activation_rate_per_window": 0.1111111111111111,
+        "missed_intent_rate": 0.6666666666666666,
+        "auroc": 0.7407407407407407,
+        "auprc": 0.6974061409996638,
+        "brier_score": 0.21354996715842547
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.6888888888888889,
+        "sensitivity": 0.4666666666666667,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.5333333333333333,
+        "auroc": 0.7669135802469136,
+        "auprc": 0.7720541614987987,
+        "brier_score": 0.20901737150094163
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.8444444444444444,
+        "sensitivity": 0.7333333333333333,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.26666666666666666,
+        "auroc": 0.9254320987654321,
+        "auprc": 0.9148730797712438,
+        "brier_score": 0.2031307591456118
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.7888888888888889,
+        "sensitivity": 0.6,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.4,
+        "auroc": 0.9155555555555556,
+        "auprc": 0.8709328796372231,
+        "brier_score": 0.11612275776167864
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.7777777777777778,
+        "sensitivity": 0.6,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.4,
+        "auroc": 0.9145679012345679,
+        "auprc": 0.9040203456228413,
+        "brier_score": 0.1514265498474442
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.8333333333333333,
+        "sensitivity": 0.7555555555555555,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.24444444444444444,
+        "auroc": 0.9269135802469135,
+        "auprc": 0.925596560937104,
+        "brier_score": 0.13989028604168843
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6222222222222222,
+        "sensitivity": 0.9111111111111111,
+        "specificity": 0.3333333333333333,
+        "false_activation_rate_per_window": 0.6666666666666666,
+        "missed_intent_rate": 0.08888888888888889,
+        "auroc": 0.6602469135802469,
+        "auprc": 0.5983936121967511,
+        "brier_score": 0.24592040039827162
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.788888888888889,
+        "sensitivity": 0.7111111111111111,
+        "specificity": 0.8666666666666667,
+        "false_activation_rate_per_window": 0.13333333333333333,
+        "missed_intent_rate": 0.28888888888888886,
+        "auroc": 0.9086419753086419,
+        "auprc": 0.9029734928052223,
+        "brier_score": 0.14790554455221694
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.2,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.7545679012345679,
+        "auprc": 0.7393497467328832,
+        "brier_score": 0.22081729495041755
+      }
+    },
+    "physionet:physionet:S021": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5222222222222223,
+        "sensitivity": 0.06666666666666667,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.9333333333333333,
+        "auroc": 0.5669135802469135,
+        "auprc": 0.5711538553660956,
+        "brier_score": 0.24797858923740215
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.022222222222222223,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9777777777777777,
+        "auroc": 0.654320987654321,
+        "auprc": 0.7012454928638145,
+        "brier_score": 0.26218549101058886
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.697283950617284,
+        "auprc": 0.7369060730296983,
+        "brier_score": 0.23418462416112698
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 0.8888888888888888,
+        "false_activation_rate_per_window": 0.1111111111111111,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.6360493827160494,
+        "auprc": 0.6271875181749673,
+        "brier_score": 0.3014621847962543
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.6488888888888888,
+        "auprc": 0.6861803736648076,
+        "brier_score": 0.23331881881605604
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5222222222222221,
+        "sensitivity": 0.2222222222222222,
+        "specificity": 0.8222222222222222,
+        "false_activation_rate_per_window": 0.17777777777777778,
+        "missed_intent_rate": 0.7777777777777778,
+        "auroc": 0.6054320987654321,
+        "auprc": 0.6237138512597452,
+        "brier_score": 0.24658572704924056
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.044444444444444446,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.9555555555555556,
+        "auroc": 0.594074074074074,
+        "auprc": 0.6013154526747884,
+        "brier_score": 0.2469718778952664
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.7155555555555555,
+        "auprc": 0.686547401147118,
+        "brier_score": 0.25096812376091704
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.6,
+        "sensitivity": 0.2222222222222222,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.7777777777777778,
+        "auroc": 0.6597530864197529,
+        "auprc": 0.700479338569896,
+        "brier_score": 0.2531260954666426
+      }
+    },
+    "physionet:physionet:S025": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.044444444444444446,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.9555555555555556,
+        "auroc": 0.7348148148148148,
+        "auprc": 0.6770506613783644,
+        "brier_score": 0.21470428540544056
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.06666666666666667,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9333333333333333,
+        "auroc": 0.8479012345679012,
+        "auprc": 0.8196887177549044,
+        "brier_score": 0.20291442329514883
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.9061728395061729,
+        "auprc": 0.8516123190405229,
+        "brier_score": 0.203699312068813
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5222222222222223,
+        "sensitivity": 0.08888888888888889,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.9111111111111111,
+        "auroc": 0.6380246913580248,
+        "auprc": 0.6541275300513048,
+        "brier_score": 0.3053702266668263
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6333333333333333,
+        "sensitivity": 0.35555555555555557,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.6444444444444445,
+        "auroc": 0.8222222222222223,
+        "auprc": 0.7845171324880209,
+        "brier_score": 0.18597769961343089
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.044444444444444446,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.9555555555555556,
+        "auroc": 0.8182716049382716,
+        "auprc": 0.7644687882448231,
+        "brier_score": 0.19671176324053422
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.7975308641975308,
+        "auprc": 0.7717046130465393,
+        "brier_score": 0.23349815364055487
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.7333333333333334,
+        "sensitivity": 0.7777777777777778,
+        "specificity": 0.6888888888888889,
+        "false_activation_rate_per_window": 0.3111111111111111,
+        "missed_intent_rate": 0.2222222222222222,
+        "auroc": 0.7911111111111111,
+        "auprc": 0.7661443935881415,
+        "brier_score": 0.18962935452298535
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.08888888888888889,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.9111111111111111,
+        "auroc": 0.6241975308641975,
+        "auprc": 0.5899849622660471,
+        "brier_score": 0.2540374814639873
+      }
+    },
+    "physionet:physionet:S036": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5777777777777777,
+        "sensitivity": 0.17777777777777778,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8222222222222222,
+        "auroc": 0.8054320987654321,
+        "auprc": 0.8155793776575391,
+        "brier_score": 0.18917827872225482
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.044444444444444446,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.9555555555555556,
+        "auroc": 0.7209876543209877,
+        "auprc": 0.7260313945696957,
+        "brier_score": 0.2359664478121575
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.5777777777777777,
+        "sensitivity": 0.15555555555555556,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.8444444444444444,
+        "auroc": 0.8874074074074073,
+        "auprc": 0.8856007934245278,
+        "brier_score": 0.20042730794659475
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.6,
+        "sensitivity": 0.26666666666666666,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.7333333333333333,
+        "auroc": 0.8103703703703704,
+        "auprc": 0.7988865371809784,
+        "brier_score": 0.2109392616973994
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.17777777777777778,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.8222222222222222,
+        "auroc": 0.8113580246913581,
+        "auprc": 0.7521738296524989,
+        "brier_score": 0.19081852341199854
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5222222222222223,
+        "sensitivity": 0.044444444444444446,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9555555555555556,
+        "auroc": 0.8251851851851851,
+        "auprc": 0.7970477499427902,
+        "brier_score": 0.2040879776933073
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.5520987654320988,
+        "auprc": 0.545659411869907,
+        "brier_score": 0.2513784093983765
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6,
+        "sensitivity": 0.24444444444444444,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.7555555555555555,
+        "auroc": 0.825679012345679,
+        "auprc": 0.7847055239187628,
+        "brier_score": 0.21114257154125224
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.17777777777777778,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.8222222222222222,
+        "auroc": 0.7180246913580247,
+        "auprc": 0.6905727454844833,
+        "brier_score": 0.21812180168607856
+      }
+    },
+    "physionet:physionet:S044": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.08888888888888889,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.9111111111111111,
+        "auroc": 0.7762962962962963,
+        "auprc": 0.7560967087996991,
+        "brier_score": 0.23056228195856804
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5222222222222221,
+        "sensitivity": 0.15555555555555556,
+        "specificity": 0.8888888888888888,
+        "false_activation_rate_per_window": 0.1111111111111111,
+        "missed_intent_rate": 0.8444444444444444,
+        "auroc": 0.602962962962963,
+        "auprc": 0.6324428716074502,
+        "brier_score": 0.25629510869606936
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.15555555555555556,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.8444444444444444,
+        "auroc": 0.7664197530864196,
+        "auprc": 0.7587448503488976,
+        "brier_score": 0.21737831730340185
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5888888888888889,
+        "sensitivity": 0.2,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.7728395061728396,
+        "auprc": 0.7979631266165269,
+        "brier_score": 0.26417379321399526
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6666666666666667,
+        "sensitivity": 0.4,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.6,
+        "auroc": 0.7837037037037037,
+        "auprc": 0.7414844858738613,
+        "brier_score": 0.202506599994824
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.022222222222222223,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.9777777777777777,
+        "auroc": 0.76,
+        "auprc": 0.7179543214144676,
+        "brier_score": 0.27541946173479354
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.022222222222222223,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9777777777777777,
+        "auroc": 0.6380246913580246,
+        "auprc": 0.6499225391721043,
+        "brier_score": 0.2509170356897956
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5888888888888889,
+        "sensitivity": 0.2,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.8296296296296297,
+        "auprc": 0.8260454868911413,
+        "brier_score": 0.2341331007529754
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5666666666666667,
+        "sensitivity": 0.15555555555555556,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8444444444444444,
+        "auroc": 0.7753086419753086,
+        "auprc": 0.7584688113488752,
+        "brier_score": 0.19183070151213516
+      }
+    },
+    "physionet:physionet:S047": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.45555555555555555,
+        "sensitivity": 0.15555555555555556,
+        "specificity": 0.7555555555555555,
+        "false_activation_rate_per_window": 0.24444444444444444,
+        "missed_intent_rate": 0.8444444444444444,
+        "auroc": 0.3664197530864197,
+        "auprc": 0.4368645059304676,
+        "brier_score": 0.2885922336268616
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.4777777777777778,
+        "sensitivity": 0.08888888888888889,
+        "specificity": 0.8666666666666667,
+        "false_activation_rate_per_window": 0.13333333333333333,
+        "missed_intent_rate": 0.9111111111111111,
+        "auroc": 0.41481481481481486,
+        "auprc": 0.4618729060034658,
+        "brier_score": 0.2780378855737842
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.4666666666666667,
+        "sensitivity": 0.28888888888888886,
+        "specificity": 0.6444444444444445,
+        "false_activation_rate_per_window": 0.35555555555555557,
+        "missed_intent_rate": 0.7111111111111111,
+        "auroc": 0.39209876543209876,
+        "auprc": 0.43722895866512257,
+        "brier_score": 0.2656733788223052
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.4666666666666667,
+        "sensitivity": 0.2,
+        "specificity": 0.7333333333333333,
+        "false_activation_rate_per_window": 0.26666666666666666,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.48444444444444446,
+        "auprc": 0.5260181272638298,
+        "brier_score": 0.3617863959378897
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.4666666666666667,
+        "sensitivity": 0.3333333333333333,
+        "specificity": 0.6,
+        "false_activation_rate_per_window": 0.4,
+        "missed_intent_rate": 0.6666666666666666,
+        "auroc": 0.3520987654320988,
+        "auprc": 0.4139301635947473,
+        "brier_score": 0.3082076984949699
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.4888888888888889,
+        "sensitivity": 0.6,
+        "specificity": 0.37777777777777777,
+        "false_activation_rate_per_window": 0.6222222222222222,
+        "missed_intent_rate": 0.4,
+        "auroc": 0.4637037037037037,
+        "auprc": 0.5454536811233472,
+        "brier_score": 0.3415375173818466
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.4555555555555556,
+        "sensitivity": 0.7111111111111111,
+        "specificity": 0.2,
+        "false_activation_rate_per_window": 0.8,
+        "missed_intent_rate": 0.28888888888888886,
+        "auroc": 0.39456790123456786,
+        "auprc": 0.4288538468335562,
+        "brier_score": 0.2613305047502262
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.43333333333333335,
+        "sensitivity": 0.35555555555555557,
+        "specificity": 0.5111111111111111,
+        "false_activation_rate_per_window": 0.4888888888888889,
+        "missed_intent_rate": 0.6444444444444445,
+        "auroc": 0.38617283950617287,
+        "auprc": 0.4534587496111194,
+        "brier_score": 0.31340972231418235
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.26666666666666666,
+        "specificity": 0.8,
+        "false_activation_rate_per_window": 0.2,
+        "missed_intent_rate": 0.7333333333333333,
+        "auroc": 0.5007407407407407,
+        "auprc": 0.49301201070082556,
+        "brier_score": 0.3170773906837124
+      }
+    },
+    "physionet:physionet:S048": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5888888888888889,
+        "sensitivity": 0.17777777777777778,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.8222222222222222,
+        "auroc": 0.871604938271605,
+        "auprc": 0.8652484378263596,
+        "brier_score": 0.17728340908369658
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5444444444444444,
+        "sensitivity": 0.08888888888888889,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9111111111111111,
+        "auroc": 0.7743209876543209,
+        "auprc": 0.7823423286086714,
+        "brier_score": 0.21325263448699813
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.6666666666666666,
+        "sensitivity": 0.35555555555555557,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.6444444444444445,
+        "auroc": 0.8987654320987655,
+        "auprc": 0.8914641860011456,
+        "brier_score": 0.18701603788959514
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.13333333333333333,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8666666666666667,
+        "auroc": 0.7525925925925925,
+        "auprc": 0.7115337629771692,
+        "brier_score": 0.2521927264570451
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.7222222222222222,
+        "sensitivity": 0.5333333333333333,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.4666666666666667,
+        "auroc": 0.8780246913580247,
+        "auprc": 0.8654408028054085,
+        "brier_score": 0.15259975750496338
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.022222222222222223,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9777777777777777,
+        "auroc": 0.8686419753086421,
+        "auprc": 0.8715128155412193,
+        "brier_score": 0.19967841952753615
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.8138271604938272,
+        "auprc": 0.8127874712594478,
+        "brier_score": 0.2169565925978022
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6777777777777778,
+        "sensitivity": 0.4,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.6,
+        "auroc": 0.7896296296296297,
+        "auprc": 0.7811597096875424,
+        "brier_score": 0.21009705423265218
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.6,
+        "sensitivity": 0.24444444444444444,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.7555555555555555,
+        "auroc": 0.7165432098765432,
+        "auprc": 0.7342913911076994,
+        "brier_score": 0.22154627006344674
+      }
+    },
+    "physionet:physionet:S054": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.8217283950617283,
+        "auprc": 0.8416234290567197,
+        "brier_score": 0.21671614222539823
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.022222222222222223,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.9777777777777777,
+        "auroc": 0.7960493827160493,
+        "auprc": 0.7249913376976307,
+        "brier_score": 0.2434954347134298
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.06666666666666667,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9333333333333333,
+        "auroc": 0.8834567901234568,
+        "auprc": 0.8986891686244758,
+        "brier_score": 0.20410740768984392
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5666666666666667,
+        "sensitivity": 0.17777777777777778,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.8222222222222222,
+        "auroc": 0.8172839506172839,
+        "auprc": 0.8104814333829524,
+        "brier_score": 0.22003339336535177
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.7333333333333334,
+        "sensitivity": 0.6,
+        "specificity": 0.8666666666666667,
+        "false_activation_rate_per_window": 0.13333333333333333,
+        "missed_intent_rate": 0.4,
+        "auroc": 0.854320987654321,
+        "auprc": 0.845065917874531,
+        "brier_score": 0.1573795983477008
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.8306172839506173,
+        "auprc": 0.8219197013725793,
+        "brier_score": 0.28538065889618647
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.6760493827160494,
+        "auprc": 0.6896171893535408,
+        "brier_score": 0.29994115723878434
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6111111111111112,
+        "sensitivity": 0.2222222222222222,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.7777777777777778,
+        "auroc": 0.8108641975308641,
+        "auprc": 0.8155700839214706,
+        "brier_score": 0.2495076966140206
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5222222222222223,
+        "sensitivity": 0.044444444444444446,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9555555555555556,
+        "auroc": 0.7876543209876543,
+        "auprc": 0.8011284962979589,
+        "brier_score": 0.1941091350543796
+      }
+    },
+    "physionet:physionet:S058": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5444444444444444,
+        "sensitivity": 0.08888888888888889,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9111111111111111,
+        "auroc": 0.7683950617283949,
+        "auprc": 0.7710293709853866,
+        "brier_score": 0.2093135723667829
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.2,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.7091358024691358,
+        "auprc": 0.6800691788429714,
+        "brier_score": 0.22500993775732714
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.13333333333333333,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.8666666666666667,
+        "auroc": 0.8148148148148148,
+        "auprc": 0.7819303794178126,
+        "brier_score": 0.22216929800037696
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.15555555555555556,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.8444444444444444,
+        "auroc": 0.5758024691358025,
+        "auprc": 0.6138588759239413,
+        "brier_score": 0.3037289653552176
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.28888888888888886,
+        "specificity": 0.7777777777777778,
+        "false_activation_rate_per_window": 0.2222222222222222,
+        "missed_intent_rate": 0.7111111111111111,
+        "auroc": 0.5866666666666667,
+        "auprc": 0.5540055766991393,
+        "brier_score": 0.25653630068553857
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.08888888888888889,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.9111111111111111,
+        "auroc": 0.571358024691358,
+        "auprc": 0.586957841962916,
+        "brier_score": 0.25094633024019464
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.5209876543209877,
+        "auprc": 0.5160323550570627,
+        "brier_score": 0.2495517286904208
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5666666666666667,
+        "sensitivity": 0.24444444444444444,
+        "specificity": 0.8888888888888888,
+        "false_activation_rate_per_window": 0.1111111111111111,
+        "missed_intent_rate": 0.7555555555555555,
+        "auroc": 0.7086419753086419,
+        "auprc": 0.6634795300196317,
+        "brier_score": 0.23205501893445266
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.4888888888888889,
+        "sensitivity": 0.24444444444444444,
+        "specificity": 0.7333333333333333,
+        "false_activation_rate_per_window": 0.26666666666666666,
+        "missed_intent_rate": 0.7555555555555555,
+        "auroc": 0.494320987654321,
+        "auprc": 0.5243264122387135,
+        "brier_score": 0.32663398713380426
+      }
+    },
+    "physionet:physionet:S061": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5222222222222223,
+        "sensitivity": 0.06666666666666667,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.9333333333333333,
+        "auroc": 0.49283950617283945,
+        "auprc": 0.5263850114977131,
+        "brier_score": 0.30097014593830024
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.022222222222222223,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9777777777777777,
+        "auroc": 0.5669135802469136,
+        "auprc": 0.593912936376842,
+        "brier_score": 0.260737983539826
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.044444444444444446,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.9555555555555556,
+        "auroc": 0.5703703703703704,
+        "auprc": 0.5815420520224289,
+        "brier_score": 0.2551906185736375
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.6,
+        "sensitivity": 0.28888888888888886,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.7111111111111111,
+        "auroc": 0.6325925925925926,
+        "auprc": 0.6495901187949853,
+        "brier_score": 0.27591445932467906
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.2,
+        "specificity": 0.8,
+        "false_activation_rate_per_window": 0.2,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.5348148148148147,
+        "auprc": 0.5497890175787404,
+        "brier_score": 0.30330972011769475
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5222222222222223,
+        "sensitivity": 0.08888888888888889,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.9111111111111111,
+        "auroc": 0.494320987654321,
+        "auprc": 0.5663456408208938,
+        "brier_score": 0.274398443727323
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.13333333333333333,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8666666666666667,
+        "auroc": 0.6044444444444445,
+        "auprc": 0.618083516934377,
+        "brier_score": 0.24204986269721587
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.13333333333333333,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.8666666666666667,
+        "auroc": 0.614320987654321,
+        "auprc": 0.6224836954616562,
+        "brier_score": 0.28918001815870115
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111112,
+        "sensitivity": 0.06666666666666667,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.9333333333333333,
+        "auroc": 0.5703703703703703,
+        "auprc": 0.5831734228029466,
+        "brier_score": 0.2716652523386535
+      }
+    },
+    "physionet:physionet:S065": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5888888888888889,
+        "sensitivity": 0.2,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.7664197530864197,
+        "auprc": 0.7642706447710352,
+        "brier_score": 0.19959295426949464
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5888888888888889,
+        "sensitivity": 0.5555555555555556,
+        "specificity": 0.6222222222222222,
+        "false_activation_rate_per_window": 0.37777777777777777,
+        "missed_intent_rate": 0.4444444444444444,
+        "auroc": 0.6553086419753087,
+        "auprc": 0.6300850295572812,
+        "brier_score": 0.23817886823694293
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.7444444444444445,
+        "sensitivity": 0.5777777777777777,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.4222222222222222,
+        "auroc": 0.84,
+        "auprc": 0.8282426044042255,
+        "brier_score": 0.20443033345957606
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.6111111111111112,
+        "sensitivity": 0.37777777777777777,
+        "specificity": 0.8444444444444444,
+        "false_activation_rate_per_window": 0.15555555555555556,
+        "missed_intent_rate": 0.6222222222222222,
+        "auroc": 0.6903703703703703,
+        "auprc": 0.6441318700666337,
+        "brier_score": 0.23943571828290003
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6444444444444444,
+        "sensitivity": 0.4,
+        "specificity": 0.8888888888888888,
+        "false_activation_rate_per_window": 0.1111111111111111,
+        "missed_intent_rate": 0.6,
+        "auroc": 0.7901234567901234,
+        "auprc": 0.7513959170061137,
+        "brier_score": 0.18983203521216233
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6444444444444445,
+        "sensitivity": 0.3333333333333333,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.6666666666666666,
+        "auroc": 0.8646913580246913,
+        "auprc": 0.8531899768654838,
+        "brier_score": 0.18132440998106725
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.022222222222222223,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.9777777777777777,
+        "auroc": 0.6222222222222222,
+        "auprc": 0.5945849871072133,
+        "brier_score": 0.24139318978999166
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5666666666666667,
+        "sensitivity": 0.4,
+        "specificity": 0.7333333333333333,
+        "false_activation_rate_per_window": 0.26666666666666666,
+        "missed_intent_rate": 0.6,
+        "auroc": 0.642962962962963,
+        "auprc": 0.629548196761902,
+        "brier_score": 0.23978320199939476
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5888888888888889,
+        "sensitivity": 0.2222222222222222,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.7777777777777778,
+        "auroc": 0.7051851851851851,
+        "auprc": 0.6993592424095512,
+        "brier_score": 0.22832963103154166
+      }
+    },
+    "physionet:physionet:S073": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5222222222222223,
+        "sensitivity": 0.13333333333333333,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.8666666666666667,
+        "auroc": 0.5269135802469136,
+        "auprc": 0.5693107605604537,
+        "brier_score": 0.25638669884919923
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5222222222222221,
+        "sensitivity": 0.15555555555555556,
+        "specificity": 0.8888888888888888,
+        "false_activation_rate_per_window": 0.1111111111111111,
+        "missed_intent_rate": 0.8444444444444444,
+        "auroc": 0.6493827160493827,
+        "auprc": 0.6296134122685422,
+        "brier_score": 0.23429385607028044
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.17777777777777778,
+        "specificity": 0.8888888888888888,
+        "false_activation_rate_per_window": 0.1111111111111111,
+        "missed_intent_rate": 0.8222222222222222,
+        "auroc": 0.6449382716049383,
+        "auprc": 0.6215075694763591,
+        "brier_score": 0.23438970192365052
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.08888888888888889,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.9111111111111111,
+        "auroc": 0.7101234567901233,
+        "auprc": 0.6529760808342774,
+        "brier_score": 0.26625191446806856
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.4666666666666667,
+        "sensitivity": 0.2222222222222222,
+        "specificity": 0.7111111111111111,
+        "false_activation_rate_per_window": 0.28888888888888886,
+        "missed_intent_rate": 0.7777777777777778,
+        "auroc": 0.4834567901234568,
+        "auprc": 0.4765242454373215,
+        "brier_score": 0.2781827080103274
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6333333333333333,
+        "sensitivity": 0.35555555555555557,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.6444444444444445,
+        "auroc": 0.7308641975308642,
+        "auprc": 0.697647830115415,
+        "brier_score": 0.21086004540879758
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.45555555555555555,
+        "sensitivity": 0.2222222222222222,
+        "specificity": 0.6888888888888889,
+        "false_activation_rate_per_window": 0.3111111111111111,
+        "missed_intent_rate": 0.7777777777777778,
+        "auroc": 0.4864197530864197,
+        "auprc": 0.5073002507540192,
+        "brier_score": 0.25321890031572986
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.4666666666666667,
+        "sensitivity": 0.2,
+        "specificity": 0.7333333333333333,
+        "false_activation_rate_per_window": 0.26666666666666666,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.44098765432098763,
+        "auprc": 0.4601171403829744,
+        "brier_score": 0.28125075169913377
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.6444444444444445,
+        "sensitivity": 0.4222222222222222,
+        "specificity": 0.8666666666666667,
+        "false_activation_rate_per_window": 0.13333333333333333,
+        "missed_intent_rate": 0.5777777777777777,
+        "auroc": 0.7145679012345679,
+        "auprc": 0.7464214674279656,
+        "brier_score": 0.25458002161992294
+      }
+    },
+    "physionet:physionet:S076": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.4444444444444445,
+        "sensitivity": 0.24444444444444444,
+        "specificity": 0.6444444444444445,
+        "false_activation_rate_per_window": 0.35555555555555557,
+        "missed_intent_rate": 0.7555555555555555,
+        "auroc": 0.5565432098765432,
+        "auprc": 0.5463085576024387,
+        "brier_score": 0.2592348181562501
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.6222222222222222,
+        "sensitivity": 0.7111111111111111,
+        "specificity": 0.5333333333333333,
+        "false_activation_rate_per_window": 0.4666666666666667,
+        "missed_intent_rate": 0.28888888888888886,
+        "auroc": 0.64,
+        "auprc": 0.6525642638481165,
+        "brier_score": 0.2550038856795751
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.5888888888888889,
+        "sensitivity": 0.8,
+        "specificity": 0.37777777777777777,
+        "false_activation_rate_per_window": 0.6222222222222222,
+        "missed_intent_rate": 0.2,
+        "auroc": 0.6790123456790123,
+        "auprc": 0.6566087728227615,
+        "brier_score": 0.2440996931623972
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111112,
+        "sensitivity": 0.06666666666666667,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.9333333333333333,
+        "auroc": 0.6044444444444443,
+        "auprc": 0.5893061214598717,
+        "brier_score": 0.33426339416467127
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6222222222222222,
+        "sensitivity": 0.4888888888888889,
+        "specificity": 0.7555555555555555,
+        "false_activation_rate_per_window": 0.24444444444444444,
+        "missed_intent_rate": 0.5111111111111111,
+        "auroc": 0.6375308641975308,
+        "auprc": 0.6757802797132276,
+        "brier_score": 0.24631152291947847
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.47777777777777775,
+        "sensitivity": 0.4666666666666667,
+        "specificity": 0.4888888888888889,
+        "false_activation_rate_per_window": 0.5111111111111111,
+        "missed_intent_rate": 0.5333333333333333,
+        "auroc": 0.4775308641975309,
+        "auprc": 0.5292784452954953,
+        "brier_score": 0.3019935776006185
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.45555555555555555,
+        "sensitivity": 0.06666666666666667,
+        "specificity": 0.8444444444444444,
+        "false_activation_rate_per_window": 0.15555555555555556,
+        "missed_intent_rate": 0.9333333333333333,
+        "auroc": 0.5308641975308642,
+        "auprc": 0.4966302085632185,
+        "brier_score": 0.2523178407804133
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6333333333333333,
+        "sensitivity": 0.4,
+        "specificity": 0.8666666666666667,
+        "false_activation_rate_per_window": 0.13333333333333333,
+        "missed_intent_rate": 0.6,
+        "auroc": 0.6207407407407407,
+        "auprc": 0.6704177707497098,
+        "brier_score": 0.23612076066735485
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5444444444444445,
+        "sensitivity": 0.15555555555555556,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.8444444444444444,
+        "auroc": 0.5649382716049383,
+        "auprc": 0.5977048377378298,
+        "brier_score": 0.27952894148817603
+      }
+    },
+    "physionet:physionet:S081": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.3777777777777778,
+        "auprc": 0.4200920765623162,
+        "brier_score": 0.32925843015843714
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.48888888888888893,
+        "sensitivity": 0.022222222222222223,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.9777777777777777,
+        "auroc": 0.457283950617284,
+        "auprc": 0.46997854882415613,
+        "brier_score": 0.27178486766718407
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.4888888888888889,
+        "sensitivity": 0.0,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.4711111111111111,
+        "auprc": 0.47928644591683883,
+        "brier_score": 0.267766660142191
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5444444444444444,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.6049382716049383,
+        "auprc": 0.6459496880026514,
+        "brier_score": 0.31955941276059663
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.5022222222222222,
+        "auprc": 0.612109831106746,
+        "brier_score": 0.30098281810759553
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.568395061728395,
+        "auprc": 0.5865320778808583,
+        "brier_score": 0.31972341382405794
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.42814814814814817,
+        "auprc": 0.49155475427450446,
+        "brier_score": 0.25496300993113197
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5444444444444444,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.5323456790123456,
+        "auprc": 0.6232082250632032,
+        "brier_score": 0.30719252006126435
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5888888888888889,
+        "sensitivity": 0.2,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.548641975308642,
+        "auprc": 0.6330304393483012,
+        "brier_score": 0.2870041232431001
+      }
+    },
+    "physionet:physionet:S095": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5888888888888889,
+        "sensitivity": 0.6444444444444445,
+        "specificity": 0.5333333333333333,
+        "false_activation_rate_per_window": 0.4666666666666667,
+        "missed_intent_rate": 0.35555555555555557,
+        "auroc": 0.6513580246913581,
+        "auprc": 0.6594276866509384,
+        "brier_score": 0.27966106391960477
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.7555555555555555,
+        "specificity": 0.26666666666666666,
+        "false_activation_rate_per_window": 0.7333333333333333,
+        "missed_intent_rate": 0.24444444444444444,
+        "auroc": 0.49333333333333335,
+        "auprc": 0.47559100608317906,
+        "brier_score": 0.28792709406577405
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.6444444444444444,
+        "sensitivity": 0.7777777777777778,
+        "specificity": 0.5111111111111111,
+        "false_activation_rate_per_window": 0.4888888888888889,
+        "missed_intent_rate": 0.2222222222222222,
+        "auroc": 0.6701234567901233,
+        "auprc": 0.6573769318570973,
+        "brier_score": 0.24018606447177251
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.6444444444444444,
+        "sensitivity": 0.6666666666666666,
+        "specificity": 0.6222222222222222,
+        "false_activation_rate_per_window": 0.37777777777777777,
+        "missed_intent_rate": 0.3333333333333333,
+        "auroc": 0.751604938271605,
+        "auprc": 0.747024601394251,
+        "brier_score": 0.2573876879891127
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6555555555555556,
+        "sensitivity": 0.4888888888888889,
+        "specificity": 0.8222222222222222,
+        "false_activation_rate_per_window": 0.17777777777777778,
+        "missed_intent_rate": 0.5111111111111111,
+        "auroc": 0.7106172839506173,
+        "auprc": 0.722662181610133,
+        "brier_score": 0.2187728695350923
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5444444444444444,
+        "sensitivity": 0.17777777777777778,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.8222222222222222,
+        "auroc": 0.6241975308641975,
+        "auprc": 0.6257586515077864,
+        "brier_score": 0.242242138845964
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5444444444444445,
+        "sensitivity": 0.2222222222222222,
+        "specificity": 0.8666666666666667,
+        "false_activation_rate_per_window": 0.13333333333333333,
+        "missed_intent_rate": 0.7777777777777778,
+        "auroc": 0.4148148148148148,
+        "auprc": 0.5216003057603283,
+        "brier_score": 0.2565804734189268
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6111111111111112,
+        "sensitivity": 0.37777777777777777,
+        "specificity": 0.8444444444444444,
+        "false_activation_rate_per_window": 0.15555555555555556,
+        "missed_intent_rate": 0.6222222222222222,
+        "auroc": 0.697283950617284,
+        "auprc": 0.7170249607918833,
+        "brier_score": 0.22110720876842407
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.13333333333333333,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.8666666666666667,
+        "auroc": 0.6809876543209876,
+        "auprc": 0.6680042165110914,
+        "brier_score": 0.23680151059450874
+      }
+    },
+    "physionet:physionet:S097": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.674074074074074,
+        "auprc": 0.7177916794768717,
+        "brier_score": 0.24288887586235727
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.6222222222222222,
+        "sensitivity": 0.4888888888888889,
+        "specificity": 0.7555555555555555,
+        "false_activation_rate_per_window": 0.24444444444444444,
+        "missed_intent_rate": 0.5111111111111111,
+        "auroc": 0.6567901234567901,
+        "auprc": 0.6673587602967148,
+        "brier_score": 0.24141449784449323
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.6555555555555556,
+        "sensitivity": 0.3111111111111111,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.6888888888888889,
+        "auroc": 0.7580246913580247,
+        "auprc": 0.8081182976681158,
+        "brier_score": 0.217460101117848
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5777777777777778,
+        "sensitivity": 0.2,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.6518518518518519,
+        "auprc": 0.6855462464189362,
+        "brier_score": 0.30547756915093544
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6444444444444444,
+        "sensitivity": 0.28888888888888886,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.7111111111111111,
+        "auroc": 0.8148148148148149,
+        "auprc": 0.8487975707021672,
+        "brier_score": 0.19050903992130247
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.6612345679012347,
+        "auprc": 0.6934714713287744,
+        "brier_score": 0.23938636544205136
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.4888888888888889,
+        "sensitivity": 0.0,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.4992592592592593,
+        "auprc": 0.5095434223399511,
+        "brier_score": 0.25472750337521305
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6222222222222222,
+        "sensitivity": 0.26666666666666666,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.7333333333333333,
+        "auroc": 0.6819753086419752,
+        "auprc": 0.7258564036646007,
+        "brier_score": 0.24844898832729004
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5666666666666667,
+        "sensitivity": 0.13333333333333333,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.8666666666666667,
+        "auroc": 0.7076543209876545,
+        "auprc": 0.7407098105859058,
+        "brier_score": 0.22023427588530622
+      }
+    },
+    "physionet:physionet:S098": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.13333333333333333,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8666666666666667,
+        "auroc": 0.6567901234567901,
+        "auprc": 0.6882820220156531,
+        "brier_score": 0.2309244324561052
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.6111111111111112,
+        "sensitivity": 0.26666666666666666,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.7333333333333333,
+        "auroc": 0.6538271604938272,
+        "auprc": 0.6908862439344844,
+        "brier_score": 0.23249650320332121
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.7444444444444445,
+        "sensitivity": 0.5555555555555556,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.4444444444444444,
+        "auroc": 0.7639506172839506,
+        "auprc": 0.8098889702193377,
+        "brier_score": 0.22487920609952153
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.6111111111111112,
+        "sensitivity": 0.28888888888888886,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.7111111111111111,
+        "auroc": 0.7501234567901235,
+        "auprc": 0.7816657215108238,
+        "brier_score": 0.2260683158967183
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6777777777777778,
+        "sensitivity": 0.4444444444444444,
+        "specificity": 0.9111111111111111,
+        "false_activation_rate_per_window": 0.08888888888888889,
+        "missed_intent_rate": 0.5555555555555556,
+        "auroc": 0.7832098765432098,
+        "auprc": 0.7911230028716512,
+        "brier_score": 0.1999636810223581
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6444444444444444,
+        "sensitivity": 0.4666666666666667,
+        "specificity": 0.8222222222222222,
+        "false_activation_rate_per_window": 0.17777777777777778,
+        "missed_intent_rate": 0.5333333333333333,
+        "auroc": 0.6572839506172838,
+        "auprc": 0.7394654586273417,
+        "brier_score": 0.24837844734640527
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111112,
+        "sensitivity": 0.06666666666666667,
+        "specificity": 0.9555555555555556,
+        "false_activation_rate_per_window": 0.044444444444444446,
+        "missed_intent_rate": 0.9333333333333333,
+        "auroc": 0.6691358024691358,
+        "auprc": 0.6395954727353464,
+        "brier_score": 0.23405028716896403
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.7,
+        "sensitivity": 0.5555555555555556,
+        "specificity": 0.8444444444444444,
+        "false_activation_rate_per_window": 0.15555555555555556,
+        "missed_intent_rate": 0.4444444444444444,
+        "auroc": 0.7614814814814815,
+        "auprc": 0.7370770187966642,
+        "brier_score": 0.20202842069783686
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.7111111111111111,
+        "sensitivity": 0.5555555555555556,
+        "specificity": 0.8666666666666667,
+        "false_activation_rate_per_window": 0.13333333333333333,
+        "missed_intent_rate": 0.4444444444444444,
+        "auroc": 0.7644444444444445,
+        "auprc": 0.7927011077805877,
+        "brier_score": 0.24380621826310825
+      }
+    },
+    "physionet:physionet:S100": {
+      "statistical_target_only": {
+        "rows": 72,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.6450617283950617,
+        "auprc": 0.585588769134876,
+        "brier_score": 0.29179339511935326
+      },
+      "riemannian": {
+        "rows": 72,
+        "balanced_accuracy": 0.5138888888888888,
+        "sensitivity": 0.5277777777777778,
+        "specificity": 0.5,
+        "false_activation_rate_per_window": 0.5,
+        "missed_intent_rate": 0.4722222222222222,
+        "auroc": 0.5223765432098766,
+        "auprc": 0.5087016930594627,
+        "brier_score": 0.27149296348476115
+      },
+      "physiology_late_fusion": {
+        "rows": 72,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.3055555555555556,
+        "specificity": 0.8055555555555556,
+        "false_activation_rate_per_window": 0.19444444444444445,
+        "missed_intent_rate": 0.6944444444444444,
+        "auroc": 0.6712962962962963,
+        "auprc": 0.6272681453606006,
+        "brier_score": 0.23283951120380472
+      },
+      "conv1d_target": {
+        "rows": 72,
+        "balanced_accuracy": 0.5277777777777778,
+        "sensitivity": 0.1111111111111111,
+        "specificity": 0.9444444444444444,
+        "false_activation_rate_per_window": 0.05555555555555555,
+        "missed_intent_rate": 0.8888888888888888,
+        "auroc": 0.6304012345679012,
+        "auprc": 0.6137231758439015,
+        "brier_score": 0.32407154160342677
+      },
+      "eegnet": {
+        "rows": 72,
+        "balanced_accuracy": 0.5277777777777778,
+        "sensitivity": 0.2777777777777778,
+        "specificity": 0.7777777777777778,
+        "false_activation_rate_per_window": 0.2222222222222222,
+        "missed_intent_rate": 0.7222222222222222,
+        "auroc": 0.5871913580246914,
+        "auprc": 0.5686634832817961,
+        "brier_score": 0.2785364377682058
+      },
+      "shallow_convnet": {
+        "rows": 72,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.6342592592592593,
+        "auprc": 0.5739614494644607,
+        "brier_score": 0.27040488880617475
+      },
+      "fbcnet": {
+        "rows": 72,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 1.0,
+        "auroc": 0.5640432098765432,
+        "auprc": 0.5483165889734376,
+        "brier_score": 0.2619954057343134
+      },
+      "mrcp_fbcnet": {
+        "rows": 72,
+        "balanced_accuracy": 0.5694444444444444,
+        "sensitivity": 0.16666666666666666,
+        "specificity": 0.9722222222222222,
+        "false_activation_rate_per_window": 0.027777777777777776,
+        "missed_intent_rate": 0.8333333333333334,
+        "auroc": 0.7052469135802469,
+        "auprc": 0.7326642075957756,
+        "brier_score": 0.25678254539528933
+      },
+      "conv1d_way_ssl": {
+        "rows": 72,
+        "balanced_accuracy": 0.5555555555555556,
+        "sensitivity": 0.1388888888888889,
+        "specificity": 0.9722222222222222,
+        "false_activation_rate_per_window": 0.027777777777777776,
+        "missed_intent_rate": 0.8611111111111112,
+        "auroc": 0.6620370370370371,
+        "auprc": 0.6702793456495298,
+        "brier_score": 0.2422183932288687
+      }
+    },
+    "physionet:physionet:S103": {
+      "statistical_target_only": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.13333333333333333,
+        "specificity": 0.8666666666666667,
+        "false_activation_rate_per_window": 0.13333333333333333,
+        "missed_intent_rate": 0.8666666666666667,
+        "auroc": 0.5432098765432098,
+        "auprc": 0.5475648293988848,
+        "brier_score": 0.3032874513418327
+      },
+      "riemannian": {
+        "rows": 90,
+        "balanced_accuracy": 0.5,
+        "sensitivity": 0.15555555555555556,
+        "specificity": 0.8444444444444444,
+        "false_activation_rate_per_window": 0.15555555555555556,
+        "missed_intent_rate": 0.8444444444444444,
+        "auroc": 0.5861728395061729,
+        "auprc": 0.562910011015742,
+        "brier_score": 0.2449497772541623
+      },
+      "physiology_late_fusion": {
+        "rows": 90,
+        "balanced_accuracy": 0.5333333333333333,
+        "sensitivity": 0.2,
+        "specificity": 0.8666666666666667,
+        "false_activation_rate_per_window": 0.13333333333333333,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.6227160493827161,
+        "auprc": 0.6294330343547115,
+        "brier_score": 0.23743732000295206
+      },
+      "conv1d_target": {
+        "rows": 90,
+        "balanced_accuracy": 0.5888888888888889,
+        "sensitivity": 0.24444444444444444,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.7555555555555555,
+        "auroc": 0.6276543209876544,
+        "auprc": 0.670634940060143,
+        "brier_score": 0.2905828754214018
+      },
+      "eegnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.6,
+        "sensitivity": 0.2,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.6928395061728395,
+        "auprc": 0.7186150761193975,
+        "brier_score": 0.24057223364798744
+      },
+      "shallow_convnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.022222222222222223,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9777777777777777,
+        "auroc": 0.6375308641975309,
+        "auprc": 0.6228704039998377,
+        "brier_score": 0.2568702684158653
+      },
+      "fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.022222222222222223,
+        "specificity": 1.0,
+        "false_activation_rate_per_window": 0.0,
+        "missed_intent_rate": 0.9777777777777777,
+        "auroc": 0.6498765432098765,
+        "auprc": 0.6298504189152941,
+        "brier_score": 0.23910473848081698
+      },
+      "mrcp_fbcnet": {
+        "rows": 90,
+        "balanced_accuracy": 0.5888888888888889,
+        "sensitivity": 0.2,
+        "specificity": 0.9777777777777777,
+        "false_activation_rate_per_window": 0.022222222222222223,
+        "missed_intent_rate": 0.8,
+        "auroc": 0.6898765432098766,
+        "auprc": 0.7053437467886781,
+        "brier_score": 0.26865633294252445
+      },
+      "conv1d_way_ssl": {
+        "rows": 90,
+        "balanced_accuracy": 0.5111111111111111,
+        "sensitivity": 0.08888888888888889,
+        "specificity": 0.9333333333333333,
+        "false_activation_rate_per_window": 0.06666666666666667,
+        "missed_intent_rate": 0.9111111111111111,
+        "auroc": 0.5580246913580247,
+        "auprc": 0.5490777999893873,
+        "brier_score": 0.28847495479455687
+      }
+    }
+  }
+}

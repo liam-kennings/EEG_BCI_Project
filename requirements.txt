@@ -1,0 +1,10 @@
+joblib==1.4.2
+matplotlib==3.10.1
+mne==1.11.0
+numpy==2.2.3
+pandas==2.2.3
+scikit-learn==1.6.1
+scipy==1.15.2
+edfio==0.4.13
+h5py==3.14.0
+

@@ -1,0 +1,7 @@
+{
+  "status": "locked_inference_started",
+  "contract": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/cho2017_locked_external_v7/CHO2017_V7_LOCKED_CONTRACT.json",
+  "contract_sha256": "00604b041a71df7c776ce7213e86d0bb097aae349763a3f364dd391d7a14ee7b",
+  "confirmation_token": "CONFIRM_CHO2017_V7_LOCKED_RUN",
+  "started_unix_seconds": 1787024418.5162072
+}

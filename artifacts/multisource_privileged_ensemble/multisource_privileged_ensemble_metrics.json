@@ -1,0 +1,1117 @@
+{
+  "schema_version": 1,
+  "experiment": "dataset_calibrated_multisource_privileged_eeg_ensemble",
+  "source_datasets": [
+    "mrcp_eeg_emg_2025",
+    "way_eeg_gal_2014"
+  ],
+  "target_datasets": [
+    "liu2024",
+    "openbmi",
+    "physionet"
+  ],
+  "leakage_boundary": {
+    "peripheral_signals_used_at_target_inference": false,
+    "positive_source_eeg_ends_before_confirmed_movement": true,
+    "source_weights_selected_on": "controller_validation",
+    "fusion_selected_on": "group-held controller_validation predictions",
+    "evaluated_on": "development_observed",
+    "direction_head_modified": false
+  },
+  "selected_source_weights": {
+    "mrcp": 0.35,
+    "way": 0.35
+  },
+  "source_fit_summaries": {
+    "mrcp": {
+      "source_rows": 2616,
+      "accepted_source_rows": 1779,
+      "source_acceptance_fraction": 0.680045871559633,
+      "emg_cross_validated_balanced_accuracy": 0.7568807339449541,
+      "emg_cross_validated_auroc": 0.820895757932834,
+      "source_weight": 0.35,
+      "confidence_floor": 0.6
+    },
+    "way": {
+      "source_rows": 7024,
+      "accepted_source_rows": 4835,
+      "source_acceptance_fraction": 0.6883542141230068,
+      "emg_cross_validated_balanced_accuracy": 0.7457289293849658,
+      "emg_cross_validated_auroc": 0.8326787817622366,
+      "source_weight": 0.35,
+      "confidence_floor": 0.6
+    }
+  },
+  "source_weight_selection": {
+    "mrcp": [
+      {
+        "source_weight": 0.05,
+        "threshold": 0.725,
+        "metrics": {
+          "rows": 6162,
+          "balanced_accuracy": 0.5886929690615109,
+          "sensitivity": 0.27293354943273906,
+          "specificity": 0.9044523886902828,
+          "missed_intent_rate": 0.7270664505672609,
+          "false_activation_rate_per_window": 0.09554761130971726,
+          "auroc": 0.7193817885509102,
+          "auprc": 0.6886985832817475,
+          "brier_score": 0.2153307870365488
+        },
+        "fit_summary": {
+          "source_rows": 2616,
+          "accepted_source_rows": 1779,
+          "source_acceptance_fraction": 0.680045871559633,
+          "emg_cross_validated_balanced_accuracy": 0.7568807339449541,
+          "emg_cross_validated_auroc": 0.820895757932834,
+          "source_weight": 0.05,
+          "confidence_floor": 0.6
+        }
+      },
+      {
+        "source_weight": 0.1,
+        "threshold": 0.72,
+        "metrics": {
+          "rows": 6162,
+          "balanced_accuracy": 0.5898245412584296,
+          "sensitivity": 0.27747163695299837,
+          "specificity": 0.9021774455638609,
+          "missed_intent_rate": 0.7225283630470016,
+          "false_activation_rate_per_window": 0.0978225544361391,
+          "auroc": 0.7198351969887948,
+          "auprc": 0.6892128636504645,
+          "brier_score": 0.21511629602326557
+        },
+        "fit_summary": {
+          "source_rows": 2616,
+          "accepted_source_rows": 1779,
+          "source_acceptance_fraction": 0.680045871559633,
+          "emg_cross_validated_balanced_accuracy": 0.7568807339449541,
+          "emg_cross_validated_auroc": 0.820895757932834,
+          "source_weight": 0.1,
+          "confidence_floor": 0.6
+        }
+      },
+      {
+        "source_weight": 0.2,
+        "threshold": 0.715,
+        "metrics": {
+          "rows": 6162,
+          "balanced_accuracy": 0.590632385730065,
+          "sensitivity": 0.28103727714748783,
+          "specificity": 0.9002274943126422,
+          "missed_intent_rate": 0.7189627228525122,
+          "false_activation_rate_per_window": 0.09977250568735782,
+          "auroc": 0.7205526020682546,
+          "auprc": 0.6899745320209281,
+          "brier_score": 0.2147955853126126
+        },
+        "fit_summary": {
+          "source_rows": 2616,
+          "accepted_source_rows": 1779,
+          "source_acceptance_fraction": 0.680045871559633,
+          "emg_cross_validated_balanced_accuracy": 0.7568807339449541,
+          "emg_cross_validated_auroc": 0.820895757932834,
+          "source_weight": 0.2,
+          "confidence_floor": 0.6
+        }
+      },
+      {
+        "source_weight": 0.35,
+        "threshold": 0.71,
+        "metrics": {
+          "rows": 6162,
+          "balanced_accuracy": 0.5919306676976511,
+          "sensitivity": 0.28233387358184764,
+          "specificity": 0.9015274618134547,
+          "missed_intent_rate": 0.7176661264181523,
+          "false_activation_rate_per_window": 0.09847253818654533,
+          "auroc": 0.7211961597232355,
+          "auprc": 0.6910685545018587,
+          "brier_score": 0.21449837448474537
+        },
+        "fit_summary": {
+          "source_rows": 2616,
+          "accepted_source_rows": 1779,
+          "source_acceptance_fraction": 0.680045871559633,
+          "emg_cross_validated_balanced_accuracy": 0.7568807339449541,
+          "emg_cross_validated_auroc": 0.820895757932834,
+          "source_weight": 0.35,
+          "confidence_floor": 0.6
+        }
+      }
+    ],
+    "way": [
+      {
+        "source_weight": 0.05,
+        "threshold": 0.715,
+        "metrics": {
+          "rows": 6162,
+          "balanced_accuracy": 0.5899845088961917,
+          "sensitivity": 0.2794165316045381,
+          "specificity": 0.9005524861878453,
+          "missed_intent_rate": 0.720583468395462,
+          "false_activation_rate_per_window": 0.09944751381215469,
+          "auroc": 0.7219619185371257,
+          "auprc": 0.6892736268451821,
+          "brier_score": 0.21418854565385118
+        },
+        "fit_summary": {
+          "source_rows": 7024,
+          "accepted_source_rows": 4835,
+          "source_acceptance_fraction": 0.6883542141230068,
+          "emg_cross_validated_balanced_accuracy": 0.7457289293849658,
+          "emg_cross_validated_auroc": 0.8326787817622366,
+          "source_weight": 0.05,
+          "confidence_floor": 0.6
+        }
+      },
+      {
+        "source_weight": 0.1,
+        "threshold": 0.715,
+        "metrics": {
+          "rows": 6162,
+          "balanced_accuracy": 0.5903137146044607,
+          "sensitivity": 0.27617504051863856,
+          "specificity": 0.9044523886902828,
+          "missed_intent_rate": 0.7238249594813614,
+          "false_activation_rate_per_window": 0.09554761130971726,
+          "auroc": 0.7237195083088888,
+          "auprc": 0.6897421061816349,
+          "brier_score": 0.213748089221999
+        },
+        "fit_summary": {
+          "source_rows": 7024,
+          "accepted_source_rows": 4835,
+          "source_acceptance_fraction": 0.6883542141230068,
+          "emg_cross_validated_balanced_accuracy": 0.7457289293849658,
+          "emg_cross_validated_auroc": 0.8326787817622366,
+          "source_weight": 0.1,
+          "confidence_floor": 0.6
+        }
+      },
+      {
+        "source_weight": 0.2,
+        "threshold": 0.71,
+        "metrics": {
+          "rows": 6162,
+          "balanced_accuracy": 0.5914490792511387,
+          "sensitivity": 0.27779578606158833,
+          "specificity": 0.905102372440689,
+          "missed_intent_rate": 0.7222042139384117,
+          "false_activation_rate_per_window": 0.09489762755931101,
+          "auroc": 0.727108694243746,
+          "auprc": 0.6909694667438777,
+          "brier_score": 0.21293022905883205
+        },
+        "fit_summary": {
+          "source_rows": 7024,
+          "accepted_source_rows": 4835,
+          "source_acceptance_fraction": 0.6883542141230068,
+          "emg_cross_validated_balanced_accuracy": 0.7457289293849658,
+          "emg_cross_validated_auroc": 0.8326787817622366,
+          "source_weight": 0.2,
+          "confidence_floor": 0.6
+        }
+      },
+      {
+        "source_weight": 0.35,
+        "threshold": 0.7,
+        "metrics": {
+          "rows": 6162,
+          "balanced_accuracy": 0.5972782852227722,
+          "sensitivity": 0.29367909238249595,
+          "specificity": 0.9008774780630484,
+          "missed_intent_rate": 0.7063209076175041,
+          "false_activation_rate_per_window": 0.09912252193695158,
+          "auroc": 0.7299384938391127,
+          "auprc": 0.6912960589310556,
+          "brier_score": 0.2123873298617105
+        },
+        "fit_summary": {
+          "source_rows": 7024,
+          "accepted_source_rows": 4835,
+          "source_acceptance_fraction": 0.6883542141230068,
+          "emg_cross_validated_balanced_accuracy": 0.7457289293849658,
+          "emg_cross_validated_auroc": 0.8326787817622366,
+          "source_weight": 0.35,
+          "confidence_floor": 0.6
+        }
+      }
+    ]
+  },
+  "component_domain_thresholds": {
+    "target_only": {
+      "liu2024": 0.7549999999999999,
+      "openbmi": 0.725,
+      "physionet": 0.6849999999999999
+    },
+    "mrcp_student": {
+      "liu2024": 0.74,
+      "openbmi": 0.715,
+      "physionet": 0.6799999999999999
+    },
+    "way_student": {
+      "liu2024": 0.7499999999999999,
+      "openbmi": 0.705,
+      "physionet": 0.6649999999999999
+    }
+  },
+  "fusion_selection": {
+    "liu2024": {
+      "rows": 632,
+      "subjects": 8,
+      "candidates": {
+        "target_only": {
+          "threshold": 0.7549999999999999,
+          "metrics": {
+            "rows": 632,
+            "balanced_accuracy": 0.555088141025641,
+            "sensitivity": 0.203125,
+            "specificity": 0.907051282051282,
+            "missed_intent_rate": 0.796875,
+            "false_activation_rate_per_window": 0.09294871794871795,
+            "auroc": 0.6458133012820513,
+            "auprc": 0.6295874816820679,
+            "brier_score": 0.24187594286492795
+          }
+        },
+        "mrcp_student": {
+          "threshold": 0.74,
+          "metrics": {
+            "rows": 632,
+            "balanced_accuracy": 0.5691105769230769,
+            "sensitivity": 0.234375,
+            "specificity": 0.9038461538461539,
+            "missed_intent_rate": 0.765625,
+            "false_activation_rate_per_window": 0.09615384615384616,
+            "auroc": 0.6495693108974359,
+            "auprc": 0.6369502291704351,
+            "brier_score": 0.24079238006236287
+          }
+        },
+        "way_student": {
+          "threshold": 0.7499999999999999,
+          "metrics": {
+            "rows": 632,
+            "balanced_accuracy": 0.551923076923077,
+            "sensitivity": 0.2,
+            "specificity": 0.9038461538461539,
+            "missed_intent_rate": 0.8,
+            "false_activation_rate_per_window": 0.09615384615384616,
+            "auroc": 0.6377904647435897,
+            "auprc": 0.6159745938015642,
+            "brier_score": 0.2450701682240399
+          }
+        },
+        "stacked": {
+          "threshold": 0.615,
+          "metrics": {
+            "rows": 632,
+            "balanced_accuracy": 0.5551682692307692,
+            "sensitivity": 0.196875,
+            "specificity": 0.9134615384615384,
+            "missed_intent_rate": 0.803125,
+            "false_activation_rate_per_window": 0.08653846153846154,
+            "auroc": 0.6315304487179487,
+            "auprc": 0.620727417856433,
+            "brier_score": 0.24031375611803316
+          }
+        }
+      },
+      "selected": {
+        "method": "mrcp_student",
+        "threshold": 0.74,
+        "controller_balanced_accuracy": 0.5691105769230769,
+        "controller_sensitivity": 0.234375,
+        "controller_specificity": 0.9038461538461539
+      }
+    },
+    "openbmi": {
+      "rows": 4000,
+      "subjects": 5,
+      "candidates": {
+        "target_only": {
+          "threshold": 0.725,
+          "metrics": {
+            "rows": 4000,
+            "balanced_accuracy": 0.6114999999999999,
+            "sensitivity": 0.3215,
+            "specificity": 0.9015,
+            "missed_intent_rate": 0.6785,
+            "false_activation_rate_per_window": 0.0985,
+            "auroc": 0.75809575,
+            "auprc": 0.7264215968342744,
+            "brier_score": 0.20302673853444927
+          }
+        },
+        "mrcp_student": {
+          "threshold": 0.715,
+          "metrics": {
+            "rows": 4000,
+            "balanced_accuracy": 0.61025,
+            "sensitivity": 0.318,
+            "specificity": 0.9025,
+            "missed_intent_rate": 0.682,
+            "false_activation_rate_per_window": 0.0975,
+            "auroc": 0.76015975,
+            "auprc": 0.7293184675799051,
+            "brier_score": 0.20260135148466485
+          }
+        },
+        "way_student": {
+          "threshold": 0.705,
+          "metrics": {
+            "rows": 4000,
+            "balanced_accuracy": 0.6145,
+            "sensitivity": 0.326,
+            "specificity": 0.903,
+            "missed_intent_rate": 0.674,
+            "false_activation_rate_per_window": 0.097,
+            "auroc": 0.7689782500000001,
+            "auprc": 0.7312101228864709,
+            "brier_score": 0.20039820896092655
+          }
+        },
+        "stacked": {
+          "threshold": 0.7949999999999999,
+          "metrics": {
+            "rows": 4000,
+            "balanced_accuracy": 0.56075,
+            "sensitivity": 0.2165,
+            "specificity": 0.905,
+            "missed_intent_rate": 0.7835,
+            "false_activation_rate_per_window": 0.095,
+            "auroc": 0.7227345,
+            "auprc": 0.6835107081808642,
+            "brier_score": 0.21745359409985676
+          }
+        }
+      },
+      "selected": {
+        "method": "way_student",
+        "threshold": 0.705,
+        "controller_balanced_accuracy": 0.6145,
+        "controller_sensitivity": 0.326,
+        "controller_specificity": 0.903
+      }
+    },
+    "physionet": {
+      "rows": 1530,
+      "subjects": 17,
+      "candidates": {
+        "target_only": {
+          "threshold": 0.6849999999999999,
+          "metrics": {
+            "rows": 1530,
+            "balanced_accuracy": 0.5483660130718955,
+            "sensitivity": 0.19477124183006536,
+            "specificity": 0.9019607843137255,
+            "missed_intent_rate": 0.8052287581699347,
+            "false_activation_rate_per_window": 0.09803921568627451,
+            "auroc": 0.6558332265368021,
+            "auprc": 0.6255064794406664,
+            "brier_score": 0.23560111730634187
+          }
+        },
+        "mrcp_student": {
+          "threshold": 0.6799999999999999,
+          "metrics": {
+            "rows": 1530,
+            "balanced_accuracy": 0.550326797385621,
+            "sensitivity": 0.2,
+            "specificity": 0.9006535947712418,
+            "missed_intent_rate": 0.8,
+            "false_activation_rate_per_window": 0.09934640522875816,
+            "auroc": 0.6539672775428254,
+            "auprc": 0.6248992445943338,
+            "brier_score": 0.23474038786727347
+          }
+        },
+        "way_student": {
+          "threshold": 0.6649999999999999,
+          "metrics": {
+            "rows": 1530,
+            "balanced_accuracy": 0.5712418300653594,
+            "sensitivity": 0.24052287581699347,
+            "specificity": 0.9019607843137255,
+            "missed_intent_rate": 0.7594771241830065,
+            "false_activation_rate_per_window": 0.09803921568627451,
+            "auroc": 0.6730607885855868,
+            "auprc": 0.6410869856886163,
+            "brier_score": 0.23023107480167368
+          }
+        },
+        "stacked": {
+          "threshold": 0.63,
+          "metrics": {
+            "rows": 1530,
+            "balanced_accuracy": 0.5601307189542484,
+            "sensitivity": 0.21176470588235294,
+            "specificity": 0.9084967320261438,
+            "missed_intent_rate": 0.788235294117647,
+            "false_activation_rate_per_window": 0.0915032679738562,
+            "auroc": 0.6663044128326712,
+            "auprc": 0.6343301923538534,
+            "brier_score": 0.2301868485450743
+          }
+        }
+      },
+      "selected": {
+        "method": "way_student",
+        "threshold": 0.6649999999999999,
+        "controller_balanced_accuracy": 0.5712418300653594,
+        "controller_sensitivity": 0.24052287581699347,
+        "controller_specificity": 0.9019607843137255
+      }
+    },
+    "__global__": {
+      "rows": 6162,
+      "subjects": 30,
+      "candidates": {
+        "target_only": {
+          "threshold": 0.72,
+          "metrics": {
+            "rows": 6162,
+            "balanced_accuracy": 0.5898236984918165,
+            "sensitivity": 0.2781199351701783,
+            "specificity": 0.9015274618134547,
+            "missed_intent_rate": 0.7218800648298217,
+            "false_activation_rate_per_window": 0.09847253818654533,
+            "auroc": 0.7193891627587754,
+            "auprc": 0.6883807789375034,
+            "brier_score": 0.21509936051722406
+          }
+        },
+        "mrcp_student": {
+          "threshold": 0.71,
+          "metrics": {
+            "rows": 6162,
+            "balanced_accuracy": 0.5919306676976511,
+            "sensitivity": 0.28233387358184764,
+            "specificity": 0.9015274618134547,
+            "missed_intent_rate": 0.7176661264181523,
+            "false_activation_rate_per_window": 0.09847253818654533,
+            "auroc": 0.7211961597232355,
+            "auprc": 0.6910685545018587,
+            "brier_score": 0.21449837448474537
+          }
+        },
+        "way_student": {
+          "threshold": 0.7,
+          "metrics": {
+            "rows": 6162,
+            "balanced_accuracy": 0.5972782852227722,
+            "sensitivity": 0.29367909238249595,
+            "specificity": 0.9008774780630484,
+            "missed_intent_rate": 0.7063209076175041,
+            "false_activation_rate_per_window": 0.09912252193695158,
+            "auroc": 0.7299384938391127,
+            "auprc": 0.6912960589310556,
+            "brier_score": 0.2123873298617105
+          }
+        },
+        "stacked": {
+          "threshold": 0.71,
+          "metrics": {
+            "rows": 6162,
+            "balanced_accuracy": 0.5676182204034851,
+            "sensitivity": 0.2346839546191248,
+            "specificity": 0.9005524861878453,
+            "missed_intent_rate": 0.7653160453808752,
+            "false_activation_rate_per_window": 0.09944751381215469,
+            "auroc": 0.7086021714935248,
+            "auprc": 0.6690851177811992,
+            "brier_score": 0.21929207166923806
+          }
+        }
+      },
+      "selected": {
+        "method": "way_student",
+        "threshold": 0.7,
+        "controller_balanced_accuracy": 0.5972782852227722,
+        "controller_sensitivity": 0.29367909238249595,
+        "controller_specificity": 0.9008774780630484
+      }
+    }
+  },
+  "evaluation": {
+    "target_only": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5282407039943817,
+      "sensitivity": 0.10579211848717271,
+      "specificity": 0.9506892895015907,
+      "missed_intent_rate": 0.8942078815128273,
+      "false_activation_rate_per_window": 0.049310710498409335,
+      "auroc": 0.6830902012434221,
+      "auprc": 0.6451725790656493,
+      "brier_score": 0.2272811013798053
+    },
+    "mrcp_student": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5302236751654684,
+      "sensitivity": 0.11028828352287755,
+      "specificity": 0.9501590668080594,
+      "missed_intent_rate": 0.8897117164771224,
+      "false_activation_rate_per_window": 0.04984093319194061,
+      "auroc": 0.6816580670837583,
+      "auprc": 0.6429067839694638,
+      "brier_score": 0.22748454171167992
+    },
+    "way_student": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5291679626575138,
+      "sensitivity": 0.10632107907960857,
+      "specificity": 0.9520148462354189,
+      "missed_intent_rate": 0.8936789209203915,
+      "false_activation_rate_per_window": 0.04798515376458112,
+      "auroc": 0.6970006588167719,
+      "auprc": 0.6560355807496119,
+      "brier_score": 0.2241543419164176
+    },
+    "multisource": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5298263236705938,
+      "sensitivity": 0.11002380322665961,
+      "specificity": 0.9496288441145281,
+      "missed_intent_rate": 0.8899761967733404,
+      "false_activation_rate_per_window": 0.0503711558854719,
+      "auroc": 0.6977466306808924,
+      "auprc": 0.6565046851187006,
+      "brier_score": 0.22376006158517062
+    }
+  },
+  "evaluation_by_dataset": {
+    "liu2024": {
+      "target_only": {
+        "rows": 791,
+        "balanced_accuracy": 0.5485326086956521,
+        "sensitivity": 0.2275,
+        "specificity": 0.8695652173913043,
+        "missed_intent_rate": 0.7725,
+        "false_activation_rate_per_window": 0.13043478260869565,
+        "auroc": 0.6478516624040921,
+        "auprc": 0.6317087669138146,
+        "brier_score": 0.24958514718553568
+      },
+      "mrcp_student": {
+        "rows": 791,
+        "balanced_accuracy": 0.5585038363171355,
+        "sensitivity": 0.25,
+        "specificity": 0.8670076726342711,
+        "missed_intent_rate": 0.75,
+        "false_activation_rate_per_window": 0.1329923273657289,
+        "auroc": 0.6471355498721227,
+        "auprc": 0.632196489886183,
+        "brier_score": 0.24892842714817315
+      },
+      "way_student": {
+        "rows": 791,
+        "balanced_accuracy": 0.5525127877237852,
+        "sensitivity": 0.215,
+        "specificity": 0.8900255754475703,
+        "missed_intent_rate": 0.785,
+        "false_activation_rate_per_window": 0.10997442455242967,
+        "auroc": 0.6351598465473146,
+        "auprc": 0.6227755248252895,
+        "brier_score": 0.25269328093061116
+      },
+      "multisource": {
+        "rows": 791,
+        "balanced_accuracy": 0.5585038363171355,
+        "sensitivity": 0.25,
+        "specificity": 0.8670076726342711,
+        "missed_intent_rate": 0.75,
+        "false_activation_rate_per_window": 0.1329923273657289,
+        "auroc": 0.6471355498721227,
+        "auprc": 0.632196489886183,
+        "brier_score": 0.24892842714817315
+      }
+    },
+    "openbmi": {
+      "target_only": {
+        "rows": 4800,
+        "balanced_accuracy": 0.5225,
+        "sensitivity": 0.06708333333333333,
+        "specificity": 0.9779166666666667,
+        "missed_intent_rate": 0.9329166666666666,
+        "false_activation_rate_per_window": 0.022083333333333333,
+        "auroc": 0.7206501736111111,
+        "auprc": 0.674158132266764,
+        "brier_score": 0.2154477208791337
+      },
+      "mrcp_student": {
+        "rows": 4800,
+        "balanced_accuracy": 0.5245833333333333,
+        "sensitivity": 0.07,
+        "specificity": 0.9791666666666666,
+        "missed_intent_rate": 0.93,
+        "false_activation_rate_per_window": 0.020833333333333332,
+        "auroc": 0.7216975694444444,
+        "auprc": 0.6761953495882078,
+        "brier_score": 0.2158447399752356
+      },
+      "way_student": {
+        "rows": 4800,
+        "balanced_accuracy": 0.518125,
+        "sensitivity": 0.058333333333333334,
+        "specificity": 0.9779166666666667,
+        "missed_intent_rate": 0.9416666666666667,
+        "false_activation_rate_per_window": 0.022083333333333333,
+        "auroc": 0.7376446180555556,
+        "auprc": 0.6859477608387048,
+        "brier_score": 0.2130282942804164
+      },
+      "multisource": {
+        "rows": 4800,
+        "balanced_accuracy": 0.518125,
+        "sensitivity": 0.058333333333333334,
+        "specificity": 0.9779166666666667,
+        "missed_intent_rate": 0.9416666666666667,
+        "false_activation_rate_per_window": 0.022083333333333333,
+        "auroc": 0.7376446180555556,
+        "auprc": 0.6859477608387048,
+        "brier_score": 0.2130282942804164
+      }
+    },
+    "physionet": {
+      "target_only": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5336391437308868,
+        "sensitivity": 0.15086646279306828,
+        "specificity": 0.9164118246687054,
+        "missed_intent_rate": 0.8491335372069317,
+        "false_activation_rate_per_window": 0.0835881753312946,
+        "auroc": 0.6358591006909049,
+        "auprc": 0.611805042218082,
+        "brier_score": 0.24723916772582522
+      },
+      "mrcp_student": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5321100917431192,
+        "sensitivity": 0.15188583078491336,
+        "specificity": 0.9123343527013251,
+        "missed_intent_rate": 0.8481141692150866,
+        "false_activation_rate_per_window": 0.08766564729867482,
+        "auroc": 0.630245822513589,
+        "auprc": 0.6042347222343489,
+        "brier_score": 0.24731580315646431
+      },
+      "way_student": {
+        "rows": 1962,
+        "balanced_accuracy": 0.54638124362895,
+        "sensitivity": 0.17940876656472987,
+        "specificity": 0.9133537206931702,
+        "missed_intent_rate": 0.8205912334352702,
+        "false_activation_rate_per_window": 0.08664627930682976,
+        "auroc": 0.6564522045261603,
+        "auprc": 0.632943297504122,
+        "brier_score": 0.2398682705059072
+      },
+      "multisource": {
+        "rows": 1962,
+        "balanced_accuracy": 0.54638124362895,
+        "sensitivity": 0.17940876656472987,
+        "specificity": 0.9133537206931702,
+        "missed_intent_rate": 0.8205912334352702,
+        "false_activation_rate_per_window": 0.08664627930682976,
+        "auroc": 0.6564522045261603,
+        "auprc": 0.632943297504122,
+        "brier_score": 0.2398682705059072
+      }
+    }
+  },
+  "participant_analysis": {
+    "participants": 38,
+    "mean_balanced_accuracy_delta": 0.009242296446243822,
+    "median_balanced_accuracy_delta": 0.004375000000000073,
+    "bootstrap_95_ci": [
+      0.0036816520467836426,
+      0.015010971941070634
+    ],
+    "participants_improved_fraction": 0.5263157894736842,
+    "bootstrap_iterations": 2000,
+    "records": [
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S006",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5458333333333333,
+        "multisource_balanced_accuracy": 0.5583333333333333,
+        "balanced_accuracy_delta": 0.012500000000000067,
+        "target_only_sensitivity": 0.425,
+        "multisource_sensitivity": 0.45
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S022",
+        "rows": 80,
+        "target_only_balanced_accuracy": 0.6125,
+        "multisource_balanced_accuracy": 0.6125,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.25,
+        "multisource_sensitivity": 0.25
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S025",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.610897435897436,
+        "multisource_balanced_accuracy": 0.610897435897436,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.35,
+        "multisource_sensitivity": 0.35
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S027",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5746794871794871,
+        "multisource_balanced_accuracy": 0.5621794871794872,
+        "balanced_accuracy_delta": -0.012499999999999956,
+        "target_only_sensitivity": 0.175,
+        "multisource_sensitivity": 0.15
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S031",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5246794871794872,
+        "multisource_balanced_accuracy": 0.5371794871794872,
+        "balanced_accuracy_delta": 0.012499999999999956,
+        "target_only_sensitivity": 0.075,
+        "multisource_sensitivity": 0.1
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S034",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5368589743589743,
+        "multisource_balanced_accuracy": 0.5368589743589743,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.125,
+        "multisource_sensitivity": 0.125
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S036",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5246794871794872,
+        "multisource_balanced_accuracy": 0.5368589743589743,
+        "balanced_accuracy_delta": 0.012179487179487136,
+        "target_only_sensitivity": 0.075,
+        "multisource_sensitivity": 0.125
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S040",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.5830128205128206,
+        "multisource_balanced_accuracy": 0.6080128205128206,
+        "balanced_accuracy_delta": 0.025000000000000022,
+        "target_only_sensitivity": 0.525,
+        "multisource_sensitivity": 0.575
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S048",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.4740384615384616,
+        "multisource_balanced_accuracy": 0.49903846153846154,
+        "balanced_accuracy_delta": 0.024999999999999967,
+        "target_only_sensitivity": 0.025,
+        "multisource_sensitivity": 0.075
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S050",
+        "rows": 79,
+        "target_only_balanced_accuracy": 0.4967948717948718,
+        "multisource_balanced_accuracy": 0.5217948717948718,
+        "balanced_accuracy_delta": 0.025000000000000022,
+        "target_only_sensitivity": 0.25,
+        "multisource_sensitivity": 0.3
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S009",
+        "rows": 800,
+        "target_only_balanced_accuracy": 0.5237499999999999,
+        "multisource_balanced_accuracy": 0.52625,
+        "balanced_accuracy_delta": 0.0025000000000000577,
+        "target_only_sensitivity": 0.0725,
+        "multisource_sensitivity": 0.0775
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S036",
+        "rows": 800,
+        "target_only_balanced_accuracy": 0.515,
+        "multisource_balanced_accuracy": 0.51,
+        "balanced_accuracy_delta": -0.0050000000000000044,
+        "target_only_sensitivity": 0.04,
+        "multisource_sensitivity": 0.04
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S042",
+        "rows": 800,
+        "target_only_balanced_accuracy": 0.53125,
+        "multisource_balanced_accuracy": 0.52125,
+        "balanced_accuracy_delta": -0.010000000000000009,
+        "target_only_sensitivity": 0.09,
+        "multisource_sensitivity": 0.0675
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S047",
+        "rows": 800,
+        "target_only_balanced_accuracy": 0.52875,
+        "multisource_balanced_accuracy": 0.51,
+        "balanced_accuracy_delta": -0.018750000000000044,
+        "target_only_sensitivity": 0.0675,
+        "multisource_sensitivity": 0.0275
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S049",
+        "rows": 800,
+        "target_only_balanced_accuracy": 0.53375,
+        "multisource_balanced_accuracy": 0.5325,
+        "balanced_accuracy_delta": -0.0012499999999999734,
+        "target_only_sensitivity": 0.1075,
+        "multisource_sensitivity": 0.1075
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S052",
+        "rows": 800,
+        "target_only_balanced_accuracy": 0.5025,
+        "multisource_balanced_accuracy": 0.50875,
+        "balanced_accuracy_delta": 0.006250000000000089,
+        "target_only_sensitivity": 0.025,
+        "multisource_sensitivity": 0.03
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S005",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.4888888888888889,
+        "multisource_balanced_accuracy": 0.4888888888888889,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.0,
+        "multisource_sensitivity": 0.044444444444444446
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S007",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5,
+        "multisource_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.0,
+        "multisource_sensitivity": 0.0
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S010",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5777777777777777,
+        "multisource_balanced_accuracy": 0.5888888888888889,
+        "balanced_accuracy_delta": 0.011111111111111183,
+        "target_only_sensitivity": 0.37777777777777777,
+        "multisource_sensitivity": 0.4
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S020",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.611111111111111,
+        "multisource_balanced_accuracy": 0.6555555555555556,
+        "balanced_accuracy_delta": 0.04444444444444451,
+        "target_only_sensitivity": 0.3333333333333333,
+        "multisource_sensitivity": 0.4222222222222222
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S021",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5222222222222223,
+        "multisource_balanced_accuracy": 0.5333333333333333,
+        "balanced_accuracy_delta": 0.011111111111111072,
+        "target_only_sensitivity": 0.06666666666666667,
+        "multisource_sensitivity": 0.06666666666666667
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S025",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5,
+        "multisource_balanced_accuracy": 0.5555555555555556,
+        "balanced_accuracy_delta": 0.05555555555555558,
+        "target_only_sensitivity": 0.044444444444444446,
+        "multisource_sensitivity": 0.13333333333333333
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S036",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5777777777777777,
+        "multisource_balanced_accuracy": 0.6222222222222222,
+        "balanced_accuracy_delta": 0.04444444444444451,
+        "target_only_sensitivity": 0.17777777777777778,
+        "multisource_sensitivity": 0.26666666666666666
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S044",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5333333333333333,
+        "multisource_balanced_accuracy": 0.5555555555555556,
+        "balanced_accuracy_delta": 0.022222222222222254,
+        "target_only_sensitivity": 0.08888888888888889,
+        "multisource_sensitivity": 0.15555555555555556
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S047",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.45555555555555555,
+        "multisource_balanced_accuracy": 0.4444444444444445,
+        "balanced_accuracy_delta": -0.011111111111111072,
+        "target_only_sensitivity": 0.15555555555555556,
+        "multisource_sensitivity": 0.08888888888888889
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S048",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5888888888888889,
+        "multisource_balanced_accuracy": 0.611111111111111,
+        "balanced_accuracy_delta": 0.022222222222222143,
+        "target_only_sensitivity": 0.17777777777777778,
+        "multisource_sensitivity": 0.24444444444444444
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S054",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5555555555555556,
+        "multisource_balanced_accuracy": 0.5666666666666667,
+        "balanced_accuracy_delta": 0.011111111111111072,
+        "target_only_sensitivity": 0.1111111111111111,
+        "multisource_sensitivity": 0.13333333333333333
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S058",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5444444444444444,
+        "multisource_balanced_accuracy": 0.5555555555555556,
+        "balanced_accuracy_delta": 0.011111111111111183,
+        "target_only_sensitivity": 0.08888888888888889,
+        "multisource_sensitivity": 0.13333333333333333
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S061",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5222222222222223,
+        "multisource_balanced_accuracy": 0.5222222222222223,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.06666666666666667,
+        "multisource_sensitivity": 0.06666666666666667
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S065",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5888888888888889,
+        "multisource_balanced_accuracy": 0.5777777777777778,
+        "balanced_accuracy_delta": -0.011111111111111072,
+        "target_only_sensitivity": 0.2,
+        "multisource_sensitivity": 0.2
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S073",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5222222222222223,
+        "multisource_balanced_accuracy": 0.5333333333333333,
+        "balanced_accuracy_delta": 0.011111111111111072,
+        "target_only_sensitivity": 0.13333333333333333,
+        "multisource_sensitivity": 0.15555555555555556
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S076",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.4444444444444445,
+        "multisource_balanced_accuracy": 0.4777777777777778,
+        "balanced_accuracy_delta": 0.033333333333333326,
+        "target_only_sensitivity": 0.24444444444444444,
+        "multisource_sensitivity": 0.3111111111111111
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S081",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5,
+        "multisource_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.0,
+        "multisource_sensitivity": 0.0
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S095",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5888888888888889,
+        "multisource_balanced_accuracy": 0.6222222222222222,
+        "balanced_accuracy_delta": 0.033333333333333326,
+        "target_only_sensitivity": 0.6444444444444445,
+        "multisource_sensitivity": 0.7111111111111111
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S097",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5555555555555556,
+        "multisource_balanced_accuracy": 0.5555555555555556,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.1111111111111111,
+        "multisource_sensitivity": 0.1111111111111111
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S098",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5555555555555556,
+        "multisource_balanced_accuracy": 0.5444444444444444,
+        "balanced_accuracy_delta": -0.011111111111111183,
+        "target_only_sensitivity": 0.13333333333333333,
+        "multisource_sensitivity": 0.1111111111111111
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S100",
+        "rows": 72,
+        "target_only_balanced_accuracy": 0.5,
+        "multisource_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.0,
+        "multisource_sensitivity": 0.0
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S103",
+        "rows": 90,
+        "target_only_balanced_accuracy": 0.5,
+        "multisource_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": 0.0,
+        "target_only_sensitivity": 0.13333333333333333,
+        "multisource_sensitivity": 0.15555555555555556
+      }
+    ]
+  }
+}

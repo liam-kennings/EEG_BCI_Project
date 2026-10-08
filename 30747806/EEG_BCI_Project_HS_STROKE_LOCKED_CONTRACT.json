@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_eeg_inference",
+  "frozen_at": "2026-08-03",
+  "dataset": {
+    "name": "HS-Stroke Upper-limb Motor Imagery",
+    "release": "Figshare 30747806 v6",
+    "root": "EEG_BCI_Project/30747806",
+    "source_archive_sha256": "bcfebde5f177db510c2dbc854f122d685e84a6f19f343a124ad0cdb7fd21e07e",
+    "subjects": [
+      "sub-01", "sub-02", "sub-03", "sub-04", "sub-05", "sub-06", "sub-07",
+      "sub-08", "sub-09", "sub-10", "sub-11", "sub-12", "sub-13", "sub-14"
+    ],
+    "role": "locked_external",
+    "independent_subject_count": 14
+  },
+  "frozen_decoder": {
+    "name": "translational_v4_neural_integrated",
+    "model_sha256": "e2b46e947dc27c657c2499db04ffa7a1f21d8ee1d57e7da6e012cc8aa3e4a80d",
+    "training_dataset_fingerprint": "fad1be0352a2e543bc29ed3a9848734d3f4e0e26e3e785fb699f74faa02270d9",
+    "refitting_allowed": false,
+    "hs_stroke_calibration_allowed": false,
+    "threshold_selection_on_hs_stroke_allowed": false
+  },
+  "preprocessing": {
+    "input": "raw sourcedata MAT trials in volts",
+    "native_sampling_hz": 256,
+    "native_eeg_channels": 11,
+    "reference": "average after frozen automatic bad-channel repair",
+    "output_sampling_hz": 100,
+    "mrcp_band_hz": [0.1, 4.0],
+    "smr_band_hz": [7.0, 35.0],
+    "quality_band_hz": [1.0, 45.0],
+    "selected_channels": ["FC3", "FC4", "C3", "Cz", "C4", "CP3", "CP4"],
+    "maximum_bad_channel_fraction": 0.25,
+    "maximum_window_peak_to_peak_uv": 1000.0,
+    "manual_exclusions_allowed": false
+  },
+  "windows": {
+    "preparation_rest_seconds": [6.5, 8.5],
+    "motor_imagery_seconds": [9.5, 11.5],
+    "feedback_seconds": [13.0, 17.0],
+    "feedback_policy": "excluded",
+    "windows_per_trial": 2,
+    "rationale": "Match the frozen 2-second window and 0.5-second post-cue offset while avoiding transition and feedback leakage."
+  },
+  "labels": {
+    "rest": 0,
+    "motor_imagery_numeric_classes": [1, 2],
+    "direction_semantics_status": "provisional_pending_explicit_author_documentation",
+    "primary_binary_endpoint_affected_by_direction_mapping": false
+  },
+  "operating_points": {
+    "conservative_intent_threshold": 0.6100000000000001,
+    "sensitivity_targeted_intent_threshold": 0.5650000000000001,
+    "threshold_source": "frozen unseen-domain fallbacks",
+    "quality_gate": "frozen global availability gate"
+  },
+  "primary_endpoints": [
+    "intent_sensitivity_including_quality_abstentions_as_misses",
+    "preparation_specificity_including_quality_abstentions_as_no_command",
+    "intent_balanced_accuracy",
+    "false_activation_fraction_per_preparation_window",
+    "missed_intent_fraction",
+    "quality_availability_fraction"
+  ],
+  "secondary_endpoints": [
+    "numeric_direction_balanced_accuracy_on_available_imagery",
+    "numeric_direction_accuracy_on_issued_imagery_commands",
+    "wrong_direction_command_fraction",
+    "three_class_balanced_accuracy_with_abstention_as_no_command",
+    "subject_level_and_session_level_variability"
+  ],
+  "inference_rules": {
+    "riemann_reference": "reconstructed only from original frozen-development rows",
+    "individual_mu_for_external_subjects_hz": 10.0,
+    "probability_calibration": "frozen global calibration for unseen domains",
+    "bootstrap_unit": "participant",
+    "bootstrap_iterations": 2000,
+    "post_inference_model_or_threshold_changes_allowed": false
+  },
+  "limitations": [
+    "Preparation is structured cue-locked rest, not natural idle.",
+    "False activation is a fraction per preparation window and cannot be converted to false commands per minute.",
+    "Fourteen participants, not 23,382 trials, determine the independent clinical sample size.",
+    "Feedback is excluded because it can contain decoder-contingent visual information.",
+    "Direction class names remain provisional until numeric label semantics are explicitly verified."
+  ]
+}

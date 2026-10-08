@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "status": "frozen_for_future_locked_external_evaluation",
+  "claim_status": "development_observed_not_externally_confirmed",
+  "source_model": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/gui_experiments/translational_v4_neural_integrated/translational_v4_neural_models.joblib",
+  "frozen_model": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/prospective_cue_controller/frozen_model/translational_v4_neural_models.joblib",
+  "model_sha256": "e2b46e947dc27c657c2499db04ffa7a1f21d8ee1d57e7da6e012cc8aa3e4a80d",
+  "model_bytes": 209957,
+  "dataset_fingerprint": "fad1be0352a2e543bc29ed3a9848734d3f4e0e26e3e785fb699f74faa02270d9",
+  "preprocessing_profile": {
+    "sfreq": 100.0,
+    "mrcp_band_hz": [
+      0.1,
+      4.0
+    ],
+    "smr_band_hz": [
+      7.0,
+      35.0
+    ],
+    "quality_band_hz": [
+      1.0,
+      45.0
+    ],
+    "filter_order": 4,
+    "phase": "zero",
+    "reference": "average_after_bad_channel_repair",
+    "montage": "standard_1005",
+    "max_bad_channel_fraction": 0.25,
+    "selected_motor_channels": [
+      "FC3",
+      "FC4",
+      "C3",
+      "Cz",
+      "C4",
+      "CP3",
+      "CP4"
+    ],
+    "compute_csd": true,
+    "profile_version": 3
+  },
+  "stage_specific_fusion": {
+    "intent_weights": {
+      "mrcp_fbcnet": 0.6,
+      "riemann": 0.25,
+      "smr": 0.15
+    },
+    "direction_weights": {
+      "riemann": 0.5,
+      "fbcsp": 0.3,
+      "mrcp": 0.2
+    },
+    "selection_scores": {
+      "mean_domain_intent_auroc": 0.8027148635477582,
+      "mean_domain_direction_balanced_accuracy": 0.6227469050044766
+    }
+  },
+  "calibrated_thresholds": {
+    "conservative": {
+      "physionet": 0.685,
+      "openbmi": 0.6000000000000001,
+      "liu2024": 0.685
+    },
+    "conservative_fallback": 0.6100000000000001,
+    "sensitivity_targeted": {
+      "physionet": 0.545,
+      "openbmi": 0.5700000000000001,
+      "liu2024": 0.495
+    },
+    "sensitivity_targeted_fallback": 0.5650000000000001
+  },
+  "patient_calibration_thresholds": {
+    "conservative": {
+      "physionet": 0.6150000000000001,
+      "openbmi": 0.64,
+      "liu2024": 0.63
+    },
+    "sensitivity_targeted": {
+      "physionet": 0.555,
+      "openbmi": 0.655,
+      "liu2024": 0.555
+    }
+  },
+  "neural_models": [
+    {
+      "seed": 42,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/prospective_cue_controller/frozen_model/mrcp_fbcnet_seed_42.pt",
+      "sha256": "449797a7fa7e90ce92573a323f07bbb171471434de12f55318b4270de56c195f",
+      "bytes": 82002
+    },
+    {
+      "seed": 43,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/prospective_cue_controller/frozen_model/mrcp_fbcnet_seed_43.pt",
+      "sha256": "fdebf4459ab9f5ee248802ae89e0ce80053f87df63a9fabaab0e978d802822d2",
+      "bytes": 82002
+    },
+    {
+      "seed": 44,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/prospective_cue_controller/frozen_model/mrcp_fbcnet_seed_44.pt",
+      "sha256": "634894e0ba1a223d2e003465391ecfd6616144216e69eb1025b6b08d34940d6d",
+      "bytes": 82002
+    },
+    {
+      "seed": 45,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/prospective_cue_controller/frozen_model/mrcp_fbcnet_seed_45.pt",
+      "sha256": "5f2725e42987d8dacb470cba7f9282e6638dcff098a2a4ce6e5a65f13c92331e",
+      "bytes": 82002
+    },
+    {
+      "seed": 46,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/prospective_cue_controller/frozen_model/mrcp_fbcnet_seed_46.pt",
+      "sha256": "a6dec062540fa83319d525277f2b5ef2e8dab9cbfb28d03d87b65166ee38b6dd",
+      "bytes": 82002
+    }
+  ],
+  "locked_external_subjects": [],
+  "tamper_check": "Recompute every SHA-256 before external inference. Any mismatch invalidates the frozen evaluation contract."
+}

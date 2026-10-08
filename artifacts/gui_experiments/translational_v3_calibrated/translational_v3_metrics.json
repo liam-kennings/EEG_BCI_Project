@@ -1,0 +1,3135 @@
+{
+  "schema_version": 4,
+  "experiment": "translational_motor_intent_v3_calibrated",
+  "confirmatory_status": {
+    "current_test_role": "development_observed",
+    "locked_external_available": false,
+    "claim_bearing_result_available": false
+  },
+  "preprocessing": {
+    "sfreq": 100.0,
+    "mrcp_band_hz": [
+      0.1,
+      4.0
+    ],
+    "smr_band_hz": [
+      7.0,
+      35.0
+    ],
+    "quality_band_hz": [
+      1.0,
+      45.0
+    ],
+    "filter_order": 4,
+    "phase": "zero",
+    "reference": "average_after_bad_channel_repair",
+    "montage": "standard_1005",
+    "max_bad_channel_fraction": 0.25,
+    "selected_motor_channels": [
+      "FC3",
+      "FC4",
+      "C3",
+      "Cz",
+      "C4",
+      "CP3",
+      "CP4"
+    ],
+    "compute_csd": true,
+    "profile_version": 3
+  },
+  "dataset": {
+    "rows": 36903,
+    "subjects": 187,
+    "datasets": {
+      "liu2024": {
+        "subjects": 49,
+        "rows": 3867,
+        "negative_kinds": [
+          "protocol_break"
+        ]
+      },
+      "openbmi": {
+        "subjects": 29,
+        "rows": 23200,
+        "negative_kinds": [
+          "post_task_rest"
+        ]
+      },
+      "physionet": {
+        "subjects": 109,
+        "rows": 9836,
+        "negative_kinds": [
+          "protocol_rest"
+        ]
+      }
+    },
+    "fingerprint": "fad1be0352a2e543bc29ed3a9848734d3f4e0e26e3e785fb699f74faa02270d9",
+    "quality_control": {
+      "accepted_recordings": 492,
+      "excluded_recordings_or_subjects": 1,
+      "excluded_subjects": [
+        "liu2024:S013"
+      ],
+      "exclusions": [
+        {
+          "dataset": "liu2024",
+          "subject": "liu2024:S013",
+          "path": "/Users/LiamKennings_1/Documents/BME 473/Liu acute-stroke dataset/edffile/sub-13/eeg/sub-13_task-motor-imagery_eeg.edf",
+          "exclusion_scope": "subject",
+          "status": "rejected",
+          "error_type": "RecordingQualityError",
+          "reason": "Recording rejected before referencing: 12/29 bad EEG channels.",
+          "bad_channels": [
+            "Fz",
+            "F8",
+            "FCz",
+            "FC3",
+            "FC4",
+            "Cz",
+            "C4",
+            "T3",
+            "T4",
+            "Pz",
+            "P4",
+            "O1"
+          ],
+          "bad_channel_count": 12,
+          "bad_channel_fraction": 0.41379310344827586,
+          "median_rms_uv": 92.05606248090292,
+          "maximum_rms_uv": 488.06898242087436,
+          "median_high_frequency_ratio": 0.1286232466197165,
+          "maximum_high_frequency_ratio": 0.13604100459887497,
+          "median_line_ratio": 2.524146360045836e-06,
+          "maximum_line_ratio": 8.976077314458352e-05,
+          "minimum_channel_correlation": 0.35868621377164656,
+          "maximum_flat_fraction": 0.4084275526722042,
+          "qc_before_reference": true,
+          "native_channel_count": 29,
+          "native_sampling_hz": 500.0,
+          "montage_available": true
+        }
+      ]
+    }
+  },
+  "subject_roles": {
+    "liu2024": {
+      "development": [
+        "liu2024:S001",
+        "liu2024:S002",
+        "liu2024:S003",
+        "liu2024:S004",
+        "liu2024:S007",
+        "liu2024:S009",
+        "liu2024:S010",
+        "liu2024:S011",
+        "liu2024:S012",
+        "liu2024:S014",
+        "liu2024:S015",
+        "liu2024:S016",
+        "liu2024:S017",
+        "liu2024:S018",
+        "liu2024:S021",
+        "liu2024:S023",
+        "liu2024:S024",
+        "liu2024:S026",
+        "liu2024:S028",
+        "liu2024:S030",
+        "liu2024:S032",
+        "liu2024:S033",
+        "liu2024:S035",
+        "liu2024:S037",
+        "liu2024:S038",
+        "liu2024:S042",
+        "liu2024:S043",
+        "liu2024:S044",
+        "liu2024:S045",
+        "liu2024:S047",
+        "liu2024:S049"
+      ],
+      "controller_validation": [
+        "liu2024:S005",
+        "liu2024:S008",
+        "liu2024:S019",
+        "liu2024:S020",
+        "liu2024:S029",
+        "liu2024:S039",
+        "liu2024:S041",
+        "liu2024:S046"
+      ],
+      "development_observed": [
+        "liu2024:S006",
+        "liu2024:S022",
+        "liu2024:S025",
+        "liu2024:S027",
+        "liu2024:S031",
+        "liu2024:S034",
+        "liu2024:S036",
+        "liu2024:S040",
+        "liu2024:S048",
+        "liu2024:S050"
+      ],
+      "locked_external": []
+    },
+    "openbmi": {
+      "development": [
+        "openbmi:S004",
+        "openbmi:S005",
+        "openbmi:S006",
+        "openbmi:S007",
+        "openbmi:S008",
+        "openbmi:S032",
+        "openbmi:S033",
+        "openbmi:S034",
+        "openbmi:S037",
+        "openbmi:S038",
+        "openbmi:S039",
+        "openbmi:S040",
+        "openbmi:S041",
+        "openbmi:S043",
+        "openbmi:S044",
+        "openbmi:S048",
+        "openbmi:S051",
+        "openbmi:S054"
+      ],
+      "controller_validation": [
+        "openbmi:S035",
+        "openbmi:S045",
+        "openbmi:S046",
+        "openbmi:S050",
+        "openbmi:S053"
+      ],
+      "development_observed": [
+        "openbmi:S009",
+        "openbmi:S036",
+        "openbmi:S042",
+        "openbmi:S047",
+        "openbmi:S049",
+        "openbmi:S052"
+      ],
+      "locked_external": []
+    },
+    "physionet": {
+      "development": [
+        "physionet:S001",
+        "physionet:S002",
+        "physionet:S004",
+        "physionet:S006",
+        "physionet:S008",
+        "physionet:S009",
+        "physionet:S011",
+        "physionet:S012",
+        "physionet:S014",
+        "physionet:S015",
+        "physionet:S016",
+        "physionet:S017",
+        "physionet:S018",
+        "physionet:S022",
+        "physionet:S023",
+        "physionet:S024",
+        "physionet:S026",
+        "physionet:S027",
+        "physionet:S028",
+        "physionet:S030",
+        "physionet:S031",
+        "physionet:S032",
+        "physionet:S034",
+        "physionet:S035",
+        "physionet:S037",
+        "physionet:S038",
+        "physionet:S039",
+        "physionet:S041",
+        "physionet:S042",
+        "physionet:S043",
+        "physionet:S045",
+        "physionet:S046",
+        "physionet:S049",
+        "physionet:S051",
+        "physionet:S052",
+        "physionet:S053",
+        "physionet:S055",
+        "physionet:S056",
+        "physionet:S057",
+        "physionet:S059",
+        "physionet:S060",
+        "physionet:S062",
+        "physionet:S063",
+        "physionet:S064",
+        "physionet:S066",
+        "physionet:S068",
+        "physionet:S069",
+        "physionet:S070",
+        "physionet:S072",
+        "physionet:S075",
+        "physionet:S077",
+        "physionet:S078",
+        "physionet:S079",
+        "physionet:S080",
+        "physionet:S083",
+        "physionet:S084",
+        "physionet:S085",
+        "physionet:S086",
+        "physionet:S087",
+        "physionet:S088",
+        "physionet:S090",
+        "physionet:S092",
+        "physionet:S093",
+        "physionet:S094",
+        "physionet:S096",
+        "physionet:S099",
+        "physionet:S101",
+        "physionet:S104",
+        "physionet:S106",
+        "physionet:S109"
+      ],
+      "controller_validation": [
+        "physionet:S003",
+        "physionet:S013",
+        "physionet:S019",
+        "physionet:S029",
+        "physionet:S033",
+        "physionet:S040",
+        "physionet:S050",
+        "physionet:S067",
+        "physionet:S071",
+        "physionet:S074",
+        "physionet:S082",
+        "physionet:S089",
+        "physionet:S091",
+        "physionet:S102",
+        "physionet:S105",
+        "physionet:S107",
+        "physionet:S108"
+      ],
+      "development_observed": [
+        "physionet:S005",
+        "physionet:S007",
+        "physionet:S010",
+        "physionet:S020",
+        "physionet:S021",
+        "physionet:S025",
+        "physionet:S036",
+        "physionet:S044",
+        "physionet:S047",
+        "physionet:S048",
+        "physionet:S054",
+        "physionet:S058",
+        "physionet:S061",
+        "physionet:S065",
+        "physionet:S073",
+        "physionet:S076",
+        "physionet:S081",
+        "physionet:S095",
+        "physionet:S097",
+        "physionet:S098",
+        "physionet:S100",
+        "physionet:S103"
+      ],
+      "locked_external": []
+    }
+  },
+  "feature_metadata": {
+    "mrcp_band_hz": [
+      0.1,
+      4.0
+    ],
+    "smr_filter_bank": [
+      [
+        "mu_low",
+        7.0,
+        10.0
+      ],
+      [
+        "mu_high",
+        10.0,
+        14.0
+      ],
+      [
+        "beta_low",
+        14.0,
+        22.0
+      ],
+      [
+        "beta_high",
+        22.0,
+        30.0
+      ]
+    ],
+    "individual_mu_reference": "explicit calibration rows only",
+    "riemann": {
+      "alignment": "none",
+      "alignment_reference": "calibration recording only",
+      "alignment_groups": 0,
+      "feature_count": 112
+    },
+    "quality_branch_role": "availability gate only"
+  },
+  "quality_gate": {
+    "rejection_quantile": 0.99,
+    "threshold": 301511.3446524719,
+    "available_fraction": 0.989133674768989
+  },
+  "methods": {
+    "mrcp": {
+      "threshold": 0.6250000000000001,
+      "threshold_selection_basis": "cue_locked_window_fallback",
+      "controller_continuous_no_control": null,
+      "controller_validation": {
+        "rows": 3822,
+        "intent_threshold": 0.6250000000000001,
+        "intent_balanced_accuracy": 0.6212138596157348,
+        "intent_sensitivity": 0.3362924281984334,
+        "intent_specificity": 0.9061352910330361,
+        "false_activation_rate_per_window": 0.09386470896696382,
+        "missed_intent_rate": 0.6637075718015666,
+        "available_fraction": 0.9790685504971219,
+        "abstained_fraction": 0.020931449502878074,
+        "conditional_direction_accuracy": 0.6785714285714286,
+        "conditional_direction_balanced_accuracy": 0.6814436002337814,
+        "intent_auroc": 0.7623196660373147,
+        "intent_auprc": 0.7207728574347618,
+        "intent_brier_score": 0.21267235261269465,
+        "intent_expected_calibration_error": 0.10737985946876177,
+        "continuous_false_activations_per_minute": "not_evaluated"
+      },
+      "controller_validation_by_dataset": {
+        "physionet": {
+          "rows": 510,
+          "intent_threshold": 0.6250000000000001,
+          "intent_balanced_accuracy": 0.5862745098039216,
+          "intent_sensitivity": 0.24705882352941178,
+          "intent_specificity": 0.9254901960784314,
+          "false_activation_rate_per_window": 0.07450980392156863,
+          "missed_intent_rate": 0.7529411764705882,
+          "available_fraction": 0.9686274509803922,
+          "abstained_fraction": 0.03137254901960784,
+          "conditional_direction_accuracy": 0.746031746031746,
+          "conditional_direction_balanced_accuracy": 0.7459677419354839,
+          "intent_auroc": 0.7018992695117262,
+          "intent_auprc": 0.6857096833922642,
+          "intent_brier_score": 0.22575186505183104,
+          "intent_expected_calibration_error": 0.06670587918057021,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "openbmi": {
+          "rows": 3000,
+          "intent_threshold": 0.6250000000000001,
+          "intent_balanced_accuracy": 0.6353333333333333,
+          "intent_sensitivity": 0.36666666666666664,
+          "intent_specificity": 0.904,
+          "false_activation_rate_per_window": 0.096,
+          "missed_intent_rate": 0.6333333333333333,
+          "available_fraction": 0.9786666666666667,
+          "abstained_fraction": 0.021333333333333333,
+          "conditional_direction_accuracy": 0.6818181818181818,
+          "conditional_direction_balanced_accuracy": 0.685752688172043,
+          "intent_auroc": 0.7938826666666666,
+          "intent_auprc": 0.7464586131667226,
+          "intent_brier_score": 0.20649617420248492,
+          "intent_expected_calibration_error": 0.1308356379398072,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "liu2024": {
+          "rows": 312,
+          "intent_threshold": 0.6250000000000001,
+          "intent_balanced_accuracy": 0.5442434210526316,
+          "intent_sensitivity": 0.19375,
+          "intent_specificity": 0.8947368421052632,
+          "false_activation_rate_per_window": 0.10526315789473684,
+          "missed_intent_rate": 0.80625,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.4838709677419355,
+          "conditional_direction_balanced_accuracy": 0.4700854700854701,
+          "intent_auroc": 0.5763980263157894,
+          "intent_auprc": 0.5812693066522998,
+          "intent_brier_score": 0.2506787112238152,
+          "intent_expected_calibration_error": 0.05618895603908068,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      },
+      "development_observed": {
+        "rows": 4645,
+        "intent_threshold": 0.6250000000000001,
+        "intent_balanced_accuracy": 0.6028279457899965,
+        "intent_sensitivity": 0.25440481306403095,
+        "intent_specificity": 0.951251078515962,
+        "false_activation_rate_per_window": 0.04874892148403796,
+        "missed_intent_rate": 0.745595186935969,
+        "available_fraction": 0.995048439181916,
+        "abstained_fraction": 0.0049515608180839615,
+        "conditional_direction_accuracy": 0.6452702702702703,
+        "conditional_direction_balanced_accuracy": 0.6404551317486641,
+        "intent_auroc": 0.7781243777792528,
+        "intent_auprc": 0.7513853241262063,
+        "intent_brier_score": 0.20721365557901902,
+        "intent_expected_calibration_error": 0.10653965724422883,
+        "continuous_false_activations_per_minute": "not_evaluated"
+      },
+      "development_observed_by_dataset": {
+        "physionet": {
+          "rows": 654,
+          "intent_threshold": 0.6250000000000001,
+          "intent_balanced_accuracy": 0.5795107033639144,
+          "intent_sensitivity": 0.21712538226299694,
+          "intent_specificity": 0.9418960244648318,
+          "false_activation_rate_per_window": 0.0581039755351682,
+          "missed_intent_rate": 0.7828746177370031,
+          "available_fraction": 0.9892966360856269,
+          "abstained_fraction": 0.010703363914373088,
+          "conditional_direction_accuracy": 0.676056338028169,
+          "conditional_direction_balanced_accuracy": 0.6796502384737679,
+          "intent_auroc": 0.6844728745242169,
+          "intent_auprc": 0.6858691224383705,
+          "intent_brier_score": 0.23179413516544983,
+          "intent_expected_calibration_error": 0.06252219684661045,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "openbmi": {
+          "rows": 3600,
+          "intent_threshold": 0.6250000000000001,
+          "intent_balanced_accuracy": 0.6138888888888889,
+          "intent_sensitivity": 0.26166666666666666,
+          "intent_specificity": 0.9661111111111111,
+          "false_activation_rate_per_window": 0.03388888888888889,
+          "missed_intent_rate": 0.7383333333333333,
+          "available_fraction": 0.9955555555555555,
+          "abstained_fraction": 0.0044444444444444444,
+          "conditional_direction_accuracy": 0.6539278131634819,
+          "conditional_direction_balanced_accuracy": 0.6459791170544056,
+          "intent_auroc": 0.8198756172839506,
+          "intent_auprc": 0.8014791663618939,
+          "intent_brier_score": 0.19645176338469247,
+          "intent_expected_calibration_error": 0.1426961886526057,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "liu2024": {
+          "rows": 391,
+          "intent_threshold": 0.6250000000000001,
+          "intent_balanced_accuracy": 0.5386125654450262,
+          "intent_sensitivity": 0.25,
+          "intent_specificity": 0.8272251308900523,
+          "false_activation_rate_per_window": 0.17277486910994763,
+          "missed_intent_rate": 0.75,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.52,
+          "conditional_direction_balanced_accuracy": 0.52,
+          "intent_auroc": 0.5073821989528795,
+          "intent_auprc": 0.5442013986108898,
+          "intent_brier_score": 0.2651859784691719,
+          "intent_expected_calibration_error": 0.11081036403646749,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      },
+      "development_observed_continuous_no_control": "not_evaluated_no_continuous_negative_recording"
+    },
+    "smr": {
+      "threshold": 0.7450000000000001,
+      "threshold_selection_basis": "cue_locked_window_fallback",
+      "controller_continuous_no_control": null,
+      "controller_validation": {
+        "rows": 3822,
+        "intent_threshold": 0.7450000000000001,
+        "intent_balanced_accuracy": 0.615458781101918,
+        "intent_sensitivity": 0.3300261096605744,
+        "intent_specificity": 0.9008914525432616,
+        "false_activation_rate_per_window": 0.09910854745673833,
+        "missed_intent_rate": 0.6699738903394257,
+        "available_fraction": 0.9790685504971219,
+        "abstained_fraction": 0.020931449502878074,
+        "conditional_direction_accuracy": 0.5506329113924051,
+        "conditional_direction_balanced_accuracy": 0.5530643948884991,
+        "intent_auroc": 0.7276218850161764,
+        "intent_auprc": 0.7164874681928093,
+        "intent_brier_score": 0.21195807594567798,
+        "intent_expected_calibration_error": 0.04863338571542271,
+        "continuous_false_activations_per_minute": "not_evaluated"
+      },
+      "controller_validation_by_dataset": {
+        "physionet": {
+          "rows": 510,
+          "intent_threshold": 0.7450000000000001,
+          "intent_balanced_accuracy": 0.5019607843137255,
+          "intent_sensitivity": 0.00784313725490196,
+          "intent_specificity": 0.996078431372549,
+          "false_activation_rate_per_window": 0.00392156862745098,
+          "missed_intent_rate": 0.9921568627450981,
+          "available_fraction": 0.9686274509803922,
+          "abstained_fraction": 0.03137254901960784,
+          "conditional_direction_accuracy": 1.0,
+          "conditional_direction_balanced_accuracy": "not_evaluable_single_class",
+          "intent_auroc": 0.5678892733564014,
+          "intent_auprc": 0.5536245857286687,
+          "intent_brier_score": 0.24754592891163316,
+          "intent_expected_calibration_error": 0.04105540846473566,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "openbmi": {
+          "rows": 3000,
+          "intent_threshold": 0.7450000000000001,
+          "intent_balanced_accuracy": 0.6423333333333333,
+          "intent_sensitivity": 0.4066666666666667,
+          "intent_specificity": 0.878,
+          "false_activation_rate_per_window": 0.122,
+          "missed_intent_rate": 0.5933333333333333,
+          "available_fraction": 0.9786666666666667,
+          "abstained_fraction": 0.021333333333333333,
+          "conditional_direction_accuracy": 0.5557377049180328,
+          "conditional_direction_balanced_accuracy": 0.5585418348130212,
+          "intent_auroc": 0.7582226666666667,
+          "intent_auprc": 0.7395102181733879,
+          "intent_brier_score": 0.20271835830024867,
+          "intent_expected_calibration_error": 0.05265644376758501,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "liu2024": {
+          "rows": 312,
+          "intent_threshold": 0.7450000000000001,
+          "intent_balanced_accuracy": 0.5460526315789473,
+          "intent_sensitivity": 0.125,
+          "intent_specificity": 0.9671052631578947,
+          "false_activation_rate_per_window": 0.03289473684210526,
+          "missed_intent_rate": 0.875,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.35,
+          "conditional_direction_balanced_accuracy": 0.3125,
+          "intent_auroc": 0.6189967105263158,
+          "intent_auprc": 0.6479165103582365,
+          "intent_brier_score": 0.2426290628804558,
+          "intent_expected_calibration_error": 0.08688557715538382,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      },
+      "development_observed": {
+        "rows": 4645,
+        "intent_threshold": 0.7450000000000001,
+        "intent_balanced_accuracy": 0.5491432495375406,
+        "intent_sensitivity": 0.13021057155135368,
+        "intent_specificity": 0.9680759275237274,
+        "false_activation_rate_per_window": 0.03192407247627265,
+        "missed_intent_rate": 0.8697894284486463,
+        "available_fraction": 0.995048439181916,
+        "abstained_fraction": 0.0049515608180839615,
+        "conditional_direction_accuracy": 0.6534653465346535,
+        "conditional_direction_balanced_accuracy": 0.6552403467297084,
+        "intent_auroc": 0.7005505761416511,
+        "intent_auprc": 0.6866492131514346,
+        "intent_brier_score": 0.2192807213522057,
+        "intent_expected_calibration_error": 0.010442530416918524,
+        "continuous_false_activations_per_minute": "not_evaluated"
+      },
+      "development_observed_by_dataset": {
+        "physionet": {
+          "rows": 654,
+          "intent_threshold": 0.7450000000000001,
+          "intent_balanced_accuracy": 0.5,
+          "intent_sensitivity": 0.0030581039755351682,
+          "intent_specificity": 0.9969418960244648,
+          "false_activation_rate_per_window": 0.0030581039755351682,
+          "missed_intent_rate": 0.9969418960244648,
+          "available_fraction": 0.9892966360856269,
+          "abstained_fraction": 0.010703363914373088,
+          "conditional_direction_accuracy": 1.0,
+          "conditional_direction_balanced_accuracy": "not_evaluable_single_class",
+          "intent_auroc": 0.5843129553254963,
+          "intent_auprc": 0.5638724546956091,
+          "intent_brier_score": 0.24702483084250534,
+          "intent_expected_calibration_error": 0.059030161370542164,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "openbmi": {
+          "rows": 3600,
+          "intent_threshold": 0.7450000000000001,
+          "intent_balanced_accuracy": 0.5611111111111111,
+          "intent_sensitivity": 0.15833333333333333,
+          "intent_specificity": 0.9638888888888889,
+          "false_activation_rate_per_window": 0.03611111111111111,
+          "missed_intent_rate": 0.8416666666666667,
+          "available_fraction": 0.9955555555555555,
+          "abstained_fraction": 0.0044444444444444444,
+          "conditional_direction_accuracy": 0.6526315789473685,
+          "conditional_direction_balanced_accuracy": 0.6545169946332736,
+          "intent_auroc": 0.7170938271604939,
+          "intent_auprc": 0.7021464230821612,
+          "intent_brier_score": 0.21436332916478756,
+          "intent_expected_calibration_error": 0.010491295779028381,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "liu2024": {
+          "rows": 391,
+          "intent_threshold": 0.7450000000000001,
+          "intent_balanced_accuracy": 0.5215575916230366,
+          "intent_sensitivity": 0.085,
+          "intent_specificity": 0.9581151832460733,
+          "false_activation_rate_per_window": 0.041884816753926704,
+          "missed_intent_rate": 0.915,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.6470588235294118,
+          "conditional_direction_balanced_accuracy": 0.6136363636363636,
+          "intent_auroc": 0.7088481675392669,
+          "intent_auprc": 0.6855313987405631,
+          "intent_brier_score": 0.21815019518353418,
+          "intent_expected_calibration_error": 0.03775542273527131,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      },
+      "development_observed_continuous_no_control": "not_evaluated_no_continuous_negative_recording"
+    },
+    "riemann": {
+      "threshold": 0.7000000000000001,
+      "threshold_selection_basis": "cue_locked_window_fallback",
+      "controller_continuous_no_control": null,
+      "controller_validation": {
+        "rows": 3822,
+        "intent_threshold": 0.7000000000000001,
+        "intent_balanced_accuracy": 0.5935321428131345,
+        "intent_sensitivity": 0.2835509138381201,
+        "intent_specificity": 0.903513371788149,
+        "false_activation_rate_per_window": 0.09648662821185107,
+        "missed_intent_rate": 0.71644908616188,
+        "available_fraction": 0.9790685504971219,
+        "abstained_fraction": 0.020931449502878074,
+        "conditional_direction_accuracy": 0.6114180478821363,
+        "conditional_direction_balanced_accuracy": 0.6150280936999539,
+        "intent_auroc": 0.7576861939179689,
+        "intent_auprc": 0.7194417410210602,
+        "intent_brier_score": 0.19849864193338665,
+        "intent_expected_calibration_error": 0.04061334446746958,
+        "continuous_false_activations_per_minute": "not_evaluated"
+      },
+      "controller_validation_by_dataset": {
+        "physionet": {
+          "rows": 510,
+          "intent_threshold": 0.7000000000000001,
+          "intent_balanced_accuracy": 0.5137254901960784,
+          "intent_sensitivity": 0.050980392156862744,
+          "intent_specificity": 0.9764705882352941,
+          "false_activation_rate_per_window": 0.023529411764705882,
+          "missed_intent_rate": 0.9490196078431372,
+          "available_fraction": 0.9686274509803922,
+          "abstained_fraction": 0.03137254901960784,
+          "conditional_direction_accuracy": 0.6923076923076923,
+          "conditional_direction_balanced_accuracy": 0.6785714285714286,
+          "intent_auroc": 0.5920645905420991,
+          "intent_auprc": 0.5787035220864337,
+          "intent_brier_score": 0.24879319075432402,
+          "intent_expected_calibration_error": 0.0747783063046955,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "openbmi": {
+          "rows": 3000,
+          "intent_threshold": 0.7000000000000001,
+          "intent_balanced_accuracy": 0.6153333333333333,
+          "intent_sensitivity": 0.33666666666666667,
+          "intent_specificity": 0.894,
+          "false_activation_rate_per_window": 0.106,
+          "missed_intent_rate": 0.6633333333333333,
+          "available_fraction": 0.9786666666666667,
+          "abstained_fraction": 0.021333333333333333,
+          "conditional_direction_accuracy": 0.6217821782178218,
+          "conditional_direction_balanced_accuracy": 0.6286272847182965,
+          "intent_auroc": 0.7931022222222223,
+          "intent_auprc": 0.7489804988387178,
+          "intent_brier_score": 0.18353590929669386,
+          "intent_expected_calibration_error": 0.04781904762711188,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "liu2024": {
+          "rows": 312,
+          "intent_threshold": 0.7000000000000001,
+          "intent_balanced_accuracy": 0.515625,
+          "intent_sensitivity": 0.15625,
+          "intent_specificity": 0.875,
+          "false_activation_rate_per_window": 0.125,
+          "missed_intent_rate": 0.84375,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.36,
+          "conditional_direction_balanced_accuracy": 0.41666666666666663,
+          "intent_auroc": 0.5610608552631579,
+          "intent_auprc": 0.5575246885943922,
+          "intent_brier_score": 0.26015882786736216,
+          "intent_expected_calibration_error": 0.09231852439130575,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      },
+      "development_observed": {
+        "rows": 4645,
+        "intent_threshold": 0.7000000000000001,
+        "intent_balanced_accuracy": 0.5789658148908803,
+        "intent_sensitivity": 0.21272024065320155,
+        "intent_specificity": 0.9452113891285591,
+        "false_activation_rate_per_window": 0.0547886108714409,
+        "missed_intent_rate": 0.7872797593467984,
+        "available_fraction": 0.995048439181916,
+        "abstained_fraction": 0.0049515608180839615,
+        "conditional_direction_accuracy": 0.6808080808080809,
+        "conditional_direction_balanced_accuracy": 0.6831656485806683,
+        "intent_auroc": 0.7209084339484751,
+        "intent_auprc": 0.7030198879163102,
+        "intent_brier_score": 0.213647784126924,
+        "intent_expected_calibration_error": 0.03269438812473306,
+        "continuous_false_activations_per_minute": "not_evaluated"
+      },
+      "development_observed_by_dataset": {
+        "physionet": {
+          "rows": 654,
+          "intent_threshold": 0.7000000000000001,
+          "intent_balanced_accuracy": 0.5305810397553516,
+          "intent_sensitivity": 0.09480122324159021,
+          "intent_specificity": 0.9663608562691132,
+          "false_activation_rate_per_window": 0.03363914373088685,
+          "missed_intent_rate": 0.9051987767584098,
+          "available_fraction": 0.9892966360856269,
+          "abstained_fraction": 0.010703363914373088,
+          "conditional_direction_accuracy": 0.6129032258064516,
+          "conditional_direction_balanced_accuracy": 0.661904761904762,
+          "intent_auroc": 0.6096849311225205,
+          "intent_auprc": 0.5857653160466849,
+          "intent_brier_score": 0.24534235573793586,
+          "intent_expected_calibration_error": 0.08345554105722859,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "openbmi": {
+          "rows": 3600,
+          "intent_threshold": 0.7000000000000001,
+          "intent_balanced_accuracy": 0.5938888888888889,
+          "intent_sensitivity": 0.245,
+          "intent_specificity": 0.9427777777777778,
+          "false_activation_rate_per_window": 0.05722222222222222,
+          "missed_intent_rate": 0.755,
+          "available_fraction": 0.9955555555555555,
+          "abstained_fraction": 0.0044444444444444444,
+          "conditional_direction_accuracy": 0.6938775510204082,
+          "conditional_direction_balanced_accuracy": 0.7012731099372731,
+          "intent_auroc": 0.7466259259259259,
+          "intent_auprc": 0.727968610197052,
+          "intent_brier_score": 0.20521628364179656,
+          "intent_expected_calibration_error": 0.03326410037477415,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "liu2024": {
+          "rows": 391,
+          "intent_threshold": 0.7000000000000001,
+          "intent_balanced_accuracy": 0.5234685863874345,
+          "intent_sensitivity": 0.115,
+          "intent_specificity": 0.9319371727748691,
+          "false_activation_rate_per_window": 0.06806282722513089,
+          "missed_intent_rate": 0.885,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.5217391304347826,
+          "conditional_direction_balanced_accuracy": 0.5192307692307692,
+          "intent_auroc": 0.6298691099476439,
+          "intent_auprc": 0.615615425362414,
+          "intent_brier_score": 0.2382645409373003,
+          "intent_expected_calibration_error": 0.04408977593644387,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      },
+      "development_observed_continuous_no_control": "not_evaluated_no_continuous_negative_recording"
+    },
+    "late_fusion": {
+      "threshold": 0.635,
+      "threshold_selection_basis": "cue_locked_window_fallback",
+      "controller_continuous_no_control": null,
+      "controller_validation": {
+        "rows": 3822,
+        "intent_threshold": 0.635,
+        "intent_balanced_accuracy": 0.6640249404078146,
+        "intent_sensitivity": 0.4261096605744125,
+        "intent_specificity": 0.9019402202412166,
+        "false_activation_rate_per_window": 0.09805977975878342,
+        "missed_intent_rate": 0.5738903394255874,
+        "available_fraction": 0.9790685504971219,
+        "abstained_fraction": 0.020931449502878074,
+        "conditional_direction_accuracy": 0.6286764705882353,
+        "conditional_direction_balanced_accuracy": 0.629998558108238,
+        "intent_auroc": 0.8038549743216211,
+        "intent_auprc": 0.7959740783706892,
+        "intent_brier_score": 0.19298777821676355,
+        "intent_expected_calibration_error": 0.09396167359032125,
+        "continuous_false_activations_per_minute": "not_evaluated"
+      },
+      "controller_validation_by_dataset": {
+        "physionet": {
+          "rows": 510,
+          "intent_threshold": 0.635,
+          "intent_balanced_accuracy": 0.5215686274509803,
+          "intent_sensitivity": 0.058823529411764705,
+          "intent_specificity": 0.9843137254901961,
+          "false_activation_rate_per_window": 0.01568627450980392,
+          "missed_intent_rate": 0.9411764705882353,
+          "available_fraction": 0.9686274509803922,
+          "abstained_fraction": 0.03137254901960784,
+          "conditional_direction_accuracy": 0.9333333333333333,
+          "conditional_direction_balanced_accuracy": 0.9285714285714286,
+          "intent_auroc": 0.6909342560553633,
+          "intent_auprc": 0.6869681397836438,
+          "intent_brier_score": 0.2279651348257959,
+          "intent_expected_calibration_error": 0.06407702314495181,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "openbmi": {
+          "rows": 3000,
+          "intent_threshold": 0.635,
+          "intent_balanced_accuracy": 0.6983333333333333,
+          "intent_sensitivity": 0.5133333333333333,
+          "intent_specificity": 0.8833333333333333,
+          "false_activation_rate_per_window": 0.11666666666666667,
+          "missed_intent_rate": 0.4866666666666667,
+          "available_fraction": 0.9786666666666667,
+          "abstained_fraction": 0.021333333333333333,
+          "conditional_direction_accuracy": 0.6272727272727273,
+          "conditional_direction_balanced_accuracy": 0.6287033850845766,
+          "intent_auroc": 0.836404888888889,
+          "intent_auprc": 0.823516084980232,
+          "intent_brier_score": 0.18226898641367908,
+          "intent_expected_calibration_error": 0.10935609078470773,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "liu2024": {
+          "rows": 312,
+          "intent_threshold": 0.635,
+          "intent_balanced_accuracy": 0.5705592105263158,
+          "intent_sensitivity": 0.19375,
+          "intent_specificity": 0.9473684210526316,
+          "false_activation_rate_per_window": 0.05263157894736842,
+          "missed_intent_rate": 0.80625,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.5161290322580645,
+          "conditional_direction_balanced_accuracy": 0.51875,
+          "intent_auroc": 0.6128700657894737,
+          "intent_auprc": 0.6473568149119479,
+          "intent_brier_score": 0.2388785587893499,
+          "intent_expected_calibration_error": 0.01666242824400851,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      },
+      "development_observed": {
+        "rows": 4645,
+        "intent_threshold": 0.635,
+        "intent_balanced_accuracy": 0.6011498732106461,
+        "intent_sensitivity": 0.22990975504941985,
+        "intent_specificity": 0.9723899913718723,
+        "false_activation_rate_per_window": 0.027610008628127698,
+        "missed_intent_rate": 0.7700902449505802,
+        "available_fraction": 0.995048439181916,
+        "abstained_fraction": 0.0049515608180839615,
+        "conditional_direction_accuracy": 0.6504672897196262,
+        "conditional_direction_balanced_accuracy": 0.6512928022361985,
+        "intent_auroc": 0.8040171034926675,
+        "intent_auprc": 0.7966703017899588,
+        "intent_brier_score": 0.1994976739736835,
+        "intent_expected_calibration_error": 0.11870719592346023,
+        "continuous_false_activations_per_minute": "not_evaluated"
+      },
+      "development_observed_by_dataset": {
+        "physionet": {
+          "rows": 654,
+          "intent_threshold": 0.635,
+          "intent_balanced_accuracy": 0.5382262996941896,
+          "intent_sensitivity": 0.10091743119266056,
+          "intent_specificity": 0.9755351681957186,
+          "false_activation_rate_per_window": 0.024464831804281346,
+          "missed_intent_rate": 0.8990825688073394,
+          "available_fraction": 0.9892966360856269,
+          "abstained_fraction": 0.010703363914373088,
+          "conditional_direction_accuracy": 0.6060606060606061,
+          "conditional_direction_balanced_accuracy": 0.6111111111111112,
+          "intent_auroc": 0.6770847945833217,
+          "intent_auprc": 0.6604698854449955,
+          "intent_brier_score": 0.2285358199325537,
+          "intent_expected_calibration_error": 0.0569797224713458,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "openbmi": {
+          "rows": 3600,
+          "intent_threshold": 0.635,
+          "intent_balanced_accuracy": 0.6177777777777778,
+          "intent_sensitivity": 0.26166666666666666,
+          "intent_specificity": 0.9738888888888889,
+          "false_activation_rate_per_window": 0.026111111111111113,
+          "missed_intent_rate": 0.7383333333333333,
+          "available_fraction": 0.9955555555555555,
+          "abstained_fraction": 0.0044444444444444444,
+          "conditional_direction_accuracy": 0.6645435244161358,
+          "conditional_direction_balanced_accuracy": 0.6662368345116145,
+          "intent_auroc": 0.8343317901234568,
+          "intent_auprc": 0.8282198377473426,
+          "intent_brier_score": 0.19130970115239557,
+          "intent_expected_calibration_error": 0.14253684941389644,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "liu2024": {
+          "rows": 391,
+          "intent_threshold": 0.635,
+          "intent_balanced_accuracy": 0.5539397905759162,
+          "intent_sensitivity": 0.155,
+          "intent_specificity": 0.9528795811518325,
+          "false_activation_rate_per_window": 0.04712041884816754,
+          "missed_intent_rate": 0.845,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.4838709677419355,
+          "conditional_direction_balanced_accuracy": 0.47916666666666663,
+          "intent_auroc": 0.6990837696335079,
+          "intent_auprc": 0.6868942160545423,
+          "intent_brier_score": 0.22631546092901753,
+          "intent_expected_calibration_error": 0.057673158465284174,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      },
+      "development_observed_continuous_no_control": "not_evaluated_no_continuous_negative_recording"
+    },
+    "fbcsp": {
+      "threshold": 0.685,
+      "threshold_selection_basis": "cue_locked_window_fallback",
+      "controller_continuous_no_control": null,
+      "controller_validation": {
+        "rows": 3822,
+        "intent_threshold": 0.685,
+        "intent_balanced_accuracy": 0.5671635762704671,
+        "intent_sensitivity": 0.2297650130548303,
+        "intent_specificity": 0.9045621394861039,
+        "false_activation_rate_per_window": 0.09543786051389617,
+        "missed_intent_rate": 0.7702349869451697,
+        "available_fraction": 0.9790685504971219,
+        "abstained_fraction": 0.020931449502878074,
+        "conditional_direction_accuracy": 0.6295454545454545,
+        "conditional_direction_balanced_accuracy": 0.6326086956521739,
+        "intent_auroc": 0.7232480034393008,
+        "intent_auprc": 0.6673112400798069,
+        "intent_brier_score": 0.20623228150234146,
+        "intent_expected_calibration_error": 0.028635760925753182,
+        "continuous_false_activations_per_minute": "not_evaluated"
+      },
+      "controller_validation_by_dataset": {
+        "physionet": {
+          "rows": 510,
+          "intent_threshold": 0.685,
+          "intent_balanced_accuracy": 0.4980392156862745,
+          "intent_sensitivity": 0.050980392156862744,
+          "intent_specificity": 0.9450980392156862,
+          "false_activation_rate_per_window": 0.054901960784313725,
+          "missed_intent_rate": 0.9490196078431372,
+          "available_fraction": 0.9686274509803922,
+          "abstained_fraction": 0.03137254901960784,
+          "conditional_direction_accuracy": 0.8461538461538461,
+          "conditional_direction_balanced_accuracy": 0.8452380952380952,
+          "intent_auroc": 0.512402921953095,
+          "intent_auprc": 0.511098973865769,
+          "intent_brier_score": 0.2623907991012755,
+          "intent_expected_calibration_error": 0.08007012813853014,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "openbmi": {
+          "rows": 3000,
+          "intent_threshold": 0.685,
+          "intent_balanced_accuracy": 0.5853333333333334,
+          "intent_sensitivity": 0.25866666666666666,
+          "intent_specificity": 0.912,
+          "false_activation_rate_per_window": 0.088,
+          "missed_intent_rate": 0.7413333333333334,
+          "available_fraction": 0.9786666666666667,
+          "abstained_fraction": 0.021333333333333333,
+          "conditional_direction_accuracy": 0.6365979381443299,
+          "conditional_direction_balanced_accuracy": 0.639492175023954,
+          "intent_auroc": 0.7709813333333333,
+          "intent_auprc": 0.7049018540449219,
+          "intent_brier_score": 0.18991710089925398,
+          "intent_expected_calibration_error": 0.04777521344080166,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "liu2024": {
+          "rows": 312,
+          "intent_threshold": 0.685,
+          "intent_balanced_accuracy": 0.5034539473684211,
+          "intent_sensitivity": 0.24375,
+          "intent_specificity": 0.7631578947368421,
+          "false_activation_rate_per_window": 0.23684210526315788,
+          "missed_intent_rate": 0.75625,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.48717948717948717,
+          "conditional_direction_balanced_accuracy": 0.4919786096256684,
+          "intent_auroc": 0.5245476973684211,
+          "intent_auprc": 0.540539699952211,
+          "intent_brier_score": 0.27131144122607903,
+          "intent_expected_calibration_error": 0.16029808324639966,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      },
+      "development_observed": {
+        "rows": 4645,
+        "intent_threshold": 0.685,
+        "intent_balanced_accuracy": 0.5288955143747128,
+        "intent_sensitivity": 0.11559948431456811,
+        "intent_specificity": 0.9421915444348576,
+        "false_activation_rate_per_window": 0.057808455565142365,
+        "missed_intent_rate": 0.8844005156854319,
+        "available_fraction": 0.995048439181916,
+        "abstained_fraction": 0.0049515608180839615,
+        "conditional_direction_accuracy": 0.6765799256505576,
+        "conditional_direction_balanced_accuracy": 0.6829138702460851,
+        "intent_auroc": 0.6761246692149367,
+        "intent_auprc": 0.6298751105964984,
+        "intent_brier_score": 0.2252143430745351,
+        "intent_expected_calibration_error": 0.029364265429302205,
+        "continuous_false_activations_per_minute": "not_evaluated"
+      },
+      "development_observed_by_dataset": {
+        "physionet": {
+          "rows": 654,
+          "intent_threshold": 0.685,
+          "intent_balanced_accuracy": 0.5122324159021406,
+          "intent_sensitivity": 0.0764525993883792,
+          "intent_specificity": 0.9480122324159022,
+          "false_activation_rate_per_window": 0.05198776758409786,
+          "missed_intent_rate": 0.9235474006116208,
+          "available_fraction": 0.9892966360856269,
+          "abstained_fraction": 0.010703363914373088,
+          "conditional_direction_accuracy": 0.64,
+          "conditional_direction_balanced_accuracy": 0.6499999999999999,
+          "intent_auroc": 0.5305950677552395,
+          "intent_auprc": 0.5373192275325196,
+          "intent_brier_score": 0.266359388453786,
+          "intent_expected_calibration_error": 0.11096741618326211,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "openbmi": {
+          "rows": 3600,
+          "intent_threshold": 0.685,
+          "intent_balanced_accuracy": 0.5325,
+          "intent_sensitivity": 0.10833333333333334,
+          "intent_specificity": 0.9566666666666667,
+          "false_activation_rate_per_window": 0.043333333333333335,
+          "missed_intent_rate": 0.8916666666666666,
+          "available_fraction": 0.9955555555555555,
+          "abstained_fraction": 0.0044444444444444444,
+          "conditional_direction_accuracy": 0.6974358974358974,
+          "conditional_direction_balanced_accuracy": 0.7096203346203347,
+          "intent_auroc": 0.7199163580246913,
+          "intent_auprc": 0.670030231851989,
+          "intent_brier_score": 0.21303943001823908,
+          "intent_expected_calibration_error": 0.03878782213568175,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "liu2024": {
+          "rows": 391,
+          "intent_threshold": 0.685,
+          "intent_balanced_accuracy": 0.5204057591623037,
+          "intent_sensitivity": 0.245,
+          "intent_specificity": 0.7958115183246073,
+          "false_activation_rate_per_window": 0.20418848167539266,
+          "missed_intent_rate": 0.755,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.6122448979591837,
+          "conditional_direction_balanced_accuracy": 0.6145484949832776,
+          "intent_auroc": 0.5225916230366492,
+          "intent_auprc": 0.5307936436361375,
+          "intent_brier_score": 0.2684901162833221,
+          "intent_expected_calibration_error": 0.12662744435048168,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      },
+      "development_observed_continuous_no_control": "not_evaluated_no_continuous_negative_recording"
+    }
+  },
+  "thresholds": {
+    "mrcp": 0.6250000000000001,
+    "smr": 0.7450000000000001,
+    "riemann": 0.7000000000000001,
+    "late_fusion": 0.635,
+    "fbcsp": 0.685
+  },
+  "calibrated_stage_controller": {
+    "nested_controller_roles": {
+      "physionet": {
+        "fusion_and_probability_calibration": [
+          "physionet:S029",
+          "physionet:S050",
+          "physionet:S067",
+          "physionet:S074",
+          "physionet:S082",
+          "physionet:S089",
+          "physionet:S091",
+          "physionet:S108"
+        ],
+        "operating_point_selection": [
+          "physionet:S003",
+          "physionet:S013",
+          "physionet:S019",
+          "physionet:S033",
+          "physionet:S040",
+          "physionet:S071",
+          "physionet:S102",
+          "physionet:S105",
+          "physionet:S107"
+        ]
+      },
+      "openbmi": {
+        "fusion_and_probability_calibration": [
+          "openbmi:S045",
+          "openbmi:S050"
+        ],
+        "operating_point_selection": [
+          "openbmi:S035",
+          "openbmi:S046",
+          "openbmi:S053"
+        ]
+      },
+      "liu2024": {
+        "fusion_and_probability_calibration": [
+          "liu2024:S005",
+          "liu2024:S008",
+          "liu2024:S020",
+          "liu2024:S041"
+        ],
+        "operating_point_selection": [
+          "liu2024:S019",
+          "liu2024:S029",
+          "liu2024:S039",
+          "liu2024:S046"
+        ]
+      }
+    },
+    "fusion": {
+      "intent_weights": {
+        "mrcp": 0.3333333333333333,
+        "riemann": 0.3333333333333333,
+        "smr": 0.3333333333333333
+      },
+      "direction_weights": {
+        "riemann": 0.5,
+        "fbcsp": 0.3,
+        "mrcp": 0.2
+      },
+      "selection_scores": {
+        "mean_domain_intent_auroc": 0.7640049707602339,
+        "mean_domain_direction_balanced_accuracy": 0.6227469050044766
+      }
+    },
+    "probability_calibration": {
+      "method": "per_dataset_platt_with_identity_shrinkage",
+      "intent_blends": {
+        "__global__": 0.0,
+        "liu2024": 0.0,
+        "openbmi": 0.0,
+        "physionet": 1.0
+      },
+      "direction_blends": {
+        "__global__": 0.0,
+        "liu2024": 0.75,
+        "openbmi": 0.0,
+        "physionet": 1.0
+      }
+    },
+    "thresholds": {
+      "conservative": {
+        "physionet": 0.65,
+        "openbmi": 0.64,
+        "liu2024": 0.6250000000000001
+      },
+      "conservative_fallback": 0.64,
+      "sensitivity_targeted": {
+        "physionet": 0.525,
+        "openbmi": 0.54,
+        "liu2024": 0.46
+      },
+      "sensitivity_targeted_fallback": 0.53
+    },
+    "operating_points": {
+      "conservative": {
+        "controller_policy": {
+          "rows": 2226,
+          "intent_threshold": "row_specific",
+          "intent_balanced_accuracy": 0.6186677860611174,
+          "intent_sensitivity": 0.33004484304932735,
+          "intent_specificity": 0.9072907290729073,
+          "false_activation_rate_per_window": 0.0927092709270927,
+          "missed_intent_rate": 0.6699551569506726,
+          "available_fraction": 0.9923629829290207,
+          "abstained_fraction": 0.0076370170709793355,
+          "conditional_direction_accuracy": 0.5380434782608695,
+          "conditional_direction_balanced_accuracy": 0.5308510638297872,
+          "intent_auroc": 0.7876166988896199,
+          "intent_auprc": 0.7720776249400982,
+          "intent_brier_score": 0.19464253885440785,
+          "intent_expected_calibration_error": 0.11034623434353698,
+          "continuous_false_activations_per_minute": "not_evaluated",
+          "thresholds_by_dataset": {
+            "physionet": 0.65,
+            "openbmi": 0.64,
+            "liu2024": 0.6250000000000001
+          },
+          "threshold_fallback": 0.64,
+          "by_dataset": {
+            "physionet": {
+              "rows": 270,
+              "intent_threshold": 0.65,
+              "intent_balanced_accuracy": 0.5814814814814815,
+              "intent_sensitivity": 0.2518518518518518,
+              "intent_specificity": 0.9111111111111111,
+              "false_activation_rate_per_window": 0.08888888888888889,
+              "missed_intent_rate": 0.7481481481481482,
+              "available_fraction": 0.9407407407407408,
+              "abstained_fraction": 0.05925925925925926,
+              "conditional_direction_accuracy": 0.7647058823529411,
+              "conditional_direction_balanced_accuracy": 0.7543859649122806,
+              "intent_auroc": 0.7004115226337448,
+              "intent_auprc": 0.6805226670070444,
+              "intent_brier_score": 0.22095864718694505,
+              "intent_expected_calibration_error": 0.05595701353376398,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            },
+            "openbmi": {
+              "rows": 1800,
+              "intent_threshold": 0.64,
+              "intent_balanced_accuracy": 0.6344444444444444,
+              "intent_sensitivity": 0.3622222222222222,
+              "intent_specificity": 0.9066666666666666,
+              "false_activation_rate_per_window": 0.09333333333333334,
+              "missed_intent_rate": 0.6377777777777778,
+              "available_fraction": 0.9994444444444445,
+              "abstained_fraction": 0.0005555555555555556,
+              "conditional_direction_accuracy": 0.50920245398773,
+              "conditional_direction_balanced_accuracy": 0.5047619047619047,
+              "intent_auroc": 0.8145716049382716,
+              "intent_auprc": 0.7977838652919109,
+              "intent_brier_score": 0.18581612140364087,
+              "intent_expected_calibration_error": 0.12967703579165502,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            },
+            "liu2024": {
+              "rows": 156,
+              "intent_threshold": 0.6250000000000001,
+              "intent_balanced_accuracy": 0.5039473684210527,
+              "intent_sensitivity": 0.1,
+              "intent_specificity": 0.9078947368421053,
+              "false_activation_rate_per_window": 0.09210526315789473,
+              "missed_intent_rate": 0.9,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.75,
+              "conditional_direction_balanced_accuracy": 0.75,
+              "intent_auroc": 0.5578947368421052,
+              "intent_auprc": 0.5692101102112289,
+              "intent_brier_score": 0.2509387065569436,
+              "intent_expected_calibration_error": 0.07949129054567967,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          }
+        },
+        "development_observed": {
+          "rows": 4645,
+          "intent_threshold": "row_specific",
+          "intent_balanced_accuracy": 0.598983664399574,
+          "intent_sensitivity": 0.2346368715083799,
+          "intent_specificity": 0.9633304572907679,
+          "false_activation_rate_per_window": 0.036669542709232096,
+          "missed_intent_rate": 0.7653631284916201,
+          "available_fraction": 0.995048439181916,
+          "abstained_fraction": 0.0049515608180839615,
+          "conditional_direction_accuracy": 0.63003663003663,
+          "conditional_direction_balanced_accuracy": 0.633278679711859,
+          "intent_auroc": 0.8005119034420928,
+          "intent_auprc": 0.7836751997983855,
+          "intent_brier_score": 0.19903598354410196,
+          "intent_expected_calibration_error": 0.11493721756095203,
+          "continuous_false_activations_per_minute": "not_evaluated",
+          "thresholds_by_dataset": {
+            "physionet": 0.65,
+            "openbmi": 0.64,
+            "liu2024": 0.6250000000000001
+          },
+          "threshold_fallback": 0.64,
+          "by_dataset": {
+            "physionet": {
+              "rows": 654,
+              "intent_threshold": 0.65,
+              "intent_balanced_accuracy": 0.5718654434250765,
+              "intent_sensitivity": 0.22935779816513763,
+              "intent_specificity": 0.9143730886850153,
+              "false_activation_rate_per_window": 0.0856269113149847,
+              "missed_intent_rate": 0.7706422018348624,
+              "available_fraction": 0.9892966360856269,
+              "abstained_fraction": 0.010703363914373088,
+              "conditional_direction_accuracy": 0.5733333333333334,
+              "conditional_direction_balanced_accuracy": 0.569583931133429,
+              "intent_auroc": 0.6770847945833217,
+              "intent_auprc": 0.6604698854449955,
+              "intent_brier_score": 0.22525668836465407,
+              "intent_expected_calibration_error": 0.029840123506835896,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            },
+            "openbmi": {
+              "rows": 3600,
+              "intent_threshold": 0.64,
+              "intent_balanced_accuracy": 0.6094444444444445,
+              "intent_sensitivity": 0.24388888888888888,
+              "intent_specificity": 0.975,
+              "false_activation_rate_per_window": 0.025,
+              "missed_intent_rate": 0.7561111111111112,
+              "available_fraction": 0.9955555555555555,
+              "abstained_fraction": 0.0044444444444444444,
+              "conditional_direction_accuracy": 0.6583143507972665,
+              "conditional_direction_balanced_accuracy": 0.6619302837675017,
+              "intent_auroc": 0.8343317901234568,
+              "intent_auprc": 0.8282198377473426,
+              "intent_brier_score": 0.19130970115239557,
+              "intent_expected_calibration_error": 0.1425368494138964,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            },
+            "liu2024": {
+              "rows": 391,
+              "intent_threshold": 0.6250000000000001,
+              "intent_balanced_accuracy": 0.548586387434555,
+              "intent_sensitivity": 0.16,
+              "intent_specificity": 0.93717277486911,
+              "false_activation_rate_per_window": 0.06282722513089005,
+              "missed_intent_rate": 0.84,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.375,
+              "conditional_direction_balanced_accuracy": 0.3607843137254902,
+              "intent_auroc": 0.6990837696335079,
+              "intent_auprc": 0.6868942160545423,
+              "intent_brier_score": 0.22631546092901753,
+              "intent_expected_calibration_error": 0.057673158465284154,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          }
+        }
+      },
+      "sensitivity_targeted": {
+        "controller_policy": {
+          "rows": 2226,
+          "intent_threshold": "row_specific",
+          "intent_balanced_accuracy": 0.6753310757084677,
+          "intent_sensitivity": 0.6035874439461884,
+          "intent_specificity": 0.7470747074707471,
+          "false_activation_rate_per_window": 0.25292529252925294,
+          "missed_intent_rate": 0.39641255605381165,
+          "available_fraction": 0.9923629829290207,
+          "abstained_fraction": 0.0076370170709793355,
+          "conditional_direction_accuracy": 0.563150074294205,
+          "conditional_direction_balanced_accuracy": 0.5711689483179455,
+          "intent_auroc": 0.7876166988896199,
+          "intent_auprc": 0.7720776249400982,
+          "intent_brier_score": 0.19464253885440785,
+          "intent_expected_calibration_error": 0.11034623434353698,
+          "continuous_false_activations_per_minute": "not_evaluated",
+          "thresholds_by_dataset": {
+            "physionet": 0.525,
+            "openbmi": 0.54,
+            "liu2024": 0.46
+          },
+          "threshold_fallback": 0.53,
+          "by_dataset": {
+            "physionet": {
+              "rows": 270,
+              "intent_threshold": 0.525,
+              "intent_balanced_accuracy": 0.6481481481481481,
+              "intent_sensitivity": 0.6,
+              "intent_specificity": 0.6962962962962963,
+              "false_activation_rate_per_window": 0.3037037037037037,
+              "missed_intent_rate": 0.4,
+              "available_fraction": 0.9407407407407408,
+              "abstained_fraction": 0.05925925925925926,
+              "conditional_direction_accuracy": 0.691358024691358,
+              "conditional_direction_balanced_accuracy": 0.6911585365853659,
+              "intent_auroc": 0.7004115226337448,
+              "intent_auprc": 0.6805226670070444,
+              "intent_brier_score": 0.22095864718694505,
+              "intent_expected_calibration_error": 0.05595701353376398,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            },
+            "openbmi": {
+              "rows": 1800,
+              "intent_threshold": 0.54,
+              "intent_balanced_accuracy": 0.6894444444444445,
+              "intent_sensitivity": 0.6044444444444445,
+              "intent_specificity": 0.7744444444444445,
+              "false_activation_rate_per_window": 0.22555555555555556,
+              "missed_intent_rate": 0.39555555555555555,
+              "available_fraction": 0.9994444444444445,
+              "abstained_fraction": 0.0005555555555555556,
+              "conditional_direction_accuracy": 0.5459558823529411,
+              "conditional_direction_balanced_accuracy": 0.5576652221018418,
+              "intent_auroc": 0.8145716049382716,
+              "intent_auprc": 0.7977838652919109,
+              "intent_brier_score": 0.18581612140364087,
+              "intent_expected_calibration_error": 0.12967703579165502,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            },
+            "liu2024": {
+              "rows": 156,
+              "intent_threshold": 0.46,
+              "intent_balanced_accuracy": 0.5565789473684211,
+              "intent_sensitivity": 0.6,
+              "intent_specificity": 0.513157894736842,
+              "false_activation_rate_per_window": 0.4868421052631579,
+              "missed_intent_rate": 0.4,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.5416666666666666,
+              "conditional_direction_balanced_accuracy": 0.5408695652173914,
+              "intent_auroc": 0.5578947368421052,
+              "intent_auprc": 0.5692101102112289,
+              "intent_brier_score": 0.2509387065569436,
+              "intent_expected_calibration_error": 0.07949129054567967,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          }
+        },
+        "development_observed": {
+          "rows": 4645,
+          "intent_threshold": "row_specific",
+          "intent_balanced_accuracy": 0.7067457164330793,
+          "intent_sensitivity": 0.614095401804899,
+          "intent_specificity": 0.7993960310612597,
+          "false_activation_rate_per_window": 0.2006039689387403,
+          "missed_intent_rate": 0.38590459819510103,
+          "available_fraction": 0.995048439181916,
+          "abstained_fraction": 0.0049515608180839615,
+          "conditional_direction_accuracy": 0.6920923722883136,
+          "conditional_direction_balanced_accuracy": 0.6932795509247281,
+          "intent_auroc": 0.8005119034420928,
+          "intent_auprc": 0.7836751997983855,
+          "intent_brier_score": 0.19903598354410196,
+          "intent_expected_calibration_error": 0.11493721756095203,
+          "continuous_false_activations_per_minute": "not_evaluated",
+          "thresholds_by_dataset": {
+            "physionet": 0.525,
+            "openbmi": 0.54,
+            "liu2024": 0.46
+          },
+          "threshold_fallback": 0.53,
+          "by_dataset": {
+            "physionet": {
+              "rows": 654,
+              "intent_threshold": 0.525,
+              "intent_balanced_accuracy": 0.6207951070336392,
+              "intent_sensitivity": 0.5902140672782875,
+              "intent_specificity": 0.6513761467889908,
+              "false_activation_rate_per_window": 0.3486238532110092,
+              "missed_intent_rate": 0.4097859327217125,
+              "available_fraction": 0.9892966360856269,
+              "abstained_fraction": 0.010703363914373088,
+              "conditional_direction_accuracy": 0.6424870466321243,
+              "conditional_direction_balanced_accuracy": 0.6424812030075189,
+              "intent_auroc": 0.6770847945833217,
+              "intent_auprc": 0.6604698854449955,
+              "intent_brier_score": 0.22525668836465407,
+              "intent_expected_calibration_error": 0.029840123506835896,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            },
+            "openbmi": {
+              "rows": 3600,
+              "intent_threshold": 0.54,
+              "intent_balanced_accuracy": 0.7313888888888889,
+              "intent_sensitivity": 0.5927777777777777,
+              "intent_specificity": 0.87,
+              "false_activation_rate_per_window": 0.13,
+              "missed_intent_rate": 0.40722222222222226,
+              "available_fraction": 0.9955555555555555,
+              "abstained_fraction": 0.0044444444444444444,
+              "conditional_direction_accuracy": 0.7169634489222118,
+              "conditional_direction_balanced_accuracy": 0.7204400391270998,
+              "intent_auroc": 0.8343317901234568,
+              "intent_auprc": 0.8282198377473426,
+              "intent_brier_score": 0.19130970115239557,
+              "intent_expected_calibration_error": 0.1425368494138964,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            },
+            "liu2024": {
+              "rows": 391,
+              "intent_threshold": 0.46,
+              "intent_balanced_accuracy": 0.616217277486911,
+              "intent_sensitivity": 0.845,
+              "intent_specificity": 0.38743455497382195,
+              "false_activation_rate_per_window": 0.612565445026178,
+              "missed_intent_rate": 0.15500000000000003,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.591715976331361,
+              "conditional_direction_balanced_accuracy": 0.5944242084617539,
+              "intent_auroc": 0.6990837696335079,
+              "intent_auprc": 0.6868942160545423,
+              "intent_brier_score": 0.22631546092901753,
+              "intent_expected_calibration_error": 0.057673158465284154,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          }
+        }
+      }
+    },
+    "temporal_confirmation": {
+      "status": "prepared_not_evaluated",
+      "reason": "no continuous no-control manifest",
+      "confirmations": 2,
+      "refractory_seconds": 2.0
+    }
+  },
+  "patient_calibration": {
+    "status": "core_stage_all_datasets",
+    "selected_configurations": {
+      "physionet": {
+        "budget_per_class": 5,
+        "blend_weight": 0.75
+      },
+      "openbmi": {
+        "budget_per_class": 10,
+        "blend_weight": 0.5
+      },
+      "liu2024": {
+        "budget_per_class": 10,
+        "blend_weight": 0.75
+      }
+    },
+    "by_dataset": {
+      "physionet": {
+        "selected_on_controller": {
+          "budget_per_class": 5,
+          "blend_weight": 0.75,
+          "conservative_threshold": 0.5950000000000001,
+          "sensitivity_targeted_threshold": 0.495,
+          "controller_conservative": {
+            "rows": 510,
+            "intent_threshold": 0.5950000000000001,
+            "intent_balanced_accuracy": 0.6490196078431373,
+            "intent_sensitivity": 0.39215686274509803,
+            "intent_specificity": 0.9058823529411765,
+            "false_activation_rate_per_window": 0.09411764705882353,
+            "missed_intent_rate": 0.607843137254902,
+            "available_fraction": 0.9686274509803922,
+            "abstained_fraction": 0.03137254901960784,
+            "conditional_direction_accuracy": 0.71,
+            "conditional_direction_balanced_accuracy": 0.712484993997599,
+            "intent_auroc": 0.7092656670511341,
+            "intent_auprc": 0.7181824060239284,
+            "intent_brier_score": 0.2192551612568583,
+            "intent_expected_calibration_error": 0.05214921830340203,
+            "continuous_false_activations_per_minute": "not_evaluated"
+          }
+        },
+        "all_controller_configurations": [
+          {
+            "budget_per_class": 2,
+            "blend_weight": 0.25,
+            "conservative_threshold": 0.6100000000000001,
+            "sensitivity_targeted_threshold": 0.51,
+            "controller_conservative": {
+              "rows": 510,
+              "intent_threshold": 0.6100000000000001,
+              "intent_balanced_accuracy": 0.5901960784313726,
+              "intent_sensitivity": 0.2784313725490196,
+              "intent_specificity": 0.9019607843137255,
+              "false_activation_rate_per_window": 0.09803921568627451,
+              "missed_intent_rate": 0.7215686274509804,
+              "available_fraction": 0.9686274509803922,
+              "abstained_fraction": 0.03137254901960784,
+              "conditional_direction_accuracy": 0.7887323943661971,
+              "conditional_direction_balanced_accuracy": 0.7870967741935484,
+              "intent_auroc": 0.6956401384083046,
+              "intent_auprc": 0.6862106741652924,
+              "intent_brier_score": 0.22475624455182422,
+              "intent_expected_calibration_error": 0.06174891836978646,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 2,
+            "blend_weight": 0.5,
+            "conservative_threshold": 0.6250000000000001,
+            "sensitivity_targeted_threshold": 0.49,
+            "controller_conservative": {
+              "rows": 510,
+              "intent_threshold": 0.6250000000000001,
+              "intent_balanced_accuracy": 0.5568627450980392,
+              "intent_sensitivity": 0.21176470588235294,
+              "intent_specificity": 0.9019607843137255,
+              "false_activation_rate_per_window": 0.09803921568627451,
+              "missed_intent_rate": 0.788235294117647,
+              "available_fraction": 0.9686274509803922,
+              "abstained_fraction": 0.03137254901960784,
+              "conditional_direction_accuracy": 0.7592592592592593,
+              "conditional_direction_balanced_accuracy": 0.751082251082251,
+              "intent_auroc": 0.6746943483275663,
+              "intent_auprc": 0.6589468997046022,
+              "intent_brier_score": 0.22993703550054698,
+              "intent_expected_calibration_error": 0.06775604622756858,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 2,
+            "blend_weight": 0.75,
+            "conservative_threshold": 0.64,
+            "sensitivity_targeted_threshold": 0.455,
+            "controller_conservative": {
+              "rows": 510,
+              "intent_threshold": 0.64,
+              "intent_balanced_accuracy": 0.5333333333333333,
+              "intent_sensitivity": 0.1607843137254902,
+              "intent_specificity": 0.9058823529411765,
+              "false_activation_rate_per_window": 0.09411764705882353,
+              "missed_intent_rate": 0.8392156862745098,
+              "available_fraction": 0.9686274509803922,
+              "abstained_fraction": 0.03137254901960784,
+              "conditional_direction_accuracy": 0.5853658536585366,
+              "conditional_direction_balanced_accuracy": 0.5845238095238096,
+              "intent_auroc": 0.637677816224529,
+              "intent_auprc": 0.6216348585665784,
+              "intent_brier_score": 0.23950772483408836,
+              "intent_expected_calibration_error": 0.07254917965235574,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 5,
+            "blend_weight": 0.25,
+            "conservative_threshold": 0.6000000000000001,
+            "sensitivity_targeted_threshold": 0.525,
+            "controller_conservative": {
+              "rows": 510,
+              "intent_threshold": 0.6000000000000001,
+              "intent_balanced_accuracy": 0.6215686274509804,
+              "intent_sensitivity": 0.3333333333333333,
+              "intent_specificity": 0.9098039215686274,
+              "false_activation_rate_per_window": 0.09019607843137255,
+              "missed_intent_rate": 0.6666666666666667,
+              "available_fraction": 0.9686274509803922,
+              "abstained_fraction": 0.03137254901960784,
+              "conditional_direction_accuracy": 0.8235294117647058,
+              "conditional_direction_balanced_accuracy": 0.8127815315315315,
+              "intent_auroc": 0.7274586697424068,
+              "intent_auprc": 0.7308490641827141,
+              "intent_brier_score": 0.21752128089454079,
+              "intent_expected_calibration_error": 0.06287294726342019,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 5,
+            "blend_weight": 0.5,
+            "conservative_threshold": 0.5850000000000001,
+            "sensitivity_targeted_threshold": 0.52,
+            "controller_conservative": {
+              "rows": 510,
+              "intent_threshold": 0.5850000000000001,
+              "intent_balanced_accuracy": 0.6431372549019608,
+              "intent_sensitivity": 0.3843137254901961,
+              "intent_specificity": 0.9019607843137255,
+              "false_activation_rate_per_window": 0.09803921568627451,
+              "missed_intent_rate": 0.615686274509804,
+              "available_fraction": 0.9686274509803922,
+              "abstained_fraction": 0.03137254901960784,
+              "conditional_direction_accuracy": 0.7244897959183674,
+              "conditional_direction_balanced_accuracy": 0.7184343434343434,
+              "intent_auroc": 0.7302114571318723,
+              "intent_auprc": 0.7329603555194906,
+              "intent_brier_score": 0.21595121731752018,
+              "intent_expected_calibration_error": 0.07970972209281474,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 5,
+            "blend_weight": 0.75,
+            "conservative_threshold": 0.5950000000000001,
+            "sensitivity_targeted_threshold": 0.495,
+            "controller_conservative": {
+              "rows": 510,
+              "intent_threshold": 0.5950000000000001,
+              "intent_balanced_accuracy": 0.6490196078431373,
+              "intent_sensitivity": 0.39215686274509803,
+              "intent_specificity": 0.9058823529411765,
+              "false_activation_rate_per_window": 0.09411764705882353,
+              "missed_intent_rate": 0.607843137254902,
+              "available_fraction": 0.9686274509803922,
+              "abstained_fraction": 0.03137254901960784,
+              "conditional_direction_accuracy": 0.71,
+              "conditional_direction_balanced_accuracy": 0.712484993997599,
+              "intent_auroc": 0.7092656670511341,
+              "intent_auprc": 0.7181824060239284,
+              "intent_brier_score": 0.2192551612568583,
+              "intent_expected_calibration_error": 0.05214921830340203,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 10,
+            "blend_weight": 0.25,
+            "conservative_threshold": 0.6150000000000001,
+            "sensitivity_targeted_threshold": 0.535,
+            "controller_conservative": {
+              "rows": 510,
+              "intent_threshold": 0.6150000000000001,
+              "intent_balanced_accuracy": 0.6215686274509804,
+              "intent_sensitivity": 0.33725490196078434,
+              "intent_specificity": 0.9058823529411765,
+              "false_activation_rate_per_window": 0.09411764705882353,
+              "missed_intent_rate": 0.6627450980392157,
+              "available_fraction": 0.9686274509803922,
+              "abstained_fraction": 0.03137254901960784,
+              "conditional_direction_accuracy": 0.7441860465116279,
+              "conditional_direction_balanced_accuracy": 0.7419530823786142,
+              "intent_auroc": 0.7354094579008074,
+              "intent_auprc": 0.727606008162726,
+              "intent_brier_score": 0.21457571413959334,
+              "intent_expected_calibration_error": 0.06692371229805395,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 10,
+            "blend_weight": 0.5,
+            "conservative_threshold": 0.6200000000000001,
+            "sensitivity_targeted_threshold": 0.54,
+            "controller_conservative": {
+              "rows": 510,
+              "intent_threshold": 0.6200000000000001,
+              "intent_balanced_accuracy": 0.6294117647058823,
+              "intent_sensitivity": 0.35294117647058826,
+              "intent_specificity": 0.9058823529411765,
+              "false_activation_rate_per_window": 0.09411764705882353,
+              "missed_intent_rate": 0.6470588235294117,
+              "available_fraction": 0.9686274509803922,
+              "abstained_fraction": 0.03137254901960784,
+              "conditional_direction_accuracy": 0.7333333333333333,
+              "conditional_direction_balanced_accuracy": 0.7333333333333334,
+              "intent_auroc": 0.7414071510957323,
+              "intent_auprc": 0.7257281367939895,
+              "intent_brier_score": 0.21127641411576814,
+              "intent_expected_calibration_error": 0.07379787919713943,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 10,
+            "blend_weight": 0.75,
+            "conservative_threshold": 0.665,
+            "sensitivity_targeted_threshold": 0.54,
+            "controller_conservative": {
+              "rows": 510,
+              "intent_threshold": 0.665,
+              "intent_balanced_accuracy": 0.596078431372549,
+              "intent_sensitivity": 0.28627450980392155,
+              "intent_specificity": 0.9058823529411765,
+              "false_activation_rate_per_window": 0.09411764705882353,
+              "missed_intent_rate": 0.7137254901960784,
+              "available_fraction": 0.9686274509803922,
+              "abstained_fraction": 0.03137254901960784,
+              "conditional_direction_accuracy": 0.6712328767123288,
+              "conditional_direction_balanced_accuracy": 0.6729323308270676,
+              "intent_auroc": 0.7228450595924644,
+              "intent_auprc": 0.6992896073624069,
+              "intent_brier_score": 0.21406745191644458,
+              "intent_expected_calibration_error": 0.03687836755185806,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          }
+        ],
+        "development_observed_conservative": {
+          "rows": 654,
+          "intent_threshold": 0.5950000000000001,
+          "intent_balanced_accuracy": 0.6330275229357798,
+          "intent_sensitivity": 0.40061162079510704,
+          "intent_specificity": 0.8654434250764527,
+          "false_activation_rate_per_window": 0.1345565749235474,
+          "missed_intent_rate": 0.599388379204893,
+          "available_fraction": 0.9892966360856269,
+          "abstained_fraction": 0.010703363914373088,
+          "conditional_direction_accuracy": 0.7175572519083969,
+          "conditional_direction_balanced_accuracy": 0.7168534080298786,
+          "intent_auroc": 0.7279316181765471,
+          "intent_auprc": 0.6955470640268228,
+          "intent_brier_score": 0.21251703505915584,
+          "intent_expected_calibration_error": 0.05927355026288524,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "development_observed_sensitivity_targeted": {
+          "rows": 654,
+          "intent_threshold": 0.495,
+          "intent_balanced_accuracy": 0.6590214067278288,
+          "intent_sensitivity": 0.6574923547400612,
+          "intent_specificity": 0.6605504587155964,
+          "false_activation_rate_per_window": 0.3394495412844037,
+          "missed_intent_rate": 0.3425076452599388,
+          "available_fraction": 0.9892966360856269,
+          "abstained_fraction": 0.010703363914373088,
+          "conditional_direction_accuracy": 0.7302325581395349,
+          "conditional_direction_balanced_accuracy": 0.7305194805194806,
+          "intent_auroc": 0.7279316181765471,
+          "intent_auprc": 0.6955470640268228,
+          "intent_brier_score": 0.21251703505915584,
+          "intent_expected_calibration_error": 0.05927355026288524,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      },
+      "openbmi": {
+        "selected_on_controller": {
+          "budget_per_class": 10,
+          "blend_weight": 0.5,
+          "conservative_threshold": 0.635,
+          "sensitivity_targeted_threshold": 0.64,
+          "controller_conservative": {
+            "rows": 3000,
+            "intent_threshold": 0.635,
+            "intent_balanced_accuracy": 0.7596666666666667,
+            "intent_sensitivity": 0.6186666666666667,
+            "intent_specificity": 0.9006666666666667,
+            "false_activation_rate_per_window": 0.09933333333333333,
+            "missed_intent_rate": 0.3813333333333333,
+            "available_fraction": 0.9786666666666667,
+            "abstained_fraction": 0.021333333333333333,
+            "conditional_direction_accuracy": 0.6734913793103449,
+            "conditional_direction_balanced_accuracy": 0.6741257019699285,
+            "intent_auroc": 0.8806062222222222,
+            "intent_auprc": 0.8644712299467557,
+            "intent_brier_score": 0.16714399176838207,
+            "intent_expected_calibration_error": 0.1486850962698453,
+            "continuous_false_activations_per_minute": "not_evaluated"
+          }
+        },
+        "all_controller_configurations": [
+          {
+            "budget_per_class": 2,
+            "blend_weight": 0.25,
+            "conservative_threshold": 0.6150000000000001,
+            "sensitivity_targeted_threshold": 0.5900000000000001,
+            "controller_conservative": {
+              "rows": 3000,
+              "intent_threshold": 0.6150000000000001,
+              "intent_balanced_accuracy": 0.7083333333333333,
+              "intent_sensitivity": 0.51,
+              "intent_specificity": 0.9066666666666666,
+              "false_activation_rate_per_window": 0.09333333333333334,
+              "missed_intent_rate": 0.49,
+              "available_fraction": 0.9786666666666667,
+              "abstained_fraction": 0.021333333333333333,
+              "conditional_direction_accuracy": 0.665359477124183,
+              "conditional_direction_balanced_accuracy": 0.6637518459771372,
+              "intent_auroc": 0.8524528888888889,
+              "intent_auprc": 0.8353347928503776,
+              "intent_brier_score": 0.18379928117845953,
+              "intent_expected_calibration_error": 0.13984078883035972,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 2,
+            "blend_weight": 0.5,
+            "conservative_threshold": 0.6150000000000001,
+            "sensitivity_targeted_threshold": 0.5700000000000001,
+            "controller_conservative": {
+              "rows": 3000,
+              "intent_threshold": 0.6150000000000001,
+              "intent_balanced_accuracy": 0.681,
+              "intent_sensitivity": 0.46066666666666667,
+              "intent_specificity": 0.9013333333333333,
+              "false_activation_rate_per_window": 0.09866666666666667,
+              "missed_intent_rate": 0.5393333333333333,
+              "available_fraction": 0.9786666666666667,
+              "abstained_fraction": 0.021333333333333333,
+              "conditional_direction_accuracy": 0.683068017366136,
+              "conditional_direction_balanced_accuracy": 0.6826496114643253,
+              "intent_auroc": 0.8207888888888889,
+              "intent_auprc": 0.7953803790020203,
+              "intent_brier_score": 0.19123402342082474,
+              "intent_expected_calibration_error": 0.11806431648166295,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 2,
+            "blend_weight": 0.75,
+            "conservative_threshold": 0.66,
+            "sensitivity_targeted_threshold": 0.55,
+            "controller_conservative": {
+              "rows": 3000,
+              "intent_threshold": 0.66,
+              "intent_balanced_accuracy": 0.6113333333333333,
+              "intent_sensitivity": 0.31733333333333336,
+              "intent_specificity": 0.9053333333333333,
+              "false_activation_rate_per_window": 0.09466666666666666,
+              "missed_intent_rate": 0.6826666666666666,
+              "available_fraction": 0.9786666666666667,
+              "abstained_fraction": 0.021333333333333333,
+              "conditional_direction_accuracy": 0.6218487394957983,
+              "conditional_direction_balanced_accuracy": 0.6221592920353982,
+              "intent_auroc": 0.7539653333333334,
+              "intent_auprc": 0.7235579227905194,
+              "intent_brier_score": 0.2045732131407747,
+              "intent_expected_calibration_error": 0.0509102928768745,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 5,
+            "blend_weight": 0.25,
+            "conservative_threshold": 0.5900000000000001,
+            "sensitivity_targeted_threshold": 0.5900000000000001,
+            "controller_conservative": {
+              "rows": 3000,
+              "intent_threshold": 0.5900000000000001,
+              "intent_balanced_accuracy": 0.7596666666666667,
+              "intent_sensitivity": 0.6153333333333333,
+              "intent_specificity": 0.904,
+              "false_activation_rate_per_window": 0.096,
+              "missed_intent_rate": 0.3846666666666667,
+              "available_fraction": 0.9786666666666667,
+              "abstained_fraction": 0.021333333333333333,
+              "conditional_direction_accuracy": 0.6717226435536294,
+              "conditional_direction_balanced_accuracy": 0.6720748427082355,
+              "intent_auroc": 0.8869080000000001,
+              "intent_auprc": 0.8694982817297645,
+              "intent_brier_score": 0.17330414625001844,
+              "intent_expected_calibration_error": 0.17040158890859786,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 5,
+            "blend_weight": 0.5,
+            "conservative_threshold": 0.5900000000000001,
+            "sensitivity_targeted_threshold": 0.5700000000000001,
+            "controller_conservative": {
+              "rows": 3000,
+              "intent_threshold": 0.5900000000000001,
+              "intent_balanced_accuracy": 0.7250000000000001,
+              "intent_sensitivity": 0.542,
+              "intent_specificity": 0.908,
+              "false_activation_rate_per_window": 0.092,
+              "missed_intent_rate": 0.45799999999999996,
+              "available_fraction": 0.9786666666666667,
+              "abstained_fraction": 0.021333333333333333,
+              "conditional_direction_accuracy": 0.6777367773677737,
+              "conditional_direction_balanced_accuracy": 0.6773115754303561,
+              "intent_auroc": 0.8767151111111111,
+              "intent_auprc": 0.8492643011880256,
+              "intent_brier_score": 0.17187431486402704,
+              "intent_expected_calibration_error": 0.16520092880023,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 5,
+            "blend_weight": 0.75,
+            "conservative_threshold": 0.6250000000000001,
+            "sensitivity_targeted_threshold": 0.55,
+            "controller_conservative": {
+              "rows": 3000,
+              "intent_threshold": 0.6250000000000001,
+              "intent_balanced_accuracy": 0.6576666666666666,
+              "intent_sensitivity": 0.4126666666666667,
+              "intent_specificity": 0.9026666666666667,
+              "false_activation_rate_per_window": 0.09733333333333333,
+              "missed_intent_rate": 0.5873333333333333,
+              "available_fraction": 0.9786666666666667,
+              "abstained_fraction": 0.021333333333333333,
+              "conditional_direction_accuracy": 0.6510500807754442,
+              "conditional_direction_balanced_accuracy": 0.6510702725279315,
+              "intent_auroc": 0.830244,
+              "intent_auprc": 0.7931582852943859,
+              "intent_brier_score": 0.1779794922557049,
+              "intent_expected_calibration_error": 0.10756944823103985,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 10,
+            "blend_weight": 0.25,
+            "conservative_threshold": 0.6200000000000001,
+            "sensitivity_targeted_threshold": 0.6250000000000001,
+            "controller_conservative": {
+              "rows": 3000,
+              "intent_threshold": 0.6200000000000001,
+              "intent_balanced_accuracy": 0.7603333333333333,
+              "intent_sensitivity": 0.6166666666666667,
+              "intent_specificity": 0.904,
+              "false_activation_rate_per_window": 0.096,
+              "missed_intent_rate": 0.3833333333333333,
+              "available_fraction": 0.9786666666666667,
+              "abstained_fraction": 0.021333333333333333,
+              "conditional_direction_accuracy": 0.6616216216216216,
+              "conditional_direction_balanced_accuracy": 0.6627952645458116,
+              "intent_auroc": 0.8816213333333333,
+              "intent_auprc": 0.8713389186581553,
+              "intent_brier_score": 0.1715621706332206,
+              "intent_expected_calibration_error": 0.16315594818348286,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 10,
+            "blend_weight": 0.5,
+            "conservative_threshold": 0.635,
+            "sensitivity_targeted_threshold": 0.64,
+            "controller_conservative": {
+              "rows": 3000,
+              "intent_threshold": 0.635,
+              "intent_balanced_accuracy": 0.7596666666666667,
+              "intent_sensitivity": 0.6186666666666667,
+              "intent_specificity": 0.9006666666666667,
+              "false_activation_rate_per_window": 0.09933333333333333,
+              "missed_intent_rate": 0.3813333333333333,
+              "available_fraction": 0.9786666666666667,
+              "abstained_fraction": 0.021333333333333333,
+              "conditional_direction_accuracy": 0.6734913793103449,
+              "conditional_direction_balanced_accuracy": 0.6741257019699285,
+              "intent_auroc": 0.8806062222222222,
+              "intent_auprc": 0.8644712299467557,
+              "intent_brier_score": 0.16714399176838207,
+              "intent_expected_calibration_error": 0.1486850962698453,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 10,
+            "blend_weight": 0.75,
+            "conservative_threshold": 0.665,
+            "sensitivity_targeted_threshold": 0.655,
+            "controller_conservative": {
+              "rows": 3000,
+              "intent_threshold": 0.665,
+              "intent_balanced_accuracy": 0.735,
+              "intent_sensitivity": 0.566,
+              "intent_specificity": 0.904,
+              "false_activation_rate_per_window": 0.096,
+              "missed_intent_rate": 0.43400000000000005,
+              "available_fraction": 0.9786666666666667,
+              "abstained_fraction": 0.021333333333333333,
+              "conditional_direction_accuracy": 0.6666666666666666,
+              "conditional_direction_balanced_accuracy": 0.6672752902524031,
+              "intent_auroc": 0.8509035555555555,
+              "intent_auprc": 0.8264280226497723,
+              "intent_brier_score": 0.16901444981916355,
+              "intent_expected_calibration_error": 0.09017009605757152,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          }
+        ],
+        "development_observed_conservative": {
+          "rows": 3600,
+          "intent_threshold": 0.635,
+          "intent_balanced_accuracy": 0.6941666666666666,
+          "intent_sensitivity": 0.42333333333333334,
+          "intent_specificity": 0.965,
+          "false_activation_rate_per_window": 0.035,
+          "missed_intent_rate": 0.5766666666666667,
+          "available_fraction": 0.9955555555555555,
+          "abstained_fraction": 0.0044444444444444444,
+          "conditional_direction_accuracy": 0.7230971128608924,
+          "conditional_direction_balanced_accuracy": 0.7215538674033148,
+          "intent_auroc": 0.9035324074074075,
+          "intent_auprc": 0.8895431094993052,
+          "intent_brier_score": 0.16179631047883478,
+          "intent_expected_calibration_error": 0.1769765376105985,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "development_observed_sensitivity_targeted": {
+          "rows": 3600,
+          "intent_threshold": 0.64,
+          "intent_balanced_accuracy": 0.6891666666666667,
+          "intent_sensitivity": 0.4088888888888889,
+          "intent_specificity": 0.9694444444444444,
+          "false_activation_rate_per_window": 0.030555555555555555,
+          "missed_intent_rate": 0.5911111111111111,
+          "available_fraction": 0.9955555555555555,
+          "abstained_fraction": 0.0044444444444444444,
+          "conditional_direction_accuracy": 0.720108695652174,
+          "conditional_direction_balanced_accuracy": 0.7180945188541643,
+          "intent_auroc": 0.9035324074074075,
+          "intent_auprc": 0.8895431094993052,
+          "intent_brier_score": 0.16179631047883478,
+          "intent_expected_calibration_error": 0.1769765376105985,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      },
+      "liu2024": {
+        "selected_on_controller": {
+          "budget_per_class": 10,
+          "blend_weight": 0.75,
+          "conservative_threshold": 0.685,
+          "sensitivity_targeted_threshold": 0.5650000000000001,
+          "controller_conservative": {
+            "rows": 312,
+            "intent_threshold": 0.685,
+            "intent_balanced_accuracy": 0.6319078947368421,
+            "intent_sensitivity": 0.3625,
+            "intent_specificity": 0.9013157894736842,
+            "false_activation_rate_per_window": 0.09868421052631579,
+            "missed_intent_rate": 0.6375,
+            "available_fraction": 1.0,
+            "abstained_fraction": 0.0,
+            "conditional_direction_accuracy": 0.603448275862069,
+            "conditional_direction_balanced_accuracy": 0.6099163679808841,
+            "intent_auroc": 0.6586759868421053,
+            "intent_auprc": 0.7089705983498353,
+            "intent_brier_score": 0.23412268217027998,
+            "intent_expected_calibration_error": 0.09946147095742151,
+            "continuous_false_activations_per_minute": "not_evaluated"
+          }
+        },
+        "all_controller_configurations": [
+          {
+            "budget_per_class": 2,
+            "blend_weight": 0.25,
+            "conservative_threshold": 0.5950000000000001,
+            "sensitivity_targeted_threshold": 0.51,
+            "controller_conservative": {
+              "rows": 312,
+              "intent_threshold": 0.5950000000000001,
+              "intent_balanced_accuracy": 0.5631578947368421,
+              "intent_sensitivity": 0.225,
+              "intent_specificity": 0.9013157894736842,
+              "false_activation_rate_per_window": 0.09868421052631579,
+              "missed_intent_rate": 0.775,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.6111111111111112,
+              "conditional_direction_balanced_accuracy": 0.59375,
+              "intent_auroc": 0.65078125,
+              "intent_auprc": 0.6602070052160447,
+              "intent_brier_score": 0.2330333264217903,
+              "intent_expected_calibration_error": 0.04291570040004558,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 2,
+            "blend_weight": 0.5,
+            "conservative_threshold": 0.6000000000000001,
+            "sensitivity_targeted_threshold": 0.505,
+            "controller_conservative": {
+              "rows": 312,
+              "intent_threshold": 0.6000000000000001,
+              "intent_balanced_accuracy": 0.5725328947368421,
+              "intent_sensitivity": 0.24375,
+              "intent_specificity": 0.9013157894736842,
+              "false_activation_rate_per_window": 0.09868421052631579,
+              "missed_intent_rate": 0.75625,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.6410256410256411,
+              "conditional_direction_balanced_accuracy": 0.6394736842105263,
+              "intent_auroc": 0.6632812499999999,
+              "intent_auprc": 0.6621467701246008,
+              "intent_brier_score": 0.23144503709194622,
+              "intent_expected_calibration_error": 0.057693390878443565,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 2,
+            "blend_weight": 0.75,
+            "conservative_threshold": 0.6250000000000001,
+            "sensitivity_targeted_threshold": 0.48,
+            "controller_conservative": {
+              "rows": 312,
+              "intent_threshold": 0.6250000000000001,
+              "intent_balanced_accuracy": 0.5694078947368421,
+              "intent_sensitivity": 0.2375,
+              "intent_specificity": 0.9013157894736842,
+              "false_activation_rate_per_window": 0.09868421052631579,
+              "missed_intent_rate": 0.7625,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.6052631578947368,
+              "conditional_direction_balanced_accuracy": 0.6079545454545454,
+              "intent_auroc": 0.6504111842105263,
+              "intent_auprc": 0.6463230023025538,
+              "intent_brier_score": 0.23411369079981767,
+              "intent_expected_calibration_error": 0.03937327517793509,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 5,
+            "blend_weight": 0.25,
+            "conservative_threshold": 0.6150000000000001,
+            "sensitivity_targeted_threshold": 0.535,
+            "controller_conservative": {
+              "rows": 312,
+              "intent_threshold": 0.6150000000000001,
+              "intent_balanced_accuracy": 0.5947368421052632,
+              "intent_sensitivity": 0.275,
+              "intent_specificity": 0.9144736842105263,
+              "false_activation_rate_per_window": 0.08552631578947369,
+              "missed_intent_rate": 0.725,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.5454545454545454,
+              "conditional_direction_balanced_accuracy": 0.5384615384615384,
+              "intent_auroc": 0.6698190789473684,
+              "intent_auprc": 0.6790796393325647,
+              "intent_brier_score": 0.2298305040024053,
+              "intent_expected_calibration_error": 0.04633769287624038,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 5,
+            "blend_weight": 0.5,
+            "conservative_threshold": 0.64,
+            "sensitivity_targeted_threshold": 0.545,
+            "controller_conservative": {
+              "rows": 312,
+              "intent_threshold": 0.64,
+              "intent_balanced_accuracy": 0.5945723684210527,
+              "intent_sensitivity": 0.28125,
+              "intent_specificity": 0.9078947368421053,
+              "false_activation_rate_per_window": 0.09210526315789473,
+              "missed_intent_rate": 0.71875,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.4888888888888889,
+              "conditional_direction_balanced_accuracy": 0.4891304347826087,
+              "intent_auroc": 0.6909539473684211,
+              "intent_auprc": 0.6959526918677407,
+              "intent_brier_score": 0.22581742458980938,
+              "intent_expected_calibration_error": 0.05793637576949723,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 5,
+            "blend_weight": 0.75,
+            "conservative_threshold": 0.685,
+            "sensitivity_targeted_threshold": 0.55,
+            "controller_conservative": {
+              "rows": 312,
+              "intent_threshold": 0.685,
+              "intent_balanced_accuracy": 0.606907894736842,
+              "intent_sensitivity": 0.3125,
+              "intent_specificity": 0.9013157894736842,
+              "false_activation_rate_per_window": 0.09868421052631579,
+              "missed_intent_rate": 0.6875,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.48,
+              "conditional_direction_balanced_accuracy": 0.48,
+              "intent_auroc": 0.6821546052631579,
+              "intent_auprc": 0.6843438455708524,
+              "intent_brier_score": 0.22683932055156225,
+              "intent_expected_calibration_error": 0.05553135515434239,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 10,
+            "blend_weight": 0.25,
+            "conservative_threshold": 0.6100000000000001,
+            "sensitivity_targeted_threshold": 0.525,
+            "controller_conservative": {
+              "rows": 312,
+              "intent_threshold": 0.6100000000000001,
+              "intent_balanced_accuracy": 0.6162828947368421,
+              "intent_sensitivity": 0.33125,
+              "intent_specificity": 0.9013157894736842,
+              "false_activation_rate_per_window": 0.09868421052631579,
+              "missed_intent_rate": 0.66875,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.6037735849056604,
+              "conditional_direction_balanced_accuracy": 0.6091954022988506,
+              "intent_auroc": 0.6605674342105263,
+              "intent_auprc": 0.6950698717485374,
+              "intent_brier_score": 0.23051346090263505,
+              "intent_expected_calibration_error": 0.06184126771542146,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 10,
+            "blend_weight": 0.5,
+            "conservative_threshold": 0.645,
+            "sensitivity_targeted_threshold": 0.54,
+            "controller_conservative": {
+              "rows": 312,
+              "intent_threshold": 0.645,
+              "intent_balanced_accuracy": 0.6258223684210527,
+              "intent_sensitivity": 0.34375,
+              "intent_specificity": 0.9078947368421053,
+              "false_activation_rate_per_window": 0.09210526315789473,
+              "missed_intent_rate": 0.65625,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.6181818181818182,
+              "conditional_direction_balanced_accuracy": 0.6266666666666667,
+              "intent_auroc": 0.6697779605263158,
+              "intent_auprc": 0.7137249776758593,
+              "intent_brier_score": 0.22892816869627838,
+              "intent_expected_calibration_error": 0.0772366351048288,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          },
+          {
+            "budget_per_class": 10,
+            "blend_weight": 0.75,
+            "conservative_threshold": 0.685,
+            "sensitivity_targeted_threshold": 0.5650000000000001,
+            "controller_conservative": {
+              "rows": 312,
+              "intent_threshold": 0.685,
+              "intent_balanced_accuracy": 0.6319078947368421,
+              "intent_sensitivity": 0.3625,
+              "intent_specificity": 0.9013157894736842,
+              "false_activation_rate_per_window": 0.09868421052631579,
+              "missed_intent_rate": 0.6375,
+              "available_fraction": 1.0,
+              "abstained_fraction": 0.0,
+              "conditional_direction_accuracy": 0.603448275862069,
+              "conditional_direction_balanced_accuracy": 0.6099163679808841,
+              "intent_auroc": 0.6586759868421053,
+              "intent_auprc": 0.7089705983498353,
+              "intent_brier_score": 0.23412268217027998,
+              "intent_expected_calibration_error": 0.09946147095742151,
+              "continuous_false_activations_per_minute": "not_evaluated"
+            }
+          }
+        ],
+        "development_observed_conservative": {
+          "rows": 391,
+          "intent_threshold": 0.685,
+          "intent_balanced_accuracy": 0.6176439790575916,
+          "intent_sensitivity": 0.34,
+          "intent_specificity": 0.8952879581151832,
+          "false_activation_rate_per_window": 0.10471204188481675,
+          "missed_intent_rate": 0.6599999999999999,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.5588235294117647,
+          "conditional_direction_balanced_accuracy": 0.5645889792231256,
+          "intent_auroc": 0.7006544502617801,
+          "intent_auprc": 0.6997511582536782,
+          "intent_brier_score": 0.2217632691822485,
+          "intent_expected_calibration_error": 0.060140163871662725,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "development_observed_sensitivity_targeted": {
+          "rows": 391,
+          "intent_threshold": 0.5650000000000001,
+          "intent_balanced_accuracy": 0.6296073298429319,
+          "intent_sensitivity": 0.61,
+          "intent_specificity": 0.6492146596858639,
+          "false_activation_rate_per_window": 0.3507853403141361,
+          "missed_intent_rate": 0.39,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.5163934426229508,
+          "conditional_direction_balanced_accuracy": 0.5147058823529411,
+          "intent_auroc": 0.7006544502617801,
+          "intent_auprc": 0.6997511582536782,
+          "intent_brier_score": 0.2217632691822485,
+          "intent_expected_calibration_error": 0.060140163871662725,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      }
+    },
+    "development_observed_conservative": {
+      "rows": 4645,
+      "intent_threshold": "row_specific",
+      "intent_balanced_accuracy": 0.679094736248852,
+      "intent_sensitivity": 0.4129780833691448,
+      "intent_specificity": 0.9452113891285591,
+      "false_activation_rate_per_window": 0.0547886108714409,
+      "missed_intent_rate": 0.5870219166308552,
+      "available_fraction": 0.995048439181916,
+      "abstained_fraction": 0.0049515608180839615,
+      "conditional_direction_accuracy": 0.7107180020811654,
+      "conditional_direction_balanced_accuracy": 0.709762864698487,
+      "intent_auroc": 0.8633138832766716,
+      "intent_auprc": 0.8354596447261172,
+      "intent_brier_score": 0.17398542452158283,
+      "intent_expected_calibration_error": 0.139505578137343,
+      "continuous_false_activations_per_minute": "not_evaluated",
+      "thresholds_by_dataset": {
+        "physionet": 0.5950000000000001,
+        "openbmi": 0.635,
+        "liu2024": 0.685
+      },
+      "threshold_fallback": 0.6383333333333333,
+      "by_dataset": {
+        "physionet": {
+          "rows": 654,
+          "intent_threshold": 0.5950000000000001,
+          "intent_balanced_accuracy": 0.6330275229357798,
+          "intent_sensitivity": 0.40061162079510704,
+          "intent_specificity": 0.8654434250764527,
+          "false_activation_rate_per_window": 0.1345565749235474,
+          "missed_intent_rate": 0.599388379204893,
+          "available_fraction": 0.9892966360856269,
+          "abstained_fraction": 0.010703363914373088,
+          "conditional_direction_accuracy": 0.7175572519083969,
+          "conditional_direction_balanced_accuracy": 0.7168534080298786,
+          "intent_auroc": 0.7279316181765471,
+          "intent_auprc": 0.6955470640268228,
+          "intent_brier_score": 0.21251703505915584,
+          "intent_expected_calibration_error": 0.05927355026288524,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "openbmi": {
+          "rows": 3600,
+          "intent_threshold": 0.635,
+          "intent_balanced_accuracy": 0.6941666666666666,
+          "intent_sensitivity": 0.42333333333333334,
+          "intent_specificity": 0.965,
+          "false_activation_rate_per_window": 0.035,
+          "missed_intent_rate": 0.5766666666666667,
+          "available_fraction": 0.9955555555555555,
+          "abstained_fraction": 0.0044444444444444444,
+          "conditional_direction_accuracy": 0.7230971128608924,
+          "conditional_direction_balanced_accuracy": 0.7215538674033148,
+          "intent_auroc": 0.9035324074074075,
+          "intent_auprc": 0.8895431094993052,
+          "intent_brier_score": 0.16179631047883478,
+          "intent_expected_calibration_error": 0.1769765376105985,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "liu2024": {
+          "rows": 391,
+          "intent_threshold": 0.685,
+          "intent_balanced_accuracy": 0.6176439790575916,
+          "intent_sensitivity": 0.34,
+          "intent_specificity": 0.8952879581151832,
+          "false_activation_rate_per_window": 0.10471204188481675,
+          "missed_intent_rate": 0.6599999999999999,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.5588235294117647,
+          "conditional_direction_balanced_accuracy": 0.5645889792231256,
+          "intent_auroc": 0.7006544502617801,
+          "intent_auprc": 0.6997511582536782,
+          "intent_brier_score": 0.2217632691822485,
+          "intent_expected_calibration_error": 0.060140163871662725,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      }
+    },
+    "development_observed_sensitivity_targeted": {
+      "rows": 4645,
+      "intent_threshold": "row_specific",
+      "intent_balanced_accuracy": 0.6802955180083894,
+      "intent_sensitivity": 0.4611087236785561,
+      "intent_specificity": 0.8994823123382226,
+      "false_activation_rate_per_window": 0.10051768766177739,
+      "missed_intent_rate": 0.538891276321444,
+      "available_fraction": 0.995048439181916,
+      "abstained_fraction": 0.0049515608180839615,
+      "conditional_direction_accuracy": 0.6989748369058714,
+      "conditional_direction_balanced_accuracy": 0.6984347088711416,
+      "intent_auroc": 0.8633138832766716,
+      "intent_auprc": 0.8354596447261172,
+      "intent_brier_score": 0.17398542452158283,
+      "intent_expected_calibration_error": 0.139505578137343,
+      "continuous_false_activations_per_minute": "not_evaluated",
+      "thresholds_by_dataset": {
+        "physionet": 0.495,
+        "openbmi": 0.64,
+        "liu2024": 0.5650000000000001
+      },
+      "threshold_fallback": 0.5666666666666668,
+      "by_dataset": {
+        "physionet": {
+          "rows": 654,
+          "intent_threshold": 0.495,
+          "intent_balanced_accuracy": 0.6590214067278288,
+          "intent_sensitivity": 0.6574923547400612,
+          "intent_specificity": 0.6605504587155964,
+          "false_activation_rate_per_window": 0.3394495412844037,
+          "missed_intent_rate": 0.3425076452599388,
+          "available_fraction": 0.9892966360856269,
+          "abstained_fraction": 0.010703363914373088,
+          "conditional_direction_accuracy": 0.7302325581395349,
+          "conditional_direction_balanced_accuracy": 0.7305194805194806,
+          "intent_auroc": 0.7279316181765471,
+          "intent_auprc": 0.6955470640268228,
+          "intent_brier_score": 0.21251703505915584,
+          "intent_expected_calibration_error": 0.05927355026288524,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "openbmi": {
+          "rows": 3600,
+          "intent_threshold": 0.64,
+          "intent_balanced_accuracy": 0.6891666666666667,
+          "intent_sensitivity": 0.4088888888888889,
+          "intent_specificity": 0.9694444444444444,
+          "false_activation_rate_per_window": 0.030555555555555555,
+          "missed_intent_rate": 0.5911111111111111,
+          "available_fraction": 0.9955555555555555,
+          "abstained_fraction": 0.0044444444444444444,
+          "conditional_direction_accuracy": 0.720108695652174,
+          "conditional_direction_balanced_accuracy": 0.7180945188541643,
+          "intent_auroc": 0.9035324074074075,
+          "intent_auprc": 0.8895431094993052,
+          "intent_brier_score": 0.16179631047883478,
+          "intent_expected_calibration_error": 0.1769765376105985,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        },
+        "liu2024": {
+          "rows": 391,
+          "intent_threshold": 0.5650000000000001,
+          "intent_balanced_accuracy": 0.6296073298429319,
+          "intent_sensitivity": 0.61,
+          "intent_specificity": 0.6492146596858639,
+          "false_activation_rate_per_window": 0.3507853403141361,
+          "missed_intent_rate": 0.39,
+          "available_fraction": 1.0,
+          "abstained_fraction": 0.0,
+          "conditional_direction_accuracy": 0.5163934426229508,
+          "conditional_direction_balanced_accuracy": 0.5147058823529411,
+          "intent_auroc": 0.7006544502617801,
+          "intent_auprc": 0.6997511582536782,
+          "intent_brier_score": 0.2217632691822485,
+          "intent_expected_calibration_error": 0.060140163871662725,
+          "continuous_false_activations_per_minute": "not_evaluated"
+        }
+      }
+    }
+  },
+  "bootstrap_confidence_intervals": {
+    "iterations": 1000,
+    "population": {
+      "conservative": {
+        "overall": {
+          "intent_balanced_accuracy": {
+            "estimate": 0.598983664399574,
+            "lower_95": 0.5524184585501423,
+            "upper_95": 0.6555696397971752
+          },
+          "intent_sensitivity": {
+            "estimate": 0.2346368715083799,
+            "lower_95": 0.1376037991060927,
+            "upper_95": 0.354581261633392
+          },
+          "intent_specificity": {
+            "estimate": 0.9633304572907679,
+            "lower_95": 0.9437069600387052,
+            "upper_95": 0.975880201124855
+          },
+          "conditional_direction_balanced_accuracy": {
+            "estimate": 0.633278679711859,
+            "lower_95": 0.5663374794142639,
+            "upper_95": 0.7110080637208547
+          },
+          "intent_auroc": {
+            "estimate": 0.8005119034420928,
+            "lower_95": 0.749134041377604,
+            "upper_95": 0.8491289253959184
+          },
+          "intent_auprc": {
+            "estimate": 0.7836751997983855,
+            "lower_95": 0.716558459886738,
+            "upper_95": 0.8367966597161477
+          }
+        },
+        "by_dataset": {
+          "physionet": {
+            "intent_balanced_accuracy": {
+              "estimate": 0.5718654434250765,
+              "lower_95": 0.5305810397553516,
+              "upper_95": 0.6162079510703364
+            },
+            "intent_sensitivity": {
+              "estimate": 0.22935779816513763,
+              "lower_95": 0.1131241312204615,
+              "upper_95": 0.3425097689432552
+            },
+            "intent_specificity": {
+              "estimate": 0.9143730886850153,
+              "lower_95": 0.8545454545454545,
+              "upper_95": 0.9636966891133557
+            },
+            "conditional_direction_balanced_accuracy": {
+              "estimate": 0.569583931133429,
+              "lower_95": 0.49801963212792955,
+              "upper_95": 0.6696850024975025
+            },
+            "intent_auroc": {
+              "estimate": 0.6770847945833217,
+              "lower_95": 0.6240378787878788,
+              "upper_95": 0.7359554003123567
+            },
+            "intent_auprc": {
+              "estimate": 0.6604698854449955,
+              "lower_95": 0.6147744303210049,
+              "upper_95": 0.7178196669655972
+            }
+          },
+          "openbmi": {
+            "intent_balanced_accuracy": {
+              "estimate": 0.6094444444444445,
+              "lower_95": 0.5508194444444444,
+              "upper_95": 0.6794444444444444
+            },
+            "intent_sensitivity": {
+              "estimate": 0.24388888888888888,
+              "lower_95": 0.12541666666666668,
+              "upper_95": 0.39
+            },
+            "intent_specificity": {
+              "estimate": 0.975,
+              "lower_95": 0.9644444444444444,
+              "upper_95": 0.9861111111111112
+            },
+            "conditional_direction_balanced_accuracy": {
+              "estimate": 0.6619302837675017,
+              "lower_95": 0.5974951130269159,
+              "upper_95": 0.7845126175160811
+            },
+            "intent_auroc": {
+              "estimate": 0.8343317901234568,
+              "lower_95": 0.7950398148148148,
+              "upper_95": 0.892804938271605
+            },
+            "intent_auprc": {
+              "estimate": 0.8282198377473426,
+              "lower_95": 0.7642292937927246,
+              "upper_95": 0.8877064076913568
+            }
+          },
+          "liu2024": {
+            "intent_balanced_accuracy": {
+              "estimate": 0.548586387434555,
+              "lower_95": 0.5106940445026178,
+              "upper_95": 0.5906578947368422
+            },
+            "intent_sensitivity": {
+              "estimate": 0.16,
+              "lower_95": 0.07,
+              "upper_95": 0.2601249999999999
+            },
+            "intent_specificity": {
+              "estimate": 0.93717277486911,
+              "lower_95": 0.9052631578947369,
+              "upper_95": 0.9684251860016534
+            },
+            "conditional_direction_balanced_accuracy": {
+              "estimate": 0.3607843137254902,
+              "lower_95": 0.14647646414887794,
+              "upper_95": 0.5589285714285714
+            },
+            "intent_auroc": {
+              "estimate": 0.6990837696335079,
+              "lower_95": 0.6328773422430422,
+              "upper_95": 0.7624042501966742
+            },
+            "intent_auprc": {
+              "estimate": 0.6868942160545423,
+              "lower_95": 0.6328584002557891,
+              "upper_95": 0.7540386756805791
+            }
+          }
+        }
+      },
+      "sensitivity_targeted": {
+        "overall": {
+          "intent_balanced_accuracy": {
+            "estimate": 0.7067457164330793,
+            "lower_95": 0.6399209840337501,
+            "upper_95": 0.7620258821674635
+          },
+          "intent_sensitivity": {
+            "estimate": 0.614095401804899,
+            "lower_95": 0.4805584257847775,
+            "upper_95": 0.754442335215927
+          },
+          "intent_specificity": {
+            "estimate": 0.7993960310612597,
+            "lower_95": 0.6915303393123714,
+            "upper_95": 0.8476263845498437
+          },
+          "conditional_direction_balanced_accuracy": {
+            "estimate": 0.6932795509247281,
+            "lower_95": 0.6275420117302399,
+            "upper_95": 0.7625813433090448
+          },
+          "intent_auroc": {
+            "estimate": 0.8005119034420928,
+            "lower_95": 0.7425218216573608,
+            "upper_95": 0.8485664762848253
+          },
+          "intent_auprc": {
+            "estimate": 0.7836751997983855,
+            "lower_95": 0.7089960211072933,
+            "upper_95": 0.8396103696693428
+          }
+        },
+        "by_dataset": {
+          "physionet": {
+            "intent_balanced_accuracy": {
+              "estimate": 0.6207951070336392,
+              "lower_95": 0.5757575757575758,
+              "upper_95": 0.6666666666666666
+            },
+            "intent_sensitivity": {
+              "estimate": 0.5902140672782875,
+              "lower_95": 0.4666666666666667,
+              "upper_95": 0.7151515151515152
+            },
+            "intent_specificity": {
+              "estimate": 0.6513761467889908,
+              "lower_95": 0.5123046211348964,
+              "upper_95": 0.7788135946622186
+            },
+            "conditional_direction_balanced_accuracy": {
+              "estimate": 0.6424812030075189,
+              "lower_95": 0.590106651008861,
+              "upper_95": 0.6974999189784806
+            },
+            "intent_auroc": {
+              "estimate": 0.6770847945833217,
+              "lower_95": 0.6275778567102928,
+              "upper_95": 0.7342509182736455
+            },
+            "intent_auprc": {
+              "estimate": 0.6604698854449955,
+              "lower_95": 0.6204379601371722,
+              "upper_95": 0.7217706786279753
+            }
+          },
+          "openbmi": {
+            "intent_balanced_accuracy": {
+              "estimate": 0.7313888888888889,
+              "lower_95": 0.6516527777777777,
+              "upper_95": 0.8016875
+            },
+            "intent_sensitivity": {
+              "estimate": 0.5927777777777777,
+              "lower_95": 0.4204027777777778,
+              "upper_95": 0.7561666666666665
+            },
+            "intent_specificity": {
+              "estimate": 0.87,
+              "lower_95": 0.8294444444444444,
+              "upper_95": 0.9155694444444444
+            },
+            "conditional_direction_balanced_accuracy": {
+              "estimate": 0.7204400391270998,
+              "lower_95": 0.6480172474729624,
+              "upper_95": 0.8187834338807489
+            },
+            "intent_auroc": {
+              "estimate": 0.8343317901234568,
+              "lower_95": 0.7963040123456789,
+              "upper_95": 0.8915033950617284
+            },
+            "intent_auprc": {
+              "estimate": 0.8282198377473426,
+              "lower_95": 0.7688213667808261,
+              "upper_95": 0.8850759850381091
+            }
+          },
+          "liu2024": {
+            "intent_balanced_accuracy": {
+              "estimate": 0.616217277486911,
+              "lower_95": 0.56309375,
+              "upper_95": 0.6765486532102507
+            },
+            "intent_sensitivity": {
+              "estimate": 0.845,
+              "lower_95": 0.745,
+              "upper_95": 0.935
+            },
+            "intent_specificity": {
+              "estimate": 0.38743455497382195,
+              "lower_95": 0.25789066739012484,
+              "upper_95": 0.5052631578947369
+            },
+            "conditional_direction_balanced_accuracy": {
+              "estimate": 0.5944242084617539,
+              "lower_95": 0.5235223170146505,
+              "upper_95": 0.6633994281535797
+            },
+            "intent_auroc": {
+              "estimate": 0.6990837696335079,
+              "lower_95": 0.6341589039680353,
+              "upper_95": 0.7654740469568062
+            },
+            "intent_auprc": {
+              "estimate": 0.6868942160545423,
+              "lower_95": 0.6345623492774856,
+              "upper_95": 0.7523632209860763
+            }
+          }
+        }
+      }
+    },
+    "patient_adapted": {
+      "conservative": {
+        "overall": {
+          "intent_balanced_accuracy": {
+            "estimate": 0.679094736248852,
+            "lower_95": 0.6313702749392383,
+            "upper_95": 0.7192053547318207
+          },
+          "intent_sensitivity": {
+            "estimate": 0.4129780833691448,
+            "lower_95": 0.3145525050363313,
+            "upper_95": 0.5057457790093693
+          },
+          "intent_specificity": {
+            "estimate": 0.9452113891285591,
+            "lower_95": 0.9060695403452721,
+            "upper_95": 0.9660708432090825
+          },
+          "conditional_direction_balanced_accuracy": {
+            "estimate": 0.709762864698487,
+            "lower_95": 0.6488598325811717,
+            "upper_95": 0.7698748727275351
+          },
+          "intent_auroc": {
+            "estimate": 0.8633138832766716,
+            "lower_95": 0.7978608594204283,
+            "upper_95": 0.9084124498992797
+          },
+          "intent_auprc": {
+            "estimate": 0.8354596447261172,
+            "lower_95": 0.7625602864983976,
+            "upper_95": 0.8849066757300627
+          }
+        },
+        "by_dataset": {
+          "physionet": {
+            "intent_balanced_accuracy": {
+              "estimate": 0.6330275229357798,
+              "lower_95": 0.5864197530864198,
+              "upper_95": 0.6803030303030303
+            },
+            "intent_sensitivity": {
+              "estimate": 0.40061162079510704,
+              "lower_95": 0.3148148148148148,
+              "upper_95": 0.49401374859708186
+            },
+            "intent_specificity": {
+              "estimate": 0.8654434250764527,
+              "lower_95": 0.7938921323324993,
+              "upper_95": 0.9235474006116208
+            },
+            "conditional_direction_balanced_accuracy": {
+              "estimate": 0.7168534080298786,
+              "lower_95": 0.6152476220016543,
+              "upper_95": 0.8139142692095728
+            },
+            "intent_auroc": {
+              "estimate": 0.7279316181765471,
+              "lower_95": 0.6623261507392165,
+              "upper_95": 0.7893767217630854
+            },
+            "intent_auprc": {
+              "estimate": 0.6955470640268228,
+              "lower_95": 0.632485928114248,
+              "upper_95": 0.7699001346471247
+            }
+          },
+          "openbmi": {
+            "intent_balanced_accuracy": {
+              "estimate": 0.6941666666666666,
+              "lower_95": 0.643875,
+              "upper_95": 0.7422638888888887
+            },
+            "intent_sensitivity": {
+              "estimate": 0.42333333333333334,
+              "lower_95": 0.3071666666666667,
+              "upper_95": 0.5383333333333333
+            },
+            "intent_specificity": {
+              "estimate": 0.965,
+              "lower_95": 0.9372222222222222,
+              "upper_95": 0.9877777777777778
+            },
+            "conditional_direction_balanced_accuracy": {
+              "estimate": 0.7215538674033148,
+              "lower_95": 0.6579335787162459,
+              "upper_95": 0.8072513473787359
+            },
+            "intent_auroc": {
+              "estimate": 0.9035324074074075,
+              "lower_95": 0.8537728395061729,
+              "upper_95": 0.9483509259259258
+            },
+            "intent_auprc": {
+              "estimate": 0.8895431094993052,
+              "lower_95": 0.8403837373230328,
+              "upper_95": 0.9430726201319903
+            }
+          },
+          "liu2024": {
+            "intent_balanced_accuracy": {
+              "estimate": 0.6176439790575916,
+              "lower_95": 0.5505156250000001,
+              "upper_95": 0.6891348684210526
+            },
+            "intent_sensitivity": {
+              "estimate": 0.34,
+              "lower_95": 0.214875,
+              "upper_95": 0.465
+            },
+            "intent_specificity": {
+              "estimate": 0.8952879581151832,
+              "lower_95": 0.837696335078534,
+              "upper_95": 0.9430125260402756
+            },
+            "conditional_direction_balanced_accuracy": {
+              "estimate": 0.5645889792231256,
+              "lower_95": 0.4163761466180821,
+              "upper_95": 0.6954605263157894
+            },
+            "intent_auroc": {
+              "estimate": 0.7006544502617801,
+              "lower_95": 0.6136718483053182,
+              "upper_95": 0.7950032383419688
+            },
+            "intent_auprc": {
+              "estimate": 0.6997511582536782,
+              "lower_95": 0.6016289362548906,
+              "upper_95": 0.8036345865685153
+            }
+          }
+        }
+      },
+      "sensitivity_targeted": {
+        "overall": {
+          "intent_balanced_accuracy": {
+            "estimate": 0.6802955180083894,
+            "lower_95": 0.6341705308418201,
+            "upper_95": 0.7183329666221021
+          },
+          "intent_sensitivity": {
+            "estimate": 0.4611087236785561,
+            "lower_95": 0.37219308992893896,
+            "upper_95": 0.5712666699717416
+          },
+          "intent_specificity": {
+            "estimate": 0.8994823123382226,
+            "lower_95": 0.79928772928887,
+            "upper_95": 0.9390605666891728
+          },
+          "conditional_direction_balanced_accuracy": {
+            "estimate": 0.6984347088711416,
+            "lower_95": 0.6521474680102739,
+            "upper_95": 0.7511540942091158
+          },
+          "intent_auroc": {
+            "estimate": 0.8633138832766716,
+            "lower_95": 0.7926355785198678,
+            "upper_95": 0.9073208324182321
+          },
+          "intent_auprc": {
+            "estimate": 0.8354596447261172,
+            "lower_95": 0.7654642685863036,
+            "upper_95": 0.8829087713620812
+          }
+        },
+        "by_dataset": {
+          "physionet": {
+            "intent_balanced_accuracy": {
+              "estimate": 0.6590214067278288,
+              "lower_95": 0.6064709595959595,
+              "upper_95": 0.7121212121212122
+            },
+            "intent_sensitivity": {
+              "estimate": 0.6574923547400612,
+              "lower_95": 0.5832759938837921,
+              "upper_95": 0.7314966251298027
+            },
+            "intent_specificity": {
+              "estimate": 0.6605504587155964,
+              "lower_95": 0.5514618406285073,
+              "upper_95": 0.765462962962963
+            },
+            "conditional_direction_balanced_accuracy": {
+              "estimate": 0.7305194805194806,
+              "lower_95": 0.6609290542339001,
+              "upper_95": 0.7913701024856792
+            },
+            "intent_auroc": {
+              "estimate": 0.7279316181765471,
+              "lower_95": 0.6627701385392312,
+              "upper_95": 0.7904203494335645
+            },
+            "intent_auprc": {
+              "estimate": 0.6955470640268228,
+              "lower_95": 0.6326778910444049,
+              "upper_95": 0.771840847441535
+            }
+          },
+          "openbmi": {
+            "intent_balanced_accuracy": {
+              "estimate": 0.6891666666666667,
+              "lower_95": 0.63775,
+              "upper_95": 0.7377986111111112
+            },
+            "intent_sensitivity": {
+              "estimate": 0.4088888888888889,
+              "lower_95": 0.28988888888888886,
+              "upper_95": 0.5183333333333333
+            },
+            "intent_specificity": {
+              "estimate": 0.9694444444444444,
+              "lower_95": 0.9455416666666667,
+              "upper_95": 0.9889166666666667
+            },
+            "conditional_direction_balanced_accuracy": {
+              "estimate": 0.7180945188541643,
+              "lower_95": 0.6611884749889073,
+              "upper_95": 0.7977796002672985
+            },
+            "intent_auroc": {
+              "estimate": 0.9035324074074075,
+              "lower_95": 0.8503138888888889,
+              "upper_95": 0.9472808641975308
+            },
+            "intent_auprc": {
+              "estimate": 0.8895431094993052,
+              "lower_95": 0.8395515283596755,
+              "upper_95": 0.9391223768555318
+            }
+          },
+          "liu2024": {
+            "intent_balanced_accuracy": {
+              "estimate": 0.6296073298429319,
+              "lower_95": 0.5516973684210527,
+              "upper_95": 0.7035702845136401
+            },
+            "intent_sensitivity": {
+              "estimate": 0.61,
+              "lower_95": 0.45,
+              "upper_95": 0.7601249999999999
+            },
+            "intent_specificity": {
+              "estimate": 0.6492146596858639,
+              "lower_95": 0.5473560855263158,
+              "upper_95": 0.7539267015706806
+            },
+            "conditional_direction_balanced_accuracy": {
+              "estimate": 0.5147058823529411,
+              "lower_95": 0.4227287266584169,
+              "upper_95": 0.6091995769669645
+            },
+            "intent_auroc": {
+              "estimate": 0.7006544502617801,
+              "lower_95": 0.6132769736842105,
+              "upper_95": 0.790317284066022
+            },
+            "intent_auprc": {
+              "estimate": 0.6997511582536782,
+              "lower_95": 0.5965859049679418,
+              "upper_95": 0.8022455323247961
+            }
+          }
+        }
+      }
+    }
+  },
+  "continuous_no_control_status": "Not evaluated: no hard-negative manifest was supplied. Cue-locked window specificity is not converted into a deployment false-activation rate.",
+  "runtime_minutes": 1.0273899992307027
+}

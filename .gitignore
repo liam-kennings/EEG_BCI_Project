@@ -1,0 +1,42 @@
+# --- Python / tool caches -------------------------------------------------
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.numba_cache/
+.matplotlib/
+.venv/
+.DS_Store
+
+# --- Source datasets (67 GB; re-link with EEG_BCI_Project_CONFIGURE_DATA.command)
+# WAY-EEG-GAL: keep only the download audit and manifest.
+WAY-EEG-GAL/archives/
+WAY-EEG-GAL/participants/
+WAY-EEG-GAL/.way_eeg_gal_ready
+# HS-Stroke release (figshare 30747806): keep only the project-authored
+# intake and locked-contract records.
+30747806/*
+!30747806/EEG_BCI_Project_HS_STROKE_V6_INTAKE.json
+!30747806/EEG_BCI_Project_HS_STROKE_LOCKED_CONTRACT.json
+EEG and EMG Dataset for Analyzing Movement-Related/
+files/
+MIND/
+# Machine-specific absolute dataset links.
+Liu acute-stroke dataset
+data_links/EEG_BCI_Project_*
+artifacts/gui_experiments/translational_v3
+
+# --- Regenerable window/feature caches (about 950 MB) ---------------------
+# Metrics, predictions, models, and figures are tracked; cached arrays are not.
+*.npz
+
+# --- Third-party papers and extracted text --------------------------------
+Yin_2015_J._Neural_Eng._12_036004.pdf
+s41597-026-07807-x.pdf
+tmp/
+
+# --- Large poster design binaries and scratch rebuild workspace -----------
+*.pptx
+*.pxd
+*.pptx.inspect.ndjson
+EEG_BCI_Project_Poster_V1.pdf
+.tmp/

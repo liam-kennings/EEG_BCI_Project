@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "event_semantics": {
+    "physionet": {
+      "dataset": "physionet",
+      "cohort": "healthy",
+      "intent_definition": "T1/T2 cue-locked unilateral fist imagery",
+      "negative_definition": "T0 intervals inside repetitive imagery runs",
+      "negative_subtype": "protocol_rest",
+      "cue_locked": true,
+      "continuous_idle_available": false,
+      "auxiliary_validation": [],
+      "deployment_match": "low",
+      "caveats": [
+        "T0 is not unrestricted idle.",
+        "The cue is synchronized but attempted movement onset is not measured.",
+        "No EOG, EMG, force, or motion validation is available."
+      ]
+    },
+    "openbmi": {
+      "dataset": "openbmi",
+      "cohort": "healthy",
+      "intent_definition": "left/right hand imagery after a visual instruction",
+      "negative_definition": "fixed post-imagery interval from the same trial",
+      "negative_subtype": "post_task_rest",
+      "cue_locked": true,
+      "continuous_idle_available": false,
+      "auxiliary_validation": [
+        "emg"
+      ],
+      "deployment_match": "low",
+      "caveats": [
+        "Post-task rest is temporally predictable and not unrestricted idle.",
+        "EMG channels are retained for validation but excluded from EEG decoding."
+      ]
+    },
+    "liu2024": {
+      "dataset": "liu2024",
+      "cohort": "acute_stroke",
+      "intent_definition": "left/right hand-grip imagery during protocol stage 2",
+      "negative_definition": "protocol break/rest during stage 3",
+      "negative_subtype": "protocol_break",
+      "cue_locked": true,
+      "continuous_idle_available": false,
+      "auxiliary_validation": [
+        "horizontal_eog",
+        "vertical_eog"
+      ],
+      "deployment_match": "moderate",
+      "caveats": [
+        "Rest is a structured trial stage rather than natural clinical idle.",
+        "Healthy/stroke comparisons are confounded by acquisition and protocol.",
+        "No simultaneous EMG, force, or motion ground truth is distributed."
+      ]
+    },
+    "hard_negative": {
+      "dataset": "hard_negative",
+      "cohort": "dataset_specific",
+      "intent_definition": "none",
+      "negative_definition": "continuous no-control EEG containing ordinary idle and documented artifacts",
+      "negative_subtype": "continuous_no_control",
+      "cue_locked": false,
+      "continuous_idle_available": true,
+      "auxiliary_validation": [
+        "dataset_specific"
+      ],
+      "deployment_match": "high",
+      "caveats": [
+        "Recordings must be held out by subject/session.",
+        "Artifact labels must not be treated as intent labels."
+      ]
+    }
+  },
+  "evaluation": {
+    "primary_endpoint": "event sensitivity at a fixed continuous false-activation budget",
+    "secondary_endpoint": "left/right accuracy conditional on accepted motor intent",
+    "operating_point": "<=1 false activation/minute, >=60% sensitivity, <=2.5 s median latency",
+    "split_roles": [
+      "development",
+      "controller_validation",
+      "development_observed",
+      "locked_external"
+    ],
+    "current_stroke_test_status": "development_observed",
+    "locked_external_required": true,
+    "locked_external_available": false,
+    "confirmation_rule": "A claim-bearing result requires a never-inspected subject/session or external dataset after every preprocessing, feature, model, fusion, and threshold choice."
+  },
+  "prospective_acquisition": {
+    "enabled": false,
+    "mode": "preparation_only",
+    "warning_seconds": 1.0,
+    "instruction_delay_range_seconds": [
+      0.8,
+      1.8
+    ],
+    "go_delay_range_seconds": [
+      0.8,
+      1.8
+    ],
+    "imagery_seconds": 4.0,
+    "rest_seconds": 5.0,
+    "no_go_fraction": 0.2,
+    "required_auxiliary_channels": [
+      "vertical_eog",
+      "horizontal_eog",
+      "left_emg",
+      "right_emg",
+      "force_or_grip",
+      "limb_imu",
+      "hardware_event_trigger"
+    ],
+    "safety_note": "Configuration only. No clinical command or autonomous device output is enabled."
+  }
+}

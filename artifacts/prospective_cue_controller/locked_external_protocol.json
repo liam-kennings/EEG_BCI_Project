@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "prepared_not_collected",
+  "model_manifest": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/prospective_cue_controller/frozen_model/frozen_model_manifest.json",
+  "acquisition": {},
+  "required_blocks": [
+    "short_labeled_calibration_with_left_right_rest_and_no_go",
+    "locked_later_cued_evaluation_block",
+    "continuous_natural_idle_no_control_block",
+    "artifact_challenge_block_blinks_jaw_swallow_posture",
+    "periodic_sham_arming_opportunities_during_no_control"
+  ],
+  "required_synchronization": [
+    "hardware_event_trigger_or_photodiode",
+    "vertical_and_horizontal_EOG",
+    "bilateral_task_muscle_EMG",
+    "force_or_grip_and_limb_IMU"
+  ],
+  "primary_endpoints": [
+    "issued_false_commands_per_minute_on_continuous_no_control",
+    "motor_command_sensitivity",
+    "no_decision_fraction",
+    "wrong_direction_command_fraction",
+    "median_and_p95_command_latency_seconds"
+  ],
+  "locked_external_rule": "Do not refit preprocessing, features, model weights, fusion, calibration, thresholds, or controller timing after opening the locked evaluation block.",
+  "patient_calibration_rule": "Calibration may estimate subject normalization, contamination limits, and a predeclared threshold offset; later blocks remain untouched.",
+  "clinical_status": "research_only_no_autonomous_device_commands"
+}

@@ -1,0 +1,1114 @@
+{
+  "dataset_root": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL",
+  "eeg_only_contract": {
+    "emg_read": false,
+    "kinematics_read": false,
+    "force_read": false,
+    "event_labels_read": false
+  },
+  "configuration": {
+    "window_seconds": 2.0,
+    "stride_seconds": 2.0,
+    "guard_seconds": 3.0,
+    "max_windows_per_series": 160,
+    "output_sampling_hz": 100.0,
+    "channels": [
+      "FC3",
+      "FC4",
+      "C3",
+      "Cz",
+      "C4",
+      "CP3",
+      "CP4"
+    ]
+  },
+  "discovered_series": 120,
+  "accepted_series": 120,
+  "challenge_series": 12,
+  "participants": 12,
+  "windows": 16960,
+  "challenge_windows": 1534,
+  "rejected_amplitude_windows": 73,
+  "series": [
+    {
+      "participant": 1,
+      "series": "S1",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 116,
+      "accepted_windows": 115,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S1.mat"
+    },
+    {
+      "participant": 1,
+      "series": "S2",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S2.mat"
+    },
+    {
+      "participant": 1,
+      "series": "S3",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S3.mat"
+    },
+    {
+      "participant": 1,
+      "series": "S4",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 113,
+      "accepted_windows": 113,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S4.mat"
+    },
+    {
+      "participant": 1,
+      "series": "S5",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S5.mat"
+    },
+    {
+      "participant": 1,
+      "series": "S6",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S6.mat"
+    },
+    {
+      "participant": 1,
+      "series": "S7",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 116,
+      "accepted_windows": 116,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S7.mat"
+    },
+    {
+      "participant": 1,
+      "series": "S8",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 114,
+      "accepted_windows": 114,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S8.mat"
+    },
+    {
+      "participant": 1,
+      "series": "S9",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 112,
+      "accepted_windows": 112,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S9.mat"
+    },
+    {
+      "participant": 1,
+      "series": "ST",
+      "challenge_series": true,
+      "status": "accepted",
+      "candidate_windows": 114,
+      "accepted_windows": 114,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_ST.mat"
+    },
+    {
+      "participant": 2,
+      "series": "S1",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S1.mat"
+    },
+    {
+      "participant": 2,
+      "series": "S2",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 159,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S2.mat"
+    },
+    {
+      "participant": 2,
+      "series": "S3",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 149,
+      "accepted_windows": 149,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S3.mat"
+    },
+    {
+      "participant": 2,
+      "series": "S4",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 159,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S4.mat"
+    },
+    {
+      "participant": 2,
+      "series": "S5",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 148,
+      "accepted_windows": 148,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S5.mat"
+    },
+    {
+      "participant": 2,
+      "series": "S6",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 159,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S6.mat"
+    },
+    {
+      "participant": 2,
+      "series": "S7",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 147,
+      "accepted_windows": 146,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S7.mat"
+    },
+    {
+      "participant": 2,
+      "series": "S8",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 146,
+      "accepted_windows": 145,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S8.mat"
+    },
+    {
+      "participant": 2,
+      "series": "S9",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 144,
+      "accepted_windows": 144,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S9.mat"
+    },
+    {
+      "participant": 2,
+      "series": "ST",
+      "challenge_series": true,
+      "status": "accepted",
+      "candidate_windows": 147,
+      "accepted_windows": 145,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_ST.mat"
+    },
+    {
+      "participant": 3,
+      "series": "S1",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 119,
+      "accepted_windows": 118,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S1.mat"
+    },
+    {
+      "participant": 3,
+      "series": "S2",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S2.mat"
+    },
+    {
+      "participant": 3,
+      "series": "S3",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S3.mat"
+    },
+    {
+      "participant": 3,
+      "series": "S4",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S4.mat"
+    },
+    {
+      "participant": 3,
+      "series": "S5",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S5.mat"
+    },
+    {
+      "participant": 3,
+      "series": "S6",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 113,
+      "accepted_windows": 113,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S6.mat"
+    },
+    {
+      "participant": 3,
+      "series": "S7",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 112,
+      "accepted_windows": 112,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S7.mat"
+    },
+    {
+      "participant": 3,
+      "series": "S8",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 111,
+      "accepted_windows": 111,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S8.mat"
+    },
+    {
+      "participant": 3,
+      "series": "S9",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 108,
+      "accepted_windows": 108,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S9.mat"
+    },
+    {
+      "participant": 3,
+      "series": "ST",
+      "challenge_series": true,
+      "status": "accepted",
+      "candidate_windows": 110,
+      "accepted_windows": 110,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_ST.mat"
+    },
+    {
+      "participant": 4,
+      "series": "S1",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 159,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S1.mat"
+    },
+    {
+      "participant": 4,
+      "series": "S2",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S2.mat"
+    },
+    {
+      "participant": 4,
+      "series": "S3",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 128,
+      "accepted_windows": 128,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S3.mat"
+    },
+    {
+      "participant": 4,
+      "series": "S4",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S4.mat"
+    },
+    {
+      "participant": 4,
+      "series": "S5",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 120,
+      "accepted_windows": 120,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S5.mat"
+    },
+    {
+      "participant": 4,
+      "series": "S6",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S6.mat"
+    },
+    {
+      "participant": 4,
+      "series": "S7",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 118,
+      "accepted_windows": 118,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S7.mat"
+    },
+    {
+      "participant": 4,
+      "series": "S8",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 118,
+      "accepted_windows": 118,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S8.mat"
+    },
+    {
+      "participant": 4,
+      "series": "S9",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 118,
+      "accepted_windows": 118,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S9.mat"
+    },
+    {
+      "participant": 4,
+      "series": "ST",
+      "challenge_series": true,
+      "status": "accepted",
+      "candidate_windows": 120,
+      "accepted_windows": 120,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_ST.mat"
+    },
+    {
+      "participant": 5,
+      "series": "S1",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S1.mat"
+    },
+    {
+      "participant": 5,
+      "series": "S2",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 135,
+      "accepted_windows": 135,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S2.mat"
+    },
+    {
+      "participant": 5,
+      "series": "S3",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S3.mat"
+    },
+    {
+      "participant": 5,
+      "series": "S4",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 133,
+      "accepted_windows": 133,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S4.mat"
+    },
+    {
+      "participant": 5,
+      "series": "S5",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 159,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S5.mat"
+    },
+    {
+      "participant": 5,
+      "series": "S6",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S6.mat"
+    },
+    {
+      "participant": 5,
+      "series": "S7",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 132,
+      "accepted_windows": 132,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S7.mat"
+    },
+    {
+      "participant": 5,
+      "series": "S8",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 126,
+      "accepted_windows": 126,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S8.mat"
+    },
+    {
+      "participant": 5,
+      "series": "S9",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 128,
+      "accepted_windows": 128,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S9.mat"
+    },
+    {
+      "participant": 5,
+      "series": "ST",
+      "challenge_series": true,
+      "status": "accepted",
+      "candidate_windows": 126,
+      "accepted_windows": 126,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_ST.mat"
+    },
+    {
+      "participant": 6,
+      "series": "S1",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 146,
+      "accepted_windows": 146,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S1.mat"
+    },
+    {
+      "participant": 6,
+      "series": "S2",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S2.mat"
+    },
+    {
+      "participant": 6,
+      "series": "S3",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S3.mat"
+    },
+    {
+      "participant": 6,
+      "series": "S4",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 134,
+      "accepted_windows": 134,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S4.mat"
+    },
+    {
+      "participant": 6,
+      "series": "S5",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 159,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S5.mat"
+    },
+    {
+      "participant": 6,
+      "series": "S6",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S6.mat"
+    },
+    {
+      "participant": 6,
+      "series": "S7",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 130,
+      "accepted_windows": 130,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S7.mat"
+    },
+    {
+      "participant": 6,
+      "series": "S8",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 132,
+      "accepted_windows": 132,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S8.mat"
+    },
+    {
+      "participant": 6,
+      "series": "S9",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 133,
+      "accepted_windows": 133,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S9.mat"
+    },
+    {
+      "participant": 6,
+      "series": "ST",
+      "challenge_series": true,
+      "status": "accepted",
+      "candidate_windows": 139,
+      "accepted_windows": 139,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_ST.mat"
+    },
+    {
+      "participant": 7,
+      "series": "S1",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 158,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S1.mat"
+    },
+    {
+      "participant": 7,
+      "series": "S2",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S2.mat"
+    },
+    {
+      "participant": 7,
+      "series": "S3",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S3.mat"
+    },
+    {
+      "participant": 7,
+      "series": "S4",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 157,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S4.mat"
+    },
+    {
+      "participant": 7,
+      "series": "S5",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 159,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S5.mat"
+    },
+    {
+      "participant": 7,
+      "series": "S6",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 144,
+      "accepted_windows": 142,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S6.mat"
+    },
+    {
+      "participant": 7,
+      "series": "S7",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 141,
+      "accepted_windows": 139,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S7.mat"
+    },
+    {
+      "participant": 7,
+      "series": "S8",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 137,
+      "accepted_windows": 137,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S8.mat"
+    },
+    {
+      "participant": 7,
+      "series": "S9",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 135,
+      "accepted_windows": 135,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S9.mat"
+    },
+    {
+      "participant": 7,
+      "series": "ST",
+      "challenge_series": true,
+      "status": "accepted",
+      "candidate_windows": 135,
+      "accepted_windows": 134,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_ST.mat"
+    },
+    {
+      "participant": 8,
+      "series": "S1",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 154,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S1.mat"
+    },
+    {
+      "participant": 8,
+      "series": "S2",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 157,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S2.mat"
+    },
+    {
+      "participant": 8,
+      "series": "S3",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 120,
+      "accepted_windows": 119,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S3.mat"
+    },
+    {
+      "participant": 8,
+      "series": "S4",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 157,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S4.mat"
+    },
+    {
+      "participant": 8,
+      "series": "S5",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 115,
+      "accepted_windows": 114,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S5.mat"
+    },
+    {
+      "participant": 8,
+      "series": "S6",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 159,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S6.mat"
+    },
+    {
+      "participant": 8,
+      "series": "S7",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 115,
+      "accepted_windows": 113,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S7.mat"
+    },
+    {
+      "participant": 8,
+      "series": "S8",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 121,
+      "accepted_windows": 120,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S8.mat"
+    },
+    {
+      "participant": 8,
+      "series": "S9",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 120,
+      "accepted_windows": 120,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S9.mat"
+    },
+    {
+      "participant": 8,
+      "series": "ST",
+      "challenge_series": true,
+      "status": "accepted",
+      "candidate_windows": 123,
+      "accepted_windows": 122,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_ST.mat"
+    },
+    {
+      "participant": 9,
+      "series": "S1",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 138,
+      "accepted_windows": 137,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S1.mat"
+    },
+    {
+      "participant": 9,
+      "series": "S2",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S2.mat"
+    },
+    {
+      "participant": 9,
+      "series": "S3",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S3.mat"
+    },
+    {
+      "participant": 9,
+      "series": "S4",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S4.mat"
+    },
+    {
+      "participant": 9,
+      "series": "S5",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S5.mat"
+    },
+    {
+      "participant": 9,
+      "series": "S6",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 128,
+      "accepted_windows": 128,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S6.mat"
+    },
+    {
+      "participant": 9,
+      "series": "S7",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 125,
+      "accepted_windows": 125,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S7.mat"
+    },
+    {
+      "participant": 9,
+      "series": "S8",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 124,
+      "accepted_windows": 124,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S8.mat"
+    },
+    {
+      "participant": 9,
+      "series": "S9",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 122,
+      "accepted_windows": 122,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S9.mat"
+    },
+    {
+      "participant": 9,
+      "series": "ST",
+      "challenge_series": true,
+      "status": "accepted",
+      "candidate_windows": 123,
+      "accepted_windows": 123,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_ST.mat"
+    },
+    {
+      "participant": 10,
+      "series": "S1",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S1.mat"
+    },
+    {
+      "participant": 10,
+      "series": "S2",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S2.mat"
+    },
+    {
+      "participant": 10,
+      "series": "S3",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 139,
+      "accepted_windows": 138,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S3.mat"
+    },
+    {
+      "participant": 10,
+      "series": "S4",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S4.mat"
+    },
+    {
+      "participant": 10,
+      "series": "S5",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 133,
+      "accepted_windows": 133,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S5.mat"
+    },
+    {
+      "participant": 10,
+      "series": "S6",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S6.mat"
+    },
+    {
+      "participant": 10,
+      "series": "S7",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 129,
+      "accepted_windows": 129,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S7.mat"
+    },
+    {
+      "participant": 10,
+      "series": "S8",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 123,
+      "accepted_windows": 123,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S8.mat"
+    },
+    {
+      "participant": 10,
+      "series": "S9",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 125,
+      "accepted_windows": 125,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S9.mat"
+    },
+    {
+      "participant": 10,
+      "series": "ST",
+      "challenge_series": true,
+      "status": "accepted",
+      "candidate_windows": 125,
+      "accepted_windows": 125,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_ST.mat"
+    },
+    {
+      "participant": 11,
+      "series": "S1",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S1.mat"
+    },
+    {
+      "participant": 11,
+      "series": "S2",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 144,
+      "accepted_windows": 144,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S2.mat"
+    },
+    {
+      "participant": 11,
+      "series": "S3",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 160,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S3.mat"
+    },
+    {
+      "participant": 11,
+      "series": "S4",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 138,
+      "accepted_windows": 138,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S4.mat"
+    },
+    {
+      "participant": 11,
+      "series": "S5",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 159,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S5.mat"
+    },
+    {
+      "participant": 11,
+      "series": "S6",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 159,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S6.mat"
+    },
+    {
+      "participant": 11,
+      "series": "S7",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 138,
+      "accepted_windows": 135,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S7.mat"
+    },
+    {
+      "participant": 11,
+      "series": "S8",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 131,
+      "accepted_windows": 131,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S8.mat"
+    },
+    {
+      "participant": 11,
+      "series": "S9",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 133,
+      "accepted_windows": 131,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S9.mat"
+    },
+    {
+      "participant": 11,
+      "series": "ST",
+      "challenge_series": true,
+      "status": "accepted",
+      "candidate_windows": 137,
+      "accepted_windows": 137,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_ST.mat"
+    },
+    {
+      "participant": 12,
+      "series": "S1",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 148,
+      "accepted_windows": 147,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S1.mat"
+    },
+    {
+      "participant": 12,
+      "series": "S2",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 152,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S2.mat"
+    },
+    {
+      "participant": 12,
+      "series": "S3",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 158,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S3.mat"
+    },
+    {
+      "participant": 12,
+      "series": "S4",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 153,
+      "accepted_windows": 153,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S4.mat"
+    },
+    {
+      "participant": 12,
+      "series": "S5",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 156,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S5.mat"
+    },
+    {
+      "participant": 12,
+      "series": "S6",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 160,
+      "accepted_windows": 159,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S6.mat"
+    },
+    {
+      "participant": 12,
+      "series": "S7",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 144,
+      "accepted_windows": 140,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S7.mat"
+    },
+    {
+      "participant": 12,
+      "series": "S8",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 151,
+      "accepted_windows": 151,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S8.mat"
+    },
+    {
+      "participant": 12,
+      "series": "S9",
+      "challenge_series": false,
+      "status": "accepted",
+      "candidate_windows": 142,
+      "accepted_windows": 140,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S9.mat"
+    },
+    {
+      "participant": 12,
+      "series": "ST",
+      "challenge_series": true,
+      "status": "accepted",
+      "candidate_windows": 139,
+      "accepted_windows": 139,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_ST.mat"
+    }
+  ]
+}

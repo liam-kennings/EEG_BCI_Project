@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "dataset": "WAY-EEG-GAL",
+  "collection_id": 988376,
+  "collection_url": "https://springernature.figshare.com/collections/WAY_EEG_GAL_Multi_channel_EEG_Recordings_During_3_936_Grasp_and_Lift_Trials_with_Varying_Weight_and_Friction/988376/2",
+  "article_url": "https://www.nature.com/articles/sdata201447",
+  "participants": [
+    {
+      "participant": 1,
+      "article_id": 1185502,
+      "article_url": "https://springernature.figshare.com/articles/dataset/Participant_1_in_the_WAY_EEG_GAL_dataset_328_grasp_and_lift_trials_with_different_weights_and_surfaces_during_which_EEG_EMG_kinematics_and_kinetics_were_recorded/1185502",
+      "file_id": 3229301,
+      "filename": "P1.zip",
+      "size_bytes": 838738355,
+      "md5": "db738ebf022abd6826879d9afee3202c",
+      "download_url": "https://ndownloader.figshare.com/files/3229301"
+    },
+    {
+      "participant": 2,
+      "article_id": 1185505,
+      "article_url": "https://springernature.figshare.com/articles/dataset/Participant_2_in_the_WAY_EEG_GAL_dataset_328_grasp_and_lift_trials_with_different_weights_and_surfaces_during_which_EEG_EMG_kinematics_and_kinetics_were_recorded/1185505",
+      "file_id": 3229304,
+      "filename": "P2.zip",
+      "size_bytes": 949516152,
+      "md5": "1bd75993ae538c35f8c403e4e5ff40e5",
+      "download_url": "https://ndownloader.figshare.com/files/3229304"
+    },
+    {
+      "participant": 3,
+      "article_id": 1185507,
+      "article_url": "https://springernature.figshare.com/articles/dataset/Participant_3_in_the_WAY_EEG_GAL_dataset_328_grasp_and_lift_trials_with_different_weights_and_surfaces_during_which_EEG_EMG_kinematics_and_kinetics_were_recorded/1185507",
+      "file_id": 3229307,
+      "filename": "P3.zip",
+      "size_bytes": 743891763,
+      "md5": "891bfca8516056201e5a214b2fde4558",
+      "download_url": "https://ndownloader.figshare.com/files/3229307"
+    },
+    {
+      "participant": 4,
+      "article_id": 1185509,
+      "article_url": "https://springernature.figshare.com/articles/dataset/Participant_4_in_the_WAY_EEG_GAL_dataset_328_grasp_and_lift_trials_with_different_weights_and_surfaces_during_which_EEG_EMG_kinematics_and_kinetics_were_recorded/1185509",
+      "file_id": 3229310,
+      "filename": "P4.zip",
+      "size_bytes": 802120619,
+      "md5": "b921d5e1d82151bf00fc041419ef22e9",
+      "download_url": "https://ndownloader.figshare.com/files/3229310"
+    },
+    {
+      "participant": 5,
+      "article_id": 1185511,
+      "article_url": "https://springernature.figshare.com/articles/dataset/Participant_5_in_the_WAY_EEG_GAL_dataset_328_grasp_and_lift_trials_with_different_weights_and_surfaces_during_which_EEG_EMG_kinematics_and_kinetics_were_recorded/1185511",
+      "file_id": 3229313,
+      "filename": "P5.zip",
+      "size_bytes": 842392342,
+      "md5": "2ef0bc0c9bc2840fd28190a6fc5e9602",
+      "download_url": "https://ndownloader.figshare.com/files/3229313"
+    },
+    {
+      "participant": 6,
+      "article_id": 1119392,
+      "article_url": "https://springernature.figshare.com/articles/dataset/Participant_6_in_the_WAY_EEG_GAL_dataset_328_grasp_and_lift_trials_with_different_weights_and_surfaces_during_which_EEG_EMG_kinematics_and_kinetics_were_recorded/1119392",
+      "file_id": 3209486,
+      "filename": "P6.zip",
+      "size_bytes": 862474753,
+      "md5": "5cf49ca627cbc3e8ef8e3c03a180c1d3",
+      "download_url": "https://ndownloader.figshare.com/files/3209486"
+    },
+    {
+      "participant": 7,
+      "article_id": 1119691,
+      "article_url": "https://springernature.figshare.com/articles/dataset/Participant_7_in_the_WAY_EEG_GAL_dataset_328_grasp_and_lift_trials_with_different_weights_and_surfaces_during_which_EEG_EMG_kinematics_and_kinetics_were_recorded/1119691",
+      "file_id": 3209501,
+      "filename": "P7.zip",
+      "size_bytes": 1036731427,
+      "md5": "125e2958872b3c06aeb3b729f282482a",
+      "download_url": "https://ndownloader.figshare.com/files/3209501"
+    },
+    {
+      "participant": 8,
+      "article_id": 1119669,
+      "article_url": "https://springernature.figshare.com/articles/dataset/Participant_8_in_the_WAY_EEG_GAL_dataset_328_grasp_and_lift_trials_with_different_weights_and_surfaces_during_which_EEG_EMG_kinematics_and_kinetics_were_recorded/1119669",
+      "file_id": 3209504,
+      "filename": "P8.zip",
+      "size_bytes": 781620401,
+      "md5": "56e39cfa3e7ea8361d51e8810fd65cb2",
+      "download_url": "https://ndownloader.figshare.com/files/3209504"
+    },
+    {
+      "participant": 9,
+      "article_id": 1119677,
+      "article_url": "https://springernature.figshare.com/articles/dataset/Participant_9_in_the_WAY_EEG_GAL_dataset_328_grasp_and_lift_trials_with_different_weights_and_surfaces_during_which_EEG_EMG_kinematics_and_kinetics_were_recorded/1119677",
+      "file_id": 3209495,
+      "filename": "P9.zip",
+      "size_bytes": 832268248,
+      "md5": "6e3eda3b36de5c1bbf09c5432258af79",
+      "download_url": "https://ndownloader.figshare.com/files/3209495"
+    },
+    {
+      "participant": 10,
+      "article_id": 1119682,
+      "article_url": "https://springernature.figshare.com/articles/dataset/Participant_10_in_the_WAY_EEG_GAL_dataset_328_grasp_and_lift_trials_with_different_weights_and_surfaces_during_which_EEG_EMG_kinematics_and_kinetics_were_recorded/1119682",
+      "file_id": 3209492,
+      "filename": "P10.zip",
+      "size_bytes": 852411764,
+      "md5": "4037a88eedc22bc6a3cbb786ab993ac2",
+      "download_url": "https://ndownloader.figshare.com/files/3209492"
+    },
+    {
+      "participant": 11,
+      "article_id": 1119680,
+      "article_url": "https://springernature.figshare.com/articles/dataset/Participant_11_in_the_WAY_EEG_GAL_dataset_328_grasp_and_lift_trials_with_different_weights_and_surfaces_during_which_EEG_EMG_kinematics_and_kinetics_were_recorded/1119680",
+      "file_id": 3209498,
+      "filename": "P11.zip",
+      "size_bytes": 888190528,
+      "md5": "45b7e844786b4707f5cd0dda42ecb63a",
+      "download_url": "https://ndownloader.figshare.com/files/3209498"
+    },
+    {
+      "participant": 12,
+      "article_id": 1119678,
+      "article_url": "https://springernature.figshare.com/articles/dataset/Participant_12_in_the_WAY_EEG_GAL_dataset_328_grasp_and_lift_trials_with_different_weights_and_surfaces_during_which_EEG_EMG_kinematics_and_kinetics_were_recorded/1119678",
+      "file_id": 3209489,
+      "filename": "P12.zip",
+      "size_bytes": 908902695,
+      "md5": "d8e1d2bfd8cf58ceff8d9d21a7114e85",
+      "download_url": "https://ndownloader.figshare.com/files/3209489"
+    }
+  ],
+  "total_download_bytes": 10339259047,
+  "download_complete": true,
+  "archives_verified": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "extracted": true
+}

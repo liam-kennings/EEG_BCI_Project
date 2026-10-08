@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "source_metrics": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/gui_experiments/translational_v3_calibrated/translational_v3_metrics.json",
+  "current_result": {
+    "intent_balanced_accuracy": 0.679094736248852,
+    "intent_sensitivity": 0.4129780833691448,
+    "intent_specificity": 0.9452113891285591,
+    "conditional_direction_balanced_accuracy": 0.709762864698487
+  },
+  "checks": [
+    {
+      "key": "subject_isolation",
+      "label": "Subject-isolated development roles",
+      "status": "ready",
+      "evidence": "187 subjects are assigned by subject role.",
+      "next_action": "Preserve subject and session grouping in every new adapter.",
+      "score": 1.0
+    },
+    {
+      "key": "nested_controller",
+      "label": "Nested controller selection",
+      "status": "ready",
+      "evidence": "Fusion/calibration and operating-point selection use separate controller subroles.",
+      "next_action": "Keep all fusion, calibration, and threshold choices outside observed test subjects.",
+      "score": 1.0
+    },
+    {
+      "key": "native_qc",
+      "label": "Full-montage QC before reference",
+      "status": "ready",
+      "evidence": "492 recordings accepted; 1 excluded.",
+      "next_action": "Continue reporting exclusions and sensitivity to QC thresholds.",
+      "score": 1.0
+    },
+    {
+      "key": "openbmi_emg",
+      "label": "Existing synchronized EMG source",
+      "status": "prepared",
+      "evidence": "OpenBMI loader recognizes four EMG channels, but v3 stores only aggregate auxiliary quality.",
+      "next_action": "Retain EMG waveforms and derive silence, onset, RMS, and waveform-length labels.",
+      "score": 0.5
+    },
+    {
+      "key": "multimodal_catalog",
+      "label": "External multimodal teacher catalog",
+      "status": "prepared",
+      "evidence": "7 EEG-EMG sources are cataloged with modality-specific roles.",
+      "next_action": "Implement the MRCP EEG-EMG adapter first; do not pool execution labels with imagery.",
+      "score": 0.5
+    },
+    {
+      "key": "modality_identity",
+      "label": "Modality-specific auxiliary processing",
+      "status": "gap",
+      "evidence": "EMG and EOG are currently merged into generic auxiliary peak-to-peak/RMS features.",
+      "next_action": "Split EMG, EOG, and device channels before feature extraction and gating.",
+      "score": 0.0
+    },
+    {
+      "key": "robust_quality_scaling",
+      "label": "Robustly scaled quality gate",
+      "status": "gap",
+      "evidence": "The current heterogeneous-distance threshold is 301,511.3, indicating scale domination.",
+      "next_action": "Fit median/IQR scaling per feature and report per-domain rejection rates.",
+      "score": 0.0
+    },
+    {
+      "key": "causal_preprocessing",
+      "label": "Causal deployable preprocessing",
+      "status": "gap",
+      "evidence": "Final reported profile uses phase=zero filtering.",
+      "next_action": "Re-run the locked candidate with causal filters and measure added latency/performance loss.",
+      "score": 0.0
+    },
+    {
+      "key": "continuous_safety",
+      "label": "Continuous no-control safety",
+      "status": "gap",
+      "evidence": "Not evaluated: no hard-negative manifest was supplied. Cue-locked window specificity is not converted into a deployment false-activation rate.",
+      "next_action": "Add continuous idle, gaze, speech, jaw, posture, and device-motion hard negatives.",
+      "score": 0.0
+    },
+    {
+      "key": "locked_external",
+      "label": "Locked external confirmation",
+      "status": "gap",
+      "evidence": "The final cohort remains development-observed.",
+      "next_action": "Freeze v4, then evaluate once on untouched subjects/sessions.",
+      "score": 0.0
+    }
+  ],
+  "multimodal_datasets": [
+    {
+      "key": "mrcp_eeg_emg_2025",
+      "name": "MRCP Hand Gesture EEG-EMG Dataset",
+      "cohort": "Healthy",
+      "subjects": 40,
+      "sessions": "5 sessions; 10 movements/session",
+      "eeg_channels": "32 EEG + bipolar forearm EMG",
+      "sampling_hz": "128 EEG / 440 EMG",
+      "tasks": [
+        "right-hand fist closure"
+      ],
+      "rest_support": "Pre-movement rest within synchronized trials",
+      "file_formats": [
+        "CSV"
+      ],
+      "license": "CC BY-NC-SA 4.0",
+      "access_url": "https://data.mendeley.com/datasets/y23s2xg6x4/1",
+      "publication_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12969298/",
+      "priority_tier": 1,
+      "recommended_role": "First multimodal adapter: MRCP pretraining, EMG-onset labels, and session-drift validation",
+      "integration_status": "CSV synchronization and event adapter required",
+      "caveat": "Execution-only and right-hand-only; use EMG as timing supervision, not as proof of EEG imagery decoding.",
+      "modalities": [
+        "EEG",
+        "EMG",
+        "event triggers"
+      ],
+      "movement_ground_truth": "Synchronized forearm EMG and visual-interface event triggers"
+    },
+    {
+      "key": "way_eeg_gal",
+      "name": "WAY-EEG-GAL Grasp-and-Lift",
+      "cohort": "Healthy",
+      "subjects": 12,
+      "sessions": "10 series; 3,936 recorded trials",
+      "eeg_channels": "32 EEG + 5 EMG",
+      "sampling_hz": "500 EEG/kinematics/force / 4000 EMG",
+      "tasks": [
+        "reach",
+        "precision grasp",
+        "lift",
+        "hold",
+        "replace",
+        "release"
+      ],
+      "rest_support": "Return-to-rest phase and 16 behaviorally defined event times",
+      "file_formats": [
+        "MAT"
+      ],
+      "license": "CC BY 4.0",
+      "access_url": "https://doi.org/10.1038/sdata.2014.47",
+      "publication_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4365902/",
+      "priority_tier": 1,
+      "recommended_role": "Multimodal onset teacher and force/kinematic validation with explicit modality ablation",
+      "integration_status": "MAT multimodal adapter required",
+      "caveat": "Overt right-hand execution in 12 participants; recent LOSO work found weight/surface decoding predominantly EMG-driven.",
+      "modalities": [
+        "EEG",
+        "EMG",
+        "kinematics",
+        "grip/load force"
+      ],
+      "movement_ground_truth": "EMG, hand/object kinematics, force, and 16 trial event timestamps"
+    },
+    {
+      "key": "nebula_reaching_2025",
+      "name": "NeBULA Standardized Reaching EEG-EMG",
+      "cohort": "Healthy",
+      "subjects": 40,
+      "sessions": "1 session; 3 conditions x 10 repetitions",
+      "eeg_channels": "127 EEG + 11 EMG",
+      "sampling_hz": "1000 EEG / 2000 EMG",
+      "tasks": [
+        "free reaching",
+        "low exoskeleton assistance",
+        "high exoskeleton assistance"
+      ],
+      "rest_support": "GO, reach, and end-of-trial markers",
+      "file_formats": [
+        "BIDS",
+        "BrainVision",
+        "CSV",
+        "TSV"
+      ],
+      "license": "CC BY 4.0",
+      "access_url": "https://doi.org/10.6084/m9.figshare.27301629",
+      "publication_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12092770/",
+      "priority_tier": 1,
+      "recommended_role": "Human-robot artifact, assistance-domain shift, and compensation robustness benchmark",
+      "integration_status": "BIDS EEG/EMG adapter required; large download",
+      "caveat": "Overt right-arm reaching with only 10 repetitions per condition; do not pool its labels with hand imagery.",
+      "modalities": [
+        "EEG",
+        "EMG",
+        "exoskeleton telemetry"
+      ],
+      "movement_ground_truth": "GO/reach markers, upper-limb EMG, and exoskeleton endpoint/joint telemetry"
+    },
+    {
+      "key": "wristmotion_2026",
+      "name": "EEG-EMG WristMotion Pointing",
+      "cohort": "Healthy",
+      "subjects": 45,
+      "sessions": "320 trials/participant",
+      "eeg_channels": "8 EEG + 4 bipolar EMG",
+      "sampling_hz": "Multirate; verify BIDS sidecars",
+      "tasks": [
+        "three-degree-of-freedom wrist pointing"
+      ],
+      "rest_support": "Pre/post baseline and synchronized trial timestamps",
+      "file_formats": [
+        "BIDS",
+        "EDF",
+        "MAT",
+        "TSV"
+      ],
+      "license": "Verify current Figshare record",
+      "access_url": "https://doi.org/10.6084/M9.FIGSHARE.29666735.v3",
+      "publication_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13287717/",
+      "priority_tier": 1,
+      "recommended_role": "Direction, latency, and continuous kinematic-teacher benchmark",
+      "integration_status": "BIDS/EDF multimodal adapter required",
+      "caveat": "Overt wrist movement in healthy participants; the eight-channel montage limits direct spatial transfer.",
+      "modalities": [
+        "EEG",
+        "EMG",
+        "robot encoders",
+        "kinematics"
+      ],
+      "movement_ground_truth": "Synchronized EMG, robotic encoders, event markers, and trajectory metrics"
+    },
+    {
+      "key": "prehension_eeg_emg_2026",
+      "name": "High-density EEG-EMG Object Prehension",
+      "cohort": "Healthy",
+      "subjects": 14,
+      "sessions": "3 grip types; dynamic and holding phases",
+      "eeg_channels": "64 EEG + 13 EMG",
+      "sampling_hz": "Verify OSF acquisition metadata",
+      "tasks": [
+        "object prehension",
+        "three grip types",
+        "holding"
+      ],
+      "rest_support": "Visual GO and sensorized-object phase markers",
+      "file_formats": [
+        "MAT"
+      ],
+      "license": "Verify OSF data record",
+      "access_url": "https://doi.org/10.17605/OSF.IO/RSV4Z",
+      "publication_url": "https://doi.org/10.1038/s41597-026-07242-y",
+      "priority_tier": 2,
+      "recommended_role": "Muscle-synergy and corticomuscular-coherence research benchmark",
+      "integration_status": "OSF multimodal adapter required",
+      "caveat": "Small overt-movement cohort; useful for physiological features, not cross-subject imagery claims.",
+      "modalities": [
+        "EEG",
+        "EMG",
+        "sensorized grasping box"
+      ],
+      "movement_ground_truth": "Thirteen-muscle EMG plus object contact and lift-completion sensing"
+    },
+    {
+      "key": "stroke_attempt_eeg_emg_2025",
+      "name": "Severe Stroke Attempted-Movement EEG-EMG Cohort",
+      "cohort": "Chronic severe stroke",
+      "subjects": 35,
+      "sessions": "4-6 blocks; 17 trials/block",
+      "eeg_channels": "16 EEG + bilateral upper-limb EMG + EOG",
+      "sampling_hz": "Publication protocol; request raw metadata",
+      "tasks": [
+        "attempted paretic hand opening/closing",
+        "rest"
+      ],
+      "rest_support": "Randomized 4-5 second rest, 4 second attempt, and 8-9 second inter-trial intervals",
+      "file_formats": [
+        "Not publicly confirmed"
+      ],
+      "license": "Article open access; participant data access not confirmed",
+      "access_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12557861/",
+      "publication_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12557861/",
+      "priority_tier": 1,
+      "recommended_role": "Clinical protocol template and potential author-request external validation cohort",
+      "integration_status": "Contact authors or locate repository before implementation",
+      "caveat": "Do not assume the participant-level recordings are downloadable; published results are within-patient block validation.",
+      "modalities": [
+        "EEG",
+        "EMG",
+        "EOG"
+      ],
+      "movement_ground_truth": "Attempt cue plus bilateral task-related and compensatory-muscle EMG"
+    },
+    {
+      "key": "openbmi",
+      "name": "OpenBMI Motor Imagery",
+      "cohort": "Healthy",
+      "subjects": 54,
+      "sessions": "2 days",
+      "eeg_channels": "62 EEG + 4 EMG",
+      "sampling_hz": "1000",
+      "tasks": [
+        "left hand",
+        "right hand"
+      ],
+      "rest_support": "Resting-state recording and within-trial baseline intervals",
+      "file_formats": [
+        "MAT",
+        "BIDS mirror"
+      ],
+      "license": "CC BY 4.0 data article; toolbox GPL-3.0",
+      "access_url": "https://doi.org/10.5524/100542",
+      "publication_url": "https://doi.org/10.1093/gigascience/giz002",
+      "priority_tier": 2,
+      "recommended_role": "Healthy cross-subject and cross-session pretraining",
+      "integration_status": "Local NEMAR BIDS adapter and raw-window cache builder available",
+      "caveat": "The local NEMAR zip contains 116 of 216 expected BDF recordings; use only complete subjects until missing signals are retrieved.",
+      "modalities": [
+        "EEG",
+        "EMG"
+      ],
+      "movement_ground_truth": "Cue markers; EMG should remain silent during imagery and can audit covert movement"
+    }
+  ]
+}

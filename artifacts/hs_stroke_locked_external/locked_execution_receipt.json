@@ -1,0 +1,48 @@
+{
+  "status": "locked_inference_complete",
+  "contract": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/30747806/EEG_BCI_Project_HS_STROKE_LOCKED_CONTRACT.json",
+  "contract_sha256": "2f329b4b9f29c18cdded9ecbc786b1e97f1d07a52a79fcf092f8c7c4eca3b5a5",
+  "model_sha256": "e2b46e947dc27c657c2499db04ffa7a1f21d8ee1d57e7da6e012cc8aa3e4a80d",
+  "source_archive_sha256": "bcfebde5f177db510c2dbc854f122d685e84a6f19f343a124ad0cdb7fd21e07e",
+  "inventory": {
+    "subjects": 14,
+    "sessions": 278,
+    "runs": 1169,
+    "sessions_by_subject": {
+      "sub-01": 20,
+      "sub-02": 20,
+      "sub-03": 26,
+      "sub-04": 19,
+      "sub-05": 20,
+      "sub-06": 19,
+      "sub-07": 20,
+      "sub-08": 20,
+      "sub-09": 20,
+      "sub-10": 20,
+      "sub-11": 19,
+      "sub-12": 20,
+      "sub-13": 17,
+      "sub-14": 18
+    },
+    "runs_by_subject": {
+      "sub-01": 78,
+      "sub-02": 80,
+      "sub-03": 141,
+      "sub-04": 80,
+      "sub-05": 80,
+      "sub-06": 80,
+      "sub-07": 80,
+      "sub-08": 80,
+      "sub-09": 80,
+      "sub-10": 80,
+      "sub-11": 80,
+      "sub-12": 80,
+      "sub-13": 80,
+      "sub-14": 70
+    }
+  },
+  "confirmation_token": "CONFIRM_HS_STROKE_V6_LOCKED_RUN",
+  "metrics": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/hs_stroke_locked_external/hs_stroke_locked_external_metrics.json",
+  "metrics_sha256": "2dc1cd61eda4584fd8e1542e80ba9b1833330d9103592be0331b5db31da13290",
+  "runtime_minutes": 3.2384206533432005
+}

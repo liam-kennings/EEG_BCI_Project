@@ -1,0 +1,14 @@
+{
+  "recordings": [
+    {
+      "path": "/absolute/path/to/continuous_no_control.edf",
+      "dataset_id": "hard_negative",
+      "subject_key": "prospective:P001",
+      "session": 1,
+      "recording": 1,
+      "negative_kind": "continuous_no_control",
+      "start_seconds": 0.0,
+      "step_seconds": 0.5
+    }
+  ]
+}

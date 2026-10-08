@@ -1,0 +1,940 @@
+{
+  "dataset_root": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL",
+  "configuration": {
+    "output_sampling_hz": 100.0,
+    "window_seconds": 2.0,
+    "premovement_guard_seconds": 0.1,
+    "rest_guard_seconds": 0.1,
+    "emg_confirmation_delay_seconds": 0.05,
+    "emg_confirmation_seconds": 0.75,
+    "transfer_channels": [
+      "FC3",
+      "FC4",
+      "C3",
+      "Cz",
+      "C4",
+      "CP3",
+      "CP4"
+    ],
+    "spatial_channel_map": {
+      "FC3": [
+        "FC1",
+        "FC5"
+      ],
+      "FC4": [
+        "FC2",
+        "FC6"
+      ],
+      "C3": [
+        "C3"
+      ],
+      "Cz": [
+        "Cz"
+      ],
+      "C4": [
+        "C4"
+      ],
+      "CP3": [
+        "CP1",
+        "CP5"
+      ],
+      "CP4": [
+        "CP2",
+        "CP6"
+      ]
+    }
+  },
+  "discovered_series": 108,
+  "accepted_series": 108,
+  "accepted_subjects": 12,
+  "accepted_movement_events": 3512,
+  "rows": 7024,
+  "rejected_events": {
+    "invalid_event_timing": 3,
+    "window_out_of_bounds": 0,
+    "eeg_amplitude": 13,
+    "series_load_or_montage": 0
+  },
+  "cue_to_hand_start_seconds": {
+    "median": 0.4140000000000015,
+    "p05": 0.27600000000001046,
+    "p95": 1.1160000000000099
+  },
+  "limitations": {
+    "right_hand_execution_only": true,
+    "visual_cue_inside_some_positive_windows": true,
+    "interpolated_transfer_channels": [
+      "FC3",
+      "FC4",
+      "CP3",
+      "CP4"
+    ],
+    "withheld_eeg_only_challenge_series_excluded": true
+  },
+  "series": [
+    {
+      "participant": 1,
+      "series": 1,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 33,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S1.mat"
+    },
+    {
+      "participant": 1,
+      "series": 2,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 33,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S2.mat"
+    },
+    {
+      "participant": 1,
+      "series": 3,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S3.mat"
+    },
+    {
+      "participant": 1,
+      "series": 4,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S4.mat"
+    },
+    {
+      "participant": 1,
+      "series": 5,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S5.mat"
+    },
+    {
+      "participant": 1,
+      "series": 6,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S6.mat"
+    },
+    {
+      "participant": 1,
+      "series": 7,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S7.mat"
+    },
+    {
+      "participant": 1,
+      "series": 8,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S8.mat"
+    },
+    {
+      "participant": 1,
+      "series": 9,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S9.mat"
+    },
+    {
+      "participant": 2,
+      "series": 1,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S1.mat"
+    },
+    {
+      "participant": 2,
+      "series": 2,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 33,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S2.mat"
+    },
+    {
+      "participant": 2,
+      "series": 3,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S3.mat"
+    },
+    {
+      "participant": 2,
+      "series": 4,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S4.mat"
+    },
+    {
+      "participant": 2,
+      "series": 5,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S5.mat"
+    },
+    {
+      "participant": 2,
+      "series": 6,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S6.mat"
+    },
+    {
+      "participant": 2,
+      "series": 7,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S7.mat"
+    },
+    {
+      "participant": 2,
+      "series": 8,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S8.mat"
+    },
+    {
+      "participant": 2,
+      "series": 9,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S9.mat"
+    },
+    {
+      "participant": 3,
+      "series": 1,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 33,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S1.mat"
+    },
+    {
+      "participant": 3,
+      "series": 2,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S2.mat"
+    },
+    {
+      "participant": 3,
+      "series": 3,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S3.mat"
+    },
+    {
+      "participant": 3,
+      "series": 4,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S4.mat"
+    },
+    {
+      "participant": 3,
+      "series": 5,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S5.mat"
+    },
+    {
+      "participant": 3,
+      "series": 6,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S6.mat"
+    },
+    {
+      "participant": 3,
+      "series": 7,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S7.mat"
+    },
+    {
+      "participant": 3,
+      "series": 8,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S8.mat"
+    },
+    {
+      "participant": 3,
+      "series": 9,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S9.mat"
+    },
+    {
+      "participant": 4,
+      "series": 1,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S1.mat"
+    },
+    {
+      "participant": 4,
+      "series": 2,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S2.mat"
+    },
+    {
+      "participant": 4,
+      "series": 3,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S3.mat"
+    },
+    {
+      "participant": 4,
+      "series": 4,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S4.mat"
+    },
+    {
+      "participant": 4,
+      "series": 5,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S5.mat"
+    },
+    {
+      "participant": 4,
+      "series": 6,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S6.mat"
+    },
+    {
+      "participant": 4,
+      "series": 7,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S7.mat"
+    },
+    {
+      "participant": 4,
+      "series": 8,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S8.mat"
+    },
+    {
+      "participant": 4,
+      "series": 9,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S9.mat"
+    },
+    {
+      "participant": 5,
+      "series": 1,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S1.mat"
+    },
+    {
+      "participant": 5,
+      "series": 2,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S2.mat"
+    },
+    {
+      "participant": 5,
+      "series": 3,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S3.mat"
+    },
+    {
+      "participant": 5,
+      "series": 4,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S4.mat"
+    },
+    {
+      "participant": 5,
+      "series": 5,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S5.mat"
+    },
+    {
+      "participant": 5,
+      "series": 6,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S6.mat"
+    },
+    {
+      "participant": 5,
+      "series": 7,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S7.mat"
+    },
+    {
+      "participant": 5,
+      "series": 8,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S8.mat"
+    },
+    {
+      "participant": 5,
+      "series": 9,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S9.mat"
+    },
+    {
+      "participant": 6,
+      "series": 1,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S1.mat"
+    },
+    {
+      "participant": 6,
+      "series": 2,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S2.mat"
+    },
+    {
+      "participant": 6,
+      "series": 3,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S3.mat"
+    },
+    {
+      "participant": 6,
+      "series": 4,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S4.mat"
+    },
+    {
+      "participant": 6,
+      "series": 5,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S5.mat"
+    },
+    {
+      "participant": 6,
+      "series": 6,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S6.mat"
+    },
+    {
+      "participant": 6,
+      "series": 7,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S7.mat"
+    },
+    {
+      "participant": 6,
+      "series": 8,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S8.mat"
+    },
+    {
+      "participant": 6,
+      "series": 9,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S9.mat"
+    },
+    {
+      "participant": 7,
+      "series": 1,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S1.mat"
+    },
+    {
+      "participant": 7,
+      "series": 2,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S2.mat"
+    },
+    {
+      "participant": 7,
+      "series": 3,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S3.mat"
+    },
+    {
+      "participant": 7,
+      "series": 4,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S4.mat"
+    },
+    {
+      "participant": 7,
+      "series": 5,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S5.mat"
+    },
+    {
+      "participant": 7,
+      "series": 6,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S6.mat"
+    },
+    {
+      "participant": 7,
+      "series": 7,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S7.mat"
+    },
+    {
+      "participant": 7,
+      "series": 8,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S8.mat"
+    },
+    {
+      "participant": 7,
+      "series": 9,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S9.mat"
+    },
+    {
+      "participant": 8,
+      "series": 1,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S1.mat"
+    },
+    {
+      "participant": 8,
+      "series": 2,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S2.mat"
+    },
+    {
+      "participant": 8,
+      "series": 3,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S3.mat"
+    },
+    {
+      "participant": 8,
+      "series": 4,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S4.mat"
+    },
+    {
+      "participant": 8,
+      "series": 5,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 33,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S5.mat"
+    },
+    {
+      "participant": 8,
+      "series": 6,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S6.mat"
+    },
+    {
+      "participant": 8,
+      "series": 7,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S7.mat"
+    },
+    {
+      "participant": 8,
+      "series": 8,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 33,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S8.mat"
+    },
+    {
+      "participant": 8,
+      "series": 9,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S9.mat"
+    },
+    {
+      "participant": 9,
+      "series": 1,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S1.mat"
+    },
+    {
+      "participant": 9,
+      "series": 2,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S2.mat"
+    },
+    {
+      "participant": 9,
+      "series": 3,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S3.mat"
+    },
+    {
+      "participant": 9,
+      "series": 4,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S4.mat"
+    },
+    {
+      "participant": 9,
+      "series": 5,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 32,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S5.mat"
+    },
+    {
+      "participant": 9,
+      "series": 6,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S6.mat"
+    },
+    {
+      "participant": 9,
+      "series": 7,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S7.mat"
+    },
+    {
+      "participant": 9,
+      "series": 8,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S8.mat"
+    },
+    {
+      "participant": 9,
+      "series": 9,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S9.mat"
+    },
+    {
+      "participant": 10,
+      "series": 1,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S1.mat"
+    },
+    {
+      "participant": 10,
+      "series": 2,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S2.mat"
+    },
+    {
+      "participant": 10,
+      "series": 3,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 33,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S3.mat"
+    },
+    {
+      "participant": 10,
+      "series": 4,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S4.mat"
+    },
+    {
+      "participant": 10,
+      "series": 5,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S5.mat"
+    },
+    {
+      "participant": 10,
+      "series": 6,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S6.mat"
+    },
+    {
+      "participant": 10,
+      "series": 7,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S7.mat"
+    },
+    {
+      "participant": 10,
+      "series": 8,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S8.mat"
+    },
+    {
+      "participant": 10,
+      "series": 9,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S9.mat"
+    },
+    {
+      "participant": 11,
+      "series": 1,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S1.mat"
+    },
+    {
+      "participant": 11,
+      "series": 2,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S2.mat"
+    },
+    {
+      "participant": 11,
+      "series": 3,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S3.mat"
+    },
+    {
+      "participant": 11,
+      "series": 4,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S4.mat"
+    },
+    {
+      "participant": 11,
+      "series": 5,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S5.mat"
+    },
+    {
+      "participant": 11,
+      "series": 6,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S6.mat"
+    },
+    {
+      "participant": 11,
+      "series": 7,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 33,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S7.mat"
+    },
+    {
+      "participant": 11,
+      "series": 8,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S8.mat"
+    },
+    {
+      "participant": 11,
+      "series": 9,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 32,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S9.mat"
+    },
+    {
+      "participant": 12,
+      "series": 1,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S1.mat"
+    },
+    {
+      "participant": 12,
+      "series": 2,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 32,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S2.mat"
+    },
+    {
+      "participant": 12,
+      "series": 3,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 27,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S3.mat"
+    },
+    {
+      "participant": 12,
+      "series": 4,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S4.mat"
+    },
+    {
+      "participant": 12,
+      "series": 5,
+      "status": "accepted",
+      "events": 28,
+      "accepted_movement_events": 28,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S5.mat"
+    },
+    {
+      "participant": 12,
+      "series": 6,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S6.mat"
+    },
+    {
+      "participant": 12,
+      "series": 7,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 33,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S7.mat"
+    },
+    {
+      "participant": 12,
+      "series": 8,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S8.mat"
+    },
+    {
+      "participant": 12,
+      "series": 9,
+      "status": "accepted",
+      "events": 34,
+      "accepted_movement_events": 34,
+      "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S9.mat"
+    }
+  ]
+}

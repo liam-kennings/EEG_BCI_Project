@@ -1,0 +1,89 @@
+{
+  "experiment": "cho2017_post_lock_quality_audit",
+  "status": "exploratory_post_lock_not_confirmatory",
+  "locked_result_unchanged": true,
+  "quality_calibration": {
+    "inputs": "30 frozen patient-calibration windows only",
+    "evaluation_labels_used": false,
+    "gate": "QualityAvailabilityGate",
+    "rejection_quantile": 0.99
+  },
+  "results": {
+    "locked_conservative": {
+      "rows": 4023,
+      "threshold": 0.6150000000000001,
+      "intent_balanced_accuracy": 0.5,
+      "intent_sensitivity": 0.0,
+      "rest_specificity": 1.0,
+      "false_activation_fraction": 0.0,
+      "missed_intent_fraction": 1.0,
+      "available_fraction": 0.0,
+      "abstained_fraction": 1.0,
+      "auroc": 0.9252390787372324
+    },
+    "recalibrated_conservative": {
+      "rows": 4023,
+      "threshold": 0.6150000000000001,
+      "intent_balanced_accuracy": 0.5848475515860795,
+      "intent_sensitivity": 0.1696951031721589,
+      "rest_specificity": 1.0,
+      "false_activation_fraction": 0.0,
+      "missed_intent_fraction": 0.830304896827841,
+      "available_fraction": 0.9373601789709173,
+      "abstained_fraction": 0.06263982102908278,
+      "auroc": 0.9252390787372324
+    },
+    "recalibrated_sensitivity_targeted": {
+      "rows": 4023,
+      "threshold": 0.525,
+      "intent_balanced_accuracy": 0.7201018624646383,
+      "intent_sensitivity": 0.4518016630736064,
+      "rest_specificity": 0.9884020618556701,
+      "false_activation_fraction": 0.011597938144329856,
+      "missed_intent_fraction": 0.5481983369263936,
+      "available_fraction": 0.9373601789709173,
+      "abstained_fraction": 0.06263982102908278,
+      "auroc": 0.9252390787372324
+    },
+    "bypass_sensitivity_targeted": {
+      "rows": 4023,
+      "threshold": 0.525,
+      "intent_balanced_accuracy": 0.7312862547188682,
+      "intent_sensitivity": 0.4767477671696951,
+      "rest_specificity": 0.9858247422680413,
+      "false_activation_fraction": 0.014175257731958713,
+      "missed_intent_fraction": 0.5232522328303049,
+      "available_fraction": 1.0,
+      "abstained_fraction": 0.0,
+      "auroc": 0.9252390787372324
+    }
+  },
+  "participant_bootstrap_95ci": {
+    "intent_balanced_accuracy": {
+      "low": 0.6740527902240162,
+      "high": 0.7624602946206774
+    },
+    "intent_sensitivity": {
+      "low": 0.3632604674501448,
+      "high": 0.5357721600480604
+    },
+    "rest_specificity": {
+      "low": 0.9793101217825757,
+      "high": 0.9961743159653241
+    },
+    "false_activation_fraction": {
+      "low": 0.0038256840346758358,
+      "high": 0.020689878217424316
+    },
+    "available_fraction": {
+      "low": 0.9217965119270827,
+      "high": 0.9520617482128705
+    }
+  },
+  "interpretation": [
+    "The frozen population OOD gate rejected every Cho2017 evaluation window.",
+    "Patient-calibrated quality normalization restored availability without evaluation labels.",
+    "This audit was designed after observing the locked failure and is exploratory.",
+    "A future external cohort must pre-register this quality-calibration step before inference."
+  ]
+}

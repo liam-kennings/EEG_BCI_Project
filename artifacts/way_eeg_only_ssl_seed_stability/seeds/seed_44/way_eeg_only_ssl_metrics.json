@@ -1,0 +1,1784 @@
+{
+  "schema_version": 1,
+  "experiment": "way_eeg_only_masked_reconstruction_transfer",
+  "neural_seed": 44,
+  "inputs": {
+    "way_cache": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/way_eeg_only_ssl/way_unlabeled_eeg_windows.npz",
+    "target_raw_cache": "/Users/LiamKennings_1/Documents/BME 473/artifacts/gui_experiments/translational_v3/translational_windows_v3.npz",
+    "target_feature_cache": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/emg_supervised_transfer/pure_eeg_target_features.npz",
+    "comparison_model": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/multisource_privileged_ensemble/multisource_eeg_intent_ensemble.joblib"
+  },
+  "source_audit": {
+    "dataset_root": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL",
+    "eeg_only_contract": {
+      "emg_read": false,
+      "kinematics_read": false,
+      "force_read": false,
+      "event_labels_read": false
+    },
+    "configuration": {
+      "window_seconds": 2.0,
+      "stride_seconds": 2.0,
+      "guard_seconds": 3.0,
+      "max_windows_per_series": 160,
+      "output_sampling_hz": 100.0,
+      "channels": [
+        "FC3",
+        "FC4",
+        "C3",
+        "Cz",
+        "C4",
+        "CP3",
+        "CP4"
+      ]
+    },
+    "discovered_series": 120,
+    "accepted_series": 120,
+    "challenge_series": 12,
+    "participants": 12,
+    "windows": 16960,
+    "challenge_windows": 1534,
+    "rejected_amplitude_windows": 73,
+    "series": [
+      {
+        "participant": 1,
+        "series": "S1",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 116,
+        "accepted_windows": 115,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S1.mat"
+      },
+      {
+        "participant": 1,
+        "series": "S2",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S2.mat"
+      },
+      {
+        "participant": 1,
+        "series": "S3",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S3.mat"
+      },
+      {
+        "participant": 1,
+        "series": "S4",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 113,
+        "accepted_windows": 113,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S4.mat"
+      },
+      {
+        "participant": 1,
+        "series": "S5",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S5.mat"
+      },
+      {
+        "participant": 1,
+        "series": "S6",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S6.mat"
+      },
+      {
+        "participant": 1,
+        "series": "S7",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 116,
+        "accepted_windows": 116,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S7.mat"
+      },
+      {
+        "participant": 1,
+        "series": "S8",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 114,
+        "accepted_windows": 114,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S8.mat"
+      },
+      {
+        "participant": 1,
+        "series": "S9",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 112,
+        "accepted_windows": 112,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_S9.mat"
+      },
+      {
+        "participant": 1,
+        "series": "ST",
+        "challenge_series": true,
+        "status": "accepted",
+        "candidate_windows": 114,
+        "accepted_windows": 114,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P01/HS_P1_ST.mat"
+      },
+      {
+        "participant": 2,
+        "series": "S1",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S1.mat"
+      },
+      {
+        "participant": 2,
+        "series": "S2",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 159,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S2.mat"
+      },
+      {
+        "participant": 2,
+        "series": "S3",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 149,
+        "accepted_windows": 149,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S3.mat"
+      },
+      {
+        "participant": 2,
+        "series": "S4",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 159,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S4.mat"
+      },
+      {
+        "participant": 2,
+        "series": "S5",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 148,
+        "accepted_windows": 148,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S5.mat"
+      },
+      {
+        "participant": 2,
+        "series": "S6",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 159,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S6.mat"
+      },
+      {
+        "participant": 2,
+        "series": "S7",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 147,
+        "accepted_windows": 146,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S7.mat"
+      },
+      {
+        "participant": 2,
+        "series": "S8",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 146,
+        "accepted_windows": 145,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S8.mat"
+      },
+      {
+        "participant": 2,
+        "series": "S9",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 144,
+        "accepted_windows": 144,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_S9.mat"
+      },
+      {
+        "participant": 2,
+        "series": "ST",
+        "challenge_series": true,
+        "status": "accepted",
+        "candidate_windows": 147,
+        "accepted_windows": 145,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P02/HS_P2_ST.mat"
+      },
+      {
+        "participant": 3,
+        "series": "S1",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 119,
+        "accepted_windows": 118,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S1.mat"
+      },
+      {
+        "participant": 3,
+        "series": "S2",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S2.mat"
+      },
+      {
+        "participant": 3,
+        "series": "S3",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S3.mat"
+      },
+      {
+        "participant": 3,
+        "series": "S4",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S4.mat"
+      },
+      {
+        "participant": 3,
+        "series": "S5",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S5.mat"
+      },
+      {
+        "participant": 3,
+        "series": "S6",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 113,
+        "accepted_windows": 113,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S6.mat"
+      },
+      {
+        "participant": 3,
+        "series": "S7",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 112,
+        "accepted_windows": 112,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S7.mat"
+      },
+      {
+        "participant": 3,
+        "series": "S8",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 111,
+        "accepted_windows": 111,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S8.mat"
+      },
+      {
+        "participant": 3,
+        "series": "S9",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 108,
+        "accepted_windows": 108,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_S9.mat"
+      },
+      {
+        "participant": 3,
+        "series": "ST",
+        "challenge_series": true,
+        "status": "accepted",
+        "candidate_windows": 110,
+        "accepted_windows": 110,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P03/HS_P3_ST.mat"
+      },
+      {
+        "participant": 4,
+        "series": "S1",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 159,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S1.mat"
+      },
+      {
+        "participant": 4,
+        "series": "S2",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S2.mat"
+      },
+      {
+        "participant": 4,
+        "series": "S3",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 128,
+        "accepted_windows": 128,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S3.mat"
+      },
+      {
+        "participant": 4,
+        "series": "S4",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S4.mat"
+      },
+      {
+        "participant": 4,
+        "series": "S5",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 120,
+        "accepted_windows": 120,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S5.mat"
+      },
+      {
+        "participant": 4,
+        "series": "S6",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S6.mat"
+      },
+      {
+        "participant": 4,
+        "series": "S7",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 118,
+        "accepted_windows": 118,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S7.mat"
+      },
+      {
+        "participant": 4,
+        "series": "S8",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 118,
+        "accepted_windows": 118,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S8.mat"
+      },
+      {
+        "participant": 4,
+        "series": "S9",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 118,
+        "accepted_windows": 118,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_S9.mat"
+      },
+      {
+        "participant": 4,
+        "series": "ST",
+        "challenge_series": true,
+        "status": "accepted",
+        "candidate_windows": 120,
+        "accepted_windows": 120,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P04/HS_P4_ST.mat"
+      },
+      {
+        "participant": 5,
+        "series": "S1",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S1.mat"
+      },
+      {
+        "participant": 5,
+        "series": "S2",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 135,
+        "accepted_windows": 135,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S2.mat"
+      },
+      {
+        "participant": 5,
+        "series": "S3",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S3.mat"
+      },
+      {
+        "participant": 5,
+        "series": "S4",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 133,
+        "accepted_windows": 133,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S4.mat"
+      },
+      {
+        "participant": 5,
+        "series": "S5",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 159,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S5.mat"
+      },
+      {
+        "participant": 5,
+        "series": "S6",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S6.mat"
+      },
+      {
+        "participant": 5,
+        "series": "S7",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 132,
+        "accepted_windows": 132,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S7.mat"
+      },
+      {
+        "participant": 5,
+        "series": "S8",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 126,
+        "accepted_windows": 126,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S8.mat"
+      },
+      {
+        "participant": 5,
+        "series": "S9",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 128,
+        "accepted_windows": 128,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_S9.mat"
+      },
+      {
+        "participant": 5,
+        "series": "ST",
+        "challenge_series": true,
+        "status": "accepted",
+        "candidate_windows": 126,
+        "accepted_windows": 126,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P05/HS_P5_ST.mat"
+      },
+      {
+        "participant": 6,
+        "series": "S1",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 146,
+        "accepted_windows": 146,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S1.mat"
+      },
+      {
+        "participant": 6,
+        "series": "S2",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S2.mat"
+      },
+      {
+        "participant": 6,
+        "series": "S3",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S3.mat"
+      },
+      {
+        "participant": 6,
+        "series": "S4",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 134,
+        "accepted_windows": 134,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S4.mat"
+      },
+      {
+        "participant": 6,
+        "series": "S5",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 159,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S5.mat"
+      },
+      {
+        "participant": 6,
+        "series": "S6",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S6.mat"
+      },
+      {
+        "participant": 6,
+        "series": "S7",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 130,
+        "accepted_windows": 130,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S7.mat"
+      },
+      {
+        "participant": 6,
+        "series": "S8",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 132,
+        "accepted_windows": 132,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S8.mat"
+      },
+      {
+        "participant": 6,
+        "series": "S9",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 133,
+        "accepted_windows": 133,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_S9.mat"
+      },
+      {
+        "participant": 6,
+        "series": "ST",
+        "challenge_series": true,
+        "status": "accepted",
+        "candidate_windows": 139,
+        "accepted_windows": 139,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P06/HS_P6_ST.mat"
+      },
+      {
+        "participant": 7,
+        "series": "S1",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 158,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S1.mat"
+      },
+      {
+        "participant": 7,
+        "series": "S2",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S2.mat"
+      },
+      {
+        "participant": 7,
+        "series": "S3",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S3.mat"
+      },
+      {
+        "participant": 7,
+        "series": "S4",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 157,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S4.mat"
+      },
+      {
+        "participant": 7,
+        "series": "S5",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 159,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S5.mat"
+      },
+      {
+        "participant": 7,
+        "series": "S6",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 144,
+        "accepted_windows": 142,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S6.mat"
+      },
+      {
+        "participant": 7,
+        "series": "S7",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 141,
+        "accepted_windows": 139,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S7.mat"
+      },
+      {
+        "participant": 7,
+        "series": "S8",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 137,
+        "accepted_windows": 137,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S8.mat"
+      },
+      {
+        "participant": 7,
+        "series": "S9",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 135,
+        "accepted_windows": 135,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_S9.mat"
+      },
+      {
+        "participant": 7,
+        "series": "ST",
+        "challenge_series": true,
+        "status": "accepted",
+        "candidate_windows": 135,
+        "accepted_windows": 134,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P07/HS_P7_ST.mat"
+      },
+      {
+        "participant": 8,
+        "series": "S1",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 154,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S1.mat"
+      },
+      {
+        "participant": 8,
+        "series": "S2",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 157,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S2.mat"
+      },
+      {
+        "participant": 8,
+        "series": "S3",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 120,
+        "accepted_windows": 119,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S3.mat"
+      },
+      {
+        "participant": 8,
+        "series": "S4",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 157,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S4.mat"
+      },
+      {
+        "participant": 8,
+        "series": "S5",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 115,
+        "accepted_windows": 114,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S5.mat"
+      },
+      {
+        "participant": 8,
+        "series": "S6",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 159,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S6.mat"
+      },
+      {
+        "participant": 8,
+        "series": "S7",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 115,
+        "accepted_windows": 113,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S7.mat"
+      },
+      {
+        "participant": 8,
+        "series": "S8",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 121,
+        "accepted_windows": 120,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S8.mat"
+      },
+      {
+        "participant": 8,
+        "series": "S9",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 120,
+        "accepted_windows": 120,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_S9.mat"
+      },
+      {
+        "participant": 8,
+        "series": "ST",
+        "challenge_series": true,
+        "status": "accepted",
+        "candidate_windows": 123,
+        "accepted_windows": 122,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P08/HS_P8_ST.mat"
+      },
+      {
+        "participant": 9,
+        "series": "S1",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 138,
+        "accepted_windows": 137,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S1.mat"
+      },
+      {
+        "participant": 9,
+        "series": "S2",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S2.mat"
+      },
+      {
+        "participant": 9,
+        "series": "S3",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S3.mat"
+      },
+      {
+        "participant": 9,
+        "series": "S4",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S4.mat"
+      },
+      {
+        "participant": 9,
+        "series": "S5",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S5.mat"
+      },
+      {
+        "participant": 9,
+        "series": "S6",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 128,
+        "accepted_windows": 128,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S6.mat"
+      },
+      {
+        "participant": 9,
+        "series": "S7",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 125,
+        "accepted_windows": 125,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S7.mat"
+      },
+      {
+        "participant": 9,
+        "series": "S8",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 124,
+        "accepted_windows": 124,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S8.mat"
+      },
+      {
+        "participant": 9,
+        "series": "S9",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 122,
+        "accepted_windows": 122,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_S9.mat"
+      },
+      {
+        "participant": 9,
+        "series": "ST",
+        "challenge_series": true,
+        "status": "accepted",
+        "candidate_windows": 123,
+        "accepted_windows": 123,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P09/HS_P9_ST.mat"
+      },
+      {
+        "participant": 10,
+        "series": "S1",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S1.mat"
+      },
+      {
+        "participant": 10,
+        "series": "S2",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S2.mat"
+      },
+      {
+        "participant": 10,
+        "series": "S3",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 139,
+        "accepted_windows": 138,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S3.mat"
+      },
+      {
+        "participant": 10,
+        "series": "S4",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S4.mat"
+      },
+      {
+        "participant": 10,
+        "series": "S5",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 133,
+        "accepted_windows": 133,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S5.mat"
+      },
+      {
+        "participant": 10,
+        "series": "S6",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S6.mat"
+      },
+      {
+        "participant": 10,
+        "series": "S7",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 129,
+        "accepted_windows": 129,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S7.mat"
+      },
+      {
+        "participant": 10,
+        "series": "S8",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 123,
+        "accepted_windows": 123,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S8.mat"
+      },
+      {
+        "participant": 10,
+        "series": "S9",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 125,
+        "accepted_windows": 125,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_S9.mat"
+      },
+      {
+        "participant": 10,
+        "series": "ST",
+        "challenge_series": true,
+        "status": "accepted",
+        "candidate_windows": 125,
+        "accepted_windows": 125,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P10/HS_P10_ST.mat"
+      },
+      {
+        "participant": 11,
+        "series": "S1",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S1.mat"
+      },
+      {
+        "participant": 11,
+        "series": "S2",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 144,
+        "accepted_windows": 144,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S2.mat"
+      },
+      {
+        "participant": 11,
+        "series": "S3",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 160,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S3.mat"
+      },
+      {
+        "participant": 11,
+        "series": "S4",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 138,
+        "accepted_windows": 138,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S4.mat"
+      },
+      {
+        "participant": 11,
+        "series": "S5",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 159,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S5.mat"
+      },
+      {
+        "participant": 11,
+        "series": "S6",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 159,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S6.mat"
+      },
+      {
+        "participant": 11,
+        "series": "S7",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 138,
+        "accepted_windows": 135,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S7.mat"
+      },
+      {
+        "participant": 11,
+        "series": "S8",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 131,
+        "accepted_windows": 131,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S8.mat"
+      },
+      {
+        "participant": 11,
+        "series": "S9",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 133,
+        "accepted_windows": 131,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_S9.mat"
+      },
+      {
+        "participant": 11,
+        "series": "ST",
+        "challenge_series": true,
+        "status": "accepted",
+        "candidate_windows": 137,
+        "accepted_windows": 137,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P11/HS_P11_ST.mat"
+      },
+      {
+        "participant": 12,
+        "series": "S1",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 148,
+        "accepted_windows": 147,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S1.mat"
+      },
+      {
+        "participant": 12,
+        "series": "S2",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 152,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S2.mat"
+      },
+      {
+        "participant": 12,
+        "series": "S3",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 158,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S3.mat"
+      },
+      {
+        "participant": 12,
+        "series": "S4",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 153,
+        "accepted_windows": 153,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S4.mat"
+      },
+      {
+        "participant": 12,
+        "series": "S5",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 156,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S5.mat"
+      },
+      {
+        "participant": 12,
+        "series": "S6",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 160,
+        "accepted_windows": 159,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S6.mat"
+      },
+      {
+        "participant": 12,
+        "series": "S7",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 144,
+        "accepted_windows": 140,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S7.mat"
+      },
+      {
+        "participant": 12,
+        "series": "S8",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 151,
+        "accepted_windows": 151,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S8.mat"
+      },
+      {
+        "participant": 12,
+        "series": "S9",
+        "challenge_series": false,
+        "status": "accepted",
+        "candidate_windows": 142,
+        "accepted_windows": 140,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_S9.mat"
+      },
+      {
+        "participant": 12,
+        "series": "ST",
+        "challenge_series": true,
+        "status": "accepted",
+        "candidate_windows": 139,
+        "accepted_windows": 139,
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/WAY-EEG-GAL/participants/P12/HS_P12_ST.mat"
+      }
+    ]
+  },
+  "source_branch_scales": {
+    "mrcp": 4.874240586181994e-05,
+    "smr": 2.6793808591294428e-05
+  },
+  "training": {
+    "pretrain_epochs": 8,
+    "fine_tune_epochs": 10,
+    "batch_size": 256,
+    "neural_seed": 44,
+    "max_controller_false_activation": 0.1,
+    "device": "cpu",
+    "development_rows": 23188,
+    "controller_rows": 6162,
+    "development_observed_rows": 7553,
+    "ssl_reconstruction_losses": [
+      0.9421328926986119,
+      0.7080192898804287,
+      0.6573346205477445,
+      0.6200200481234857,
+      0.5920035362243652,
+      0.5709931051956033,
+      0.5657359568577892,
+      0.5587190272673122
+    ],
+    "random_control_losses": [
+      0.6857574743712602,
+      0.6591043082614708,
+      0.6348663195894164,
+      0.6068859917334324,
+      0.5686200580267161,
+      0.5338836675582657,
+      0.481910136059901,
+      0.44432733511695727,
+      0.3751488369196829,
+      0.33766427639830576
+    ],
+    "pretrained_fine_tune_losses": [
+      0.6915016018362691,
+      0.6696962831600417,
+      0.6635249789891994,
+      0.6594437061402545,
+      0.6479707435588349,
+      0.6363500277589953,
+      0.6206616804606864,
+      0.6128199615923507,
+      0.5915068125635012,
+      0.5727882559709608
+    ]
+  },
+  "leakage_boundary": {
+    "way_labels_used": false,
+    "way_events_used": false,
+    "way_emg_used": false,
+    "way_kinematics_used": false,
+    "way_force_used": false,
+    "controller_used_for_gradient_training": false,
+    "observed_used_for_selection": false
+  },
+  "domain_thresholds": {
+    "classical_target_only": {
+      "liu2024": 0.7549999999999999,
+      "openbmi": 0.725,
+      "physionet": 0.6849999999999999
+    },
+    "random_cnn": {
+      "liu2024": 0.9249999999999999,
+      "openbmi": 0.8899999999999999,
+      "physionet": 0.9099999999999999
+    },
+    "way_ssl": {
+      "liu2024": 0.735,
+      "openbmi": 0.6449999999999999,
+      "physionet": 0.6449999999999999
+    },
+    "way_privileged": {
+      "liu2024": 0.7499999999999999,
+      "openbmi": 0.705,
+      "physionet": 0.6649999999999999
+    }
+  },
+  "evaluation": {
+    "classical_target_only": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5282407039943817,
+      "sensitivity": 0.10579211848717271,
+      "specificity": 0.9506892895015907,
+      "missed_intent_rate": 0.8942078815128273,
+      "false_activation_rate_per_window": 0.049310710498409335,
+      "auroc": 0.6830902012434221,
+      "auprc": 0.6451725790656493,
+      "brier_score": 0.2272811013798053
+    },
+    "random_cnn": {
+      "rows": 7553,
+      "balanced_accuracy": 0.542489825361669,
+      "sensitivity": 0.16186194128537423,
+      "specificity": 0.9231177094379639,
+      "missed_intent_rate": 0.8381380587146258,
+      "false_activation_rate_per_window": 0.07688229056203605,
+      "auroc": 0.619096346834356,
+      "auprc": 0.6082041612681397,
+      "brier_score": 0.2853579307957195
+    },
+    "way_ssl": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5601995928742334,
+      "sensitivity": 0.20603015075376885,
+      "specificity": 0.9143690349946978,
+      "missed_intent_rate": 0.7939698492462312,
+      "false_activation_rate_per_window": 0.08563096500530222,
+      "auroc": 0.6609203437514637,
+      "auprc": 0.6386121346907216,
+      "brier_score": 0.2421890025786599
+    },
+    "way_privileged": {
+      "rows": 7553,
+      "balanced_accuracy": 0.5291679626575138,
+      "sensitivity": 0.10632107907960857,
+      "specificity": 0.9520148462354189,
+      "missed_intent_rate": 0.8936789209203915,
+      "false_activation_rate_per_window": 0.04798515376458112,
+      "auroc": 0.6970006588167719,
+      "auprc": 0.6560355807496119,
+      "brier_score": 0.2241543419164176
+    }
+  },
+  "evaluation_by_dataset": {
+    "liu2024": {
+      "classical_target_only": {
+        "rows": 791,
+        "balanced_accuracy": 0.5485326086956521,
+        "sensitivity": 0.2275,
+        "specificity": 0.8695652173913043,
+        "missed_intent_rate": 0.7725,
+        "false_activation_rate_per_window": 0.13043478260869565,
+        "auroc": 0.6478516624040921,
+        "auprc": 0.6317087669138146,
+        "brier_score": 0.24958514718553568
+      },
+      "random_cnn": {
+        "rows": 791,
+        "balanced_accuracy": 0.5315505115089514,
+        "sensitivity": 0.1475,
+        "specificity": 0.9156010230179028,
+        "missed_intent_rate": 0.8525,
+        "false_activation_rate_per_window": 0.08439897698209718,
+        "auroc": 0.5470588235294118,
+        "auprc": 0.5641387918126504,
+        "brier_score": 0.3192424248714952
+      },
+      "way_ssl": {
+        "rows": 791,
+        "balanced_accuracy": 0.49195332480818416,
+        "sensitivity": 0.0325,
+        "specificity": 0.9514066496163683,
+        "missed_intent_rate": 0.9675,
+        "false_activation_rate_per_window": 0.04859335038363171,
+        "auroc": 0.5690984654731458,
+        "auprc": 0.5426758988971975,
+        "brier_score": 0.2587025369868883
+      },
+      "way_privileged": {
+        "rows": 791,
+        "balanced_accuracy": 0.5525127877237852,
+        "sensitivity": 0.215,
+        "specificity": 0.8900255754475703,
+        "missed_intent_rate": 0.785,
+        "false_activation_rate_per_window": 0.10997442455242967,
+        "auroc": 0.6351598465473146,
+        "auprc": 0.6227755248252895,
+        "brier_score": 0.25269328093061116
+      }
+    },
+    "openbmi": {
+      "classical_target_only": {
+        "rows": 4800,
+        "balanced_accuracy": 0.5225,
+        "sensitivity": 0.06708333333333333,
+        "specificity": 0.9779166666666667,
+        "missed_intent_rate": 0.9329166666666666,
+        "false_activation_rate_per_window": 0.022083333333333333,
+        "auroc": 0.7206501736111111,
+        "auprc": 0.674158132266764,
+        "brier_score": 0.2154477208791337
+      },
+      "random_cnn": {
+        "rows": 4800,
+        "balanced_accuracy": 0.5552083333333333,
+        "sensitivity": 0.19083333333333333,
+        "specificity": 0.9195833333333333,
+        "missed_intent_rate": 0.8091666666666667,
+        "false_activation_rate_per_window": 0.08041666666666666,
+        "auroc": 0.6435309027777778,
+        "auprc": 0.6325819588071078,
+        "brier_score": 0.27220183629604217
+      },
+      "way_ssl": {
+        "rows": 4800,
+        "balanced_accuracy": 0.576875,
+        "sensitivity": 0.24083333333333334,
+        "specificity": 0.9129166666666667,
+        "missed_intent_rate": 0.7591666666666667,
+        "false_activation_rate_per_window": 0.08708333333333333,
+        "auroc": 0.6893498263888889,
+        "auprc": 0.6700658080207498,
+        "brier_score": 0.23325266795558558
+      },
+      "way_privileged": {
+        "rows": 4800,
+        "balanced_accuracy": 0.518125,
+        "sensitivity": 0.058333333333333334,
+        "specificity": 0.9779166666666667,
+        "missed_intent_rate": 0.9416666666666667,
+        "false_activation_rate_per_window": 0.022083333333333333,
+        "auroc": 0.7376446180555556,
+        "auprc": 0.6859477608387048,
+        "brier_score": 0.2130282942804164
+      }
+    },
+    "physionet": {
+      "classical_target_only": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5336391437308868,
+        "sensitivity": 0.15086646279306828,
+        "specificity": 0.9164118246687054,
+        "missed_intent_rate": 0.8491335372069317,
+        "false_activation_rate_per_window": 0.0835881753312946,
+        "auroc": 0.6358591006909049,
+        "auprc": 0.611805042218082,
+        "brier_score": 0.24723916772582522
+      },
+      "random_cnn": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5158002038735984,
+        "sensitivity": 0.09683995922528033,
+        "specificity": 0.9347604485219164,
+        "missed_intent_rate": 0.9031600407747197,
+        "false_activation_rate_per_window": 0.0652395514780836,
+        "auroc": 0.5891687215088725,
+        "auprc": 0.5728534144103399,
+        "brier_score": 0.30388322069608287
+      },
+      "way_ssl": {
+        "rows": 1962,
+        "balanced_accuracy": 0.5474006116207951,
+        "sensitivity": 0.19164118246687054,
+        "specificity": 0.9031600407747197,
+        "missed_intent_rate": 0.8083588175331294,
+        "false_activation_rate_per_window": 0.09683995922528033,
+        "auroc": 0.623505108789737,
+        "auprc": 0.599384494168572,
+        "brier_score": 0.25739399772333277
+      },
+      "way_privileged": {
+        "rows": 1962,
+        "balanced_accuracy": 0.54638124362895,
+        "sensitivity": 0.17940876656472987,
+        "specificity": 0.9133537206931702,
+        "missed_intent_rate": 0.8205912334352702,
+        "false_activation_rate_per_window": 0.08664627930682976,
+        "auroc": 0.6564522045261603,
+        "auprc": 0.632943297504122,
+        "brier_score": 0.2398682705059072
+      }
+    }
+  },
+  "participant_analysis": {
+    "participants": 38,
+    "mean_balanced_accuracy_delta": 0.011312977957714803,
+    "median_balanced_accuracy_delta": 0.021111111111111053,
+    "bootstrap_95_ci": [
+      -0.005667214912280703,
+      0.02907513073549255
+    ],
+    "participants_improved_fraction": 0.631578947368421,
+    "bootstrap_iterations": 2000,
+    "records": [
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S006",
+        "rows": 79,
+        "random_cnn_balanced_accuracy": 0.4608974358974359,
+        "way_ssl_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": 0.039102564102564075,
+        "random_cnn_sensitivity": 0.05,
+        "way_ssl_sensitivity": 0.0
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S022",
+        "rows": 80,
+        "random_cnn_balanced_accuracy": 0.5375,
+        "way_ssl_balanced_accuracy": 0.4625,
+        "balanced_accuracy_delta": -0.07499999999999996,
+        "random_cnn_sensitivity": 0.1,
+        "way_ssl_sensitivity": 0.025
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S025",
+        "rows": 79,
+        "random_cnn_balanced_accuracy": 0.6112179487179488,
+        "way_ssl_balanced_accuracy": 0.5125,
+        "balanced_accuracy_delta": -0.09871794871794881,
+        "random_cnn_sensitivity": 0.325,
+        "way_ssl_sensitivity": 0.025
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S027",
+        "rows": 79,
+        "random_cnn_balanced_accuracy": 0.4862179487179487,
+        "way_ssl_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": 0.013782051282051289,
+        "random_cnn_sensitivity": 0.075,
+        "way_ssl_sensitivity": 0.0
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S031",
+        "rows": 79,
+        "random_cnn_balanced_accuracy": 0.5237179487179487,
+        "way_ssl_balanced_accuracy": 0.4865384615384616,
+        "balanced_accuracy_delta": -0.03717948717948716,
+        "random_cnn_sensitivity": 0.15,
+        "way_ssl_sensitivity": 0.05
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S034",
+        "rows": 79,
+        "random_cnn_balanced_accuracy": 0.5365384615384615,
+        "way_ssl_balanced_accuracy": 0.49935897435897436,
+        "balanced_accuracy_delta": -0.03717948717948716,
+        "random_cnn_sensitivity": 0.15,
+        "way_ssl_sensitivity": 0.05
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S036",
+        "rows": 79,
+        "random_cnn_balanced_accuracy": 0.4987179487179487,
+        "way_ssl_balanced_accuracy": 0.4480769230769231,
+        "balanced_accuracy_delta": -0.05064102564102563,
+        "random_cnn_sensitivity": 0.1,
+        "way_ssl_sensitivity": 0.05
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S040",
+        "rows": 79,
+        "random_cnn_balanced_accuracy": 0.5362179487179487,
+        "way_ssl_balanced_accuracy": 0.48685897435897435,
+        "balanced_accuracy_delta": -0.04935897435897435,
+        "random_cnn_sensitivity": 0.175,
+        "way_ssl_sensitivity": 0.025
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S048",
+        "rows": 79,
+        "random_cnn_balanced_accuracy": 0.5621794871794872,
+        "way_ssl_balanced_accuracy": 0.5121794871794871,
+        "balanced_accuracy_delta": -0.050000000000000044,
+        "random_cnn_sensitivity": 0.15,
+        "way_ssl_sensitivity": 0.05
+      },
+      {
+        "dataset_id": "liu2024",
+        "subject_key": "liu2024:S050",
+        "rows": 79,
+        "random_cnn_balanced_accuracy": 0.5615384615384615,
+        "way_ssl_balanced_accuracy": 0.5121794871794871,
+        "balanced_accuracy_delta": -0.049358974358974406,
+        "random_cnn_sensitivity": 0.2,
+        "way_ssl_sensitivity": 0.05
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S009",
+        "rows": 800,
+        "random_cnn_balanced_accuracy": 0.58125,
+        "way_ssl_balanced_accuracy": 0.6375,
+        "balanced_accuracy_delta": 0.05624999999999991,
+        "random_cnn_sensitivity": 0.245,
+        "way_ssl_sensitivity": 0.3725
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S036",
+        "rows": 800,
+        "random_cnn_balanced_accuracy": 0.53375,
+        "way_ssl_balanced_accuracy": 0.5725,
+        "balanced_accuracy_delta": 0.03875000000000006,
+        "random_cnn_sensitivity": 0.1275,
+        "way_ssl_sensitivity": 0.2
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S042",
+        "rows": 800,
+        "random_cnn_balanced_accuracy": 0.54625,
+        "way_ssl_balanced_accuracy": 0.56375,
+        "balanced_accuracy_delta": 0.01749999999999996,
+        "random_cnn_sensitivity": 0.2325,
+        "way_ssl_sensitivity": 0.23
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S047",
+        "rows": 800,
+        "random_cnn_balanced_accuracy": 0.5449999999999999,
+        "way_ssl_balanced_accuracy": 0.56125,
+        "balanced_accuracy_delta": 0.016250000000000098,
+        "random_cnn_sensitivity": 0.15,
+        "way_ssl_sensitivity": 0.1725
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S049",
+        "rows": 800,
+        "random_cnn_balanced_accuracy": 0.5975,
+        "way_ssl_balanced_accuracy": 0.6174999999999999,
+        "balanced_accuracy_delta": 0.019999999999999907,
+        "random_cnn_sensitivity": 0.2675,
+        "way_ssl_sensitivity": 0.38
+      },
+      {
+        "dataset_id": "openbmi",
+        "subject_key": "openbmi:S052",
+        "rows": 800,
+        "random_cnn_balanced_accuracy": 0.5275,
+        "way_ssl_balanced_accuracy": 0.50875,
+        "balanced_accuracy_delta": -0.018749999999999933,
+        "random_cnn_sensitivity": 0.1225,
+        "way_ssl_sensitivity": 0.09
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S005",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5222222222222223,
+        "way_ssl_balanced_accuracy": 0.6,
+        "balanced_accuracy_delta": 0.07777777777777772,
+        "random_cnn_sensitivity": 0.17777777777777778,
+        "way_ssl_sensitivity": 0.26666666666666666
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S007",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5111111111111111,
+        "way_ssl_balanced_accuracy": 0.5777777777777777,
+        "balanced_accuracy_delta": 0.06666666666666665,
+        "random_cnn_sensitivity": 0.044444444444444446,
+        "way_ssl_sensitivity": 0.17777777777777778
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S010",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5333333333333333,
+        "way_ssl_balanced_accuracy": 0.5333333333333333,
+        "balanced_accuracy_delta": 0.0,
+        "random_cnn_sensitivity": 0.08888888888888889,
+        "way_ssl_sensitivity": 0.13333333333333333
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S020",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5666666666666667,
+        "way_ssl_balanced_accuracy": 0.6111111111111112,
+        "balanced_accuracy_delta": 0.04444444444444451,
+        "random_cnn_sensitivity": 0.17777777777777778,
+        "way_ssl_sensitivity": 0.3111111111111111
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S021",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5333333333333333,
+        "way_ssl_balanced_accuracy": 0.5888888888888889,
+        "balanced_accuracy_delta": 0.05555555555555558,
+        "random_cnn_sensitivity": 0.13333333333333333,
+        "way_ssl_sensitivity": 0.26666666666666666
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S025",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5111111111111111,
+        "way_ssl_balanced_accuracy": 0.5333333333333333,
+        "balanced_accuracy_delta": 0.022222222222222254,
+        "random_cnn_sensitivity": 0.044444444444444446,
+        "way_ssl_sensitivity": 0.13333333333333333
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S036",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5777777777777777,
+        "way_ssl_balanced_accuracy": 0.6,
+        "balanced_accuracy_delta": 0.022222222222222254,
+        "random_cnn_sensitivity": 0.2222222222222222,
+        "way_ssl_sensitivity": 0.26666666666666666
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S044",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5333333333333333,
+        "way_ssl_balanced_accuracy": 0.5666666666666667,
+        "balanced_accuracy_delta": 0.033333333333333326,
+        "random_cnn_sensitivity": 0.06666666666666667,
+        "way_ssl_sensitivity": 0.17777777777777778
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S047",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5555555555555556,
+        "way_ssl_balanced_accuracy": 0.47777777777777775,
+        "balanced_accuracy_delta": -0.07777777777777783,
+        "random_cnn_sensitivity": 0.15555555555555556,
+        "way_ssl_sensitivity": 0.35555555555555557
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S048",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.4777777777777778,
+        "way_ssl_balanced_accuracy": 0.5,
+        "balanced_accuracy_delta": 0.0222222222222222,
+        "random_cnn_sensitivity": 0.022222222222222223,
+        "way_ssl_sensitivity": 0.08888888888888889
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S054",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5111111111111111,
+        "way_ssl_balanced_accuracy": 0.5111111111111111,
+        "balanced_accuracy_delta": 0.0,
+        "random_cnn_sensitivity": 0.022222222222222223,
+        "way_ssl_sensitivity": 0.022222222222222223
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S058",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.4888888888888889,
+        "way_ssl_balanced_accuracy": 0.5888888888888889,
+        "balanced_accuracy_delta": 0.10000000000000003,
+        "random_cnn_sensitivity": 0.15555555555555556,
+        "way_ssl_sensitivity": 0.3333333333333333
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S061",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.4888888888888889,
+        "way_ssl_balanced_accuracy": 0.4888888888888889,
+        "balanced_accuracy_delta": 0.0,
+        "random_cnn_sensitivity": 0.0,
+        "way_ssl_sensitivity": 0.044444444444444446
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S065",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5333333333333333,
+        "way_ssl_balanced_accuracy": 0.5777777777777777,
+        "balanced_accuracy_delta": 0.0444444444444444,
+        "random_cnn_sensitivity": 0.15555555555555556,
+        "way_ssl_sensitivity": 0.26666666666666666
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S073",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.4888888888888889,
+        "way_ssl_balanced_accuracy": 0.6222222222222222,
+        "balanced_accuracy_delta": 0.13333333333333336,
+        "random_cnn_sensitivity": 0.044444444444444446,
+        "way_ssl_sensitivity": 0.37777777777777777
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S076",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.4444444444444444,
+        "way_ssl_balanced_accuracy": 0.4666666666666667,
+        "balanced_accuracy_delta": 0.022222222222222254,
+        "random_cnn_sensitivity": 0.044444444444444446,
+        "way_ssl_sensitivity": 0.1111111111111111
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S081",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5,
+        "way_ssl_balanced_accuracy": 0.5444444444444445,
+        "balanced_accuracy_delta": 0.04444444444444451,
+        "random_cnn_sensitivity": 0.044444444444444446,
+        "way_ssl_sensitivity": 0.13333333333333333
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S095",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5555555555555556,
+        "way_ssl_balanced_accuracy": 0.4666666666666667,
+        "balanced_accuracy_delta": -0.0888888888888889,
+        "random_cnn_sensitivity": 0.2222222222222222,
+        "way_ssl_sensitivity": 0.13333333333333333
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S097",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.4888888888888889,
+        "way_ssl_balanced_accuracy": 0.5111111111111112,
+        "balanced_accuracy_delta": 0.02222222222222231,
+        "random_cnn_sensitivity": 0.044444444444444446,
+        "way_ssl_sensitivity": 0.06666666666666667
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S098",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.5444444444444445,
+        "way_ssl_balanced_accuracy": 0.6555555555555556,
+        "balanced_accuracy_delta": 0.11111111111111105,
+        "random_cnn_sensitivity": 0.15555555555555556,
+        "way_ssl_sensitivity": 0.35555555555555557
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S100",
+        "rows": 72,
+        "random_cnn_balanced_accuracy": 0.5,
+        "way_ssl_balanced_accuracy": 0.5277777777777778,
+        "balanced_accuracy_delta": 0.02777777777777779,
+        "random_cnn_sensitivity": 0.05555555555555555,
+        "way_ssl_sensitivity": 0.05555555555555555
+      },
+      {
+        "dataset_id": "physionet",
+        "subject_key": "physionet:S103",
+        "rows": 90,
+        "random_cnn_balanced_accuracy": 0.47777777777777775,
+        "way_ssl_balanced_accuracy": 0.48888888888888893,
+        "balanced_accuracy_delta": 0.011111111111111183,
+        "random_cnn_sensitivity": 0.044444444444444446,
+        "way_ssl_sensitivity": 0.1111111111111111
+      }
+    ]
+  }
+}

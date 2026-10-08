@@ -1,0 +1,86 @@
+{
+  "status": "frozen_before_eeg_inference",
+  "purpose": "external_healthy_domain_confirmation_of_v7_rest_vs_intent",
+  "dataset": {
+    "id": "cho2017",
+    "root": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/files/external/cho2017/nm000245",
+    "source_subjects": 52,
+    "locked_subjects": 51,
+    "adapter_development_subjects": [
+      1
+    ],
+    "snapshot_fingerprint": "fe383901c94d2fa0d9a39979b3066d174e445b8a08fcf7c6a51f468889532f1b",
+    "event_totals": {
+      "left_hand": 5160,
+      "right_hand": 5160
+    },
+    "bdf_bytes": 7104943296,
+    "source_mat_bytes": 10500590581
+  },
+  "frozen_decoder": {
+    "model": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/gui_experiments/translational_v7_auxiliary_direction/translational_v7_auxiliary_direction_models.joblib",
+    "model_sha256": "f0390ae511ba3fb8207163b9a2fca5dd9ff0616f30a30ab11c71d86785dc8092",
+    "training_dataset_fingerprint": "fad1be0352a2e543bc29ed3a9848734d3f4e0e26e3e785fb699f74faa02270d9",
+    "reference_cache": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/gui_experiments/translational_v5_patient_adaptive/translational_windows_v3.npz",
+    "reference_cache_sha256": "f99608b5b7a2578d80dc9bf128875bea9242f40441f95106b9f2162c295bcec1",
+    "neural_models": [
+      {
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/gui_experiments/eeg_decoder_model_bakeoff/seeds/seed_42/mrcp_fbcnet.pt",
+        "sha256": "fa53ee7ac60d4b86677194f36e2e7cb98f54f2faa9dd680c0655e3048c16d40c"
+      },
+      {
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/gui_experiments/eeg_decoder_model_bakeoff/seeds/seed_43/mrcp_fbcnet.pt",
+        "sha256": "1d3b33f55a68e192b21fb23d3d5e450f6d9ef8d469dcf5e58cdb862bb11543d6"
+      },
+      {
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/gui_experiments/eeg_decoder_model_bakeoff/seeds/seed_44/mrcp_fbcnet.pt",
+        "sha256": "3fdec4a08b337e545a63e42126effd5c722d011902a12972fce3e88ec6783f22"
+      },
+      {
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/gui_experiments/eeg_decoder_model_bakeoff/seeds/seed_45/mrcp_fbcnet.pt",
+        "sha256": "ef723e99dc3bca0a2a7777a59bc269d33338e18e67d03a2195dd5f5700331df6"
+      },
+      {
+        "path": "/Users/LiamKennings_1/Documents/BME 473/EEG_BCI_Project/artifacts/gui_experiments/eeg_decoder_model_bakeoff/seeds/seed_46/mrcp_fbcnet.pt",
+        "sha256": "83d0231056b34157b0a68f1b242d26dc2e6d7b003cada36dcc85f1dd1901a8fe"
+      }
+    ]
+  },
+  "protocol": {
+    "task": "binary_rest_vs_motor_imagery_intent",
+    "zero_shot": "all_eligible_windows_no_cho2017_fitting",
+    "intent_window_seconds_after_cue": [
+      0.5,
+      2.5
+    ],
+    "rest_source": "independent_continuous_rest_recording",
+    "rest_windows": "2_s_windows_with_1_s_step_starting_at_2_s",
+    "patient_calibration": {
+      "design": "stratified_within_session_not_prospective",
+      "windows": {
+        "rest": 10,
+        "left": 10,
+        "right": 10
+      },
+      "budget_per_source_class": 10,
+      "blend_weight": 0.5,
+      "auxiliary_weight": 0.25,
+      "direction_output_exposed": false
+    },
+    "thresholds": {
+      "conservative": 0.6150000000000001,
+      "sensitivity_targeted": 0.525
+    },
+    "primary_endpoint": "adapted_conservative_intent_balanced_accuracy",
+    "safety_endpoint": "adapted_conservative_rest_specificity",
+    "bootstrap_unit": "participant"
+  },
+  "claim_boundary": [
+    "Cho2017 was not used for V7 training, model selection, probability calibration, or threshold selection.",
+    "Subject 1 was used only for adapter/QC smoke testing and is excluded from locked model inference.",
+    "The adapted analysis uses frozen stratified within-session calibration and is not a later-session prospective result.",
+    "Rest comes from the independent continuous resting-state recording.",
+    "Window specificity is not a temporally confirmed false-command rate per minute.",
+    "No result may be used to retune V7 and remain labelled locked confirmation."
+  ]
+}
