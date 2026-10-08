@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "purpose": "binary EEG intent model with auxiliary direction training",
+  "claim_status": "development_observed_not_external_confirmation",
+  "population_controller": "general_population_controller.joblib",
+  "population_controller_sha256": "ef5df4b1d0afaf7864b940b26b3ce5acf0929590efbd37b79b037bce1f8edc4b",
+  "neural_models": [
+    {
+      "architecture": "mrcp_fbcnet",
+      "seed": 42,
+      "relative_path": "neural_models/mrcp_fbcnet_seed_42.pt",
+      "sha256": "fa53ee7ac60d4b86677194f36e2e7cb98f54f2faa9dd680c0655e3048c16d40c"
+    },
+    {
+      "architecture": "mrcp_fbcnet",
+      "seed": 43,
+      "relative_path": "neural_models/mrcp_fbcnet_seed_43.pt",
+      "sha256": "1d3b33f55a68e192b21fb23d3d5e450f6d9ef8d469dcf5e58cdb862bb11543d6"
+    },
+    {
+      "architecture": "mrcp_fbcnet",
+      "seed": 44,
+      "relative_path": "neural_models/mrcp_fbcnet_seed_44.pt",
+      "sha256": "3fdec4a08b337e545a63e42126effd5c722d011902a12972fce3e88ec6783f22"
+    },
+    {
+      "architecture": "mrcp_fbcnet",
+      "seed": 45,
+      "relative_path": "neural_models/mrcp_fbcnet_seed_45.pt",
+      "sha256": "ef723e99dc3bca0a2a7777a59bc269d33338e18e67d03a2195dd5f5700331df6"
+    },
+    {
+      "architecture": "mrcp_fbcnet",
+      "seed": 46,
+      "relative_path": "neural_models/mrcp_fbcnet_seed_46.pt",
+      "sha256": "83d0231056b34157b0a68f1b242d26dc2e6d7b003cada36dcc85f1dd1901a8fe"
+    },
+    {
+      "architecture": "shallow_convnet",
+      "seed": 42,
+      "relative_path": "neural_models/shallow_convnet_seed_42.pt",
+      "sha256": "be69056f7f83d22929af0996133f77a25d38b249c1af5e3a31ca08930fe3797a"
+    },
+    {
+      "architecture": "shallow_convnet",
+      "seed": 43,
+      "relative_path": "neural_models/shallow_convnet_seed_43.pt",
+      "sha256": "cbbbc0a83c514bd8e8aa4db4ba6021a8f336ab9c6fb6e17cb7e52782aa115fb4"
+    },
+    {
+      "architecture": "shallow_convnet",
+      "seed": 44,
+      "relative_path": "neural_models/shallow_convnet_seed_44.pt",
+      "sha256": "86426a14df9218509c02a320c882bf8e868a596d394224ba782bb68fc860f921"
+    },
+    {
+      "architecture": "shallow_convnet",
+      "seed": 45,
+      "relative_path": "neural_models/shallow_convnet_seed_45.pt",
+      "sha256": "0cb313fbdc8bbdf03513c42834a4b353728828c6e17d8f8b3d971927e00c3876"
+    },
+    {
+      "architecture": "shallow_convnet",
+      "seed": 46,
+      "relative_path": "neural_models/shallow_convnet_seed_46.pt",
+      "sha256": "5c07d3a901af8621feccbfe26a618a9e456e473db3777f6425729156514b6d37"
+    }
+  ],
+  "neural_architectures_evaluated": [
+    "mrcp_fbcnet",
+    "shallow_convnet"
+  ],
+  "selected_intent_fusion": {
+    "mrcp_fbcnet": 0.6,
+    "riemann": 0.25,
+    "smr": 0.15
+  },
+  "patient_calibration": {
+    "protocol": "recording 0 supplies labeled rest/left/right cue windows for an auxiliary direction signal; output remains rest/intent and only later recordings are evaluated",
+    "adapter_api": "bci_pipeline.translational_decoder.RapidAuxiliaryIntentPatientAdapter",
+    "fit_contract": "fit(branches, labels, domain, branch_names, blend_weight, auxiliary_weight, seed)",
+    "predict_contract": "predict(branches, domain, population)",
+    "adapter_inputs": {
+      "physionet": [
+        "population_intent",
+        "mrcp",
+        "smr",
+        "riemann"
+      ],
+      "openbmi": [
+        "population_intent",
+        "mrcp",
+        "smr",
+        "riemann"
+      ],
+      "liu2024": [
+        "population_intent",
+        "mrcp",
+        "smr",
+        "riemann"
+      ]
+    },
+    "selected_by_dataset": {
+      "physionet": {
+        "budget_per_source_class": 10,
+        "total_calibration_windows": 30,
+        "blend_weight": 0.5,
+        "adapter_branch_names": [
+          "population_intent",
+          "mrcp",
+          "smr",
+          "riemann"
+        ],
+        "graph_branch_enabled": false,
+        "graph_selection_guard": {
+          "status": "not_applicable"
+        },
+        "auxiliary_weight": 0.25
+      },
+      "openbmi": {
+        "budget_per_source_class": 10,
+        "total_calibration_windows": 30,
+        "blend_weight": 0.5,
+        "adapter_branch_names": [
+          "population_intent",
+          "mrcp",
+          "smr",
+          "riemann"
+        ],
+        "graph_branch_enabled": false,
+        "graph_selection_guard": {
+          "status": "not_applicable"
+        },
+        "auxiliary_weight": 0.5
+      },
+      "liu2024": {
+        "budget_per_source_class": 10,
+        "total_calibration_windows": 30,
+        "blend_weight": 0.5,
+        "adapter_branch_names": [
+          "population_intent",
+          "mrcp",
+          "smr",
+          "riemann"
+        ],
+        "graph_branch_enabled": false,
+        "graph_selection_guard": {
+          "status": "rejected_to_base",
+          "minimum_gain": 0.01,
+          "controller_sensitivity_gain": 0.006249999999999978,
+          "controller_balanced_accuracy_gain": 0.0031249999999999334
+        },
+        "auxiliary_weight": 0.0
+      }
+    },
+    "labels_required": [
+      "rest",
+      "left",
+      "right"
+    ],
+    "output_classes": [
+      "rest",
+      "intent"
+    ],
+    "auxiliary_direction_output_exposed": false,
+    "calibration_rows_excluded_from_metrics": true
+  },
+  "development_observed_result": {
+    "balanced_accuracy": 0.7360183174372348,
+    "sensitivity": 0.5354533734422002,
+    "specificity": 0.9365832614322692
+  },
+  "deployment_boundary": "Temporal false activations per minute require continuous no-control validation before device commands are enabled."
+}

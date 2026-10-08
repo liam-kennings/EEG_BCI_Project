@@ -32,6 +32,7 @@ print "Using Python: $PYTHON_BIN"
 "$PYTHON_BIN" -m unittest tests.test_v7h
 "$PYTHON_BIN" -m unittest tests.test_cho2017
 "$PYTHON_BIN" -m unittest tests.test_quality_gate
+"$PYTHON_BIN" -m unittest tests.test_participant_metrics
 
 test -d files/eegmmidb/1.0.0
 test -d files/external/openbmi/nm000338

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import os
@@ -75,6 +76,8 @@ from bci_pipeline.translational_features import (  # noqa: E402
 from bci_pipeline.translational_metrics import (  # noqa: E402
     continuous_false_activations,
     domain_threshold_vector,
+    paired_participant_difference,
+    participant_level_summary,
     score_intent_operating_point,
     score_operating_point,
     select_continuous_threshold,
@@ -3385,6 +3388,64 @@ def write_report(path: Path, report: Mapping[str, object]) -> None:
     path.write_text("\n".join(lines) + "\n", encoding="ascii")
 
 
+def _participant_level_report_lines(
+    participant_level: Mapping[str, object] | None,
+) -> list[str]:
+    if not participant_level:
+        return []
+    adapted = participant_level["patient_adapted_conservative"]
+    population = participant_level["population_conservative"]
+    gain = participant_level["adaptation_gain_at_own_thresholds"]
+
+    def pct(value: float) -> str:
+        return f"{100 * float(value):.1f}%"
+
+    def interval(values: Sequence[float]) -> str:
+        return f"{100 * float(values[0]):.1f}-{100 * float(values[1]):.1f}%"
+
+    rows = [
+        "| "
+        f"{dataset_id} | {summary['participants']} | {summary['evaluation_windows']} | "
+        f"{pct(summary['mean_balanced_accuracy'])} ({interval(summary['participant_bootstrap_95_ci'])}) | "
+        f"{float(summary['mean_auroc']):.3f} | "
+        f"{summary['participants_above_chance']}/{summary['participants']} |"
+        for dataset_id, summary in adapted["by_dataset"].items()
+    ]
+    return [
+        "## Participant-Level Results (primary)",
+        "",
+        "Each participant counts once. Abstained windows count as rest predictions.",
+        "",
+        "- Patient-adapted conservative: "
+        f"**{pct(adapted['mean_balanced_accuracy'])} mean BA** across "
+        f"**{adapted['participants']} participants** "
+        f"(participant bootstrap 95% CI {interval(adapted['participant_bootstrap_95_ci'])}; "
+        f"dataset-stratified {interval(adapted['dataset_stratified_bootstrap_95_ci'])}), "
+        f"median {pct(adapted['median_balanced_accuracy'])}, "
+        f"range {interval(adapted['range'])}.",
+        "- Mean sensitivity / specificity / AUROC: "
+        f"{pct(adapted['mean_sensitivity'])} / {pct(adapted['mean_specificity'])} / "
+        f"{float(adapted['mean_auroc']):.3f}.",
+        "- Participants above their own chance threshold: "
+        f"**{adapted['participants_above_chance']}/{adapted['participants']}** "
+        f"({adapted['chance_model']}).",
+        f"- Dataset-equal BA: {pct(adapted['dataset_equal_balanced_accuracy'])}.",
+        "- Population model at its own controller thresholds: "
+        f"{pct(population['mean_balanced_accuracy'])} mean BA; patient adaptation changed "
+        f"participant BA by **{100 * float(gain['mean_balanced_accuracy_change']):+.1f} points** "
+        f"(95% CI {100 * float(gain['participant_bootstrap_95_ci'][0]):+.1f} to "
+        f"{100 * float(gain['participant_bootstrap_95_ci'][1]):+.1f}), improving "
+        f"{pct(gain['participants_improved_fraction'])} of participants.",
+        "",
+        "| Dataset | Participants | Windows | Mean BA (95% CI) | Mean AUROC | Above chance |",
+        "|---|---:|---:|---:|---:|---:|",
+        *rows,
+        "",
+        f"Evaluation-set status: {participant_level['evaluation_set_status']}",
+        "",
+    ]
+
+
 def write_intent_only_report(
     path: Path,
     report: Mapping[str, object],
@@ -3480,7 +3541,11 @@ def write_intent_only_report(
         ),
         "- The result remains development-observed because `locked_external` is empty.",
         "",
-        "## Development-Observed Results",
+        *_participant_level_report_lines(report.get("participant_level")),
+        "## Window-Pooled Results (secondary)",
+        "",
+        "Pooled over evaluation windows, so participants with many windows dominate.",
+        "",
         "",
         "- General population conservative: "
         f"**{100 * float(population['intent_balanced_accuracy']):.1f}% BA**, "
@@ -3684,6 +3749,56 @@ def write_intent_only_report(
         ),
     ]
     path.write_text("\n".join(lines) + "\n", encoding="ascii")
+
+
+def _write_evaluation_predictions(
+    path: Path,
+    dataset: TranslationalWindowDataset,
+    evaluation: np.ndarray,
+    available: np.ndarray,
+    population_probability: np.ndarray,
+    population_threshold: np.ndarray,
+    adapted_probability: np.ndarray,
+    adapted_threshold: np.ndarray,
+) -> None:
+    """Write one row per scored evaluation window for later reanalysis."""
+    with path.open("w", newline="", encoding="ascii") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(
+            (
+                "subject",
+                "dataset",
+                "session",
+                "recording",
+                "trial_index",
+                "window_onset_seconds",
+                "label",
+                "intent",
+                "available",
+                "population_probability",
+                "population_threshold",
+                "adapted_probability",
+                "adapted_threshold",
+            )
+        )
+        for index in np.flatnonzero(evaluation):
+            writer.writerow(
+                (
+                    dataset.subject_keys[index],
+                    dataset.dataset_ids[index],
+                    int(dataset.sessions[index]),
+                    int(dataset.recordings[index]),
+                    int(dataset.trial_indices[index]),
+                    f"{float(dataset.window_onsets_seconds[index]):.3f}",
+                    int(dataset.labels[index]),
+                    int(dataset.labels[index] != 0),
+                    int(bool(available[index])),
+                    f"{float(population_probability[index]):.6f}",
+                    f"{float(population_threshold[index]):.6f}",
+                    f"{float(adapted_probability[index]):.6f}",
+                    f"{float(adapted_threshold[index]):.6f}",
+                )
+            )
 
 
 def main() -> None:
@@ -3964,6 +4079,60 @@ def main() -> None:
             "false-activation rate."
         )
     )
+    population_conservative_thresholds = domain_threshold_vector(
+        dataset.dataset_ids,
+        calibrated_thresholds["conservative"],
+        float(calibrated_thresholds["conservative_fallback"]),
+    )
+    patient_conservative_thresholds = domain_threshold_vector(
+        dataset.dataset_ids,
+        patient_thresholds["conservative"],
+        float(np.mean(list(patient_thresholds["conservative"].values()))),
+    )
+    participant_level = None
+    if args.intent_only:
+        participant_level = {}
+        for key, values, row_thresholds, seed_offset in (
+            (
+                "population_conservative",
+                calibrated_probabilities.intent,
+                population_conservative_thresholds,
+                40000,
+            ),
+            (
+                "patient_adapted_conservative",
+                patient_probabilities.intent,
+                patient_conservative_thresholds,
+                41000,
+            ),
+        ):
+            participant_level[key] = participant_level_summary(
+                dataset.labels[patient_evaluation],
+                values[patient_evaluation],
+                available[patient_evaluation],
+                row_thresholds[patient_evaluation],
+                dataset.subject_keys[patient_evaluation],
+                dataset.dataset_ids[patient_evaluation],
+                iterations=args.bootstrap_iterations,
+                seed=args.seed + seed_offset,
+            )
+        participant_level["adaptation_gain_at_own_thresholds"] = (
+            paired_participant_difference(
+                participant_level["population_conservative"],
+                participant_level["patient_adapted_conservative"],
+                iterations=args.bootstrap_iterations,
+                seed=args.seed + 42000,
+            )
+        )
+        participant_level["evaluation_rows"] = (
+            "development_observed participants, recordings after the "
+            "calibration recording"
+        )
+        participant_level["evaluation_set_status"] = (
+            "The development_observed participants have been scored by every "
+            "pipeline version since v3 and were used to rank neural "
+            "architectures, so they act as a validation set, not a test set."
+        )
     v5_reference = _load_v5_reference(output) if args.intent_only else None
     v6_reference = (
         _load_v6_reference(output) if args.auxiliary_direction else None
@@ -4080,6 +4249,7 @@ def main() -> None:
         "v5_directional_reference": v5_reference,
         "v6_intent_only_reference": v6_reference,
         "bootstrap_confidence_intervals": bootstrap,
+        "participant_level": participant_level,
         "continuous_no_control_status": continuous_status,
         "runtime_minutes": (time.time() - started) / 60.0,
     }
@@ -4143,6 +4313,19 @@ def main() -> None:
         json.dumps(report, indent=2, default=json_default) + "\n",
         encoding="ascii",
     )
+    if args.intent_only:
+        _write_evaluation_predictions(
+            metrics_path.with_name(
+                metrics_path.name.replace("_metrics.json", "_predictions.csv")
+            ),
+            dataset,
+            patient_evaluation,
+            available,
+            calibrated_probabilities.intent,
+            population_conservative_thresholds,
+            patient_probabilities.intent,
+            patient_conservative_thresholds,
+        )
     _plot_method_summary(
         output / "01_decoder_comparison.png",
         results,

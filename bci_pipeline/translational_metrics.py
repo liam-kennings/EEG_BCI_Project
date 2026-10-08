@@ -486,3 +486,197 @@ def select_continuous_threshold(
         return 1.0, fallback
     selected = max(candidates, key=lambda value: (value[1], -value[2], value[0]))
     return selected[0], selected[3]
+
+
+def balanced_accuracy_chance_threshold(
+    n_rest: int,
+    n_intent: int,
+    alpha: float = 0.05,
+) -> float:
+    """Upper one-sided chance bound for balanced accuracy on one participant.
+
+    Under the null hypothesis the decoder flags intent at some rate ``q``
+    independently of the labels, so sensitivity and specificity are binomial
+    proportions. Their variance is largest at ``q = 0.5``, which gives the
+    conservative normal-approximation bound
+    ``0.5 + z * 0.5 * sqrt(0.25 / n_intent + 0.25 / n_rest)``.
+
+    Windows are assumed independent. Overlapping or temporally correlated
+    windows raise the true bound, so this threshold is a minimum.
+    """
+    from scipy.stats import norm
+
+    if n_rest <= 0 or n_intent <= 0:
+        raise ValueError("Both classes need at least one window.")
+    z = float(norm.ppf(1.0 - alpha))
+    spread = 0.5 * np.sqrt(0.25 / n_intent + 0.25 / n_rest)
+    return float(min(1.0, 0.5 + z * spread))
+
+
+def _bootstrap_mean_interval(
+    values: np.ndarray,
+    strata: np.ndarray | None,
+    rng: np.random.Generator,
+    iterations: int,
+) -> list[float]:
+    values = np.asarray(values, dtype=np.float64)
+    if len(values) == 0:
+        return [float("nan"), float("nan")]
+    means = np.empty(iterations, dtype=np.float64)
+    if strata is None:
+        for index in range(iterations):
+            means[index] = np.mean(values[rng.integers(0, len(values), len(values))])
+    else:
+        groups = [np.flatnonzero(strata == stratum) for stratum in np.unique(strata)]
+        for index in range(iterations):
+            sample = np.concatenate(
+                [group[rng.integers(0, len(group), len(group))] for group in groups]
+            )
+            means[index] = np.mean(values[sample])
+    return [float(np.quantile(means, 0.025)), float(np.quantile(means, 0.975))]
+
+
+def participant_level_summary(
+    labels: np.ndarray,
+    probabilities: np.ndarray,
+    available: np.ndarray,
+    thresholds: float | np.ndarray,
+    subjects: np.ndarray,
+    datasets: np.ndarray,
+    *,
+    iterations: int = 1000,
+    seed: int = 0,
+    alpha: float = 0.05,
+) -> dict[str, object]:
+    """Score a binary intent decoder with each participant weighted equally.
+
+    Window-pooled metrics let participants with many windows dominate (in V7,
+    6 OpenBMI participants supply 77.5% of evaluation rows). This summary
+    computes balanced accuracy per participant, averages participants, and
+    resamples participants for confidence intervals, both unstratified and
+    stratified by dataset. Abstained windows count as rest predictions,
+    matching :func:`score_intent_operating_point`.
+    """
+    labels = np.asarray(labels)
+    probabilities = np.asarray(probabilities, dtype=np.float64)
+    available = np.asarray(available, dtype=bool)
+    threshold_values = np.broadcast_to(
+        np.asarray(thresholds, dtype=np.float64),
+        probabilities.shape,
+    )
+    subjects = np.asarray(subjects).astype(str)
+    datasets = np.asarray(datasets).astype(str)
+    intent = labels != 0
+    predicted = available & (probabilities >= threshold_values)
+    records: list[dict[str, object]] = []
+    skipped: list[str] = []
+    for subject in np.unique(subjects):
+        selected = subjects == subject
+        n_intent = int(np.sum(intent[selected]))
+        n_rest = int(np.sum(~intent[selected]))
+        if n_intent == 0 or n_rest == 0:
+            skipped.append(str(subject))
+            continue
+        sensitivity = float(np.mean(predicted[selected & intent]))
+        specificity = 1.0 - float(np.mean(predicted[selected & ~intent]))
+        balanced = 0.5 * (sensitivity + specificity)
+        chance = balanced_accuracy_chance_threshold(n_rest, n_intent, alpha)
+        records.append(
+            {
+                "subject": str(subject),
+                "dataset": str(datasets[selected][0]),
+                "rest_windows": n_rest,
+                "intent_windows": n_intent,
+                "balanced_accuracy": balanced,
+                "sensitivity": sensitivity,
+                "specificity": specificity,
+                "auroc": float(roc_auc_score(intent[selected], probabilities[selected])),
+                "chance_threshold": chance,
+                "above_chance": bool(balanced > chance),
+            }
+        )
+    rng = np.random.default_rng(seed)
+    balanced = np.asarray([record["balanced_accuracy"] for record in records])
+    record_datasets = np.asarray([record["dataset"] for record in records])
+    above = np.asarray([record["above_chance"] for record in records], dtype=bool)
+    by_dataset: dict[str, object] = {}
+    for dataset_id in np.unique(record_datasets):
+        local = record_datasets == dataset_id
+        by_dataset[str(dataset_id)] = {
+            "participants": int(np.sum(local)),
+            "evaluation_windows": int(
+                sum(
+                    record["rest_windows"] + record["intent_windows"]
+                    for record, keep in zip(records, local)
+                    if keep
+                )
+            ),
+            "mean_balanced_accuracy": float(np.mean(balanced[local])),
+            "participant_bootstrap_95_ci": _bootstrap_mean_interval(
+                balanced[local], None, rng, iterations
+            ),
+            "median_balanced_accuracy": float(np.median(balanced[local])),
+            "mean_auroc": float(
+                np.mean([r["auroc"] for r, keep in zip(records, local) if keep])
+            ),
+            "participants_above_chance": int(np.sum(above[local])),
+        }
+    return {
+        "unit": "participant",
+        "participants": int(len(records)),
+        "skipped_single_class_participants": skipped,
+        "mean_balanced_accuracy": float(np.mean(balanced)),
+        "participant_bootstrap_95_ci": _bootstrap_mean_interval(
+            balanced, None, rng, iterations
+        ),
+        "dataset_stratified_bootstrap_95_ci": _bootstrap_mean_interval(
+            balanced, record_datasets, rng, iterations
+        ),
+        "median_balanced_accuracy": float(np.median(balanced)),
+        "interquartile_range": [
+            float(np.quantile(balanced, 0.25)),
+            float(np.quantile(balanced, 0.75)),
+        ],
+        "range": [float(np.min(balanced)), float(np.max(balanced))],
+        "dataset_equal_balanced_accuracy": float(
+            np.mean([value["mean_balanced_accuracy"] for value in by_dataset.values()])
+        ),
+        "mean_sensitivity": float(np.mean([r["sensitivity"] for r in records])),
+        "mean_specificity": float(np.mean([r["specificity"] for r in records])),
+        "mean_auroc": float(np.mean([r["auroc"] for r in records])),
+        "participants_above_chance": int(np.sum(above)),
+        "fraction_above_chance": float(np.mean(above)),
+        "chance_model": (
+            f"one-sided alpha={alpha} normal bound on balanced accuracy for a "
+            "label-independent decoder, assuming independent windows"
+        ),
+        "bootstrap_iterations": int(iterations),
+        "by_dataset": by_dataset,
+        "records": records,
+    }
+
+
+def paired_participant_difference(
+    baseline: Mapping[str, object],
+    candidate: Mapping[str, object],
+    *,
+    iterations: int = 1000,
+    seed: int = 0,
+) -> dict[str, object]:
+    """Participant-paired balanced-accuracy change between two summaries."""
+    base = {r["subject"]: r for r in baseline["records"]}
+    cand = {r["subject"]: r for r in candidate["records"]}
+    shared = sorted(set(base) & set(cand))
+    differences = np.asarray(
+        [cand[s]["balanced_accuracy"] - base[s]["balanced_accuracy"] for s in shared]
+    )
+    rng = np.random.default_rng(seed)
+    return {
+        "participants": int(len(shared)),
+        "mean_balanced_accuracy_change": float(np.mean(differences)),
+        "participant_bootstrap_95_ci": _bootstrap_mean_interval(
+            differences, None, rng, iterations
+        ),
+        "participants_improved_fraction": float(np.mean(differences > 0)),
+        "participants_unchanged_fraction": float(np.mean(differences == 0)),
+    }
