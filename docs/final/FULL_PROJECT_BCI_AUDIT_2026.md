@@ -190,7 +190,7 @@ Asynchronous BCI studies similarly treat false positives per minute as a
 separate design objective. A cue-constrained stroke system reported about
 0.52 false positives/minute versus 0.99 in asynchronous operation, despite
 similar true-positive rates
-([Bhattacharyya et al., 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9082379/)).
+([Niazi et al., 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9082379/); attempted ankle dorsiflexion).
 A recent self-paced movement study illustrates the difficulty from the other
 direction: only 31.8% true positives at a maximum of one false positive/minute
 ([Miao et al., 2025](https://pubmed.ncbi.nlm.nih.gov/40007882/)).
@@ -960,8 +960,8 @@ by decoder capacity.
 
 ### Asynchronous and clinical BCI
 
-35. Bhattacharyya S et al. Cue-constrained versus asynchronous stroke BCI.
-    [Frontiers in Neuroscience, 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9082379/)
+35. Niazi IK et al. Associative cued asynchronous BCI induces cortical plasticity in stroke patients.
+    [Annals of Clinical and Translational Neurology, 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9082379/)
 36. Miao et al. Self-paced movement detection at controlled false positives.
     [Journal of Neural Engineering, 2025](https://pubmed.ncbi.nlm.nih.gov/40007882/)
 37. Ang KK et al. Motor-imagery BCI ability in stroke.

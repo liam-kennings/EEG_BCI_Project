@@ -424,9 +424,10 @@ V7 reached 73.6% balanced accuracy across 187 represented participants, but
 remains development observed. A 2026 chronic-stroke dataset reported up to
 82.65% accuracy for left-versus-right imagery; that higher percentage is not a
 rest-rejection result and used cross-trial evaluation in 14 patients. An online
-cue-gated stroke BCI reported 84.88% true-positive detection and 0.52 false
-positives per minute, providing the more relevant target for V7's future
-continuous safety evaluation.
+cue-gated stroke BCI (Niazi et al., 2022; nine chronic-stroke patients,
+attempted ankle dorsiflexion detected from MRCPs, not hand imagery) reported
+84.88% true-positive detection and 0.52 false positives per minute, providing
+the more relevant target for V7's future continuous safety evaluation.
 
 ### What Worked
 
@@ -700,9 +701,13 @@ Vector PDF and SVG versions are available in
 6. Mane R et al. FBCNet: A multi-view convolutional neural network for
    brain-computer interface. 2021.
    [Preprint](https://arxiv.org/abs/2104.01233).
-7. Bhattacharyya S et al. Cue-constrained versus asynchronous motor-imagery BCI
-   after stroke. *Frontiers in Neuroscience*. 2022.
+7. Niazi IK, et al. Associative cued asynchronous BCI induces cortical
+   plasticity in stroke patients. *Annals of Clinical and Translational
+   Neurology*. 2022;9(5):722-733.
    [Article](https://pmc.ncbi.nlm.nih.gov/articles/PMC9082379/).
+   (Corrected 2026-10-07: previously misattributed to "Bhattacharyya et al.,
+   Frontiers in Neuroscience". The study detected attempted ankle
+   dorsiflexion, not hand motor imagery.)
 
 The complete citation list for every dataset analyzed in the project,
 including MRCP EEG-EMG, WAY-EEG-GAL, and HS-Stroke, is provided in

@@ -1,12 +1,12 @@
 # Weak EEG Motor-Intent Detection for Rehabilitation and Prosthetic Control
 
 > **Current full-project audit:** See
-> [`FULL_PROJECT_BCI_AUDIT_2026.md`](FULL_PROJECT_BCI_AUDIT_2026.md) for the
+> [`FULL_PROJECT_BCI_AUDIT_2026.md`](../final/FULL_PROJECT_BCI_AUDIT_2026.md) for the
 > July 2026 evidence review, redesigned pipeline, dataset strategy, validation
 > contract, and prioritized implementation plan.
 
 > **Audit implementation:** See
-> [`TRANSLATIONAL_V3_IMPLEMENTATION.md`](TRANSLATIONAL_V3_IMPLEMENTATION.md) for
+> [`TRANSLATIONAL_V3_IMPLEMENTATION.md`](../final/TRANSLATIONAL_V3_IMPLEMENTATION.md) for
 > the native-montage MRCP/SMR/quality pipeline, domain-aware decoders, safety
 > endpoints, GUI preparation, reproducible commands, and verification results.
 
@@ -796,7 +796,7 @@ activation tradeoff and SSD did not improve controller validation.
 ## Future Research and Clinical Translation Roadmap
 
 The detailed signal-extraction audit and proposed multibranch workflow are in
-[`BCI_FULL_WORKFLOW_RESEARCH.md`](BCI_FULL_WORKFLOW_RESEARCH.md). That report
+[`BCI_FULL_WORKFLOW_RESEARCH.md`](../final/BCI_FULL_WORKFLOW_RESEARCH.md). That report
 prioritizes raw-channel QC, robust referencing, CSD, slow cue-locked potentials,
 compact Morlet trajectories, phase-specific covariance, and calibrated late
 fusion before any larger classifier is introduced.
@@ -1212,4 +1212,4 @@ causal preprocessing, and patient calibration have been validated.
 
 The full dataset catalog, harmonization contract, training sequence, metrics,
 and console instructions are in
-[EXTERNAL_DATASETS_AND_RESEARCH_CONSOLE.md](EXTERNAL_DATASETS_AND_RESEARCH_CONSOLE.md).
+[EXTERNAL_DATASETS_AND_RESEARCH_CONSOLE.md](../final/EXTERNAL_DATASETS_AND_RESEARCH_CONSOLE.md).
