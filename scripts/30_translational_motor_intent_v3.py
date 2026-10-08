@@ -144,6 +144,15 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--bootstrap-iterations", type=int, default=1000)
     parser.add_argument("--quality-rejection-quantile", type=float, default=0.99)
+    parser.add_argument(
+        "--legacy-quality-gate",
+        action="store_true",
+        help=(
+            "Use quality-gate scoring version 1, which reproduces results produced "
+            "before 2026-10-07. Version 1 turns missing auxiliary/CSD indicators "
+            "into ~1e6-sigma deviations and rejects whole external datasets."
+        ),
+    )
     parser.add_argument("--domain-weight", type=float, default=0.5)
     parser.add_argument(
         "--neural-bakeoff-dir",
@@ -3738,7 +3747,8 @@ def main() -> None:
         include_graph=args.v7_graph_lda,
     )
     gate = QualityAvailabilityGate(
-        args.quality_rejection_quantile
+        args.quality_rejection_quantile,
+        legacy=args.legacy_quality_gate,
     ).fit(
         features.branches["quality"][masks[DEVELOPMENT_ROLE]],
         dataset.dataset_ids[masks[DEVELOPMENT_ROLE]],
@@ -4057,6 +4067,7 @@ def main() -> None:
         "feature_metadata": features.metadata,
         "quality_gate": {
             "rejection_quantile": args.quality_rejection_quantile,
+            "scoring_version": gate.scoring_version,
             "threshold": gate.threshold_,
             "available_fraction": float(np.mean(available)),
         },

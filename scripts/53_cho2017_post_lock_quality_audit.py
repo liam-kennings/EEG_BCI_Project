@@ -74,7 +74,9 @@ def _patient_calibrated_availability(
         evaluation = np.flatnonzero(
             (dataset.subject_keys == subject) & (dataset.recordings != 0)
         )
-        gate = QualityAvailabilityGate(quantile).fit(
+        # Version 1 scoring reproduces the recorded post-lock audit; see
+        # QualityAvailabilityGate for the indicator-feature defect it carries.
+        gate = QualityAvailabilityGate(quantile, legacy=True).fit(
             dataset.quality_features[calibration]
         )
         available[evaluation] = gate.available(

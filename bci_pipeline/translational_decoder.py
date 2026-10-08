@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Mapping, Sequence
+from typing import Any, Mapping, Sequence
 
 import numpy as np
 from sklearn.covariance import oas
@@ -1229,26 +1229,67 @@ class DomainIntentProbabilityCalibrator:
 
 
 class QualityAvailabilityGate:
-    """Domain-aware robust quality gate that abstains on unusual windows."""
+    """Domain-aware robust quality gate that abstains on unusual windows.
 
-    def __init__(self, rejection_quantile: float = 0.99):
+    Scoring version 2 (the default for new fits) measures robust distance only
+    over continuous features with nonzero spread in the reference data.
+    Indicator features whose reference values are all 0 or 1 (for example
+    ``auxiliary_available`` and ``csd_available``) and features that are
+    constant in the reference are excluded from the distance. Version 1 floored
+    their zero MAD at 1e-6, so any change in them scored as a roughly
+    1e6-sigma deviation and the gate rejected every window of the HS-Stroke and
+    Cho2017 external cohorts. Missing modalities are a compatibility question,
+    reported by :meth:`compatibility_report`, not an artifact.
+
+    When ``recording_groups`` are passed to :meth:`fit`, the gate instead
+    scores each window against its own recording's median and spread. This
+    label-free mode flags windows that are unusual within a recording and
+    does not reject a new dataset only because its amplitude scale differs.
+
+    Gates pickled before version 2 have no ``scoring_version_`` attribute and
+    keep version 1 scoring, so frozen artifacts reproduce exactly. Pass
+    ``legacy=True`` to fit a new version 1 gate.
+    """
+
+    def __init__(self, rejection_quantile: float = 0.99, legacy: bool = False):
         if not 0.5 < rejection_quantile < 1.0:
             raise ValueError("rejection_quantile must be between 0.5 and 1.0.")
         self.rejection_quantile = rejection_quantile
+        self.legacy = bool(legacy)
+
+    @property
+    def scoring_version(self) -> int:
+        return int(getattr(self, "scoring_version_", 1))
+
+    @property
+    def within_recording(self) -> bool:
+        return bool(getattr(self, "within_recording_", False))
 
     def fit(
         self,
         quality_features: np.ndarray,
         domains: np.ndarray | None = None,
+        recording_groups: np.ndarray | None = None,
     ) -> "QualityAvailabilityGate":
         values = np.asarray(quality_features, dtype=np.float64)
-        domain_values = (
-            np.full(len(values), "__global__", dtype="<U16")
-            if domains is None
-            else np.asarray(domains).astype(str)
-        )
-        if len(domain_values) != len(values):
-            raise ValueError("Quality domains must align with feature rows.")
+        domain_values = self._domains(values, domains)
+        self.scoring_version_ = 1 if getattr(self, "legacy", False) else 2
+        if recording_groups is not None and self.scoring_version_ == 1:
+            raise ValueError("Within-recording scoring requires scoring version 2.")
+        self.within_recording_ = recording_groups is not None
+        if self.within_recording_:
+            groups = self._groups(values, recording_groups)
+            distances = self._within_recording_distances(values, groups)
+            self.statistics_ = {}
+            self.threshold_ = float(np.quantile(distances, self.rejection_quantile))
+            self.domain_thresholds_ = {"__global__": self.threshold_}
+            for domain in np.unique(domain_values):
+                selected = domain_values == domain
+                if np.sum(selected) >= 10:
+                    self.domain_thresholds_[str(domain)] = float(
+                        np.quantile(distances[selected], self.rejection_quantile)
+                    )
+            return self
         self.statistics_: dict[str, tuple[np.ndarray, np.ndarray, float]] = {}
         global_statistics = self._statistics(values)
         self.statistics_["__global__"] = global_statistics
@@ -1259,28 +1300,83 @@ class QualityAvailabilityGate:
         self.threshold_ = global_statistics[2]
         return self
 
-    def _statistics(
-        self,
-        values: np.ndarray,
-    ) -> tuple[np.ndarray, np.ndarray, float]:
-        median = np.median(values, axis=0)
-        mad = np.median(np.abs(values - median), axis=0)
-        scale = np.clip(1.4826 * mad, 1e-6, None)
-        distances = np.sqrt(np.mean(((values - median) / scale) ** 2, axis=1))
-        threshold = float(np.quantile(distances, self.rejection_quantile))
-        return median, scale, threshold
-
-    def score(
-        self,
-        quality_features: np.ndarray,
-        domains: np.ndarray | None = None,
-    ) -> np.ndarray:
-        values = np.asarray(quality_features, dtype=np.float64)
+    @staticmethod
+    def _domains(values: np.ndarray, domains: np.ndarray | None) -> np.ndarray:
         domain_values = (
             np.full(len(values), "__global__", dtype="<U16")
             if domains is None
             else np.asarray(domains).astype(str)
         )
+        if len(domain_values) != len(values):
+            raise ValueError("Quality domains must align with feature rows.")
+        return domain_values
+
+    @staticmethod
+    def _groups(values: np.ndarray, recording_groups: np.ndarray | None) -> np.ndarray:
+        if recording_groups is None:
+            raise ValueError("This gate was fitted within recordings; pass recording_groups.")
+        groups = np.asarray(recording_groups).astype(str)
+        if len(groups) != len(values):
+            raise ValueError("Recording groups must align with feature rows.")
+        return groups
+
+    def _robust_center_scale(self, values: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+        median = np.median(values, axis=0)
+        mad = np.median(np.abs(values - median), axis=0)
+        if self.scoring_version == 1:
+            return median, np.clip(1.4826 * mad, 1e-6, None)
+        scale = 1.4826 * mad
+        # A feature that is mostly constant (e.g. bad-channel fraction) has
+        # zero MAD; fall back to its standard deviation. Indicators and truly
+        # constant features keep a scale of 0 and are excluded by the caller.
+        degenerate = scale <= 1e-12
+        scale[degenerate] = np.std(values[:, degenerate], axis=0)
+        indicator = np.all((values == 0.0) | (values == 1.0), axis=0)
+        scale[indicator] = 0.0
+        return median, scale
+
+    @staticmethod
+    def _distances(values: np.ndarray, median: np.ndarray, scale: np.ndarray) -> np.ndarray:
+        usable = scale > 1e-12
+        if not np.any(usable):
+            return np.zeros(len(values), dtype=np.float64)
+        z = (values[:, usable] - median[usable]) / scale[usable]
+        return np.sqrt(np.mean(z**2, axis=1))
+
+    def _statistics(
+        self,
+        values: np.ndarray,
+    ) -> tuple[np.ndarray, np.ndarray, float]:
+        median, scale = self._robust_center_scale(values)
+        distances = self._distances(values, median, scale)
+        threshold = float(np.quantile(distances, self.rejection_quantile))
+        return median, scale, threshold
+
+    def _within_recording_distances(
+        self,
+        values: np.ndarray,
+        groups: np.ndarray,
+    ) -> np.ndarray:
+        distances = np.empty(len(values), dtype=np.float64)
+        for group in np.unique(groups):
+            selected = groups == group
+            median, scale = self._robust_center_scale(values[selected])
+            distances[selected] = self._distances(values[selected], median, scale)
+        return distances
+
+    def score(
+        self,
+        quality_features: np.ndarray,
+        domains: np.ndarray | None = None,
+        recording_groups: np.ndarray | None = None,
+    ) -> np.ndarray:
+        values = np.asarray(quality_features, dtype=np.float64)
+        domain_values = self._domains(values, domains)
+        if self.within_recording:
+            return self._within_recording_distances(
+                values,
+                self._groups(values, recording_groups),
+            )
         scores = np.empty(len(values), dtype=np.float64)
         for domain in np.unique(domain_values):
             selected = domain_values == domain
@@ -1288,32 +1384,70 @@ class QualityAvailabilityGate:
                 str(domain),
                 self.statistics_["__global__"],
             )
-            scores[selected] = np.sqrt(
-                np.mean(((values[selected] - median) / scale) ** 2, axis=1)
-            )
+            if self.scoring_version == 1:
+                scores[selected] = np.sqrt(
+                    np.mean(((values[selected] - median) / scale) ** 2, axis=1)
+                )
+            else:
+                scores[selected] = self._distances(values[selected], median, scale)
         return scores
 
     def available(
         self,
         quality_features: np.ndarray,
         domains: np.ndarray | None = None,
+        recording_groups: np.ndarray | None = None,
     ) -> np.ndarray:
         values = np.asarray(quality_features, dtype=np.float64)
-        domain_values = (
-            np.full(len(values), "__global__", dtype="<U16")
-            if domains is None
-            else np.asarray(domains).astype(str)
-        )
-        scores = self.score(values, domain_values)
+        domain_values = self._domains(values, domains)
+        scores = self.score(values, domain_values, recording_groups)
         available = np.empty(len(values), dtype=bool)
         for domain in np.unique(domain_values):
             selected = domain_values == domain
-            _, _, threshold = self.statistics_.get(
-                str(domain),
-                self.statistics_["__global__"],
-            )
+            if self.within_recording:
+                threshold = self.domain_thresholds_.get(
+                    str(domain),
+                    self.domain_thresholds_["__global__"],
+                )
+            else:
+                _, _, threshold = self.statistics_.get(
+                    str(domain),
+                    self.statistics_["__global__"],
+                )
             available[selected] = scores[selected] <= threshold
         return available
+
+    def compatibility_report(
+        self,
+        quality_features: np.ndarray,
+        feature_names: Sequence[str] | None = None,
+    ) -> dict[str, Any]:
+        """Report excluded indicator/constant features that differ from the reference.
+
+        Only meaningful for version 2 gates fitted across recordings. A
+        mismatch (for example no auxiliary channels in a new dataset) should
+        be documented, not silently turned into abstention.
+        """
+        if self.scoring_version == 1 or self.within_recording:
+            return {"status": "not_applicable"}
+        values = np.asarray(quality_features, dtype=np.float64)
+        median, scale, _ = self.statistics_["__global__"]
+        names = (
+            list(feature_names)
+            if feature_names is not None
+            else [f"feature_{index}" for index in range(values.shape[1])]
+        )
+        excluded = np.flatnonzero(scale <= 1e-12)
+        return {
+            "status": "evaluated",
+            "excluded_features": {
+                names[index]: {
+                    "reference_value": float(median[index]),
+                    "mismatch_fraction": float(np.mean(values[:, index] != median[index])),
+                }
+                for index in excluded
+            },
+        }
 
 
 def population_stage_features(
