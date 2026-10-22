@@ -13,6 +13,7 @@ confound controls.
 | [`final/PROJECT_STATUS_AND_RESULTS.md`](final/PROJECT_STATUS_AND_RESULTS.md) | **Start here.** Canonical methods, results, and limitations after the audit |
 | [`final/CONFOUND_CONTROL_FINDINGS.md`](final/CONFOUND_CONTROL_FINDINGS.md) | Whether the rest-vs-intent contrast survives cue and trial-phase controls |
 | [`final/PREREGISTRATION_DRAFT_EXTERNAL_TEST.md`](final/PREREGISTRATION_DRAFT_EXTERNAL_TEST.md) | Draft protocol for the next locked external test |
+| [`final/LIGHTWEIGHT_PIPELINE_PLAN.md`](final/LIGHTWEIGHT_PIPELINE_PLAN.md) | Plan for a lightweight offline + real-time pipeline in MATLAB and Python |
 | [`final/TRANSLATIONAL_V3_IMPLEMENTATION.md`](final/TRANSLATIONAL_V3_IMPLEMENTATION.md) | Base preprocessing, feature, and decoder pipeline that V5-V7 extend |
 | [`final/V7_GRAPH_LDA_COURSE_EXTENSION.md`](final/V7_GRAPH_LDA_COURSE_EXTENSION.md) | V7 graph and shrinkage-LDA extension and its rejection by the controller |
 | [`final/BME473_COURSE_CONCEPTS_AND_PROJECT_MAPPING.md`](final/BME473_COURSE_CONCEPTS_AND_PROJECT_MAPPING.md) | Course concepts mapped to the pipeline |
