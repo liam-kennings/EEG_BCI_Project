@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "description": "Lightweight causal EEG motor-intent pipeline. Shared by the MATLAB and Python implementations.",
+  "chunk_seconds": 0.05,
+  "filter_warmup_seconds": 2.0,
+  "filter_order": 4,
+  "line_noise": {
+    "enabled": true,
+    "frequency_hz": 60,
+    "half_width_hz": 2,
+    "order": 2
+  },
+  "reference": {
+    "method": "average",
+    "laplacian_neighbors": 4
+  },
+  "bands": [
+    {"name": "mu", "low_hz": 8, "high_hz": 12},
+    {"name": "beta", "low_hz": 13, "high_hz": 30}
+  ],
+  "broadband": {"low_hz": 1, "high_hz": 40},
+  "band_power": {
+    "block_seconds": 0.25,
+    "smoothing_blocks": 3,
+    "log_floor": 1e-12
+  },
+  "drift_compensation": {
+    "enabled": true,
+    "window_seconds": 25
+  },
+  "channel_health": {
+    "band_hz": [8, 25],
+    "z_threshold": 6,
+    "robust_z": true,
+    "flat_std_uv": 0.5,
+    "saturation_uv": 1000,
+    "max_bad_fraction_per_run": 0.1
+  },
+  "epoch": {
+    "tmin_seconds": -2.0,
+    "tmax_seconds": 4.0
+  },
+  "erds": {
+    "reference_window_seconds": [-1.0, 0.0]
+  },
+  "topomap": {
+    "time_bin_centers_seconds": [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5],
+    "time_bin_width_seconds": 0.5
+  },
+  "data": {
+    "physionet_root": "../files/eegmmidb/1.0.0"
+  }
+}

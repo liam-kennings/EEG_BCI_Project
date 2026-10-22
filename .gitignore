@@ -40,3 +40,11 @@ tmp/
 *.pptx.inspect.ndjson
 EEG_BCI_Project_Poster_V1.pdf
 .tmp/
+
+# MATLAB pipeline outputs
+eeg_intent_matlab/outputs/
+*.h5
+
+# Lee et al. 2022 paper and figure saved for reference
+fnins-16-1009878.pdf
+https___www.frontiersin.org_files_Articles_1009878_xml-images_fnins-16-1009878-g003.webp
